@@ -43,10 +43,15 @@ def build(data):
     top = "".join(f'<li><span class="why">{E(t["why"])}</span><b>{E(items[t["id"]]["name"])}</b>'
                   f'<a href="#{t["id"]}">{E(items[t["id"]]["price"])}, see the details</a></li>'
                   for t in data["top_picks"])
+    import datetime
+    days_left = max(0, (datetime.date.fromisoformat(data["deal_date"]) - datetime.date.today()).days)
+    ticker = "".join(f"<span>{E(t)}</span>" for t in data["ticker"])
     bands = ""
     for k, b in enumerate(data["bands"]):
-        bands += (f'<section class="g-band" id="{b["id"]}" data-band="{k+1}"><div class="g-band-head">'
-                  f'<h2><span>{E(b["label"])}</span></h2><p>{E(b["blurb"])}</p></div>'
+        col = "".join(f'<div class="g-sticker">{svg(i["art"], i["name"])}</div>' for i in b["items"][:3])
+        bands += (f'<section class="g-band" id="{b["id"]}" data-band="{k+1}"><header class="g-band-poster"><div>'
+                  f'<h2 class="stamp">{E(b["label"])}</h2><p>{E(b["blurb"])}</p><span class="count">{len(b["items"])} picks</span></div>'
+                  f'<div class="g-collage" aria-hidden="true">{col}</div></header>'
                   f'<div class="g-grid">{"".join(card(i, people, data.get("people_short", {})) for i in b["items"])}</div></section>')
     rows = "".join(f'<tr><td><a href="#{i["id"]}">{E(i["name"])}</a></td><td class="p">{E(i["price"])}</td>'
                    f'<td>{E(", ".join(people[w] for w in i.get("for", [])[:1]))}</td></tr>'
@@ -65,12 +70,15 @@ def build(data):
 <script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"ItemList","name":title,"numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":p+1,"name":i["name"],"url":url+"#"+i["id"]} for p,i in enumerate(items.values())]})}</script>
 </head>
 <body class="finds guide"><header class="site"><div class="wrap wide"><a class="logo" href="/finds/">Digittouch <span>Finds</span></a><nav><a href="/finds/">Finds</a><a href="/">FlowFrame</a><a href="/about/">About</a></nav></div></header>
-<section class="g-hero"><div class="in"><div>
-<p class="g-crumb"><a href="/finds/">Finds</a> / Gift guides</p>
+<section class="g-hero g-poster"><div class="stage">
+<div class="g-shelf-free" aria-hidden="true">{stickers}</div>
+<div class="g-tagcard"><p class="g-crumb"><a href="/finds/">Finds</a> / Gift guides</p>
 <h1>{data["hero_title_html"]}</h1>
 <p class="lede">{E(data["lede"])}</p>
-<ul class="g-meta"><li>{n} picks</li><li>Prices checked {E(data["checked"])}</li><li>One honest catch each</li></ul>
-</div><div class="g-shelf" aria-hidden="true">{stickers}</div></div></section>
+<ul class="g-meta"><li>{n} picks</li><li>Prices checked {E(data["checked"])}</li><li>One honest catch each</li></ul></div>
+<div class="g-burst" data-countdown="{data["deal_date"]}"><b>{days_left}</b><span>{E(data["deal_label"])}</span></div>
+</div></section>
+<div class="g-ticker" aria-hidden="true"><div class="track">{ticker}{ticker}</div></div>
 <nav class="g-bar" aria-label="Jump to a budget"><div class="in">{bar}</div></nav>
 <main class="g-body">
 <p class="g-disclosure">Digittouch Finds may earn a commission if you buy through links on this page, at no extra cost to you. It never changes our picks. <a href="/disclosure/">How we make money</a>.</p>

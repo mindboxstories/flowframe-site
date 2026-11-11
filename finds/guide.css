@@ -135,3 +135,75 @@ body.guide .g-crumb a{color:#CFC8D4}
 body.guide .g-table table{min-width:0}
 body.guide .g-table th{background:var(--ink)}
 body.guide .g-top a{color:var(--sun)}
+
+/* ===== v3: poster / flyer layer ===== */
+:root{--burst:polygon(50.0% 0.0%,55.4% 9.4%,62.9% 1.7%,65.7% 12.1%,75.0% 6.7%,75.0% 17.5%,85.4% 14.6%,82.5% 25.0%,93.3% 25.0%,87.9% 34.3%,98.3% 37.1%,90.6% 44.6%,100.0% 50.0%,90.6% 55.4%,98.3% 62.9%,87.9% 65.7%,93.3% 75.0%,82.5% 75.0%,85.4% 85.4%,75.0% 82.5%,75.0% 93.3%,65.7% 87.9%,62.9% 98.3%,55.4% 90.6%,50.0% 100.0%,44.6% 90.6%,37.1% 98.3%,34.3% 87.9%,25.0% 93.3%,25.0% 82.5%,14.6% 85.4%,17.5% 75.0%,6.7% 75.0%,12.1% 65.7%,1.7% 62.9%,9.4% 55.4%,0.0% 50.0%,9.4% 44.6%,1.7% 37.1%,12.1% 34.3%,6.7% 25.0%,17.5% 25.0%,14.6% 14.6%,25.0% 17.5%,25.0% 6.7%,34.3% 12.1%,37.1% 1.7%,44.6% 9.4%)}
+.g-poster{position:relative;background-color:#FCE8DF;background-image:linear-gradient(90deg,rgba(228,87,46,.38) 50%,transparent 50%),linear-gradient(rgba(228,87,46,.38) 50%,transparent 50%);background-size:56px 56px;color:var(--ink);overflow:hidden;border-bottom:3px solid var(--ink)}
+.g-poster .stage{position:relative;max-width:1180px;margin:0 auto;min-height:640px;padding:56px 16px 64px;display:grid;place-items:center}
+.g-tagcard{position:relative;z-index:3;width:min(640px,100%);background:var(--paper);border:3px solid var(--ink);border-radius:28px;padding:54px 40px 34px;box-shadow:12px 12px 0 var(--ink);text-align:center;transform:rotate(-1.5deg)}
+.g-tagcard::before{content:"";position:absolute;top:18px;left:50%;width:22px;height:22px;margin-left:-11px;border-radius:50%;border:3px solid var(--ink);background:#FCE8DF}
+.g-tagcard::after{content:"";position:absolute;top:-70px;left:50%;width:3px;height:92px;background:var(--ink);transform:rotate(14deg);transform-origin:bottom}
+.g-tagcard .g-crumb{color:var(--muted)}
+body.guide .g-tagcard .g-crumb a{color:var(--muted)}
+.g-tagcard h1{font-size:clamp(46px,8vw,96px);line-height:.92;margin:6px 0 18px;font-weight:800;letter-spacing:-.04em}
+.g-tagcard h1 .price{display:inline-block;background:var(--coral);color:#fff;padding:0 .14em;border-radius:.14em;transform:rotate(-3deg);box-shadow:5px 5px 0 var(--ink)}
+.g-tagcard .lede{color:var(--ink);font-size:19px;margin:0 auto 20px;max-width:500px}
+.g-tagcard .g-meta{justify-content:center}
+.g-tagcard .g-meta li{border-color:var(--ink);color:var(--ink);font-weight:600}
+.g-poster .g-sticker{width:190px;z-index:2}
+.g-poster .g-sticker:nth-child(1){left:2%;top:7%}
+.g-poster .g-sticker:nth-child(2){left:auto;right:3%;top:5%}
+.g-poster .g-sticker:nth-child(3){left:6%;top:auto;bottom:6%;z-index:2}
+.g-poster .g-sticker:nth-child(4){left:auto;right:12%;top:auto;bottom:4%;width:170px}
+.g-poster .g-sticker:nth-child(5){left:20%;top:44%;width:120px}
+.g-burst{position:absolute;z-index:4;right:5%;top:38%;width:178px;aspect-ratio:1;background:var(--sun);clip-path:var(--burst);display:grid;place-content:center;text-align:center;transform:rotate(10deg);filter:drop-shadow(0 0 0 var(--ink))}
+.g-burst b{display:block;font:800 64px/0.9 "Bricolage Grotesque",sans-serif;letter-spacing:-.04em}
+.g-burst span{display:block;font-weight:700;font-size:15px;line-height:1.15;max-width:120px;margin:4px auto 0}
+@media (prefers-reduced-motion:no-preference){.g-burst{animation:wobble 2.6s ease-in-out infinite}@keyframes wobble{50%{transform:rotate(16deg) scale(1.06)}}}
+
+/* ticker ribbon */
+.g-ticker{background:var(--coral);color:#fff;border-bottom:3px solid var(--ink);overflow:hidden;white-space:nowrap}
+.g-ticker .track{display:inline-flex;gap:0;padding:12px 0;font:800 22px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
+.g-ticker .track span{padding:0 22px}
+.g-ticker .track span::after{content:"\2726";margin-left:44px;color:var(--sun)}
+@media (prefers-reduced-motion:no-preference){.g-ticker .track{animation:tick 28s linear infinite}@keyframes tick{to{transform:translateX(-50%)}}}
+
+/* budget poster headers */
+.g-band-poster{position:relative;display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:20px;border:3px solid var(--ink);border-radius:30px;padding:34px 34px 34px 38px;margin-bottom:26px;overflow:hidden;box-shadow:10px 10px 0 var(--ink);background-image:radial-gradient(rgba(29,27,32,.16) 2.2px,transparent 2.6px);background-size:20px 20px}
+.g-band[data-band="1"] .g-band-poster{background-color:var(--band-1)}
+.g-band[data-band="2"] .g-band-poster{background-color:#9FE0BF}
+.g-band[data-band="3"] .g-band-poster{background-color:#C9B6FF}
+.g-band-poster .stamp{font-size:clamp(54px,9vw,112px);line-height:.88;margin:0 0 12px;font-weight:800;letter-spacing:-.045em;color:var(--ink);text-shadow:4px 4px 0 #fff}
+.g-band-poster p{margin:0;font-size:20px;font-weight:600;max-width:340px}
+.g-band-poster .count{display:inline-block;margin-top:16px;background:var(--ink);color:var(--paper);font-weight:700;padding:8px 16px;border-radius:99px}
+.g-collage{position:relative;height:250px}
+.g-collage .g-sticker{width:47%;box-shadow:0 0 0 5px #fff;background:#fff}
+.g-collage .g-sticker:nth-child(1){left:0;top:12%;--r:-8deg}
+.g-collage .g-sticker:nth-child(2){left:28%;top:0;--r:5deg;z-index:2;background:var(--paper)}
+.g-collage .g-sticker:nth-child(3){left:54%;top:18%;--r:-4deg;width:44%}
+.g-band-head{display:none}
+
+@media (max-width:860px){
+  .g-poster .stage{min-height:0;padding:150px 16px 160px}
+  .g-poster .g-sticker{width:118px}
+  .g-poster .g-sticker:nth-child(1){left:3%;top:22px}
+  .g-poster .g-sticker:nth-child(2){right:4%;top:14px}
+  .g-poster .g-sticker:nth-child(3){left:4%;bottom:22px}
+  .g-poster .g-sticker:nth-child(4){right:30%;bottom:14px;width:104px}
+  .g-poster .g-sticker:nth-child(5){display:none}
+  .g-burst{width:128px;right:3%;top:auto;bottom:20px}
+  .g-burst b{font-size:44px}.g-burst span{font-size:12px;max-width:90px}
+  .g-tagcard{padding:46px 20px 26px;box-shadow:8px 8px 0 var(--ink)}
+  .g-band-poster{grid-template-columns:1fr;padding:26px 22px;box-shadow:6px 6px 0 var(--ink)}
+  .g-collage{height:190px;max-width:380px}
+  .g-ticker .track{font-size:18px}
+}
+/* v3 fixes */
+.g-collage{height:230px}
+.g-collage .g-sticker{width:31%;aspect-ratio:1/1}
+.g-collage .g-sticker:nth-child(1){left:0;top:20%}
+.g-collage .g-sticker:nth-child(2){left:34.5%;top:0}
+.g-collage .g-sticker:nth-child(3){left:69%;top:24%;width:31%}
+.g-collage .g-sticker svg{width:80%}
+.g-poster .g-sticker:nth-child(5){display:none}
+@media (max-width:860px){.g-collage{height:170px}}

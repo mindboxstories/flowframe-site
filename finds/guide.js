@@ -28,3 +28,15 @@
     });
   });
 })();
+
+// Black Friday countdown in the hero starburst
+(function () {
+  var el = document.querySelector('.g-burst[data-countdown]');
+  if (!el) return;
+  var end = new Date(el.dataset.countdown + 'T00:00:00');
+  var days = Math.ceil((end - new Date()) / 86400000);
+  var b = el.querySelector('b'), s = el.querySelector('span');
+  if (days > 1) { b.textContent = days; }
+  else if (days === 1) { b.textContent = '1'; s.textContent = 'day to Black Friday'; }
+  else { b.textContent = 'Now'; s.textContent = 'Black Friday deals are live'; }
+})();
