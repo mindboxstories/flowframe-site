@@ -1,0 +1,238 @@
+{
+  "slug": "gifts-for-her-under-60",
+  "title": "11 Gift Ideas for Her Under $60 (Before Black Friday 2026)",
+  "description": "Gift ideas for her under $60, grouped by budget and by who she is: cosy, beauty, drinkware, decor and jewellery picks from this season's gift lists, each with the honest catch.",
+  "hero_title_html": "Gifts for her under <span class=\"price\">$60</span>",
+  "lede": "Eleven gifts that keep turning up on this season's gift lists, sorted by budget and by who she is, with the one thing to know before you buy each.",
+  "checked": "11 Nov 2026",
+  "deal_day": "27 November",
+  "pin": "df-her60-a.jpg",
+  "hero_stickers": [
+    "owala",
+    "lego",
+    "tilbury",
+    "slippers",
+    "cuff"
+  ],
+  "people": {
+    "cold": "For the one always cold",
+    "travel": "For the traveller",
+    "fit": "For home workouts",
+    "everything": "For the one who has everything",
+    "host": "For a colleague or host"
+  },
+  "top_picks": [
+    {
+      "id": "lego",
+      "why": "The one she won't expect"
+    },
+    {
+      "id": "owala",
+      "why": "The one she'll use every day"
+    },
+    {
+      "id": "slippers",
+      "why": "The best under $25"
+    }
+  ],
+  "bands": [
+    {
+      "id": "under-25",
+      "label": "Under $25",
+      "blurb": "Stocking fillers, Secret Santa and add-ons.",
+      "items": [
+        {
+          "id": "slippers",
+          "art": "slippers",
+          "name": "Fuzzy faux-fur slippers",
+          "price": "$16",
+          "badge": "Best under $25",
+          "why": "Soft, open-toe house slippers that turn up on almost every winter gift list. An easy pick when you don't know her taste well.",
+          "catch": "sizes come in pairs (for example 7-8), so if she's between sizes, go up.",
+          "q": "womens fuzzy faux fur slippers",
+          "for": [
+            "cold",
+            "host"
+          ]
+        },
+        {
+          "id": "lamp",
+          "art": "lamp",
+          "name": "Candle warmer lamp",
+          "price": "$20",
+          "why": "A small lamp that melts a candle from the top, so there's no open flame. A good add-on to a candle gift.",
+          "catch": "you still need to buy the candle, and check the jar fits under the lamp.",
+          "q": "candle warmer lamp",
+          "for": [
+            "cold",
+            "everything"
+          ]
+        },
+        {
+          "id": "candle",
+          "art": "candle",
+          "name": "P.F. Candle Co. Woody Spruce candle",
+          "price": "$24",
+          "why": "A soy candle with a winter-forest scent in a plain glass jar that looks good on any shelf.",
+          "catch": "scent is personal; if you're unsure, pick a fresh or citrus one instead.",
+          "q": "p.f. candle co woody spruce",
+          "for": [
+            "host",
+            "cold"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "25-to-40",
+      "label": "$25 to $40",
+      "blurb": "The sweet spot for friends, sisters and partners.",
+      "items": [
+        {
+          "id": "mask",
+          "art": "mask",
+          "name": "Hommey silk eye mask",
+          "price": "$27",
+          "why": "A mulberry silk mask that blocks light for naps, flights and lazy weekend mornings.",
+          "catch": "silk needs a gentle hand wash, not the washing machine.",
+          "q": "hommey silk eye mask",
+          "for": [
+            "travel",
+            "everything"
+          ]
+        },
+        {
+          "id": "owala",
+          "art": "tumbler",
+          "name": "Owala FreeSip 40 oz tumbler",
+          "price": "$35",
+          "badge": "Everyday hero",
+          "why": "A big insulated tumbler with a built-in straw and a side handle, in a lot of colours. It goes everywhere with her.",
+          "catch": "40 oz won't fit every car cup holder; the 24 oz bottle is the safer size for commuters.",
+          "q": "owala freesip 40 oz tumbler",
+          "for": [
+            "fit",
+            "travel"
+          ]
+        },
+        {
+          "id": "summer",
+          "art": "pouch",
+          "name": "Summer Fridays Jet Lag Essentials",
+          "price": "$34",
+          "why": "Travel sizes of the brand's favourites in one zip pouch, ready for a carry-on.",
+          "catch": "travel sizes run out fast. It's a treat, not a long-term supply.",
+          "q": "summer fridays jet lag essentials",
+          "for": [
+            "travel",
+            "everything"
+          ]
+        },
+        {
+          "id": "saltstone",
+          "art": "bottle",
+          "name": "Salt & Stone body wash, Bergamot & Hinoki",
+          "price": "$36",
+          "why": "A clean, woody scent in a bottle that looks good enough to keep on show.",
+          "catch": "it's a lot for body wash, which is exactly why she won't buy it herself.",
+          "q": "salt and stone body wash bergamot hinoki",
+          "for": [
+            "host",
+            "everything"
+          ]
+        },
+        {
+          "id": "cuff",
+          "art": "cuff",
+          "name": "Gold cuff bracelet",
+          "price": "$20-40",
+          "why": "Chunky gold cuffs are one of Pinterest's predicted jewellery looks for 2026. An open cuff fits most wrists.",
+          "catch": "at this price it's gold-plated, not solid gold, so keep it away from water.",
+          "q": "gold cuff bracelet women",
+          "for": [
+            "everything",
+            "host"
+          ]
+        },
+        {
+          "id": "lego",
+          "art": "plants",
+          "name": "LEGO Botanicals Tiny Plants",
+          "price": "$40",
+          "badge": "Our top pick",
+          "why": "Nine buildable plants in little terracotta-style pots. A calm evening build and a plant she can't kill.",
+          "catch": "it takes a few hours to build, so it suits someone who enjoys a project.",
+          "q": "lego botanicals tiny plants 10329",
+          "for": [
+            "everything",
+            "host"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "40-to-60",
+      "label": "$40 to $60",
+      "blurb": "When you want it to feel like a proper present.",
+      "items": [
+        {
+          "id": "bala",
+          "art": "bangles",
+          "name": "Bala Bangles (1 lb pair)",
+          "price": "$55",
+          "price_note": "full price",
+          "why": "Weighted bangles that look like jewellery, for walks and at-home workouts.",
+          "catch": "we haven't seen these discounted this season, so $55 is the usual price.",
+          "q": "bala bangles 1lb",
+          "for": [
+            "fit",
+            "everything"
+          ]
+        },
+        {
+          "id": "tilbury",
+          "art": "makeup",
+          "name": "Charlotte Tilbury mini beauty set",
+          "price": "$54",
+          "why": "Minis of the brand's best-known lip and face products in a gift box. A luxury brand at a gift price.",
+          "catch": "holiday sets change every year, so check what's inside before you buy.",
+          "q": "charlotte tilbury mini gift set",
+          "for": [
+            "everything",
+            "travel"
+          ]
+        }
+      ]
+    }
+  ],
+  "method": "We cross-checked the 2026 gift guides from major shopping editors with this week's Amazon best-sellers, and kept items that appear repeatedly and suit a wide range of people. Prices were checked on 11 November 2026 and change daily around Black Friday, so check the price before you buy. We only call something a deal when we've seen the price drop.",
+  "updates": [
+    "11 November 2026: guide published."
+  ],
+  "sources": [
+    {
+      "name": "Good Morning America: 2026 gift guide for women",
+      "url": "https://abcnews.com/GMA/Shop/best-gifts-women/story?id=126358551"
+    },
+    {
+      "name": "Tom's Guide: best gifts under $50, 2026",
+      "url": "https://tomsguide.com/sales-events/the-best-gifts-under-usd50-for-everyone-on-your-holiday-list-our-top-picks-for-2026"
+    },
+    {
+      "name": "NBC Select: best gifts under $50",
+      "url": "https://nbcnews.com/select/shopping/best-gifts-under-50-rcna242155"
+    },
+    {
+      "name": "LEGO: Tiny Plants (10329)",
+      "url": "https://www.lego.com/en-US/product?p=10329"
+    }
+  ],
+  "more_html": "<a href=\"/finds/gifts-under-25/\">12 gifts under $25 people are actually buying</a>.",
+  "people_short": {
+    "cold": "Always cold",
+    "travel": "Traveller",
+    "fit": "Home workouts",
+    "everything": "Has everything",
+    "host": "Colleague or host"
+  }
+}
