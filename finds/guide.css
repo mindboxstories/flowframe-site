@@ -5,8 +5,8 @@
   --band-1:var(--sun);--band-2:var(--mint);--band-3:var(--lilac);
   --radius:22px;
 }
-body.guide{background:var(--paper);color:var(--ink);font:17px/1.6 "DM Sans",system-ui,sans-serif}
-body.guide h1,body.guide h2,body.guide h3{font-family:"Bricolage Grotesque","DM Sans",sans-serif;letter-spacing:-.025em}
+body.guide{background:var(--paper);color:var(--ink);font:17px/1.6 "Plus Jakarta Sans",system-ui,sans-serif}
+body.guide h1,body.guide h2,body.guide h3{font-family:"Fraunces",Georgia,serif;letter-spacing:-.025em}
 body.guide a{color:var(--coral-ink)}
 body.guide :focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
 body.guide main.g-body{width:100%;max-width:1160px;margin:0 auto;padding:0 20px}
@@ -34,7 +34,7 @@ body.guide .g-btn.ghost{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.
 /* starburst countdown (the one loud element) */
 .g-burst{flex:none;width:170px;aspect-ratio:1;background:var(--sun);color:var(--ink);display:grid;place-content:center;text-align:center;transform:rotate(10deg);margin-bottom:10px;
   clip-path:polygon(50% 0%,56.5% 9.6%,67% 3.6%,69.6% 15.1%,81.6% 13.4%,79.9% 25.4%,91.4% 28%,85.4% 38.5%,95% 45%,85.4% 51.5%,91.4% 62%,79.9% 64.6%,81.6% 76.6%,69.6% 74.9%,67% 86.4%,56.5% 80.4%,50% 90%,43.5% 80.4%,33% 86.4%,30.4% 74.9%,18.4% 76.6%,20.1% 64.6%,8.6% 62%,14.6% 51.5%,5% 45%,14.6% 38.5%,8.6% 28%,20.1% 25.4%,18.4% 13.4%,30.4% 15.1%,33% 3.6%,43.5% 9.6%)}
-.g-burst b{display:block;font:800 62px/.9 "Bricolage Grotesque",sans-serif;letter-spacing:-.04em}
+.g-burst b{display:block;font:800 62px/.9 "Fraunces",Georgia,serif;letter-spacing:-.04em}
 .g-burst span{display:block;font-weight:700;font-size:14px;line-height:1.15;max-width:110px;margin:4px auto 0}
 @media (prefers-reduced-motion:no-preference){
   .g-hero>img{animation:slowzoom 18s ease-out both}
@@ -45,7 +45,7 @@ body.guide .g-btn.ghost{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.
 
 /* ticker */
 .g-ticker{background:var(--coral);color:#fff;overflow:hidden;white-space:nowrap}
-.g-ticker .track{display:inline-flex;padding:13px 0;font:800 21px/1 "Bricolage Grotesque",sans-serif}
+.g-ticker .track{display:inline-flex;padding:13px 0;font:800 21px/1 "Fraunces",Georgia,serif}
 .g-ticker .track span{padding:0 22px}
 .g-ticker .track span::after{content:"\2726";margin-left:44px;color:var(--sun)}
 @media (prefers-reduced-motion:no-preference){.g-ticker .track{animation:tick 32s linear infinite}@keyframes tick{to{transform:translateX(-50%)}}}
@@ -63,7 +63,7 @@ body.guide .g-bar a.all{background:var(--ink);color:var(--paper)}
 .g-people{margin:40px 0 0}
 .g-people h2,.g-top h2,.g-table h2{font-size:clamp(28px,4vw,40px);line-height:1.05;margin:0 0 16px}
 .g-chips{display:flex;flex-wrap:wrap;gap:10px}
-.g-chip{font:600 15px/1 "DM Sans",sans-serif;background:#fff;color:var(--ink);border:1.5px solid var(--line);border-radius:99px;padding:12px 18px;cursor:pointer;box-shadow:0 1px 2px rgba(23,21,26,.06)}
+.g-chip{font:600 15px/1 "Plus Jakarta Sans",sans-serif;background:#fff;color:var(--ink);border:1.5px solid var(--line);border-radius:99px;padding:12px 18px;cursor:pointer;box-shadow:0 1px 2px rgba(23,21,26,.06)}
 .g-chip:hover{border-color:var(--ink)}
 .g-chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .g-status{font-size:15px;color:var(--muted);min-height:1.6em;margin:10px 0 0}
@@ -75,7 +75,7 @@ body.guide .g-topcard{display:block;text-decoration:none;color:var(--ink);backgr
 .g-topcard:hover{transform:translateY(-4px)}
 .g-topcard img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover}
 .g-topcard .why{display:block;color:var(--coral-ink);font-weight:700;font-size:14px;margin:16px 18px 2px}
-.g-topcard b{display:block;font:800 22px/1.15 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:0 18px 6px}
+.g-topcard b{display:block;font:800 22px/1.15 "Fraunces",Georgia,serif;letter-spacing:-.02em;margin:0 18px 6px}
 .g-topcard .p{display:block;margin:0 18px 18px;font-weight:700}
 
 /* budget banner */
@@ -99,9 +99,9 @@ body.guide .g-topcard{display:block;text-decoration:none;color:var(--ink);backgr
 .g-photo{position:relative;aspect-ratio:4/3;background:var(--line)}
 .g-photo img{display:block;width:100%;height:100%;object-fit:cover}
 .g-badge{position:absolute;left:14px;top:14px;background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:6px 12px;border-radius:99px}
-.g-tag{position:absolute;right:14px;bottom:-16px;z-index:2;background:var(--sun);color:var(--ink);padding:10px 16px 10px 28px;font:800 24px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;transform:rotate(-4deg);clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%);box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.g-tag{position:absolute;right:14px;bottom:-16px;z-index:2;background:var(--sun);color:var(--ink);padding:10px 16px 10px 28px;font:800 24px/1 "Fraunces",Georgia,serif;letter-spacing:-.02em;transform:rotate(-4deg);clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%);box-shadow:0 6px 16px rgba(0,0,0,.18)}
 .g-tag::before{content:"";position:absolute;left:12px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#fff}
-.g-tag small{display:block;font:600 11px "DM Sans",sans-serif;margin-top:3px;letter-spacing:0}
+.g-tag small{display:block;font:600 11px "Plus Jakarta Sans",sans-serif;margin-top:3px;letter-spacing:0}
 .g-info{padding:26px 22px 22px;display:flex;flex-direction:column;flex:1}
 .g-info h3{font-size:23px;line-height:1.15;margin:0 0 8px}
 .g-info p{margin:0 0 12px;font-size:16px;color:#2D2A31}
@@ -154,3 +154,36 @@ body.guide .g-pin{display:inline-block;background:#E60023;color:#fff;font-weight
 .g-banner h2{white-space:nowrap}
 .g-banner-copy{max-width:none}
 @media (max-width:640px){.g-banner h2{white-space:normal}}
+
+/* ---- typography v5: Fraunces (display) + Plus Jakarta Sans (text) ---- */
+body.guide h1,body.guide h2,body.guide h3,body.guide .g-tag,body.guide .g-burst b,body.guide .g-topcard b,body.guide .g-ticker .track{font-family:"Fraunces",Georgia,serif;font-optical-sizing:auto;font-variation-settings:"SOFT" 50,"WONK" 0}
+body.guide header.site .logo{font-family:"Fraunces",Georgia,serif;font-weight:700;letter-spacing:-.01em}
+.g-hero h1{font-weight:600;letter-spacing:-.03em;line-height:.95}
+.g-hero h1 .price{font-weight:700;padding:.02em .16em .06em;border-radius:.12em}
+.g-banner h2{font-weight:600;letter-spacing:-.035em;line-height:.9}
+.g-people h2,.g-top h2,.g-table h2,.g-save h2{font-weight:600;letter-spacing:-.02em}
+.g-info h3{font-size:22px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.g-topcard b{font-weight:600;letter-spacing:-.01em}
+.g-tag{font-weight:700;letter-spacing:-.01em}
+.g-burst b{font-weight:700;letter-spacing:-.03em}
+.g-ticker .track{font-weight:600;font-style:italic;letter-spacing:0}
+.g-notes h2{font-weight:600}
+body.guide .g-btn,body.guide .g-cta,body.guide .g-bar a,.g-chip,.g-badge,.g-for li,.g-meta li{font-family:"Plus Jakarta Sans",system-ui,sans-serif}
+body.guide .g-btn,body.guide .g-cta{font-weight:700;letter-spacing:.005em}
+
+/* ---- v5 polish ---- */
+body.guide header.site .wrap.wide,body.guide footer.site .wrap.wide{max-width:1160px;padding-left:20px;padding-right:20px}
+.g-banner p{max-width:460px}
+body.guide .g-table td a{color:var(--ink);text-decoration:none;font-weight:600}
+body.guide .g-table td a:hover{color:var(--coral-ink);text-decoration:underline}
+body.guide .g-notes a{color:var(--ink);text-decoration-color:var(--coral);text-underline-offset:3px}
+@media (max-width:860px){
+  .g-hero h1{font-size:clamp(52px,14vw,72px)}
+  .g-hero-ctas .g-btn{flex:1 1 auto;text-align:center}
+  .g-top ol{gap:12px}
+  body.guide .g-topcard{display:grid;grid-template-columns:120px 1fr;align-items:center}
+  .g-topcard img{grid-row:1/4;height:100%;aspect-ratio:auto;min-height:120px}
+  .g-topcard .why{margin:14px 16px 0}
+  .g-topcard b{font-size:19px;margin:2px 16px}
+  .g-topcard .p{margin:0 16px 14px}
+}
