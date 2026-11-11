@@ -1,11 +1,13 @@
-"""Build a Digittouch Finds gift guide page (design v4, photo-led) from a JSON data file.
+"""Build a Digittouch Finds gift guide page (design v6) from a JSON data file.
 Usage: python3 _tools/build_guide.py _tools/guides/<slug>.json
-Writes finds/<slug>/index.html using finds/guide.css and finds/guide.js.
+Writes finds/<slug>/index.html using /site.css (shared design system) and finds/guide.js.
 
 Images: "img" fields are Unsplash photo URLs (https://images.unsplash.com/photo-...),
 free for commercial use under the Unsplash licence. They are lifestyle images, not the
 exact products; the page says so. Swap in Amazon product images once PA-API is available."""
 import json, sys, html, urllib.parse, os, datetime
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from chrome import head, top, footer, mosaic, split_hero, ARROW
 
 E = html.escape
 SITE = "https://flowframe.shop"
@@ -34,11 +36,14 @@ def card(item, people, short):
     badge = f'<span class="g-badge">{E(item["badge"])}</span>' if item.get("badge") else ""
     note = f'<small>{E(item["price_note"])}</small>' if item.get("price_note") else ""
     return f'''<article class="g-card" id="{item["id"]}" data-who="{who}">
-<div class="g-photo">{img(item["img"], item["alt"], "(max-width:640px) 100vw, (max-width:1100px) 50vw, 360px")}{badge}<span class="g-tag">{E(item["price"])}{note}</span></div>
+<div class="g-photo">{img(item["img"], item["alt"], "(max-width:640px) 100vw, (max-width:1000px) 50vw, 380px")}{badge}<span class="g-tag">{E(item["price"])}{note}</span></div>
 <div class="g-info"><h3>{E(item["name"])}</h3><p>{E(item["why"])}</p>
 <ul class="g-for" aria-label="Good for">{tags}</ul>
 <p class="g-catch"><strong>The catch:</strong> {E(item["catch"])}</p>
-<a class="g-cta" href="{E(amazon(item))}" rel="nofollow sponsored noopener" target="_blank">See today's price on Amazon</a></div></article>'''
+<a class="g-cta" href="{E(amazon(item))}" rel="nofollow sponsored noopener" target="_blank">Check price on Amazon {ARROW}</a></div></article>'''
+
+
+PIN_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.1-.8 3.3-.2 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.6 2.2-4.6 4.4 0 .9.3 1.8.8 2.3.1.1.1.2.1.3l-.3 1.2c0 .2-.2.3-.4.2-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg>'
 
 
 def build(data):
@@ -48,23 +53,23 @@ def build(data):
     people, short = data["people"], data.get("people_short", {})
     items = {i["id"]: i for b in data["bands"] for i in b["items"]}
     n = len(items)
-    days_left = max(0, (datetime.date.fromisoformat(data["deal_date"]) - datetime.date.today()).days)
 
     bar = '<a class="all" href="#top-picks">Top picks</a>' + "".join(
-        f'<a data-band="{k+1}" href="#{b["id"]}">{E(b["label"])}</a>' for k, b in enumerate(data["bands"]))
+        f'<a data-band="{k+1}" href="#{b["id"]}"><i></i>{E(b["label"])}</a>' for k, b in enumerate(data["bands"]))
     chips = "".join(f'<button class="g-chip" type="button" aria-pressed="false" data-who="{k}">{E(v)}</button>'
                     for k, v in people.items())
-    top = "".join(
-        f'<li><a href="#{t["id"]}" class="g-topcard">{img(items[t["id"]]["img"], items[t["id"]]["alt"], "(max-width:860px) 100vw, 340px", ratio="5/4")}'
+    tops = "".join(
+        f'<li><a href="#{t["id"]}" class="g-topcard"><div class="im">{img(items[t["id"]]["img"], items[t["id"]]["alt"], "(max-width:860px) 120px, 380px", ratio="5/4")}</div>'
         f'<span class="why">{E(t["why"])}</span><b>{E(items[t["id"]]["name"])}</b><span class="p">{E(items[t["id"]]["price"])}</span></a></li>'
         for t in data["top_picks"])
-    ticker = "".join(f"<span>{E(t)}</span>" for t in data["ticker"])
     bands = ""
     for k, b in enumerate(data["bands"]):
-        bands += (f'<section class="g-band" id="{b["id"]}" data-band="{k+1}">'
-                  f'<header class="g-banner">{img(b["img"], b["alt"], "100vw", ratio="16/7", widths=(640, 1200, 1800))}'
-                  f'<div class="g-banner-copy"><h2>{E(b["label"])}</h2><p>{E(b["blurb"])}</p><span class="count">{len(b["items"])} pick{"" if len(b["items"])==1 else "s"}</span></div></header>'
-                  f'<div class="g-grid n{len(b["items"])}">{"".join(card(i, people, short) for i in b["items"])}</div></section>')
+        c = len(b["items"])
+        bands += (f'<section class="g-band s-wrap" id="{b["id"]}" data-band="{k+1}">'
+                  f'<header class="g-banner"><div class="g-banner-copy"><h2>{E(b["label"])}</h2><p>{E(b["blurb"])}</p>'
+                  f'<span class="count">{c} pick{"" if c == 1 else "s"}</span></div>'
+                  f'<div class="bi">{img(b["img"], b["alt"], "(max-width:860px) 100vw, 620px", ratio="16/10", widths=(640, 1000, 1400))}</div></header>'
+                  f'<div class="g-grid n{c}">{"".join(card(i, people, short) for i in b["items"])}</div></section>')
     rows = "".join(f'<tr><td><a href="#{i["id"]}">{E(i["name"])}</a></td><td class="p">{E(i["price"])}</td>'
                    f'<td>{E(short.get(i["for"][0], people[i["for"][0]]))}</td></tr>'
                    for b in data["bands"] for i in b["items"])
@@ -76,46 +81,35 @@ def build(data):
           "itemListElement": [{"@type": "ListItem", "position": p + 1, "name": i["name"], "url": url + "#" + i["id"]}
                               for p, i in enumerate(items.values())]}
     hero = data["hero"]
+    tp = [items[t["id"]] for t in data["top_picks"]]
+    tiles = [img(hero["img"], hero["alt"], "(max-width:960px) 60vw, 360px", ratio="3/4", eager=True, widths=(480, 760, 1100)),
+             img(tp[0]["img"], tp[0]["alt"], "(max-width:960px) 40vw, 280px", ratio="1/1", eager=True, widths=(320, 560, 800)),
+             img(tp[1]["img"], tp[1]["alt"], "(max-width:960px) 40vw, 280px", ratio="1/1", eager=True, widths=(320, 560, 800))]
+    btns = (f'<div class="s-btns"><a class="s-btn primary" href="#{data["bands"][0]["id"]}">{E(data.get("cta_label", "Shop by budget"))}</a>'
+            f'<a class="s-btn ghost" href="#top-picks">See our top 3</a></div>')
+    hero_html = split_hero(f'<p class="crumb"><a href="/finds/">Gift guides</a><span>/</span>Black Friday 2026</p>',
+                           data["hero_title_html"], data["lede"], btns,
+                           [f"{n} picks", f"Prices checked {data['checked']}", "The catch on every pick"],
+                           mosaic(tiles, (str(n), "gifts, each with the honest catch")))
 
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{E(title)} | Digittouch Finds</title><meta name="description" content="{E(desc)}"><link rel="canonical" href="{url}">
-<meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="article"><meta property="og:url" content="{url}"><meta property="og:image" content="{pin}">
-<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#17151A">
-<link rel="preconnect" href="https://images.unsplash.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,600..700,50&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/finds/guide.css?v=13">
-<script type="application/ld+json">{json.dumps(ld)}</script>
-</head>
-<body class="finds guide"><header class="site"><div class="wrap wide"><a class="logo" href="/finds/">Digittouch <span>Finds</span></a><nav><a href="/finds/">Finds</a><a href="/">FlowFrame</a><a href="/about/">About</a></nav></div></header>
-<section class="g-hero">{img(hero["img"], hero["alt"], "100vw", ratio="16/9", eager=True, widths=(800, 1600, 2400))}
-<div class="g-hero-in"><div class="g-hero-copy">
-<p class="g-crumb"><a href="/finds/">Finds</a> / Gift guides</p>
-<h1>{data["hero_title_html"]}</h1>
-<p class="lede">{E(data["lede"])}</p>
-<div class="g-hero-ctas"><a class="g-btn primary" href="#{data["bands"][0]["id"]}">{E(data.get("cta_label","Shop by budget"))}</a><a class="g-btn ghost" href="#top-picks">If you only buy one</a></div>
-<ul class="g-meta"><li>{n} picks</li><li>Prices checked {E(data["checked"])}</li><li>One honest catch each</li></ul>
-</div>
-<div class="g-burst" data-countdown="{data["deal_date"]}"><b>{days_left}</b><span>{E(data["deal_label"])}</span></div>
-</div></section>
-<div class="g-ticker" aria-hidden="true"><div class="track">{ticker}{ticker}</div></div>
-<nav class="g-bar" aria-label="Jump to a budget"><div class="in">{bar}</div></nav>
-<main class="g-body">
-<p class="g-disclosure">As an Amazon Associate, Digittouch Finds earns from qualifying purchases. Buying through our links costs you nothing extra and never changes our picks. <a href="/disclosure/">How we make money</a>.</p>
-<section class="g-people" aria-labelledby="people-h"><h2 id="people-h">Who are you shopping for?</h2>
-<div class="g-chips">{chips}</div><p class="g-status" role="status" aria-live="polite"></p></section>
-<section class="g-top" id="top-picks"><h2>If you only buy one</h2><ol>{top}</ol></section>
+    return (head(f"{title} | Digittouch Finds", desc, f"/finds/{slug}/", "finds", pin)
+            + f'<script type="application/ld+json">{json.dumps(ld)}</script></head><body class="v6 finds guide">'
+            + top("finds", f"/finds/{slug}/") + "<main>" + hero_html
+            + f'<nav class="g-bar" aria-label="Jump to a section"><div class="s-wrap in">{bar}</div></nav>'
+            + f'''<section class="g-intro s-wrap"><div><h2 id="people-h">Who are you shopping for?</h2>
+<div class="g-chips" role="group" aria-labelledby="people-h">{chips}</div><p class="g-status" role="status" aria-live="polite"></p></div>
+<p class="g-disclosure">As an Amazon Associate, Digittouch Finds earns from qualifying purchases. Buying through our links costs you nothing extra and never changes our picks. <a href="/disclosure/">How we make money</a>.</p></section>
+<section class="g-top s-wrap" id="top-picks"><div class="sec-head"><div><h2>If you only buy one</h2><p>Our three favourites from the list, for three different kinds of people.</p></div></div><ol>{tops}</ol></section>
 {bands}
-<section class="g-table"><h2>All {n} at a glance</h2><table><thead><tr><th>Gift</th><th>Price</th><th>Best for</th></tr></thead><tbody>{rows}</tbody></table></section>
-<section class="g-save"><img src="/pins/{data["pin"]}" alt="Pinterest pin for this guide" width="1000" height="1500" loading="lazy">
+<section class="g-table s-wrap"><div class="sec-head"><div><h2>All {n} at a glance</h2><p>Tap a name to jump to it.</p></div></div><div class="tw"><table><thead><tr><th>Gift</th><th>Price</th><th>Best for</th></tr></thead><tbody>{rows}</tbody></table></div></section>
+<div class="s-wrap"><section class="g-save"><img src="/pins/{data["pin"]}" alt="Pinterest pin for this guide" width="1000" height="1500" loading="lazy">
 <div><h2>Save this list for later</h2><p>Pin it to a board and come back when the Black Friday prices drop on {E(data["deal_day"])}.</p>
-<a class="g-pin" href="{E(pin_url)}" target="_blank" rel="noopener">Save to Pinterest</a></div></section>
-<section class="g-notes"><h2>How we picked</h2><p>{E(data["method"])}</p>
-<p>Photos are lifestyle images from Unsplash and may not show the exact product; tap through to Amazon to see it.</p>
-<h2>Updates</h2><ul>{updates}</ul><h2>Where we checked</h2><ul>{sources}</ul>
-<p>More gift ideas: {data["more_html"]}</p></section>
-</main>
-<footer class="site"><div class="wrap wide"><p><a href="/disclosure/">Affiliate disclosure</a><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="/contact/">Contact</a></p>
-<p>&copy; 2026 Digittouch Finds, part of Digittouch Enterprise. As an Amazon Associate we earn from qualifying purchases.</p></div></footer>
-<script src="/finds/guide.js?v=13" defer></script></body></html>'''
+<a class="g-pin" href="{E(pin_url)}" target="_blank" rel="noopener">{PIN_SVG}Save to Pinterest</a></div></section></div>
+<section class="g-notes s-wrap"><div><h2>How we picked</h2><p>{E(data["method"])}</p>
+<p>Photos are lifestyle images from Unsplash and may not show the exact product; tap through to Amazon to see it.</p></div>
+<div><h2>Updates</h2><ul>{updates}</ul></div><div><h2>Where we checked</h2><ul>{sources}</ul></div>
+<p class="more">More gift ideas: {data["more_html"]}</p></section>
+</main>''' + footer("finds") + '<script src="/finds/guide.js?v=14" defer></script></body></html>')
 
 
 if __name__ == "__main__":

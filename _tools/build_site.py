@@ -1,9 +1,11 @@
-"""Build the v5 hub pages, FlowFrame articles and simple pages.
+"""Build the v6 hub pages, FlowFrame articles and simple pages.
 Usage: python3 _tools/build_site.py
 - Hubs (/, /guides/, /finds/) are generated from the data below and from _tools/guides/*.json.
 - Articles (/guides/<slug>/) and simple pages keep their written content: the script reads the
   <article> body from the current file (or from _tools/src/ once archived) and re-wraps it."""
-import html, json, os, re, glob
+import html, json, os, re, glob, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from chrome import head, top, footer, mosaic, split_hero, promise, ARROW, MARK_FF, days_left
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 SRC = os.path.join(ROOT, "_tools", "src")
@@ -40,39 +42,24 @@ def img(src, alt, sizes="100vw", w=1600, h=900, eager=False):
             f'alt="{E(alt)}" width="{ws[1]}" height="{round(ws[1]*h/w)}" {load}>')
 
 
-def page(title, desc, url, theme, body, og=None):
-    finds = theme == "finds"
-    brand = "Digittouch Finds" if finds else "FlowFrame"
-    logo = ('<a class="logo" href="/finds/">Digittouch <span>Finds</span></a>' if finds
-            else '<a class="logo" href="/">Flow<span>Frame</span></a>')
-    nav = ('<nav><a href="/finds/">Finds</a><a href="/">FlowFrame</a><a href="/about/">About</a></nav>' if finds
-           else '<nav><a href="/guides/">Guides</a><a href="/finds/">Gift guides</a><a href="/about/">About</a></nav>')
+def page(title, desc, url, theme, body, og=None, active=None):
+    brand = "Digittouch Finds" if theme == "finds" else "FlowFrame"
     full = title if brand in title else f"{title} | {brand}"
-    ogimg = f'<meta property="og:image" content="{og}">' if og else ""
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{E(full)}</title><meta name="description" content="{E(desc)}"><link rel="canonical" href="https://flowframe.shop{url}">
-<meta property="og:title" content="{E(full)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="website"><meta property="og:url" content="https://flowframe.shop{url}">{ogimg}
-<meta name="theme-color" content="{'#17151A' if finds else '#14213D'}">
-{FONTS}<link rel="stylesheet" href="/site.css?v={V}">
-</head><body class="v5 {'finds' if finds else 'ff'}">
-<header class="site"><div class="s-wrap">{logo}{nav}</div></header>
-<main>{body}</main>
-<footer class="site"><div class="s-wrap"><p><a href="/disclosure/">Affiliate disclosure</a><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="/contact/">Contact</a></p>
-<p>&copy; 2026 {brand}, part of Digittouch Enterprise. As an Amazon Associate we earn from qualifying purchases.</p></div></footer>
-</body></html>'''
+    return (head(full, desc, url, theme, og) + f'</head><body class="v6 {theme}">' + top(theme, active or url)
+            + f"<main>{body}</main>" + footer(theme) + "</body></html>")
 
 
 def card(c, feature=False):
     chip = f'<span class="chip{" pop" if c.get("pop") else ""}">{E(c["chip"])}</span>' if c.get("chip") else ""
-    sizes = "(max-width:1000px) 100vw, 700px" if feature else "(max-width:640px) 100vw, (max-width:1000px) 50vw, 380px"
-    return (f'<a class="s-card{" feature" if feature else ""}" href="{c["url"]}"><div class="ph">{img(c["img"], c["alt"], sizes, 1200, 750)}{chip}</div>'
-            f'<div class="tx"><h3>{E(c["title"])}</h3><p>{E(c["desc"])}</p><span class="go">Read the guide</span></div></a>')
+    cat = f'<p class="cat">{E(c["tag"])}</p>' if c.get("tag") else ""
+    sizes = "(max-width:860px) 100vw, 700px" if feature else "(max-width:640px) 100vw, (max-width:1000px) 50vw, 400px"
+    return (f'<a class="card{" feature" if feature else ""}" href="{c["url"]}"><div class="ph">{img(c["img"], c["alt"], sizes, 1200, 750)}{chip}</div>'
+            f'<div class="tx">{cat}<h3>{E(c["title"])}</h3><p>{E(c["desc"])}</p><span class="go">{c.get("go", "Read the guide")} {ARROW}</span></div></a>')
 
 
-def hero(img_src, alt, crumb, h1, lede, btns="", meta=None, short=False):
-    m = "".join(f"<li>{E(x)}</li>" for x in (meta or []))
-    return (f'<section class="s-hero{" short" if short else ""}">{img(img_src, alt, eager=True)}<div class="s-wrap"><div class="s-hero-copy">'
-            f'{crumb}<h1>{h1}</h1>{f"<p class=lede>{E(lede)}</p>" if lede else ""}{btns}{f"<ul class=s-meta>{m}</ul>" if m else ""}</div></div></section>')
+def tile(src, alt, ratio, sizes):
+    w, h = ratio
+    return img(src, alt, sizes, w * 100, h * 100, eager=True)
 
 
 def finds_cards():
@@ -81,59 +68,76 @@ def finds_cards():
         d = json.load(open(f))
         n = sum(len(b["items"]) for b in d["bands"])
         out.append({"url": f'/finds/{d["slug"]}/', "img": d["hero"]["img"], "alt": d["hero"]["alt"], "chip": f"{n} picks",
+                    "tag": "Gift guide", "go": "See the gifts",
                     "title": re.sub(r"\s*\((Before )?Black Friday 2026\)", "", d["title"]), "desc": d["description"]})
     return out
 
 
+DESK = U("1596443019365-eb263a588404")
+
+
 def build_home():
     fc = finds_cards()
-    btns = ('<div class="s-btns"><a class="s-btn primary" href="/guides/">Browse AI guides</a>'
+    g0, g1 = AI_GUIDES
+    btns = ('<div class="s-btns"><a class="s-btn primary" href="/guides/">Browse the AI guides</a>'
             '<a class="s-btn ghost" href="/finds/">Black Friday gift guides</a></div>')
-    body = hero(U("1521185496955-15097b20c5fe"), "A laptop and notebook on a wooden desk", "",
-                'Work smarter with the <span class="hl">right AI tools</span>',
-                "Plain-English comparisons of AI productivity software and home-office gear, so you pick the right one the first time.",
-                btns, ["Prices checked monthly", "No paid placements", "Honest downsides"])
+    tiles = [tile(g0["img"], g0["alt"], (3, 4), "(max-width:960px) 60vw, 360px"),
+             tile(g1["img"], g1["alt"], (1, 1), "(max-width:960px) 40vw, 280px"),
+             tile(DESK, "A tidy desk with a monitor", (1, 1), "(max-width:960px) 40vw, 280px")]
+    body = split_hero("", 'Pick the right AI tool the first time',
+                      "Plain-English comparisons of AI productivity software and home-office gear: what is free, what it costs, and who should skip it.",
+                      btns, ["Prices checked monthly", "No paid placements", "The downside of every tool"],
+                      mosaic(tiles, ("Nov", "prices checked this month")))
     body += '<div class="s-wrap">'
-    body += ('<section class="s-section"><div class="s-head"><h2>Latest guides</h2><p>New comparison every week</p></div>'
-             f'<div class="s-grid two">{"".join(card(c) for c in AI_GUIDES)}</div></section>')
-    body += ('<section class="s-strip"><div><b>We compare, you choose</b><p>Every guide ends with a 30-second way to pick the right tool for you.</p></div>'
-             '<div><b>Real prices, dated</b><p>Free plans and paid prices are checked against the vendors and dated in each guide.</p></div>'
-             '<div><b>The honest catch</b><p>Every pick says who should skip it, not just who should buy it.</p></div></section>')
-    minis = "".join(f'<a href="{c["url"]}">{img(c["img"], c["alt"], "200px", 600, 450)}<span>{E(c["title"])}</span></a>' for c in fc[:4])
-    body += ('<section class="s-band"><div><h2>Black Friday gift guides</h2><p>Our sister site Digittouch Finds rounds up the gifts people are actually buying, '
+    body += ('<section class="sec"><div class="sec-head"><div><h2>Latest comparisons</h2><p>One question per guide, answered with prices, free plans and a clear pick.</p></div>'
+             '<a class="more" href="/guides/">All AI guides</a></div>'
+             f'<div class="grid two">{"".join(card(c) for c in AI_GUIDES)}</div></section>')
+    body += promise([("scale", "We compare, you choose", "Every guide ends with a 30-second way to pick the right tool for how you work."),
+                     ("tag", "Real prices, dated", "Free plans and paid prices are checked against the vendors and dated in each guide."),
+                     ("eye", "The honest catch", "Every pick says who should skip it, not just who should buy it.")])
+    minis = "".join(f'<a href="{c["url"]}">{img(c["img"], c["alt"], "(max-width:860px) 45vw, 260px", 600, 450)}<span>{E(c["title"])}</span></a>' for c in fc[:4])
+    body += ('<section class="xband finds-side"><div><h2>Black Friday gift guides</h2><p>Our sister site Digittouch Finds rounds up the gifts people are actually buying, '
              'from under $25 to proper splurges, each with the honest catch.</p><a class="s-btn primary" href="/finds/">See all gift guides</a></div>'
-             f'<div class="mini">{minis}</div></section>')
+             f'<div class="minis">{minis}</div></section>')
     body += "</div>"
-    return page("FlowFrame: honest reviews of AI tools and home-office gear",
+    return page("FlowFrame: honest comparisons of AI tools and home-office gear",
                 "Plain-English comparisons of AI productivity tools and home-office gear, so you pick the right one the first time.",
-                "/", "ff", body, U("1521185496955-15097b20c5fe") + "?w=1200&h=630&fit=crop")
+                "/", "ff", body, g0["img"] + "?w=1200&h=630&fit=crop", active="")
 
 
 def build_guides_index():
-    body = hero(U("1596443019365-eb263a588404"), "A dark desk with a monitor", '<p class="s-crumb"><a href="/">FlowFrame</a> / Guides</p>',
-                "All guides", "Side-by-side comparisons of the AI tools worth paying for, with free options first.", short=True)
-    body += f'<div class="s-wrap"><section class="s-section"><div class="s-grid two">{"".join(card(c) for c in AI_GUIDES)}</div></section></div>'
-    return page("All guides", "Every FlowFrame comparison of AI productivity tools and home-office gear.", "/guides/", "ff", body)
+    head_ = ('<section class="ph-head"><div class="s-wrap"><p class="crumb"><a href="/">FlowFrame</a><span>/</span>AI guides</p>'
+             '<h1>AI tool guides</h1><p class="sub">Side-by-side comparisons of the AI tools worth paying for, with the free options first.</p></div></section>')
+    body = head_ + f'<div class="s-wrap"><section class="sec" style="padding-top:48px"><div class="grid two">{"".join(card(c) for c in AI_GUIDES)}</div></section>'
+    body += promise([("scale", "One question per guide", "Each guide answers one decision, like which AI note-taker to use, and ends with a clear pick."),
+                     ("tag", "Free plans first", "We start with what you can do for free, then show exactly what paying adds."),
+                     ("eye", "Who should skip it", "Every tool gets an honest downside so you can rule it out quickly.")]) + "</div>"
+    return page("AI tool guides", "Every FlowFrame comparison of AI productivity tools and home-office gear.", "/guides/", "ff", body)
 
 
 def build_finds_index():
     fc = finds_cards()
-    btns = (f'<div class="s-btns"><a class="s-btn primary" href="{fc[0]["url"]}">See the newest guide</a>'
-            '<a class="s-btn ghost" href="#all-guides">All gift guides</a></div>')
-    body = hero(U("1513884923967-4b182ef167ab"), "Red and white gift bags", "",
-                'What people are buying, <span class="hl">found for you</span>',
-                "Gift guides and weekly roundups of the things people are actually buying, sorted by budget and by who they're for, with the honest catch on each.",
-                btns, [f"{len(fc)} gift guides", "Prices checked weekly", "Black Friday is 27 November"])
-    first, rest = fc[0], fc[1:]
-    first = dict(first, chip="Newest", pop=True)
-    body += (f'<div class="s-wrap"><section class="s-section" id="all-guides"><div class="s-head"><h2>Gift guides</h2><p>Updated for Black Friday 2026</p></div>'
-             f'<div class="s-grid">{card(first, True)}{"".join(card(c) for c in rest)}</div></section>'
-             '<section class="s-strip"><div><b>Sorted the way you shop</b><p>By budget and by who it is for, so you can find a gift in a minute.</p></div>'
-             '<div><b>The honest catch</b><p>Every pick says what to know before you buy, not just why it is great.</p></div>'
-             '<div><b>Prices we check</b><p>Prices are dated, and we only call something a deal when we have seen it drop.</p></div></section></div>')
+    btns = (f'<div class="s-btns"><a class="s-btn primary" href="#all-guides">Browse the gift guides</a>'
+            f'<a class="s-btn ghost" href="{fc[0]["url"]}">Newest guide</a></div>')
+    tiles = [tile(fc[0]["img"], fc[0]["alt"], (3, 4), "(max-width:960px) 60vw, 360px"),
+             tile(fc[1]["img"], fc[1]["alt"], (1, 1), "(max-width:960px) 40vw, 280px"),
+             tile(fc[2]["img"], fc[2]["alt"], (1, 1), "(max-width:960px) 40vw, 280px")]
+    body = split_hero("", 'Gifts people are actually buying',
+                      "Gift guides sorted by budget and by who they are for, with the one thing to know before you buy each.",
+                      btns, [f"{len(fc)} gift guides", "Prices checked weekly", "The catch on every pick"],
+                      mosaic(tiles, (str(days_left()), "days to Black Friday"), countdown=True))
+    first = dict(fc[0], chip="Newest", pop=True)
+    body += (f'<div class="s-wrap"><section class="sec" id="all-guides"><div class="sec-head"><div><h2>Gift guides</h2><p>Updated for Black Friday 2026. New guides every week.</p></div></div>'
+             f'<div class="grid">{card(first, True)}{"".join(card(c) for c in fc[1:])}</div></section>')
+    body += promise([("people", "Sorted the way you shop", "By budget and by who it is for, so you can find a gift in a minute."),
+                     ("eye", "The honest catch", "Every pick says what to know before you buy, not just why it is great."),
+                     ("tag", "Prices we check", "Prices are dated, and we only call something a deal when we have seen it drop.")])
+    ffm = "".join(f'<a href="{c["url"]}">{img(c["img"], c["alt"], "(max-width:860px) 45vw, 260px", 600, 450)}<span>{E(c["title"].split(":")[0])}</span></a>' for c in AI_GUIDES)
+    body += ('<section class="xband ff-side"><div><h2>Shopping for work tools?</h2><p>Our sister site FlowFrame compares AI tools and home-office gear in plain English, with free options first.</p>'
+             f'<a class="s-btn primary" href="/guides/">See the AI guides</a></div><div class="minis">{ffm}</div></section></div>')
     return page("Digittouch Finds: gift guides and what's selling now",
                 "Gift guides and weekly roundups of what people are actually buying, sorted by budget and by who it is for, with the honest catch on each.",
-                "/finds/", "finds", body, U("1513884923967-4b182ef167ab") + "?w=1200&h=630&fit=crop")
+                "/finds/", "finds", body, fc[0]["img"] + "?w=1200&h=630&fit=crop")
 
 
 def source(rel):
@@ -165,13 +169,39 @@ def build_article(slug):
     art = re.sub(r"<ul>((?:\s*<li><strong>[^<]{3,80}\?</strong>.*?</li>)+\s*)</ul>", r'<div class="a-picks">\1</div>', art, flags=re.S)
     art = re.sub(r'(<div class="a-picks">.*?</div>)', lambda m: m.group(1).replace("<li>", "<p>").replace("</li>", "</p>"), art, flags=re.S)
     h = ARTICLE_HERO[slug]
-    body = hero(h["img"], h["alt"], f'<p class="s-crumb"><a href="/guides/">Guides</a> / {E(h["tag"])}</p>',
-                E(title), "", "", [f"By FlowFrame", f"Updated {updated}", "Prices checked Nov 2026"], short=True)
+    # contents: give every h2 an id
+    toc = []
+    def hid(m):
+        t = re.sub(r"<[^>]+>", "", m.group(1)).strip()
+        i = re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")[:48]
+        toc.append((i, html.unescape(t)))
+        return f'<h2 id="{i}">{m.group(1)}</h2>'
+    art = re.sub(r"<h2>(.*?)</h2>", hid, art, flags=re.S)
+    tocl = "".join(f'<li><a href="#{i}">{E(t)}</a></li>' for i, t in toc)
+    head_ = (f'<section class="ph-head"><div class="s-wrap ph-split"><div><p class="crumb"><a href="/guides/">AI guides</a><span>/</span>{E(h["tag"])}</p>'
+             f'<h1>{E(title)}</h1><div class="byline"><span class="who">{MARK_FF}FlowFrame team</span><span>Updated {E(nice_date(updated))}</span><span>Prices checked Nov 2026</span></div></div>'
+             f'<figure>{img(h["img"], h["alt"], "(max-width:860px) 100vw, 520px", 1200, 900, eager=True)}</figure></div></section>')
+    aside = (f'<aside class="toc"><b>On this page</b><ol>{tocl}</ol><div class="tbox"><p>Shopping for gifts this Black Friday?</p>'
+             '<a href="/finds/">See our gift guides</a></div></aside>')
     others = [c for c in AI_GUIDES if c["url"] != f"/guides/{slug}/"]
-    body += f'<div class="a-body">{art}</div>'
-    body += ('<section class="a-more"><div class="s-head"><h2>Keep reading</h2></div>'
-             f'<div class="s-grid two">{"".join(card(c) for c in others)}{card(dict(finds_cards()[0], chip="Gift guide", pop=True))}</div></section>')
-    return page(title, desc, f"/guides/{slug}/", "ff", body, h["img"] + "?w=1200&h=630&fit=crop")
+    body = head_ + f'<div class="s-wrap a-layout"><article class="a-body">{art}</article>{aside}</div>'
+    body += ('<div class="s-wrap"><section class="sec"><div class="sec-head"><div><h2>Keep reading</h2></div></div>'
+             f'<div class="grid two">{"".join(card(c) for c in others)}{card(dict(finds_cards()[0], chip="Gift guide", pop=True))}</div></section></div>')
+    return page(title, desc, f"/guides/{slug}/", "ff", body, h["img"] + "?w=1200&h=630&fit=crop", active="/guides/")
+
+
+def nice_date(d):
+    import datetime
+    try:
+        x = datetime.date.fromisoformat(d.strip())
+        return f"{x.day} {x.strftime('%b %Y')}"
+    except ValueError:
+        return d
+
+
+SUBS = {"about": "Who we are and how we choose what to recommend.", "contact": "Questions, corrections or partnership ideas: here is how to reach us.",
+        "disclosure": "How FlowFrame and Digittouch Finds make money, and what that does and does not change.",
+        "privacy": "What we collect when you visit, and what we do with it."}
 
 
 def build_simple(rel, crumb_theme="ff"):
@@ -181,10 +211,19 @@ def build_simple(rel, crumb_theme="ff"):
     art = re.sub(r"\s*<h1>.*?</h1>", "", art, count=1, flags=re.S)
     m = re.search(r'<meta name="description" content="([^"]*)"', s)
     desc = html.unescape(m.group(1)) if m else t
-    body = hero(U("1599008633840-052c7f756385"), "A notebook on a wooden desk", "", E(t), "", short=True)
-    body += f'<div class="p-body">{art}</div>'
+    key = rel.split("/")[0]
+    body = (f'<section class="ph-head"><div class="s-wrap"><p class="crumb"><a href="/">Home</a><span>/</span>{E(t)}</p><h1>{E(t)}</h1>'
+            f'<p class="sub">{E(SUBS.get(key, ""))}</p></div></section><div class="p-body">{art}</div>')
     url = "/" + rel.replace("index.html", "")
     return page(t, desc, url, crumb_theme, body)
+
+
+def build_404():
+    body = ('<section class="ph-head"><div class="s-wrap"><p class="crumb">Page not found</p><h1>We could not find that page</h1>'
+            '<p class="sub">It may have moved when we updated the site. These are the best places to start.</p></div></section>'
+            '<div class="s-wrap"><section class="sec" style="padding-top:48px"><div class="grid">'
+            + card(dict(finds_cards()[0], chip="Gift guide", pop=True)) + "".join(card(c) for c in AI_GUIDES) + '</div></section></div>')
+    return page("Page not found", "The page you were looking for could not be found.", "/404.html", "ff", body, active="")
 
 
 if __name__ == "__main__":
@@ -194,6 +233,7 @@ if __name__ == "__main__":
         "finds/index.html": build_finds_index(),
         "guides/gamma-vs-canva-vs-copilot/index.html": build_article("gamma-vs-canva-vs-copilot"),
         "guides/best-ai-meeting-note-takers/index.html": build_article("best-ai-meeting-note-takers"),
+        "404.html": build_404(),
     }
     for rel in ["about/index.html", "contact/index.html", "disclosure/index.html", "privacy/index.html"]:
         out[rel] = build_simple(rel)
