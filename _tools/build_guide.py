@@ -82,7 +82,7 @@ def build(data):
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="article"><meta property="og:url" content="{url}"><meta property="og:image" content="{pin}">
 <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#17151A">
 <link rel="preconnect" href="https://images.unsplash.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,600..700,50&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/finds/guide.css?v=9">
+<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/finds/guide.css?v=11">
 <script type="application/ld+json">{json.dumps(ld)}</script>
 </head>
 <body class="finds guide"><header class="site"><div class="wrap wide"><a class="logo" href="/finds/">Digittouch <span>Finds</span></a><nav><a href="/finds/">Finds</a><a href="/">FlowFrame</a><a href="/about/">About</a></nav></div></header>
@@ -91,7 +91,7 @@ def build(data):
 <p class="g-crumb"><a href="/finds/">Finds</a> / Gift guides</p>
 <h1>{data["hero_title_html"]}</h1>
 <p class="lede">{E(data["lede"])}</p>
-<div class="g-hero-ctas"><a class="g-btn primary" href="#{data["bands"][0]["id"]}">Shop by budget</a><a class="g-btn ghost" href="#top-picks">If you only buy one</a></div>
+<div class="g-hero-ctas"><a class="g-btn primary" href="#{data["bands"][0]["id"]}">{E(data.get("cta_label","Shop by budget"))}</a><a class="g-btn ghost" href="#top-picks">If you only buy one</a></div>
 <ul class="g-meta"><li>{n} picks</li><li>Prices checked {E(data["checked"])}</li><li>One honest catch each</li></ul>
 </div>
 <div class="g-burst" data-countdown="{data["deal_date"]}"><b>{days_left}</b><span>{E(data["deal_label"])}</span></div>
@@ -115,7 +115,7 @@ def build(data):
 </main>
 <footer class="site"><div class="wrap wide"><p><a href="/disclosure/">Affiliate disclosure</a><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="/contact/">Contact</a></p>
 <p>&copy; 2026 Digittouch Finds, part of Digittouch Enterprise. As an Amazon Associate we earn from qualifying purchases.</p></div></footer>
-<script src="/finds/guide.js?v=9" defer></script></body></html>'''
+<script src="/finds/guide.js?v=11" defer></script></body></html>'''
 
 
 if __name__ == "__main__":

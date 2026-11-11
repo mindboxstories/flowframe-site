@@ -1,0 +1,282 @@
+{
+  "slug": "gifts-under-25",
+  "title": "12 Gifts Under $25 People Are Actually Buying (Black Friday 2026)",
+  "description": "12 gifts under $25 that keep topping this season's best-seller lists: small tech, cosy comforts, kitchen upgrades and self-care, each with the honest catch.",
+  "hero_title_html": "Gifts under <span class=\"price\">$25</span>",
+  "lede": "Twelve small gifts that keep topping this season's best-seller lists, sorted by type and by who they're for, with the one thing to know before you buy each.",
+  "hero": {
+    "img": "https://images.unsplash.com/photo-1607900177462-ac553f1f5d97",
+    "alt": "Christmas stockings hanging above a fireplace"
+  },
+  "checked": "11 Nov 2026",
+  "deal_date": "2026-11-27",
+  "deal_label": "days to Black Friday",
+  "deal_day": "27 November",
+  "pin": "df-gifts-v5.jpg",
+  "ticker": [
+    "12 gifts under $25",
+    "Small tech, cosy, kitchen, self-care",
+    "Prices checked 11 Nov",
+    "One honest catch on every pick",
+    "Black Friday is 27 November",
+    "Perfect for Secret Santa"
+  ],
+  "people": {
+    "lost": "For the one who loses everything",
+    "cook": "For the cook",
+    "cold": "For the one always cold",
+    "teen": "For a teen",
+    "travel": "For the traveller",
+    "host": "For a colleague or host"
+  },
+  "people_short": {
+    "lost": "Loses everything",
+    "cook": "Cook",
+    "cold": "Always cold",
+    "teen": "Teen",
+    "travel": "Traveller",
+    "host": "Colleague or host"
+  },
+  "top_picks": [
+    {
+      "id": "airtag",
+      "why": "The one they'll use every day"
+    },
+    {
+      "id": "blanket",
+      "why": "The cosiest under $25"
+    },
+    {
+      "id": "press",
+      "why": "The best for coffee lovers"
+    }
+  ],
+  "bands": [
+    {
+      "id": "tech",
+      "label": "Small tech",
+      "blurb": "Useful gadgets that feel more expensive than they are.",
+      "img": "https://images.unsplash.com/photo-1793906781087-5a5dbd5875f7",
+      "alt": "Headphones and a phone on red and white stripes",
+      "items": [
+        {
+          "id": "airtag",
+          "name": "Apple AirTag (2nd generation)",
+          "price": "$23",
+          "badge": "Our top pick",
+          "img": "https://images.unsplash.com/photo-1603508102977-02688e3265fd",
+          "alt": "A bunch of keys",
+          "why": "Clip it to keys, a bag or a suitcase and find it from an iPhone. A near-perfect gift they didn't know they needed.",
+          "catch": "it only works with iPhones. For Android, choose a Samsung SmartTag or a Tile.",
+          "q": "apple airtag 2nd generation",
+          "for": [
+            "lost",
+            "travel"
+          ]
+        },
+        {
+          "id": "earbuds",
+          "name": "Anker Soundcore noise-cancelling earbuds",
+          "price": "$25",
+          "img": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
+          "alt": "Wireless earbuds and their case",
+          "why": "Noise cancelling, a transparency mode and around 10 hours of playtime at an easy gift price.",
+          "catch": "budget noise cancelling softens a commute but won't match $200 earbuds.",
+          "q": "anker soundcore noise cancelling earbuds",
+          "for": [
+            "teen",
+            "travel"
+          ]
+        },
+        {
+          "id": "speaker",
+          "name": "Waterproof Bluetooth speaker",
+          "price": "$20",
+          "img": "https://images.unsplash.com/photo-1589003077984-894e133dabab",
+          "alt": "A portable speaker",
+          "why": "Waterproof, with a battery rated around 24 hours. Good for the shower, the beach or a teenager's room.",
+          "catch": "small speakers fill a room, not a party.",
+          "q": "waterproof portable bluetooth speaker",
+          "for": [
+            "teen",
+            "host"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cosy",
+      "label": "Cosy",
+      "blurb": "Winter comforts for the sofa, the commute and the cold.",
+      "img": "https://images.unsplash.com/photo-1601804590276-e19ce20343da",
+      "alt": "A cosy winter scene with a warm drink",
+      "items": [
+        {
+          "id": "warmers",
+          "name": "Rechargeable hand warmers",
+          "price": "$15",
+          "img": "https://images.unsplash.com/photo-1452689842785-5f14840dca48",
+          "alt": "Hands in warm knitted mittens",
+          "why": "Reusable warmers that charge by USB. Thoughtful for commuters and anyone who watches outdoor sport.",
+          "catch": "heat lasts a few hours per charge, not all day.",
+          "q": "rechargeable electric hand warmers",
+          "for": [
+            "cold",
+            "lost"
+          ]
+        },
+        {
+          "id": "blanket",
+          "name": "Wearable sherpa blanket",
+          "price": "$25",
+          "badge": "Most gifted",
+          "img": "https://images.unsplash.com/photo-1612373914372-79a8a0311f78",
+          "alt": "Someone wrapped in a warm blanket",
+          "why": "A hoodie-blanket hybrid with a big front pocket, and one of the most-gifted comfort items every winter.",
+          "catch": "usually one-size and bulky; it's for the sofa, not for going out.",
+          "q": "wearable blanket sherpa",
+          "for": [
+            "cold",
+            "teen"
+          ]
+        },
+        {
+          "id": "candle",
+          "name": "Yankee Candle Balsam & Cedar",
+          "price": "$15",
+          "img": "https://images.unsplash.com/photo-1577025728734-7ec67bdb97d0",
+          "alt": "Red candles glowing",
+          "why": "A classic winter scent with a long burn time. A safe pick for a colleague or host.",
+          "catch": "the scent is strong, so skip it for anyone sensitive to fragrance.",
+          "q": "yankee candle balsam and cedar",
+          "for": [
+            "host",
+            "cold"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "label": "Kitchen",
+      "blurb": "Everyday upgrades for people who cook and host.",
+      "img": "https://images.unsplash.com/photo-1607273177127-47ec33b5be3f",
+      "alt": "A coffee machine in a sunny kitchen",
+      "items": [
+        {
+          "id": "popcorn",
+          "name": "Dash hot-air popcorn maker",
+          "price": "$25",
+          "img": "https://images.unsplash.com/photo-1579642761360-eabd1cca1e81",
+          "alt": "Popcorn on a pink background",
+          "why": "Makes a big bowl of popcorn without oil in a couple of minutes. Fun for movie-night families.",
+          "catch": "air-popped corn is dry, so seasoning won't stick without a little butter or oil spray.",
+          "q": "dash hot air popcorn maker",
+          "for": [
+            "host",
+            "teen"
+          ]
+        },
+        {
+          "id": "board",
+          "name": "Bamboo cutting board set (3 pieces)",
+          "price": "$16",
+          "img": "https://images.unsplash.com/photo-1666013942797-9daa4b8b3b4f",
+          "alt": "A wooden cutting board and knife",
+          "why": "Three sizes with juice grooves. An everyday upgrade for anyone who cooks.",
+          "catch": "bamboo is hand-wash only and needs oiling now and then.",
+          "q": "bamboo cutting board set 3 piece",
+          "for": [
+            "cook",
+            "host"
+          ]
+        },
+        {
+          "id": "press",
+          "name": "French press coffee maker",
+          "price": "$25",
+          "img": "https://images.unsplash.com/photo-1613536844480-ac5d7b1b6ed1",
+          "alt": "A French press with fresh coffee",
+          "why": "Rich coffee with no machine or pods. Add a bag of local coffee for a complete gift.",
+          "catch": "it needs coarse-ground coffee, or you'll get grit in the cup.",
+          "q": "french press coffee maker",
+          "for": [
+            "cook",
+            "host"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-care",
+      "label": "Self-care",
+      "blurb": "Small treats for the bathroom shelf and the carry-on.",
+      "img": "https://images.unsplash.com/photo-1563417994879-58755bba00a0",
+      "alt": "Colourful beauty bottles on a shelf",
+      "items": [
+        {
+          "id": "laneige",
+          "name": "Laneige Lip Sleeping Mask minis",
+          "price": "$23",
+          "img": "https://images.unsplash.com/photo-1768235146463-328c98e7234d",
+          "alt": "A small jar of balm on a wooden stand",
+          "why": "Mini overnight lip masks in several flavours. A cult favourite at a gift-friendly price.",
+          "catch": "the minis are small, so heavy users will finish them fast.",
+          "q": "laneige lip sleeping mask mini",
+          "for": [
+            "teen",
+            "travel"
+          ]
+        },
+        {
+          "id": "patches",
+          "name": "Mighty Patch Original",
+          "price": "$12",
+          "img": "https://images.unsplash.com/photo-1739980155900-36562bcb7857",
+          "alt": "Skincare products on a table",
+          "why": "Hydrocolloid patches that are one of the most popular stocking fillers for teens and adults.",
+          "catch": "check the pack size; the cheapest packs have only a few patches.",
+          "q": "mighty patch original",
+          "for": [
+            "teen"
+          ]
+        },
+        {
+          "id": "bagsmart",
+          "name": "Bagsmart toiletry bag",
+          "price": "$19",
+          "img": "https://images.unsplash.com/photo-1613896640137-bb5b31496315",
+          "alt": "Toiletry bags",
+          "why": "Separate wet and dry compartments in water-resistant fabric. It turns up on gift lists year after year.",
+          "catch": "it's roomy, so it may be too big for a carry-on-only traveller.",
+          "q": "bagsmart toiletry bag",
+          "for": [
+            "travel",
+            "lost"
+          ]
+        }
+      ]
+    }
+  ],
+  "method": "We cross-checked this season's best-seller and editors' gift lists (November 2026) and kept items that appear repeatedly, have strong buyer reviews and suit a wide range of people. Prices were checked on 11 November 2026 and change daily around Black Friday, so check the price before you buy. We only call something a deal when we've seen the price drop.",
+  "updates": [
+    "8 November 2026: guide published.",
+    "11 November 2026: redesigned with photos; Amazon links now go through our Associates account."
+  ],
+  "sources": [
+    {
+      "name": "Fox News: Amazon gadgets under $25 (Nov 2026)",
+      "url": "https://www.foxnews.com/deals/amazon-gadgets-under-25"
+    },
+    {
+      "name": "NBC Select: holiday gifts under $25",
+      "url": "https://www.nbcnews.com/select/shopping/gift-ideas-under-20-ncna1283491"
+    },
+    {
+      "name": "Tom's Guide: best gifts under $50, 2026",
+      "url": "https://tomsguide.com/sales-events/the-best-gifts-under-usd50-for-everyone-on-your-holiday-list-our-top-picks-for-2026"
+    }
+  ],
+  "more_html": "<a href=\"/finds/gifts-for-her-under-60/\">11 gift ideas for her under $60</a>.",
+  "cta_label": "Shop by category"
+}

@@ -173,7 +173,7 @@ body.guide .g-btn,body.guide .g-cta{font-weight:700;letter-spacing:.005em}
 
 /* ---- v5 polish ---- */
 body.guide header.site .wrap.wide,body.guide footer.site .wrap.wide{max-width:1160px;padding-left:20px;padding-right:20px}
-.g-banner p{max-width:460px}
+.g-banner p{max-width:520px}
 body.guide .g-table td a{color:var(--ink);text-decoration:none;font-weight:600}
 body.guide .g-table td a:hover{color:var(--coral-ink);text-decoration:underline}
 body.guide .g-notes a{color:var(--ink);text-decoration-color:var(--coral);text-underline-offset:3px}
@@ -187,3 +187,8 @@ body.guide .g-notes a{color:var(--ink);text-decoration-color:var(--coral);text-u
   .g-topcard b{font-size:19px;margin:2px 16px}
   .g-topcard .p{margin:0 16px 14px}
 }
+/* fourth band colour (pink) */
+:root{--band-4:#FFC7D9}
+.g-bar a[data-band="4"]{background:var(--band-4)}
+.g-band[data-band="4"] .g-banner::after{background:linear-gradient(90deg,rgba(255,180,206,.97) 0%,rgba(255,180,206,.82) 38%,rgba(255,180,206,0) 70%)}
+@media (max-width:860px){.g-band[data-band="4"] .g-banner::after{background:linear-gradient(0deg,rgba(255,180,206,.97) 30%,rgba(255,180,206,.2) 100%)}}
