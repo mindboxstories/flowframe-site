@@ -7,13 +7,6 @@
   "checked": "11 Nov 2026",
   "deal_day": "27 November",
   "pin": "df-her60-a.jpg",
-  "hero_stickers": [
-    "owala",
-    "lego",
-    "tilbury",
-    "slippers",
-    "cuff"
-  ],
   "people": {
     "cold": "For the one always cold",
     "travel": "For the traveller",
@@ -53,7 +46,9 @@
           "for": [
             "cold",
             "host"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb",
+          "alt": "Feet in cosy slippers"
         },
         {
           "id": "lamp",
@@ -66,22 +61,28 @@
           "for": [
             "cold",
             "everything"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1779599859971-670a45aedf96",
+          "alt": "A lamp lighting a candle jar on a desk"
         },
         {
           "id": "candle",
           "art": "candle",
-          "name": "P.F. Candle Co. Woody Spruce candle",
+          "name": "P.F. Candle Co. Spruce candle",
           "price": "$24",
           "why": "A soy candle with a winter-forest scent in a plain glass jar that looks good on any shelf.",
           "catch": "scent is personal; if you're unsure, pick a fresh or citrus one instead.",
-          "q": "p.f. candle co woody spruce",
+          "q": "p.f. candle co spruce candle",
           "for": [
             "host",
             "cold"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1668112037360-900ff60ef6f7",
+          "alt": "A candle burning in a glass jar"
         }
-      ]
+      ],
+      "img": "https://images.unsplash.com/photo-1766233420221-c2151c92c8ca",
+      "alt": "A cosy Christmas scene with hot chocolate and decorations"
     },
     {
       "id": "25-to-40",
@@ -99,7 +100,9 @@
           "for": [
             "travel",
             "everything"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1687435703153-88f6bc0cdcff",
+          "alt": "A pink eye mask with tea and a candle"
         },
         {
           "id": "owala",
@@ -113,7 +116,10 @@
           "for": [
             "fit",
             "travel"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1789276392869-8103c256a501",
+          "alt": "An insulated travel tumbler",
+          "asin": "B0FFTLKRX3"
         },
         {
           "id": "summer",
@@ -126,7 +132,9 @@
           "for": [
             "travel",
             "everything"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1765516976457-550bd5f6f708",
+          "alt": "A toiletry bag with travel-size beauty products"
         },
         {
           "id": "saltstone",
@@ -139,7 +147,9 @@
           "for": [
             "host",
             "everything"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1597931752949-98c74b5b159f",
+          "alt": "A white pump bottle of body wash"
         },
         {
           "id": "cuff",
@@ -152,7 +162,9 @@
           "for": [
             "everything",
             "host"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a",
+          "alt": "A gold bracelet"
         },
         {
           "id": "lego",
@@ -166,9 +178,13 @@
           "for": [
             "everything",
             "host"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1775994121066-df9928d01e18",
+          "alt": "Plants in pots built from toy bricks"
         }
-      ]
+      ],
+      "img": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f",
+      "alt": "A gift box tied with a pink ribbon"
     },
     {
       "id": "40-to-60",
@@ -187,7 +203,9 @@
           "for": [
             "fit",
             "everything"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1586401100295-7a8096fd231a",
+          "alt": "Hands holding small pink weights"
         },
         {
           "id": "tilbury",
@@ -200,14 +218,19 @@
           "for": [
             "everything",
             "travel"
-          ]
+          ],
+          "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348",
+          "alt": "A flat lay of makeup and brushes"
         }
-      ]
+      ],
+      "img": "https://images.unsplash.com/photo-1674620213535-9b2a2553ef40",
+      "alt": "Black and white gift boxes with gold bows"
     }
   ],
   "method": "We cross-checked the 2026 gift guides from major shopping editors with this week's Amazon best-sellers, and kept items that appear repeatedly and suit a wide range of people. Prices were checked on 11 November 2026 and change daily around Black Friday, so check the price before you buy. We only call something a deal when we've seen the price drop.",
   "updates": [
-    "11 November 2026: guide published."
+    "11 November 2026: guide published.",
+    "11 November 2026: redesigned with photos; Amazon links now go through our Associates account."
   ],
   "sources": [
     {
@@ -244,5 +267,9 @@
     "One honest catch on every pick",
     "Black Friday is 27 November",
     "Tap who she is to filter"
-  ]
+  ],
+  "hero": {
+    "img": "https://images.unsplash.com/photo-1513885535751-8b9238bd345a",
+    "alt": "A pile of wrapped gifts with red paper and ribbon"
+  }
 }
