@@ -150,3 +150,7 @@ body.guide .g-pin{display:inline-block;background:#E60023;color:#fff;font-weight
   .g-ticker .track{font-size:17px}
   .g-table th:nth-child(3),.g-table td:nth-child(3){display:none}
 }
+.g-topcard img{height:auto}
+.g-banner h2{white-space:nowrap}
+.g-banner-copy{max-width:none}
+@media (max-width:640px){.g-banner h2{white-space:normal}}

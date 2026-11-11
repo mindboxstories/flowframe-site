@@ -82,7 +82,7 @@ def build(data):
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="article"><meta property="og:url" content="{url}"><meta property="og:image" content="{pin}">
 <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#17151A">
 <link rel="preconnect" href="https://images.unsplash.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/finds/guide.css?v=4">
+<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/finds/guide.css?v=5">
 <script type="application/ld+json">{json.dumps(ld)}</script>
 </head>
 <body class="finds guide"><header class="site"><div class="wrap wide"><a class="logo" href="/finds/">Digittouch <span>Finds</span></a><nav><a href="/finds/">Finds</a><a href="/">FlowFrame</a><a href="/about/">About</a></nav></div></header>
@@ -115,7 +115,7 @@ def build(data):
 </main>
 <footer class="site"><div class="wrap wide"><p><a href="/disclosure/">Affiliate disclosure</a><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="/contact/">Contact</a></p>
 <p>&copy; 2026 Digittouch Finds, part of Digittouch Enterprise. As an Amazon Associate we earn from qualifying purchases.</p></div></footer>
-<script src="/finds/guide.js?v=4" defer></script></body></html>'''
+<script src="/finds/guide.js?v=5" defer></script></body></html>'''
 
 
 if __name__ == "__main__":
