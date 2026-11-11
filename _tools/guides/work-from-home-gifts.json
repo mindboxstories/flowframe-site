@@ -1,0 +1,254 @@
+{
+  "slug": "work-from-home-gifts",
+  "title": "10 Gifts for People Who Work From Home (Black Friday 2026)",
+  "description": "Gifts for people who work from home, by budget: desk upgrades under $50, better tools under $150 and a few splurges, each with the honest catch.",
+  "hero_title_html": "Home-office gifts <span class=\"price\">from $20</span>",
+  "lede": "Ten upgrades for anyone who spends the day at a desk at home, sorted by budget and by who they're for, with the one thing to know before you buy each.",
+  "hero": {
+    "img": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+    "alt": "A bright home-office desk with a laptop, monitor and plant"
+  },
+  "checked": "11 Nov 2026",
+  "deal_date": "2026-11-27",
+  "deal_label": "days to Black Friday",
+  "deal_day": "27 November",
+  "pin": "df-wfh-v5.jpg",
+  "ticker": [
+    "10 gifts for the home office",
+    "Under $50, under $150, splurges",
+    "Prices checked 11 Nov",
+    "One honest catch on every pick",
+    "Black Friday is 27 November",
+    "Tap who they are to filter"
+  ],
+  "people": {
+    "calls": "For the one on calls all day",
+    "tidy": "For the desk tidier",
+    "coffee": "For the coffee drinker",
+    "reader": "For the reader",
+    "creator": "For the podcaster or creator",
+    "new": "For someone just starting remote work"
+  },
+  "people_short": {
+    "calls": "On calls all day",
+    "tidy": "Desk tidier",
+    "coffee": "Coffee drinker",
+    "reader": "Reader",
+    "creator": "Creator",
+    "new": "New to remote work"
+  },
+  "top_picks": [
+    {
+      "id": "stand",
+      "why": "The one they'll use every day"
+    },
+    {
+      "id": "mxmaster",
+      "why": "The best upgrade under $150"
+    },
+    {
+      "id": "mv7",
+      "why": "The splurge for the one on calls"
+    }
+  ],
+  "bands": [
+    {
+      "id": "under-50",
+      "label": "Under $50",
+      "blurb": "Small desk upgrades that make a big difference.",
+      "img": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae",
+      "alt": "A keyboard and mouse on a desk",
+      "items": [
+        {
+          "id": "mat",
+          "name": "Large felt or leather desk mat",
+          "price": "$20",
+          "img": "https://images.unsplash.com/photo-1650394923482-a0d03ffb2512",
+          "alt": "A desk with a large mat, mouse and keyboard",
+          "why": "Covers the whole desk, quiets the keyboard and gives the mouse a smooth surface. Instantly makes a desk look finished.",
+          "catch": "measure the desk first; the popular 90 cm mats overhang small desks.",
+          "q": "large desk mat felt leather",
+          "for": [
+            "tidy",
+            "new"
+          ]
+        },
+        {
+          "id": "stand",
+          "name": "Aluminium laptop stand",
+          "price": "$30",
+          "badge": "Our top pick",
+          "img": "https://images.unsplash.com/photo-1629317480826-910f729d1709",
+          "alt": "A laptop raised on a stand",
+          "why": "Lifts the laptop screen closer to eye level and frees up desk space. Folds flat for travel.",
+          "catch": "once the screen is raised, they'll also need a separate keyboard and mouse.",
+          "q": "aluminum laptop stand adjustable",
+          "for": [
+            "new",
+            "calls"
+          ]
+        },
+        {
+          "id": "cable",
+          "name": "Under-desk cable management kit",
+          "price": "$20",
+          "img": "https://images.unsplash.com/photo-1760348213270-7cd00b8c3405",
+          "alt": "A cable organiser holding a cord under a desk",
+          "why": "Clips, sleeves and a tray that hide the cable mess under the desk. A small gift that changes how the whole setup looks.",
+          "catch": "it takes half an hour to fit, so it suits someone who enjoys tidying.",
+          "q": "under desk cable management kit",
+          "for": [
+            "tidy"
+          ]
+        },
+        {
+          "id": "charger",
+          "name": "3-in-1 wireless charging stand",
+          "price": "$35",
+          "img": "https://images.unsplash.com/photo-1591290619618-904f6dd935e3",
+          "alt": "A white wireless charging pad on a wooden desk",
+          "why": "Charges a phone, earbuds and a watch in one spot, so the desk stays clear of cables.",
+          "catch": "check it supports their phone and watch brand before you buy.",
+          "q": "3 in 1 wireless charging station",
+          "for": [
+            "tidy",
+            "new"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "50-to-150",
+      "label": "$50 to $150",
+      "blurb": "Better tools for the hours they spend at the desk.",
+      "img": "https://images.unsplash.com/photo-1765030999960-8cc726c281ad",
+      "alt": "A pink keyboard, mouse and laptop on a desk",
+      "items": [
+        {
+          "id": "mxmaster",
+          "name": "Logitech MX Master 4 mouse",
+          "price": "$120",
+          "price_note": "often under $100 on sale",
+          "badge": "Best upgrade",
+          "img": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46",
+          "alt": "A grey ergonomic wireless mouse",
+          "why": "Logitech's flagship work mouse, with a fast scroll wheel, a thumb wheel and new haptic feedback. Pairs with up to three computers.",
+          "catch": "it's big and right-handed only; small hands may prefer the MX Anywhere.",
+          "q": "logitech mx master 4",
+          "for": [
+            "calls",
+            "creator"
+          ]
+        },
+        {
+          "id": "mxkeys",
+          "name": "Logitech MX Keys S keyboard",
+          "price": "$110",
+          "img": "https://images.unsplash.com/photo-1669884210028-81aa4c7442e5",
+          "alt": "A slim white keyboard",
+          "why": "A quiet, backlit keyboard with comfortable keys that switches between three devices with one button.",
+          "catch": "it's a full-size board, so it takes up more desk space than a compact keyboard.",
+          "q": "logitech mx keys s",
+          "for": [
+            "calls",
+            "new"
+          ]
+        },
+        {
+          "id": "screenbar",
+          "name": "BenQ ScreenBar monitor light",
+          "price": "$109",
+          "img": "https://images.unsplash.com/photo-1618133030686-e1186525ebcc",
+          "alt": "A desk with monitors lit by a monitor light",
+          "why": "A light bar that sits on top of the monitor and lights the desk without glare on the screen. Great for early mornings and late finishes.",
+          "catch": "it needs a monitor; it won't sit on a laptop screen.",
+          "q": "benq screenbar monitor light",
+          "for": [
+            "reader",
+            "creator"
+          ]
+        },
+        {
+          "id": "ember",
+          "name": "Ember Mug 2 (14 oz)",
+          "price": "$90-150",
+          "price_note": "price varies by colour",
+          "img": "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e",
+          "alt": "A latte next to a keyboard on a desk",
+          "why": "Keeps coffee at the exact temperature they choose in the app, through back-to-back meetings.",
+          "catch": "the battery is short off the coaster, so it works best kept on its charging base. Hand-wash only.",
+          "q": "ember mug 2 14 oz",
+          "for": [
+            "coffee",
+            "calls"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "splurge",
+      "label": "Splurge",
+      "blurb": "When you want it to feel like a proper present.",
+      "img": "https://images.unsplash.com/photo-1776690329305-fb4141bd528a",
+      "alt": "A professional microphone in a recording studio",
+      "items": [
+        {
+          "id": "kindle",
+          "name": "Kindle Colorsoft",
+          "price": "$290",
+          "img": "https://images.unsplash.com/photo-1676107779674-f77343861e81",
+          "alt": "Someone reading an e-reader with a cup of coffee",
+          "why": "A glare-free colour screen for books, comics and highlights. The way to switch off from screens after work.",
+          "catch": "colour is softer than a phone or tablet; for plain novels a regular Kindle is cheaper.",
+          "q": "kindle colorsoft",
+          "for": [
+            "reader"
+          ]
+        },
+        {
+          "id": "mv7",
+          "name": "Shure MV7+ podcast microphone",
+          "price": "$269",
+          "price_note": "was $319",
+          "badge": "Best splurge",
+          "img": "https://images.unsplash.com/photo-1588800347304-ec7e6f353327",
+          "alt": "A black microphone on a stand",
+          "why": "A broadcast-style mic with USB-C and XLR in one. Makes every call and recording sound professional.",
+          "catch": "it's a lot of mic for a few calls a week; a good headset is enough for light use.",
+          "q": "shure mv7+",
+          "for": [
+            "creator",
+            "calls"
+          ]
+        }
+      ]
+    }
+  ],
+  "method": "We cross-checked this season's work-from-home gift guides and this week's Amazon best-sellers, and kept items that suit a wide range of desks and jobs. Prices were checked on 11 November 2026 and change daily around Black Friday, so check the price before you buy. We only call something a deal when we've seen the price drop.",
+  "updates": [
+    "11 November 2026: guide published."
+  ],
+  "sources": [
+    {
+      "name": "Neowin: Logitech MX Master 4 discounts",
+      "url": "https://www.neowin.net/deals/logitech-mx-master-4-gets-first-notable-discounts/"
+    },
+    {
+      "name": "Tech Stories: MX Master 4 launch price ($119.99)",
+      "url": "https://techstoriesindia.com/logitech-mx-master-4-mouse/"
+    },
+    {
+      "name": "BenQ: ScreenBar",
+      "url": "https://www.benq.com/en-us/lighting/monitor-light/screenbar/buy.html"
+    },
+    {
+      "name": "Slickdeals: Ember Mug 2 14 oz price history",
+      "url": "https://slickdeals.net/f/18708595-89-99-14-oz-ember-temperature-control-smart-mug-2-at-amazon"
+    },
+    {
+      "name": "FashionBeans: best work-from-home gifts 2026",
+      "url": "https://www.fashionbeans.com/article/best-work-from-home-gifts/"
+    }
+  ],
+  "more_html": "<a href=\"/finds/gifts-for-her-under-60/\">11 gift ideas for her under $60</a> and <a href=\"/finds/gifts-under-25/\">12 gifts under $25</a>."
+}

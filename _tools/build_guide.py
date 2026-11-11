@@ -63,8 +63,8 @@ def build(data):
     for k, b in enumerate(data["bands"]):
         bands += (f'<section class="g-band" id="{b["id"]}" data-band="{k+1}">'
                   f'<header class="g-banner">{img(b["img"], b["alt"], "100vw", ratio="16/7", widths=(640, 1200, 1800))}'
-                  f'<div class="g-banner-copy"><h2>{E(b["label"])}</h2><p>{E(b["blurb"])}</p><span class="count">{len(b["items"])} picks</span></div></header>'
-                  f'<div class="g-grid">{"".join(card(i, people, short) for i in b["items"])}</div></section>')
+                  f'<div class="g-banner-copy"><h2>{E(b["label"])}</h2><p>{E(b["blurb"])}</p><span class="count">{len(b["items"])} pick{"" if len(b["items"])==1 else "s"}</span></div></header>'
+                  f'<div class="g-grid n{len(b["items"])}">{"".join(card(i, people, short) for i in b["items"])}</div></section>')
     rows = "".join(f'<tr><td><a href="#{i["id"]}">{E(i["name"])}</a></td><td class="p">{E(i["price"])}</td>'
                    f'<td>{E(short.get(i["for"][0], people[i["for"][0]]))}</td></tr>'
                    for b in data["bands"] for i in b["items"])
@@ -82,7 +82,7 @@ def build(data):
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="article"><meta property="og:url" content="{url}"><meta property="og:image" content="{pin}">
 <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#17151A">
 <link rel="preconnect" href="https://images.unsplash.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,600..700,50&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/finds/guide.css?v=11">
+<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/finds/guide.css?v=13">
 <script type="application/ld+json">{json.dumps(ld)}</script>
 </head>
 <body class="finds guide"><header class="site"><div class="wrap wide"><a class="logo" href="/finds/">Digittouch <span>Finds</span></a><nav><a href="/finds/">Finds</a><a href="/">FlowFrame</a><a href="/about/">About</a></nav></div></header>
@@ -115,7 +115,7 @@ def build(data):
 </main>
 <footer class="site"><div class="wrap wide"><p><a href="/disclosure/">Affiliate disclosure</a><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="/contact/">Contact</a></p>
 <p>&copy; 2026 Digittouch Finds, part of Digittouch Enterprise. As an Amazon Associate we earn from qualifying purchases.</p></div></footer>
-<script src="/finds/guide.js?v=11" defer></script></body></html>'''
+<script src="/finds/guide.js?v=13" defer></script></body></html>'''
 
 
 if __name__ == "__main__":

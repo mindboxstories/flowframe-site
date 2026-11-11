@@ -1,0 +1,223 @@
+{
+  "slug": "kitchen-gifts-home-cook",
+  "title": "8 Kitchen Gifts for the Home Cook (Black Friday 2026)",
+  "description": "Kitchen gifts for the home cook, by budget: tools under $50, cookware under $100 and a splurge, each with the honest catch.",
+  "hero_title_html": "Kitchen gifts <span class=\"price\">from $16</span>",
+  "lede": "Eight gifts for anyone who loves to cook, from small tools they'll use daily to a proper splurge, sorted by budget with the one thing to know before you buy each.",
+  "hero": {
+    "img": "https://images.unsplash.com/photo-1544202272-d1b1feb21070",
+    "alt": "Christmas cookies in a bowl near a Christmas tree"
+  },
+  "checked": "11 Nov 2026",
+  "deal_date": "2026-11-27",
+  "deal_label": "days to Black Friday",
+  "deal_day": "27 November",
+  "pin": "df-kitchen-v5.jpg",
+  "cta_label": "Shop by budget",
+  "ticker": [
+    "8 kitchen gifts for the home cook",
+    "Under $50, under $100, a splurge",
+    "Prices checked 11 Nov",
+    "One honest catch on every pick",
+    "Black Friday is 27 November"
+  ],
+  "people": {
+    "everyday": "For the everyday cook",
+    "baker": "For the baker",
+    "host": "For the host",
+    "new": "For a first kitchen",
+    "gadget": "For the gadget lover"
+  },
+  "people_short": {
+    "everyday": "Everyday cook",
+    "baker": "Baker",
+    "host": "Host",
+    "new": "First kitchen",
+    "gadget": "Gadget lover"
+  },
+  "top_picks": [
+    {
+      "id": "thermopop",
+      "why": "The tool they'll reach for daily"
+    },
+    {
+      "id": "allclad",
+      "why": "The best deal right now"
+    },
+    {
+      "id": "crispi",
+      "why": "The splurge"
+    }
+  ],
+  "bands": [
+    {
+      "id": "under-50",
+      "label": "Under $50",
+      "blurb": "Small tools that good cooks swear by.",
+      "img": "https://images.unsplash.com/photo-1518291344630-4857135fb581",
+      "alt": "A frying pan and tomatoes on a blue surface",
+      "items": [
+        {
+          "id": "skillet",
+          "name": "Lodge 10.25\" cast iron skillet",
+          "price": "$20",
+          "img": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6",
+          "alt": "A roast chicken in a cast iron skillet",
+          "why": "Pre-seasoned, goes from hob to oven, and lasts a lifetime. One of the best-value pans you can buy.",
+          "catch": "it's heavy and needs drying and a little oil after washing.",
+          "q": "lodge 10.25 inch cast iron skillet",
+          "for": [
+            "everyday",
+            "new"
+          ]
+        },
+        {
+          "id": "microplane",
+          "name": "Microplane classic zester",
+          "price": "$16",
+          "img": "https://images.unsplash.com/photo-1743431631733-8ed5ee8c10a8",
+          "alt": "Fresh lemons with leaves",
+          "why": "Zests citrus and grates hard cheese, garlic and ginger in seconds. The small tool chefs use most.",
+          "catch": "the blade is very sharp; keep the cover on in the drawer.",
+          "q": "microplane classic zester grater",
+          "for": [
+            "baker",
+            "everyday"
+          ]
+        },
+        {
+          "id": "thermopop",
+          "name": "ThermoWorks ThermoPop 2 thermometer",
+          "price": "$39",
+          "badge": "Our top pick",
+          "img": "https://images.unsplash.com/photo-1622001545761-9bd12a4b465b",
+          "alt": "A digital kitchen thermometer",
+          "why": "Reads the temperature in a couple of seconds, with a big display that rotates the right way up. No more guessing if the chicken is done.",
+          "catch": "it's an instant-read probe, so it can't stay in the oven during cooking.",
+          "q": "thermoworks thermopop 2",
+          "for": [
+            "everyday",
+            "host",
+            "gadget"
+          ]
+        },
+        {
+          "id": "spinner",
+          "name": "OXO Good Grips salad spinner",
+          "price": "$30",
+          "img": "https://images.unsplash.com/photo-1569760142069-bc6838de16c1",
+          "alt": "A colourful salad",
+          "why": "Dries greens in seconds with a one-handed pump, and the bowl doubles as a serving dish.",
+          "catch": "it's bulky to store in a small kitchen.",
+          "q": "oxo good grips salad spinner",
+          "for": [
+            "new",
+            "host"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "50-to-100",
+      "label": "$50 to $100",
+      "blurb": "Cookware that earns its place on the hob.",
+      "img": "https://images.unsplash.com/photo-1603185730021-ddc0c8097059",
+      "alt": "A cast iron pot of stew",
+      "items": [
+        {
+          "id": "instantpot",
+          "name": "Instant Pot Duo 7-in-1 (6 qt)",
+          "price": "$70",
+          "price_note": "often on sale",
+          "img": "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b",
+          "alt": "A multi-cooker on a kitchen counter",
+          "why": "Pressure cooker, slow cooker and rice cooker in one. Weeknight stews and beans in a fraction of the time.",
+          "catch": "it takes up counter space, and pressure cooking has a short learning curve.",
+          "q": "instant pot duo 7 in 1 6 quart",
+          "for": [
+            "everyday",
+            "new",
+            "gadget"
+          ]
+        },
+        {
+          "id": "dutchoven",
+          "name": "Lodge 6 qt enameled Dutch oven",
+          "price": "$70",
+          "img": "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1",
+          "alt": "An orange enameled Dutch oven",
+          "why": "The look and job of a much pricier French oven, for braises, soups and bread.",
+          "catch": "enamel can chip if it's knocked or heated empty on high heat.",
+          "q": "lodge 6 quart enameled cast iron dutch oven",
+          "for": [
+            "host",
+            "baker"
+          ]
+        },
+        {
+          "id": "allclad",
+          "name": "All-Clad HA1 10\" and 12\" fry pan set",
+          "price": "$90",
+          "price_note": "was $130",
+          "badge": "Best deal",
+          "img": "https://images.unsplash.com/photo-1624031000828-dba1b7a3e4ce",
+          "alt": "A nonstick frying pan on a wooden table",
+          "why": "Two hard-anodised nonstick pans from a top brand. Tied with its lowest price of 2026 in early November.",
+          "catch": "nonstick wears over time; use wooden or silicone tools and low-to-medium heat.",
+          "q": "all-clad ha1 10 12 fry pan set",
+          "for": [
+            "everyday",
+            "new"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "splurge",
+      "label": "Splurge",
+      "blurb": "The big gift for the cook who has the basics.",
+      "img": "https://images.unsplash.com/photo-1586208958839-06c17cacdf08",
+      "alt": "A bright modern kitchen",
+      "items": [
+        {
+          "id": "crispi",
+          "name": "Ninja Crispi Pro 6 qt glass air fryer",
+          "price": "$199",
+          "badge": "Best splurge",
+          "img": "https://images.unsplash.com/photo-1674504866626-fe4f19f68564",
+          "alt": "A countertop appliance on a white counter",
+          "why": "Cook, serve, store and reheat in the same glass dish, so there's no basket to scrub. One of this season's hottest kitchen gifts.",
+          "catch": "the glass dish is heavier than a normal air-fryer basket.",
+          "q": "ninja crispi pro 6 qt glass air fryer",
+          "for": [
+            "gadget",
+            "everyday"
+          ]
+        }
+      ]
+    }
+  ],
+  "method": "We cross-checked this season's kitchen gift guides with this week's Amazon best-sellers and price trackers, and kept items that suit a wide range of cooks. Prices were checked on 11 November 2026 and change daily around Black Friday, so check the price before you buy. We only call something a deal when we've seen the price drop.",
+  "updates": [
+    "11 November 2026: guide published. All-Clad price from PopSci's 2 November check; listed until 22 November."
+  ],
+  "sources": [
+    {
+      "name": "ThermoWorks: ThermoPop 2",
+      "url": "https://www.thermoworks.com/RT301WA"
+    },
+    {
+      "name": "Slickdeals: Instant Pot Duo 6 qt price history",
+      "url": "https://slickdeals.net/f/19624554-prime-64-99-6-quart-instant-pot-duo-7-in-1-electric-pressure-cooker-at-amazon"
+    },
+    {
+      "name": "Slickdeals: Lodge 6 qt enamel Dutch oven",
+      "url": "https://slickdeals.net/f/19333950-69-99-6-quart-lodge-essential-enamel-cast-iron-dutch-oven-at-amazon"
+    },
+    {
+      "name": "Slickdeals: Lodge 10.25\" skillet",
+      "url": "https://slickdeals.net/f/19711635-23-95-lodge-10-25-inch-cast-iron-skillet-250th-anniversary-logo-at-amazon"
+    }
+  ],
+  "more_html": "<a href=\"/finds/work-from-home-gifts/\">gifts for people who work from home</a> and <a href=\"/finds/gifts-under-25/\">12 gifts under $25</a>."
+}
