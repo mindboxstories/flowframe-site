@@ -182,7 +182,9 @@ def build_article(slug):
              f'<h1>{E(title)}</h1><div class="byline"><span class="who">{MARK_FF}FlowFrame team</span><span>Updated {E(nice_date(updated))}</span><span>Prices checked Nov 2026</span></div></div>'
              f'<figure>{img(h["img"], h["alt"], "(max-width:860px) 100vw, 520px", 1200, 900, eager=True)}</figure></div></section>')
     aside = (f'<aside class="toc"><b>On this page</b><ol>{tocl}</ol><div class="tbox"><p>Shopping for gifts this Black Friday?</p>'
-             '<a href="/finds/">See our gift guides</a></div></aside>')
+             '<a href="/finds/">See our gift guides</a></div>'
+             '<div class="tbox"><p>Learn on the go: audiobooks and podcasts for the commute. Free trial on Amazon.</p>'
+             '<a href="https://www.amazon.com/hz/audible/mlp?tag=digittouch-20" rel="nofollow sponsored noopener" target="_blank">Try Audible free</a></div></aside>')
     others = [c for c in AI_GUIDES if c["url"] != f"/guides/{slug}/"]
     body = head_ + f'<div class="s-wrap a-layout"><article class="a-body">{art}</article>{aside}</div>'
     body += ('<div class="s-wrap"><section class="sec"><div class="sec-head"><div><h2>Keep reading</h2></div></div>'

@@ -361,3 +361,19 @@ body.v6 .g-notes a{color:var(--ink);text-decoration-color:var(--accent)}
 @media (prefers-reduced-motion:reduce){body.v6 *{transition:none!important;animation:none!important}}
 
 .ft .brand .mark{border-radius:9px;box-shadow:0 0 0 1.5px rgba(255,255,255,.28)}
+
+/* v6.1: UK link under each product + free-trial extras (Amazon bounties) */
+body.v6 .g-uk{display:block;text-align:center;margin:10px 0 0;font-size:13.5px;font-weight:600;color:var(--muted);text-decoration:none}
+body.v6 .g-uk:hover{color:var(--ink);text-decoration:underline}
+.g-extras{padding-top:88px}
+.g-ex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.g-ex.n1{grid-template-columns:minmax(0,640px)}
+.g-extra{background:var(--wash);border-radius:var(--r-lg);padding:28px 30px;display:flex;flex-direction:column;align-items:flex-start}
+.g-extra .k{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:#fff;padding:5px 11px;border-radius:999px;margin:0 0 14px}
+.g-extra h3{font-size:22px;margin:0 0 8px}
+.g-extra p{margin:0 0 20px;color:var(--text);font-size:15.5px;line-height:1.6}
+body.v6 .g-extra a{margin-top:auto;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:12px 20px;border-radius:999px;transition:background .15s}
+body.v6 .g-extra a:hover{background:var(--accent-ink)}
+.g-extra a svg{width:15px;height:15px}
+@media (max-width:760px){.g-ex{grid-template-columns:1fr}.g-extras{padding-top:64px}.g-extra{padding:24px 22px}}
+.toc .tbox + .tbox{margin-top:14px;background:var(--wash)}

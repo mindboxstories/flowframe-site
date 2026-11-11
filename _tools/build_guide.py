@@ -12,12 +12,38 @@ from chrome import head, top, footer, mosaic, split_hero, ARROW
 E = html.escape
 SITE = "https://flowframe.shop"
 TAG = "digittouch-20"
+TAG_UK = "digittouch-21"
+
+# Amazon bounty pages (fixed fee per sign-up, nothing to buy). Rates: Associates
+# Standard Commission Income Statement. Keys are used by a guide's "extras" list.
+EXTRAS = {
+    "prime": {"k": "Free trial", "h": "New to Amazon Prime?",
+              "p": "Start a free trial before you order. Prime members get free delivery on eligible items, so it can help with last-minute gifts.",
+              "cta": "Try Prime free", "url": f"https://www.amazon.com/prime?tag={TAG}"},
+    "audible": {"k": "Free trial", "h": "Audible for the commute or the coffee break",
+                "p": "Audiobooks and podcasts to play while they cook, walk or focus. They can try it free first, and Audible gift memberships are on Amazon too.",
+                "cta": "Try Audible free", "url": f"https://www.amazon.com/hz/audible/mlp?tag={TAG}"},
+}
 
 
 def amazon(item):
     if item.get("asin"):
         return f"https://www.amazon.com/dp/{item['asin']}?tag={TAG}"
     return "https://www.amazon.com/s?" + urllib.parse.urlencode({"k": item["q"], "tag": TAG})
+
+
+def amazon_uk(item):
+    return "https://www.amazon.co.uk/s?" + urllib.parse.urlencode({"k": item["q"], "tag": TAG_UK})
+
+
+def extras(keys):
+    if not keys:
+        return ""
+    cards = "".join(f'<div class="g-extra"><span class="k">{E(EXTRAS[k]["k"])}</span><h3>{E(EXTRAS[k]["h"])}</h3><p>{E(EXTRAS[k]["p"])}</p>'
+                    f'<a href="{E(EXTRAS[k]["url"])}" rel="nofollow sponsored noopener" target="_blank">{E(EXTRAS[k]["cta"])} {ARROW}</a></div>'
+                    for k in keys)
+    return (f'<section class="g-extras s-wrap"><div class="sec-head"><div><h2>Free extras from Amazon</h2>'
+            f'<p>Nothing to buy: these are free trials, and the terms are on Amazon.</p></div></div><div class="g-ex n{len(keys)}">{cards}</div></section>')
 
 
 def img(src, alt, sizes, ratio="4/3", eager=False, widths=(480, 800, 1200)):
@@ -40,7 +66,8 @@ def card(item, people, short):
 <div class="g-info"><h3>{E(item["name"])}</h3><p>{E(item["why"])}</p>
 <ul class="g-for" aria-label="Good for">{tags}</ul>
 <p class="g-catch"><strong>The catch:</strong> {E(item["catch"])}</p>
-<a class="g-cta" href="{E(amazon(item))}" rel="nofollow sponsored noopener" target="_blank">Check price on Amazon {ARROW}</a></div></article>'''
+<a class="g-cta" href="{E(amazon(item))}" rel="nofollow sponsored noopener" target="_blank">Check price on Amazon {ARROW}</a>
+<a class="g-uk" href="{E(amazon_uk(item))}" rel="nofollow sponsored noopener" target="_blank">In the UK? Shop Amazon.co.uk</a></div></article>'''
 
 
 PIN_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.1-.8 3.3-.2 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.6 2.2-4.6 4.4 0 .9.3 1.8.8 2.3.1.1.1.2.1.3l-.3 1.2c0 .2-.2.3-.4.2-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg>'
@@ -101,6 +128,7 @@ def build(data):
 <p class="g-disclosure">As an Amazon Associate, Digittouch Finds earns from qualifying purchases. Buying through our links costs you nothing extra and never changes our picks. <a href="/disclosure/">How we make money</a>.</p></section>
 <section class="g-top s-wrap" id="top-picks"><div class="sec-head"><div><h2>If you only buy one</h2><p>Our three favourites from the list, for three different kinds of people.</p></div></div><ol>{tops}</ol></section>
 {bands}
+{extras(data.get("extras", ["prime"]))}
 <section class="g-table s-wrap"><div class="sec-head"><div><h2>All {n} at a glance</h2><p>Tap a name to jump to it.</p></div></div><div class="tw"><table><thead><tr><th>Gift</th><th>Price</th><th>Best for</th></tr></thead><tbody>{rows}</tbody></table></div></section>
 <div class="s-wrap"><section class="g-save"><img src="/pins/{data["pin"]}" alt="Pinterest pin for this guide" width="1000" height="1500" loading="lazy">
 <div><h2>Save this list for later</h2><p>Pin it to a board and come back when the Black Friday prices drop on {E(data["deal_day"])}.</p>
