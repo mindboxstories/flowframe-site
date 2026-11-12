@@ -37,7 +37,8 @@ def head(title, desc, url, theme, og=None, extra_css=""):
             f'<meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="website">'
             f'<meta property="og:url" content="https://flowframe.shop{url}">{ogimg}'
             f'<meta name="theme-color" content="#FBF7F2"><link rel="icon" href="/{"favicon-finds" if finds else "favicon"}.svg" type="image/svg+xml">'
-            f'{FONTS}<link rel="stylesheet" href="/site.css?v={SITE_CSS_V}">{extra_css}')
+            f'{FONTS}<link rel="stylesheet" href="/site.css?v={SITE_CSS_V}">{extra_css}'
+            '<script data-goatcounter="https://flowframe.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>')
 
 
 def top(theme, active=""):
