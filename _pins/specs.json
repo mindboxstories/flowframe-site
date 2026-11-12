@@ -1,0 +1,10 @@
+[
+ {"id":"s-u25-a","theme":"finds","layout":"A","img":"1607900177462-ac553f1f5d97","chip":"Gift guide · Under $25","head":"Small gifts.<br><em>Big “you get me”</em> energy.","sub":"12 under-$25 gifts they’ll actually use, with the honest catch on each."},
+ {"id":"s-her-b","theme":"finds","layout":"B","img":"1513885535751-8b9238bd345a","plabel":"All under","price":"$60","chip":"Gifts for her","head":"For the woman who <em>has everything</em>","tags":["Silk eye mask","Owala tumbler","Gold cuff","LEGO plants"]},
+ {"id":"s-pets-c","theme":"finds","layout":"C","imgs":["1675543999462-3b3157b044c2","1571131116858-2295ade82a72","1591946614720-90a587da4a36"],"chip":"Under $55","head":"Their pet is family. <em>Gift like it.</em>","sub":"9 gifts for dog and cat people"},
+ {"id":"s-kit-d","theme":"finds","layout":"D","img":"1603185730021-ddc0c8097059","plabel":"From","price":"$16","head":"For the one who<br><em style=\"color:var(--sun)\">cooks for everyone</em>"},
+ {"id":"s-hair-e","theme":"finds","layout":"E","img":"1769029270594-26ce033ca6fc","num":"8","head":"hair tool gifts on <em>every wish list</em>","chip":"From $29 to a splurge","sub":"Salon-style hair at home, sorted by budget."},
+ {"id":"s-wfh-a","theme":"finds","layout":"A","img":"1499951360447-b19be8fe80f5","chip":"Gift guide · Home office","head":"Make their Monday desk <em>feel like a treat</em>","sub":"10 work-from-home gifts, from a $20 desk mat to a splurge."},
+ {"id":"s-ff-notes-e","theme":"ff","layout":"E","img":"1588196749597-9ff075ee6b5b","num":"0","head":"meeting notes <em>typed by you</em>. Ever again.","chip":"AI note-takers compared","sub":"Free plans, prices and the catch on each."},
+ {"id":"s-ff-plan-b","theme":"ff","layout":"B","img":"1513128034602-7814ccaddd4e","plabel":"Free plans","price":"7","chip":"AI planning tools","head":"Plan all of 2027 in <em>one afternoon</em>","tags":["Reclaim.ai","MeetGeek","ClickUp","Gamma"]}
+]
