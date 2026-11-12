@@ -960,5 +960,192 @@
   "chip": "Plan 2027",
   "head": "Less busywork. <em>More of your year.</em>",
   "sub": "Reclaim.ai, ClickUp, Gamma and 4 more, with free plans."
+ },
+ {
+  "id": "bf-g-u25",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1513201099705-a9746e1e201f",
+  "num": "12",
+  "head": "Black Friday gifts <em>under $25</em>",
+  "chip": "Black Friday 2026",
+  "sub": "Your Secret Santa list, done early."
+ },
+ {
+  "id": "bf-g-her",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1602521163308-23e552671e38",
+  "chip": "Black Friday · Gifts for her",
+  "head": "Shop for her <em>before the rush</em>",
+  "sub": "11 gifts from $16 worth watching this Black Friday."
+ },
+ {
+  "id": "bf-g-kit",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1598103442097-8b74394b95c6",
+   "1622001545761-9bd12a4b465b",
+   "1590794056226-79ef3a8147e1"
+  ],
+  "chip": "Black Friday watchlist",
+  "head": "Kitchen gifts to <em>watch this Black Friday</em>",
+  "sub": "8 picks, from a $16 zester to a splurge"
+ },
+ {
+  "id": "bf-g-wfh",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1511467687858-23d96c32e4ae",
+  "plabel": "From",
+  "price": "$20",
+  "chip": "Black Friday 2026",
+  "head": "Desk upgrades for your <em>Black Friday list</em>",
+  "tags": [
+   "MX Master 4",
+   "Ember Mug",
+   "ScreenBar",
+   "Kindle"
+  ]
+ },
+ {
+  "id": "bf-g-hair",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1785456283212-338f5bc44d50",
+  "plabel": "From",
+  "price": "$29",
+  "head": "Hair-tool gifts on <em style=\"color:var(--sun)\">every Black Friday list</em>",
+  "size": 92
+ },
+ {
+  "id": "bf-g-pets",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1672355422293-a912bc3a1d90",
+  "chip": "Black Friday · Pet lovers",
+  "head": "Don’t forget <em>the pets</em> this Black Friday",
+  "sub": "9 gifts for dog and cat people, all under $55."
+ },
+ {
+  "id": "bf-p-airtag",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1603508102977-02688e3265fd",
+  "head": "The stocking stuffer <em>they’ll actually use</em>",
+  "plabel": "About",
+  "price": "$23",
+  "chip": "Black Friday watchlist",
+  "sub": "Apple AirTag (2nd generation). Clip it to keys, a bag or a suitcase and find it from an iPhone."
+ },
+ {
+  "id": "bf-p-instantpot",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1544233726-9f1d2b27be8b",
+  "head": "Put this on your <em style=\"color:var(--sun)\">Black Friday list</em>",
+  "plabel": "About",
+  "price": "$70",
+  "size": 92
+ },
+ {
+  "id": "bf-p-kindle",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1676107779674-f77343861e81",
+  "head": "The Black Friday gift for <em>every reader</em>",
+  "chip": "Black Friday watchlist",
+  "sub": "Kindle Colorsoft. A glare-free colour screen for books, comics and highlights."
+ },
+ {
+  "id": "bf-p-ember",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1500989145603-8e7ef71d639e",
+  "head": "Coffee that <em>stays hot</em> through every call",
+  "plabel": "From",
+  "price": "$90",
+  "chip": "Black Friday watchlist",
+  "sub": "Ember Mug 2 (14 oz). Keeps coffee at the exact temperature they choose in the app, through back-to-back meetings."
+ },
+ {
+  "id": "bf-p-mxmaster",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1511467687858-23d96c32e4ae",
+  "head": "Black Friday desk upgrade: <em style=\"color:var(--sun)\">this mouse</em>",
+  "plabel": "About",
+  "price": "$120",
+  "size": 92
+ },
+ {
+  "id": "bf-p-laifen",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1727364438136-6edc10ef0a52",
+  "head": "The fast dryer to <em>watch this Black Friday</em>",
+  "chip": "Black Friday watchlist",
+  "sub": "Laifen Swift Special high-speed dryer. A light, compact high-speed dryer for a fraction of the premium-brand price."
+ },
+ {
+  "id": "bf-p-flexfusion",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1580618672591-eb180b1a973f",
+  "head": "The Airwrap rival <em>to watch</em>",
+  "plabel": "About",
+  "price": "$299",
+  "chip": "Black Friday watchlist",
+  "sub": "Shark FlexFusion air styler and straightener. Dries, curls and straightens with swappable attachments."
+ },
+ {
+  "id": "bf-p-airwrap",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1785456283212-338f5bc44d50",
+  "head": "The splurge on <em style=\"color:var(--sun)\">every</em> Black Friday list",
+  "plabel": "About",
+  "price": "$749",
+  "size": 92
+ },
+ {
+  "id": "bf-p-dutchoven",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1590794056226-79ef3a8147e1",
+  "head": "The pot they’ll use <em>for decades</em>",
+  "chip": "Black Friday watchlist",
+  "sub": "Lodge 6 qt enameled Dutch oven. The look and job of a much pricier French oven, for braises, soups and bread."
+ },
+ {
+  "id": "bf-p-allclad",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1624031000828-dba1b7a3e4ce",
+  "head": "Pro pans to <em>watch</em> this Black Friday",
+  "plabel": "About",
+  "price": "$90",
+  "chip": "Black Friday watchlist",
+  "sub": "All-Clad HA1 10\" and 12\" fry pan set. Two hard-anodised nonstick pans from a top brand."
+ },
+ {
+  "id": "bf-p-owala",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1789276392869-8103c256a501",
+  "head": "The tumbler she’ll <em>carry everywhere</em>",
+  "chip": "Black Friday watchlist",
+  "sub": "Owala FreeSip 40 oz tumbler. A big insulated tumbler with a built-in straw and a side handle, in a lot of colours."
+ },
+ {
+  "id": "bf-p-crispi",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1674504866626-fe4f19f68564",
+  "head": "Air fryer meets <em style=\"color:var(--sun)\">serving dish</em>",
+  "plabel": "About",
+  "price": "$199",
+  "size": 92
  }
 ]

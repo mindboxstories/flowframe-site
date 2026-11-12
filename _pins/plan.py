@@ -109,6 +109,45 @@ for slug,g in G.items():
 for k,f in enumerate(FF):
     sp=dict(id=f'f-{k+1:02d}',theme='ff',**{x:y for x,y in f.items() if x not in('link','angle','title')}); specs.append(sp)
     ff.append(dict(id=sp['id'],link=f['link'],layout=f['layout'],angle=f['angle'],kind='guide',title=f['title'],hook=strip(f['head'])))
+
+# --- Black Friday 2026 batch (board 250372129223714487). Honest framing: "watchlist", no discount claims.
+BF_BOARD='250372129223714487'
+BFG=[
+ ('gifts-under-25',dict(layout='E',img='1513201099705-a9746e1e201f',num='12',head='Black Friday gifts <em>under $25</em>',chip='Black Friday 2026',sub='Your Secret Santa list, done early.'),'number','12 Black Friday Gift Ideas Under $25 (2026)'),
+ ('gifts-for-her-under-60',dict(layout='A',img='1602521163308-23e552671e38',chip='Black Friday · Gifts for her',head='Shop for her <em>before the rush</em>',sub='11 gifts from $16 worth watching this Black Friday.'),'urgency','Black Friday Gifts for Her Under $60 (2026)'),
+ ('kitchen-gifts-home-cook',dict(layout='C',imgs=['1598103442097-8b74394b95c6','1622001545761-9bd12a4b465b','1590794056226-79ef3a8147e1'],chip='Black Friday watchlist',head='Kitchen gifts to <em>watch this Black Friday</em>',sub='8 picks, from a $16 zester to a splurge'),'watchlist','Black Friday Kitchen Gift Ideas for the Home Cook'),
+ ('work-from-home-gifts',dict(layout='B',img='1511467687858-23d96c32e4ae',plabel='From',price='$20',chip='Black Friday 2026',head='Desk upgrades for your <em>Black Friday list</em>',tags=['MX Master 4','Ember Mug','ScreenBar','Kindle']),'watchlist','Black Friday Work-From-Home Gift Ideas (2026)'),
+ ('hair-styler-gifts',dict(layout='D',img='1785456283212-338f5bc44d50',plabel='From',price='$29',head='Hair-tool gifts on <em style="color:var(--sun)">every Black Friday list</em>',size=92),'aspiration','Black Friday Hair Tool Gifts: Dyson, Shark, Laifen and More'),
+ ('pet-lover-gifts-under-55',dict(layout='A',img='1672355422293-a912bc3a1d90',chip='Black Friday · Pet lovers',head='Don’t forget <em>the pets</em> this Black Friday',sub='9 gifts for dog and cat people, all under $55.'),'humour','Black Friday Gifts for Pet Lovers Under $55'),
+]
+BFP=[  # (slug,item id,layout,head,angle)
+ ('gifts-under-25','airtag','B','The stocking stuffer <em>they’ll actually use</em>','daily-use'),
+ ('kitchen-gifts-home-cook','instantpot','D','Put this on your <em style="color:var(--sun)">Black Friday list</em>','watchlist'),
+ ('work-from-home-gifts','kindle','A','The Black Friday gift for <em>every reader</em>','sentimental'),
+ ('work-from-home-gifts','ember','B','Coffee that <em>stays hot</em> through every call','relatable'),
+ ('work-from-home-gifts','mxmaster','D','Black Friday desk upgrade: <em style="color:var(--sun)">this mouse</em>','watchlist'),
+ ('hair-styler-gifts','laifen','A','The fast dryer to <em>watch this Black Friday</em>','watchlist'),
+ ('hair-styler-gifts','flexfusion','B','The Airwrap rival <em>to watch</em>','deal'),
+ ('hair-styler-gifts','airwrap','D','The splurge on <em style="color:var(--sun)">every</em> Black Friday list','aspiration'),
+ ('kitchen-gifts-home-cook','dutchoven','A','The pot they’ll use <em>for decades</em>','sentimental'),
+ ('kitchen-gifts-home-cook','allclad','B','Pro pans to <em>watch</em> this Black Friday','watchlist'),
+ ('gifts-for-her-under-60','owala','A','The tumbler she’ll <em>carry everywhere</em>','daily-use'),
+ ('kitchen-gifts-home-cook','crispi','D','Air fryer meets <em style="color:var(--sun)">serving dish</em>','novelty'),
+]
+ITEMS={(slug,it['id']):it for slug,g in G.items() for b in g['bands'] for it in b['items']}
+bfg=[]; bfp=[]
+for k,(slug,gp,angle,title) in enumerate(BFG):
+    sp=dict(id=f'bf-g-{SHORT[slug]}',theme='finds',**gp); specs.append(sp)
+    bfg.append(dict(id=sp['id'],slug=slug,layout=gp['layout'],angle=angle,kind='guide',title=title,hook=strip(gp['head'])))
+for slug,iid,lay,head,angle in BFP:
+    it=ITEMS[(slug,iid)]; price=it['price'].replace('$','').replace('-','–'); lab='From' if '–' in price else 'About'
+    sp=dict(id=f'bf-p-{iid}',theme='finds',layout=lay,img=it['img'].split('photo-')[1].split('?')[0],head=head)
+    if iid=='mxmaster': sp['img']='1511467687858-23d96c32e4ae'
+    if lay=='B': sp.update(plabel=lab,price='$'+price.split('–')[0],chip='Black Friday watchlist',sub=f"{it['name']}. {it['why'].split('.')[0]}.")
+    if lay=='D': sp.update(plabel=lab,price='$'+price.split('–')[0],size=92)
+    if lay=='A': sp.update(chip='Black Friday watchlist',sub=f"{it['name']}. {it['why'].split('.')[0]}.")
+    specs.append(sp)
+    bfp.append(dict(id=sp['id'],slug=slug,layout=lay,angle=angle,kind='product',item=it['name'],price=it['price'],why=it['why'],title=f"Black Friday 2026: {it['name']}"[:100],hook=strip(head)))
 json.dump(specs,open(os.path.join(ROOT,'specs.json'),'w'),indent=1,ensure_ascii=False)
 # --- schedule: interleave guides; product pins and guide pins mixed
 from itertools import zip_longest
@@ -135,5 +174,20 @@ for p in ff:
     desc=f"{p['hook']}. Free plans, prices and the honest catch on each tool, in plain English. #AItools #productivity #worksmarter #affiliate Some links may be affiliate links; we may earn a commission at no cost to you."
     sched.append(dict(id=p['id'],acct='6af0cdc55128f5755abb20cc',board='263953296849938525',when=t,title=p['title'],content=desc,
       link=f"https://flowframe.shop{p['link']}?utm_source=pinterest&utm_medium=social&utm_campaign={p['id']}",img=f"https://flowframe.shop/pins/v7/{p['id']}.jpg",layout=p['layout'],angle=p['angle'],kind=p['kind']))
+
+# BF schedule: 2/day at 11:00 and 22:00 UTC (no clash with existing slots), 13-21 Nov, guide and product pins interleaved
+bford=[]; gi=iter(bfg); pi=iter(bfp)
+for k in range(len(bfg)+len(bfp)):
+    nxt=next(gi,None) if k%3==0 else None
+    bford.append(nxt or next(pi,None) or next(gi))
+d=dt.date(2026,11,13); i=0
+for p in bford:
+    t=f"{d}T{['11:00','22:00'][i%2]}:00.000Z"; i+=1
+    if i%2==0: d+=dt.timedelta(days=1)
+    g=G[p['slug']]
+    if p['kind']=='guide': desc=f"{p['hook']}. {g['description']} Prices change daily, so check the current price before you buy. #blackfriday #blackfriday2026 {TAGS[p['slug']]} #affiliate As an Amazon Associate I earn from qualifying purchases."
+    else: desc=f"{p['item']} (around {p['price']} before sales): {p['why']} Add it to your Black Friday watchlist and check the current price. More picks in our {g['title'].split(' (')[0].lower()} guide. #blackfriday #blackfriday2026 {TAGS[p['slug']]} #affiliate As an Amazon Associate I earn from qualifying purchases."
+    sched.append(dict(id=p['id'],acct='6af0d3fa9849c2888c6c4d05',board=BF_BOARD,when=t,title=p['title'],content=desc[:500],
+      link=f"https://flowframe.shop/finds/{p['slug']}/?utm_source=pinterest&utm_medium=social&utm_campaign={p['id']}",img=f"https://flowframe.shop/pins/v7/{p['id']}.jpg",layout=p['layout'],angle=p['angle'],kind=p['kind'],batch='bf'))
 json.dump(sched,open(os.path.join(ROOT,'schedule.json'),'w'),indent=1,ensure_ascii=False)
 print(len(specs),'specs',len(finds),'finds',len(ff),'ff; finds last slot',slots[len(order)-1])
