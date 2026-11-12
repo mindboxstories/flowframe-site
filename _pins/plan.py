@@ -103,6 +103,7 @@ for slug,g in G.items():
             if lay=='D': sp.update(plabel=lab,price='$'+price.split('–')[0],head=head.replace('<em>','<em style="color:var(--sun)">'))
             if lay=='A': sp.update(chip=f"{it['name'][:34]} · ${price}",sub=it['why'].split('.')[0]+'.')
             if len(sp['price' if 'price' in sp else 'head'])>4 and lay in 'BD': sp['price']=sp['price'][:4]
+            if sp['id']=='p-wfh-mxmaster': sp['img']='1511467687858-23d96c32e4ae'
             specs.append(sp)
             finds.append(dict(id=sp['id'],slug=slug,layout=lay,angle=angle,kind='product',item=it['name'],price=it['price'],why=it['why'],title=f"{strip(head)} | {it['name']}"[:100],hook=strip(head)))
 for k,f in enumerate(FF):
