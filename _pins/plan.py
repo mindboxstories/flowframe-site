@@ -132,7 +132,7 @@ BFP=[  # (slug,item id,layout,head,angle)
  ('kitchen-gifts-home-cook','dutchoven','A','The pot they’ll use <em>for decades</em>','sentimental'),
  ('kitchen-gifts-home-cook','allclad','B','Pro pans to <em>watch</em> this Black Friday','watchlist'),
  ('gifts-for-her-under-60','owala','A','The tumbler she’ll <em>carry everywhere</em>','daily-use'),
- ('kitchen-gifts-home-cook','crispi','D','Air fryer meets <em style="color:var(--sun)">serving dish</em>','novelty'),
+ ('kitchen-gifts-home-cook','skillet','D','The pan they’ll <em style="color:var(--sun)">pass down</em>','sentimental'),
 ]
 ITEMS={(slug,it['id']):it for slug,g in G.items() for b in g['bands'] for it in b['items']}
 bfg=[]; bfp=[]
