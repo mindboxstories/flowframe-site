@@ -1,0 +1,219 @@
+{
+  "slug": "hair-styler-gifts",
+  "title": "8 Hair Tool Gifts for Her, From $29 to a Splurge (Black Friday 2026)",
+  "description": "Hair tool gifts by budget: hot air brushes under $60, fast dryers under $200 and the big-name stylers, each with the honest catch.",
+  "hero_title_html": "Hair tool gifts <span class=\"price\">from $29</span>",
+  "lede": "Eight hair tools people actually ask for this season, from a $29 blowout brush to the stylers on everyone's list, sorted by budget with the one thing to know before you buy each.",
+  "hero": {
+    "img": "https://images.unsplash.com/photo-1769029270594-26ce033ca6fc",
+    "alt": "A woman drying her long hair with a hairdryer"
+  },
+  "checked": "12 Nov 2026",
+  "deal_date": "2026-11-27",
+  "deal_label": "days to Black Friday",
+  "deal_day": "27 November",
+  "pin": "df-hair-v5.jpg",
+  "cta_label": "Shop by budget",
+  "ticker": [
+    "8 hair tool gifts",
+    "Under $60, under $200, a splurge",
+    "Prices checked 12 Nov",
+    "One honest catch on every pick",
+    "Black Friday is 27 November"
+  ],
+  "people": {
+    "volume": "For big, bouncy blowouts",
+    "sleek": "For sleek and straight",
+    "quick": "For the one always in a rush",
+    "curls": "For curls and waves",
+    "treat": "For a big treat"
+  },
+  "people_short": {
+    "volume": "Volume",
+    "sleek": "Sleek",
+    "quick": "In a rush",
+    "curls": "Curls",
+    "treat": "Big treat"
+  },
+  "top_picks": [
+    {
+      "id": "revlon",
+      "why": "The best value"
+    },
+    {
+      "id": "flexfusion",
+      "why": "The best deal right now"
+    },
+    {
+      "id": "laifen",
+      "why": "The best dryer for the money"
+    }
+  ],
+  "bands": [
+    {
+      "id": "under60",
+      "label": "Under $60",
+      "blurb": "Hot air brushes and quick fixes that feel like a salon trip.",
+      "img": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388",
+      "alt": "A black hair brush",
+      "items": [
+        {
+          "id": "hottools",
+          "name": "Hot Tools 24K Gold One-Step Blowout",
+          "price": "$29",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1522336284037-91f7da073525",
+          "alt": "A hair dryer and a red comb",
+          "why": "A dryer and round brush in one for a quick at-home blowout, at a stocking-filler price.",
+          "catch": "it's bulky to pack and works best on medium-to-long hair.",
+          "q": "hot tools 24k gold one-step blowout dryer",
+          "for": [
+            "volume",
+            "quick"
+          ]
+        },
+        {
+          "id": "tymo",
+          "name": "TYMO Ring hair straightening brush",
+          "price": "$47",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1712641970787-e178ca70c6c4",
+          "alt": "A woman holding a hair brush",
+          "why": "A heated brush for fast smoothing between washes. Easier than a flat iron for beginners.",
+          "catch": "the finish is softer than a flat iron, not pin-straight.",
+          "q": "tymo ring hair straightener brush",
+          "for": [
+            "sleek",
+            "quick"
+          ]
+        },
+        {
+          "id": "revlon",
+          "name": "Revlon One-Step Volumizer PLUS 2.0",
+          "price": "$49",
+          "price_note": "approx.",
+          "badge": "Best value",
+          "img": "https://images.unsplash.com/photo-1734111719430-fe4a3973f8af",
+          "alt": "A round brush styling long blonde hair",
+          "why": "The best-known hot air brush: dries and adds volume in one pass. A gift that gets used every week.",
+          "catch": "it's heavy for long sessions, and the big barrel suits medium-to-long hair.",
+          "q": "revlon one-step volumizer plus 2.0",
+          "for": [
+            "volume",
+            "quick"
+          ]
+        },
+        {
+          "id": "knotdr",
+          "name": "Conair InfinitiPRO The Knot Dr. dryer brush",
+          "price": "$51",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1779398261387-3399331438f4",
+          "alt": "Wavy hair and a hand holding a brush",
+          "why": "Dries and smooths with a flexible bristle head that glides through knots.",
+          "catch": "it gives less lift than a round-barrel brush.",
+          "q": "conair infinitipro knot dr all-in-one dryer brush",
+          "for": [
+            "sleek",
+            "curls"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mid",
+      "label": "Under $200",
+      "blurb": "Fast dryers and stylers that rival the big names for less.",
+      "img": "https://images.unsplash.com/photo-1522338140262-f46f5913618a",
+      "alt": "A hand holding a hair dryer",
+      "items": [
+        {
+          "id": "laifen",
+          "name": "Laifen Swift Special high-speed dryer",
+          "price": "$170",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1727364438136-6edc10ef0a52",
+          "alt": "A black hair dryer",
+          "why": "A light, compact high-speed dryer for a fraction of the premium-brand price.",
+          "catch": "it comes with fewer attachments than premium rivals.",
+          "q": "laifen swift special hair dryer",
+          "for": [
+            "quick",
+            "treat"
+          ]
+        },
+        {
+          "id": "t3duo",
+          "name": "T3 AireBrush Duo",
+          "price": "$190",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1712481846916-8f73ffc2067a",
+          "alt": "A woman blow-drying her hair",
+          "why": "Swap between a round brush for volume and a paddle brush for smooth, sleek hair.",
+          "catch": "replacement brush heads cost extra.",
+          "q": "t3 airebrush duo",
+          "for": [
+            "volume",
+            "sleek"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "splurge",
+      "label": "The splurge",
+      "blurb": "The stylers on everyone's wish list.",
+      "img": "https://images.unsplash.com/photo-1778731660069-c26ea0eb6567",
+      "alt": "A bathroom vanity with an illuminated mirror",
+      "items": [
+        {
+          "id": "flexfusion",
+          "name": "Shark FlexFusion air styler and straightener",
+          "price": "$299",
+          "badge": "Big drop",
+          "img": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f",
+          "alt": "A stylist using a blow dryer and round brush",
+          "why": "Dries, curls and straightens with swappable attachments. Reviewed found it at $299 on 6 November, down from its usual $430.",
+          "catch": "still a big spend; if they only dry their hair, a good dryer costs far less.",
+          "q": "shark flexfusion",
+          "for": [
+            "curls",
+            "sleek",
+            "treat"
+          ]
+        },
+        {
+          "id": "airwrap",
+          "name": "Dyson Airwrap i.d. multi-styler",
+          "price": "$749",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1785456283212-338f5bc44d50",
+          "alt": "Two women with long wavy hair",
+          "why": "The famous one: curls, waves, smooths and dries, with app-guided settings.",
+          "catch": "it's very expensive; the Shark FlexFusion does much of the same for well under half the price.",
+          "q": "dyson airwrap id multi-styler",
+          "for": [
+            "curls",
+            "treat"
+          ]
+        }
+      ]
+    }
+  ],
+  "method": "We cross-checked this season's hair tool gift guides with dated retailer prices and price trackers, and kept tools that suit a wide range of hair types. Prices were checked on 12 November 2026 and change daily around Black Friday, so check the price before you buy. We only call something a deal when a dated price check shows a real drop.",
+  "updates": [
+    "11 November 2026: first version (2 picks).",
+    "12 November 2026: expanded to 8 picks across three budgets. Shark FlexFusion price from Reviewed's 6 November check; other prices approximate."
+  ],
+  "sources": [
+    {
+      "name": "Reviewed: Shark FlexFusion at $299 (6 Nov 2026)",
+      "url": "https://www.reviewed.com/deals/features/shark-flexfusion-deal"
+    },
+    {
+      "name": "WishDeck: best hair tools to gift (2026)",
+      "url": "https://www.wishdeck.com/blog/best-hair-tools-gift-air-stylers-fast-results-2026"
+    }
+  ],
+  "more_html": "<a href=\"/finds/gifts-for-her-under-60/\">gifts for her under $60</a> and <a href=\"/finds/gifts-under-25/\">12 gifts under $25</a>."
+}

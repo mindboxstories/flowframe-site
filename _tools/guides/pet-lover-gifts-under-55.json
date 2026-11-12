@@ -1,0 +1,227 @@
+{
+  "slug": "pet-lover-gifts-under-55",
+  "title": "9 Gifts for Pet Lovers Under $55 (Black Friday 2026)",
+  "description": "Gifts for dog and cat lovers under $55: toys, a water fountain, a fur roller and walk gear, each with the honest catch.",
+  "hero_title_html": "Pet lover gifts <span class=\"price\">under $55</span>",
+  "lede": "Nine gifts for anyone with a dog or cat, from a $9 toy to a fur roller they'll use weekly, sorted by pet with the one thing to know before you buy each.",
+  "hero": {
+    "img": "https://images.unsplash.com/photo-1675543999462-3b3157b044c2",
+    "alt": "A dog in a Santa hat sitting on a sofa"
+  },
+  "checked": "12 Nov 2026",
+  "deal_date": "2026-11-27",
+  "deal_label": "days to Black Friday",
+  "deal_day": "27 November",
+  "pin": "df-pets-v5.jpg",
+  "cta_label": "Shop by pet",
+  "ticker": [
+    "9 gifts for pet lovers",
+    "Dogs, cats and the whole home",
+    "Everything under $55",
+    "One honest catch on every pick",
+    "Black Friday is 27 November"
+  ],
+  "people": {
+    "dog": "For a dog",
+    "cat": "For a cat",
+    "busy": "For a pet home alone",
+    "shed": "For a shedding pet",
+    "walk": "For the daily walker"
+  },
+  "people_short": {
+    "dog": "Dog",
+    "cat": "Cat",
+    "busy": "Home alone",
+    "shed": "Shedding",
+    "walk": "Walker"
+  },
+  "top_picks": [
+    {
+      "id": "chomchom",
+      "why": "The one they'll use every week"
+    },
+    {
+      "id": "fountain",
+      "why": "The best for cats"
+    },
+    {
+      "id": "kong",
+      "why": "The classic for dogs"
+    }
+  ],
+  "bands": [
+    {
+      "id": "dogs",
+      "label": "For dogs",
+      "blurb": "Toys and walk gear dogs (and owners) actually use.",
+      "img": "https://images.unsplash.com/photo-1591946614720-90a587da4a36",
+      "alt": "A dog holding a plush toy",
+      "items": [
+        {
+          "id": "kong",
+          "name": "KONG Classic dog toy",
+          "price": "$12",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1715033749994-55f16a83c236",
+          "alt": "A beagle puppy chewing a toy",
+          "why": "The stuffable rubber toy dog owners swear by. Fill it with treats to keep a dog busy.",
+          "catch": "pick the right size for the dog; too small is a choking risk.",
+          "q": "kong classic dog toy",
+          "for": [
+            "dog",
+            "busy"
+          ]
+        },
+        {
+          "id": "snuffle",
+          "name": "Snuffle mat",
+          "price": "$22–45",
+          "img": "https://images.unsplash.com/photo-1715033812966-12418510f9ab",
+          "alt": "A beagle sniffing the grass",
+          "why": "Hide kibble or treats in the fabric and the dog sniffs them out. An easy stocking filler.",
+          "catch": "strong chewers can shred the fabric; supervise the first few uses.",
+          "q": "snuffle mat for dogs",
+          "for": [
+            "dog",
+            "busy"
+          ]
+        },
+        {
+          "id": "slowbowl",
+          "name": "Outward Hound Fun Feeder slow bowl",
+          "price": "$8",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1695023267262-7f4ab64152b2",
+          "alt": "A dog eating from a metal bowl",
+          "why": "A maze-shaped bowl that turns a gulped dinner into a puzzle.",
+          "catch": "the ridges need a brush to clean properly.",
+          "q": "outward hound fun feeder slow bowl",
+          "for": [
+            "dog"
+          ]
+        },
+        {
+          "id": "harness",
+          "name": "Kurgo front-clip dog harness",
+          "price": "$40",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1648304887391-a6c2cf2228e4",
+          "alt": "A man walking a dog on a lead",
+          "why": "A padded harness with a front clip for more control on everyday walks.",
+          "catch": "measure the dog's chest first; sizes are specific.",
+          "q": "kurgo dog harness front clip",
+          "for": [
+            "dog",
+            "walk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cats",
+      "label": "For cats",
+      "blurb": "Play and water, the two things cats are fussy about.",
+      "img": "https://images.unsplash.com/photo-1672355422293-a912bc3a1d90",
+      "alt": "A cat in a Santa hat among Christmas decorations",
+      "items": [
+        {
+          "id": "fountain",
+          "name": "Cat water fountain",
+          "price": "$30–55",
+          "img": "https://images.unsplash.com/photo-1571131116858-2295ade82a72",
+          "alt": "A cat drinking water from a bowl",
+          "why": "Many cats prefer moving water to a still bowl. Pick one with an easy-to-clean pump.",
+          "catch": "filters need replacing regularly, a small ongoing cost.",
+          "q": "cat water fountain",
+          "for": [
+            "cat"
+          ]
+        },
+        {
+          "id": "hotpursuit",
+          "name": "SmartyKat Hot Pursuit cat toy",
+          "price": "$12",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1638826595775-e2eae86cda8e",
+          "alt": "A cat playing with a toy on the floor",
+          "why": "A wand moves unpredictably under a fabric cover so cats can stalk and pounce.",
+          "catch": "it runs on batteries and is noisy on hard floors.",
+          "q": "smartykat hot pursuit cat toy",
+          "for": [
+            "cat",
+            "busy"
+          ]
+        },
+        {
+          "id": "tracks",
+          "name": "Catstages Tower of Tracks",
+          "price": "$9",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1516750105099-4b8a83e217ee",
+          "alt": "A grey kitten sitting on the floor",
+          "why": "Three levels of rolling balls for solo play. Cheap, cheerful and a good stocking filler.",
+          "catch": "it's light and can slide on smooth floors.",
+          "q": "catstages tower of tracks",
+          "for": [
+            "cat",
+            "busy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "label": "For every pet home",
+      "blurb": "For the owner as much as the pet.",
+      "img": "https://images.unsplash.com/photo-1774440865482-81a8c9b92e76",
+      "alt": "A beagle puppy asleep on a sofa",
+      "items": [
+        {
+          "id": "chomchom",
+          "name": "ChomChom reusable pet hair roller",
+          "price": "$18",
+          "price_note": "approx.",
+          "badge": "Our top pick",
+          "img": "https://images.unsplash.com/photo-1610123172037-c970be4d24d7",
+          "alt": "A dog on a brown sofa",
+          "why": "Lifts pet hair off sofas and beds with no sticky sheets to replace. A gift they'll use every week.",
+          "catch": "it works best on upholstery, less well on clothes.",
+          "q": "chomchom roller pet hair remover",
+          "for": [
+            "shed",
+            "dog",
+            "cat"
+          ]
+        },
+        {
+          "id": "furminator",
+          "name": "FURminator deShedding tool",
+          "price": "$21",
+          "price_note": "approx.",
+          "img": "https://images.unsplash.com/photo-1597603413826-cd1c06b05222",
+          "alt": "A long-coated small dog",
+          "why": "A grooming tool that pulls out loose undercoat before it ends up on the sofa.",
+          "catch": "pick the long- or short-hair version to match the pet's coat.",
+          "q": "furminator deshedding tool",
+          "for": [
+            "shed",
+            "dog",
+            "cat"
+          ]
+        }
+      ]
+    }
+  ],
+  "method": "We cross-checked this season's pet gift guides with dated retailer prices and kept simple gifts that suit most dogs and cats. Prices were checked on 12 November 2026 and change daily around Black Friday, so check the price before you buy. We don't make health claims about any pet product.",
+  "updates": [
+    "11 November 2026: first version (2 picks).",
+    "12 November 2026: expanded to 9 picks for dogs, cats and the home. Prices approximate; recheck before buying."
+  ],
+  "sources": [
+    {
+      "name": "Gifting Machine: best gifts for pet lovers (2026)",
+      "url": "https://www.giftingmachine.com/blog/best-gifts-for-pet-lovers-2026"
+    }
+  ],
+  "more_html": "<a href=\"/finds/gifts-under-25/\">12 gifts under $25</a> and <a href=\"/finds/gifts-for-her-under-60/\">gifts for her under $60</a>."
+}

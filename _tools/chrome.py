@@ -21,7 +21,7 @@ MARK_DF = ('<svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width
 
 FINDS_NAV = [("/finds/", "All gift guides"), ("/finds/gifts-for-her-under-60/", "For her"),
              ("/finds/gifts-under-25/", "Under $25"), ("/finds/work-from-home-gifts/", "Home office"),
-             ("/finds/kitchen-gifts-home-cook/", "Kitchen")]
+             ("/finds/kitchen-gifts-home-cook/", "Kitchen"), ("/finds/hair-styler-gifts/", "Hair tools"), ("/finds/pet-lover-gifts-under-55/", "Pet lovers")]
 FF_NAV = [("/guides/", "AI guides"), ("/finds/", "Gift guides"), ("/about/", "About")]
 
 
@@ -65,7 +65,7 @@ def footer(theme):
              if finds else "Plain-English comparisons of AI tools and home-office gear, so you pick the right one the first time.")
     gl = "".join(f'<a href="{u}">{E(t)}</a>' for u, t in FINDS_NAV)
     fl = ('<a href="/">FlowFrame home</a><a href="/guides/">All AI guides</a>'
-          '<a href="/guides/gamma-vs-canva-vs-copilot/">AI presentation makers</a><a href="/guides/best-ai-meeting-note-takers/">AI note-takers</a>')
+          '<a href="/guides/gamma-vs-canva-vs-copilot/">AI presentation makers</a><a href="/guides/best-ai-meeting-note-takers/">AI note-takers</a><a href="/guides/ai-tools-for-planning-2027/">AI planning tools</a>')
     cl = '<a href="/about/">About us</a><a href="/contact/">Contact</a><a href="/disclosure/">Affiliate disclosure</a><a href="/privacy/">Privacy</a>'
     return (f'<footer class="ft"><div class="s-wrap"><div class="ft-grid"><div class="ft-brand">{brand}<p>{blurb}</p></div>'
             f'<div><h4>Gift guides</h4>{gl}</div><div><h4>FlowFrame</h4>{fl}</div><div><h4>Company</h4>{cl}</div></div>'

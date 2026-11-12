@@ -26,10 +26,15 @@ AI_GUIDES = [
      "alt": "A video call on a laptop next to a mug",
      "title": "Best AI meeting note-takers in 2026: Fathom, Granola, Otter or Fireflies?",
      "desc": "Free plans, prices, and whether a bot joins your call: the right note-taker for how you work."},
+    {"url": "/guides/ai-tools-for-planning-2027/", "tag": "AI planning tools", "img": U("1676287566973-7e25f18f12a9"),
+     "alt": "A planner and notepad beside a keyboard", "chip": "New",
+     "title": "7 AI tools for planning 2027, and what each one costs",
+     "desc": "Reclaim.ai, MeetGeek, monday.com, ClickUp, Gamma, Canva and ElevenLabs: free plans, real prices and who each suits."},
 ]
 ARTICLE_HERO = {
     "gamma-vs-canva-vs-copilot": AI_GUIDES[0],
     "best-ai-meeting-note-takers": AI_GUIDES[1],
+    "ai-tools-for-planning-2027": AI_GUIDES[2],
 }
 
 
@@ -78,7 +83,7 @@ DESK = U("1596443019365-eb263a588404")
 
 def build_home():
     fc = finds_cards()
-    g0, g1 = AI_GUIDES
+    g0, g1 = AI_GUIDES[:2]
     btns = ('<div class="s-btns"><a class="s-btn primary" href="/guides/">Browse the AI guides</a>'
             '<a class="s-btn ghost" href="/finds/">Black Friday gift guides</a></div>')
     tiles = [tile(g0["img"], g0["alt"], (3, 4), "(max-width:960px) 60vw, 360px"),
@@ -91,7 +96,7 @@ def build_home():
     body += '<div class="s-wrap">'
     body += ('<section class="sec"><div class="sec-head"><div><h2>Latest comparisons</h2><p>One question per guide, answered with prices, free plans and a clear pick.</p></div>'
              '<a class="more" href="/guides/">All AI guides</a></div>'
-             f'<div class="grid two">{"".join(card(c) for c in AI_GUIDES)}</div></section>')
+             f'<div class="grid">{"".join(card(c) for c in AI_GUIDES)}</div></section>')
     body += promise([("scale", "We compare, you choose", "Every guide ends with a 30-second way to pick the right tool for how you work."),
                      ("tag", "Real prices, dated", "Free plans and paid prices are checked against the vendors and dated in each guide."),
                      ("eye", "The honest catch", "Every pick says who should skip it, not just who should buy it.")])
@@ -108,7 +113,7 @@ def build_home():
 def build_guides_index():
     head_ = ('<section class="ph-head"><div class="s-wrap"><p class="crumb"><a href="/">FlowFrame</a><span>/</span>AI guides</p>'
              '<h1>AI tool guides</h1><p class="sub">Side-by-side comparisons of the AI tools worth paying for, with the free options first.</p></div></section>')
-    body = head_ + f'<div class="s-wrap"><section class="sec" style="padding-top:48px"><div class="grid two">{"".join(card(c) for c in AI_GUIDES)}</div></section>'
+    body = head_ + f'<div class="s-wrap"><section class="sec" style="padding-top:48px"><div class="grid">{"".join(card(c) for c in AI_GUIDES)}</div></section>'
     body += promise([("scale", "One question per guide", "Each guide answers one decision, like which AI note-taker to use, and ends with a clear pick."),
                      ("tag", "Free plans first", "We start with what you can do for free, then show exactly what paying adds."),
                      ("eye", "Who should skip it", "Every tool gets an honest downside so you can rule it out quickly.")]) + "</div>"
@@ -235,6 +240,7 @@ if __name__ == "__main__":
         "finds/index.html": build_finds_index(),
         "guides/gamma-vs-canva-vs-copilot/index.html": build_article("gamma-vs-canva-vs-copilot"),
         "guides/best-ai-meeting-note-takers/index.html": build_article("best-ai-meeting-note-takers"),
+        "guides/ai-tools-for-planning-2027/index.html": build_article("ai-tools-for-planning-2027"),
         "404.html": build_404(),
     }
     for rel in ["about/index.html", "contact/index.html", "disclosure/index.html", "privacy/index.html"]:
