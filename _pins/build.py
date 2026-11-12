@@ -49,7 +49,7 @@ def B(t):
 <div style="position:absolute;left:70px;right:70px;top:930px">
 <span class="chip" style="background:var(--ink);color:#fff;font-size:22px;padding:11px 22px">{t['chip']}</span>
 <div class="h" style="font-size:{t.get('size',96)}px;margin-top:26px;--hi:var(--accent)">{t['head']}</div>
-<div class="tags" style="margin-top:30px">{''.join(f'<span>{x}</span>' for x in t['tags'])}</div></div>
+{('<div class="tags" style="margin-top:30px">'+''.join(f'<span>{x}</span>' for x in t['tags'])+'</div>') if t.get('tags') else f'<p style="font-size:34px;font-weight:600;margin-top:24px;line-height:1.32;opacity:.8">{t.get("sub","")}</p>'}</div>
 <div style="position:absolute;left:70px;right:70px;bottom:44px;display:flex;justify-content:space-between;align-items:center">{brand(t,v['ink'])}<span class="url">{v['url']}</span></div>'''
     return page(t,body)
 # ---- Layout C: 3-photo collage + headline band

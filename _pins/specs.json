@@ -1,15 +1,550 @@
 [
  {
-  "id": "s-u25-a",
+  "id": "g-pets-1",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1675543999462-3b3157b044c2",
+   "1571131116858-2295ade82a72",
+   "1591946614720-90a587da4a36"
+  ],
+  "chip": "Under $55",
+  "head": "Their pet is family. <em>Gift like it.</em>",
+  "sub": "9 gifts for dog and cat people"
+ },
+ {
+  "id": "g-pets-2",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1672355422293-a912bc3a1d90",
+  "chip": "Gift guide · Cat lovers",
+  "head": "Gifts for cat people <em>(the cat gets one too)</em>",
+  "sub": "Toys, a water fountain and a fur roller, all under $55."
+ },
+ {
+  "id": "g-pets-3",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1774440865482-81a8c9b92e76",
+  "plabel": "All under",
+  "price": "$55",
+  "head": "For the friend whose dog is <em style=\"color:var(--sun)\">their whole world</em>"
+ },
+ {
+  "id": "g-pets-4",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1591946614720-90a587da4a36",
+  "num": "9",
+  "head": "gifts for <em>pet lovers</em> under $55",
+  "chip": "Dogs, cats and the home",
+  "sub": "Each with the honest catch."
+ },
+ {
+  "id": "p-pets-kong",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1715033749994-55f16a83c236",
+  "head": "The toy every dog <em>goes wild for</em>",
+  "plabel": "About",
+  "price": "$12",
+  "chip": "For dogs",
+  "sub": "KONG Classic dog toy. The stuffable rubber toy dog owners swear by."
+ },
+ {
+  "id": "p-pets-snuffle",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1715033812966-12418510f9ab",
+  "head": "Dinner becomes a <em style=\"color:var(--sun)\">treasure hunt</em>",
+  "plabel": "From",
+  "price": "$22"
+ },
+ {
+  "id": "p-pets-slowbowl",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1695023267262-7f4ab64152b2",
+  "head": "For the dog who <em>inhales</em> dinner",
+  "chip": "Outward Hound Fun Feeder slow bowl · $8",
+  "sub": "A maze-shaped bowl that turns a gulped dinner into a puzzle."
+ },
+ {
+  "id": "p-pets-harness",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1648304887391-a6c2cf2228e4",
+  "head": "Calmer walks, <em>happier humans</em>",
+  "plabel": "About",
+  "price": "$40",
+  "chip": "For dogs",
+  "sub": "Kurgo front-clip dog harness. A padded harness with a front clip for more control on everyday walks."
+ },
+ {
+  "id": "p-pets-fountain",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1571131116858-2295ade82a72",
+  "head": "For the cat who <em style=\"color:var(--sun)\">only drinks from the tap</em>",
+  "plabel": "From",
+  "price": "$30"
+ },
+ {
+  "id": "p-pets-hotpursuit",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1638826595775-e2eae86cda8e",
+  "head": "Hours of <em>pounce</em>",
+  "chip": "SmartyKat Hot Pursuit cat toy · $12",
+  "sub": "A wand moves unpredictably under a fabric cover so cats can stalk and pounce."
+ },
+ {
+  "id": "p-pets-tracks",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1516750105099-4b8a83e217ee",
+  "head": "Solo playtime for <em>$9</em>",
+  "plabel": "About",
+  "price": "$9",
+  "chip": "For cats",
+  "sub": "Catstages Tower of Tracks. Three levels of rolling balls for solo play."
+ },
+ {
+  "id": "p-pets-chomchom",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1610123172037-c970be4d24d7",
+  "head": "Goodbye, <em style=\"color:var(--sun)\">pet hair on the sofa</em>",
+  "plabel": "About",
+  "price": "$18"
+ },
+ {
+  "id": "p-pets-furminator",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1597603413826-cd1c06b05222",
+  "head": "Less fur <em>everywhere</em>",
+  "chip": "FURminator deShedding tool · $21",
+  "sub": "A grooming tool that pulls out loose undercoat before it ends up on the sofa."
+ },
+ {
+  "id": "g-u25-1",
   "theme": "finds",
   "layout": "A",
   "img": "1601804590276-e19ce20343da",
-  "chip": "Gift guide \u00b7 Under $25",
-  "head": "Small gifts.<br><em>Big \u201cyou get me\u201d</em> energy.",
-  "sub": "12 under-$25 gifts they\u2019ll actually use, with the honest catch on each."
+  "chip": "Gift guide · Under $25",
+  "head": "Small gifts.<br><em>Big “you get me”</em> energy.",
+  "sub": "12 under-$25 gifts they’ll actually use, with the honest catch on each."
  },
  {
-  "id": "s-her-b",
+  "id": "g-u25-2",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1513201099705-a9746e1e201f",
+  "num": "12",
+  "head": "gifts under $25 that <em>don’t feel cheap</em>",
+  "chip": "Secret Santa, sorted",
+  "sub": "Tech, cosy, kitchen and beauty picks."
+ },
+ {
+  "id": "g-u25-3",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1612373914372-79a8a0311f78",
+   "1603508102977-02688e3265fd",
+   "1613536844480-ac5d7b1b6ed1"
+  ],
+  "chip": "All under $25",
+  "head": "Secret Santa, <em>sorted.</em>",
+  "sub": "12 gifts, one honest catch each"
+ },
+ {
+  "id": "g-u25-4",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1607900177462-ac553f1f5d97",
+  "plabel": "All under",
+  "price": "$25",
+  "head": "Gifts they’ll <em style=\"color:var(--sun)\">actually use</em>"
+ },
+ {
+  "id": "p-u25-airtag",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1603508102977-02688e3265fd",
+  "head": "For the one who <em>always</em> loses their keys",
+  "plabel": "About",
+  "price": "$23",
+  "chip": "Small tech",
+  "sub": "Apple AirTag (2nd generation). Clip it to keys, a bag or a suitcase and find it from an iPhone."
+ },
+ {
+  "id": "p-u25-earbuds",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1590658268037-6bf12165a8df",
+  "head": "Their commute just got <em style=\"color:var(--sun)\">quieter</em>",
+  "plabel": "About",
+  "price": "$25"
+ },
+ {
+  "id": "p-u25-speaker",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1589003077984-894e133dabab",
+  "head": "Shower concerts, <em>sorted</em>",
+  "chip": "Waterproof Bluetooth speaker · $20",
+  "sub": "Waterproof, with a battery rated around 24 hours."
+ },
+ {
+  "id": "p-u25-warmers",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1452689842785-5f14840dca48",
+  "head": "For the one who’s <em>always</em> cold",
+  "plabel": "About",
+  "price": "$15",
+  "chip": "Cosy",
+  "sub": "Rechargeable hand warmers. Reusable warmers that charge by USB."
+ },
+ {
+  "id": "p-u25-blanket",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1612373914372-79a8a0311f78",
+  "head": "The hug they can <em style=\"color:var(--sun)\">wear</em>",
+  "plabel": "About",
+  "price": "$25"
+ },
+ {
+  "id": "p-u25-candle",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1577025728734-7ec67bdb97d0",
+  "head": "The easy win for <em>Secret Santa</em>",
+  "chip": "Yankee Candle Balsam & Cedar · $15",
+  "sub": "A classic winter scent with a long burn time."
+ },
+ {
+  "id": "p-u25-popcorn",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1579642761360-eabd1cca1e81",
+  "head": "Movie night, <em>upgraded</em>",
+  "plabel": "About",
+  "price": "$25",
+  "chip": "Kitchen",
+  "sub": "Dash hot-air popcorn maker. Makes a big bowl of popcorn without oil in a couple of minutes."
+ },
+ {
+  "id": "p-u25-board",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1666013942797-9daa4b8b3b4f",
+  "head": "The kitchen upgrade they’ll <em style=\"color:var(--sun)\">use daily</em>",
+  "plabel": "About",
+  "price": "$16"
+ },
+ {
+  "id": "p-u25-press",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1613536844480-ac5d7b1b6ed1",
+  "head": "Café coffee, <em>no machine</em>",
+  "chip": "French press coffee maker · $25",
+  "sub": "Rich coffee with no machine or pods."
+ },
+ {
+  "id": "p-u25-laneige",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1768235146463-328c98e7234d",
+  "head": "The cult lip mask, <em>gift-sized</em>",
+  "plabel": "About",
+  "price": "$23",
+  "chip": "Self-care",
+  "sub": "Laneige Lip Sleeping Mask minis. Mini overnight lip masks in several flavours."
+ },
+ {
+  "id": "p-u25-bagsmart",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1613896640137-bb5b31496315",
+  "head": "For the friend who <em style=\"color:var(--sun)\">overpacks</em>",
+  "plabel": "About",
+  "price": "$19"
+ },
+ {
+  "id": "g-wfh-1",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1518976024611-28bf4b48222e",
+  "chip": "Gift guide · Home office",
+  "head": "Make their Monday desk <em>feel like a treat</em>",
+  "sub": "10 work-from-home gifts, from a $20 desk mat to a splurge."
+ },
+ {
+  "id": "g-wfh-2",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1511467687858-23d96c32e4ae",
+  "plabel": "From",
+  "price": "$20",
+  "chip": "Work-from-home gifts",
+  "head": "For the one who works from the <em>kitchen table</em>",
+  "tags": [
+   "Desk mat",
+   "Laptop stand",
+   "MX Master 4",
+   "Ember Mug"
+  ]
+ },
+ {
+  "id": "g-wfh-3",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1765030999960-8cc726c281ad",
+  "num": "10",
+  "head": "desk upgrades they’ll <em>thank you for</em>",
+  "chip": "From $20",
+  "sub": "Every Monday, for years."
+ },
+ {
+  "id": "g-wfh-4",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1500989145603-8e7ef71d639e",
+   "1527864550417-7fd91fc51a46",
+   "1618133030686-e1186525ebcc"
+  ],
+  "chip": "Home office gifts",
+  "head": "The 9-to-5, <em>but nicer</em>",
+  "sub": "10 gifts for remote workers"
+ },
+ {
+  "id": "p-wfh-mat",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1650394923482-a0d03ffb2512",
+  "head": "The desk upgrade they’ll <em>feel every day</em>",
+  "plabel": "About",
+  "price": "$20",
+  "chip": "Under $50",
+  "sub": "Large felt or leather desk mat. Covers the whole desk, quiets the keyboard and gives the mouse a smooth surface."
+ },
+ {
+  "id": "p-wfh-stand",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1629317480826-910f729d1709",
+  "head": "Screen at eye level, <em style=\"color:var(--sun)\">finally</em>",
+  "plabel": "About",
+  "price": "$30"
+ },
+ {
+  "id": "p-wfh-cable",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1760348213270-7cd00b8c3405",
+  "head": "Goodbye, <em>cable chaos</em>",
+  "chip": "Under-desk cable management kit · $20",
+  "sub": "Clips, sleeves and a tray that hide the cable mess under the desk."
+ },
+ {
+  "id": "p-wfh-charger",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1591290619618-904f6dd935e3",
+  "head": "One spot. <em>Everything charged.</em>",
+  "plabel": "About",
+  "price": "$35",
+  "chip": "Under $50",
+  "sub": "3-in-1 wireless charging stand. Charges a phone, earbuds and a watch in one spot, so the desk stays clear of cables."
+ },
+ {
+  "id": "p-wfh-mxmaster",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1527864550417-7fd91fc51a46",
+  "head": "The mouse power users <em style=\"color:var(--sun)\">swear by</em>",
+  "plabel": "About",
+  "price": "$120"
+ },
+ {
+  "id": "p-wfh-mxkeys",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1669884210028-81aa4c7442e5",
+  "head": "Quiet keys. <em>Calm mornings.</em>",
+  "chip": "Logitech MX Keys S keyboard · $110",
+  "sub": "A quiet, backlit keyboard with comfortable keys that switches between three devices with one button."
+ },
+ {
+  "id": "p-wfh-screenbar",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1618133030686-e1186525ebcc",
+  "head": "Late-night work, <em>easier on the eyes</em>",
+  "plabel": "About",
+  "price": "$109",
+  "chip": "$50 to $150",
+  "sub": "BenQ ScreenBar monitor light. A light bar that sits on top of the monitor and lights the desk without glare on the screen."
+ },
+ {
+  "id": "p-wfh-ember",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1500989145603-8e7ef71d639e",
+  "head": "Coffee that <em style=\"color:var(--sun)\">stays hot</em> through every call",
+  "plabel": "From",
+  "price": "$90"
+ },
+ {
+  "id": "p-wfh-kindle",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1676107779674-f77343861e81",
+  "head": "For the one who reads <em>every night</em>",
+  "chip": "Kindle Colorsoft · $290",
+  "sub": "A glare-free colour screen for books, comics and highlights."
+ },
+ {
+  "id": "p-wfh-mv7",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1588800347304-ec7e6f353327",
+  "head": "Sound like a <em>pro</em> on every call",
+  "plabel": "About",
+  "price": "$269",
+  "chip": "Splurge",
+  "sub": "Shure MV7+ podcast microphone. A broadcast-style mic with USB-C and XLR in one."
+ },
+ {
+  "id": "g-hair-1",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1712481846916-8f73ffc2067a",
+  "num": "8",
+  "head": "hair tool gifts on <em>every wish list</em>",
+  "chip": "From $29 to a splurge",
+  "sub": "Salon-style hair at home, sorted by budget."
+ },
+ {
+  "id": "g-hair-2",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1734111719430-fe4a3973f8af",
+  "chip": "Gifts for her · Hair tools",
+  "head": "Good hair days, <em>gift-wrapped</em>",
+  "sub": "8 hair tools from $29, each with the honest catch."
+ },
+ {
+  "id": "g-hair-3",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1785456283212-338f5bc44d50",
+  "plabel": "From",
+  "price": "$29",
+  "head": "For the friend who <em style=\"color:var(--sun)\">always</em> has great hair"
+ },
+ {
+  "id": "g-hair-4",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1769029270594-26ce033ca6fc",
+  "plabel": "From",
+  "price": "$29",
+  "chip": "Hair tool gifts",
+  "head": "Salon hair <em>at home</em>",
+  "tags": [
+   "Revlon",
+   "Laifen",
+   "T3",
+   "Shark FlexFusion"
+  ]
+ },
+ {
+  "id": "p-hair-hottools",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1522336284037-91f7da073525",
+  "head": "Salon blowout. <em>$29.</em>",
+  "plabel": "About",
+  "price": "$29",
+  "chip": "Under $60",
+  "sub": "Hot Tools 24K Gold One-Step Blowout. A dryer and round brush in one for a quick at-home blowout, at a stocking-filler price."
+ },
+ {
+  "id": "p-hair-tymo",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1712641970787-e178ca70c6c4",
+  "head": "Sleek hair <em style=\"color:var(--sun)\">in minutes</em>",
+  "plabel": "About",
+  "price": "$47"
+ },
+ {
+  "id": "p-hair-revlon",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1734111719430-fe4a3973f8af",
+  "head": "The blowout brush <em>everyone asks for</em>",
+  "chip": "Revlon One-Step Volumizer PLUS 2.0 · $49",
+  "sub": "The best-known hot air brush: dries and adds volume in one pass."
+ },
+ {
+  "id": "p-hair-knotdr",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1779398261387-3399331438f4",
+  "head": "Goodbye, <em>morning tangles</em>",
+  "plabel": "About",
+  "price": "$51",
+  "chip": "Under $60",
+  "sub": "Conair InfinitiPRO The Knot Dr. dryer brush. Dries and smooths with a flexible bristle head that glides through knots."
+ },
+ {
+  "id": "p-hair-laifen",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1727364438136-6edc10ef0a52",
+  "head": "The fast dryer <em style=\"color:var(--sun)\">without the big price</em>",
+  "plabel": "About",
+  "price": "$170"
+ },
+ {
+  "id": "p-hair-t3duo",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1712481846916-8f73ffc2067a",
+  "head": "Volume or sleek? <em>Both.</em>",
+  "chip": "T3 AireBrush Duo · $190",
+  "sub": "Swap between a round brush for volume and a paddle brush for smooth, sleek hair."
+ },
+ {
+  "id": "p-hair-flexfusion",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1580618672591-eb180b1a973f",
+  "head": "The Airwrap rival, <em>now $299</em>",
+  "plabel": "About",
+  "price": "$299",
+  "chip": "The splurge",
+  "sub": "Shark FlexFusion air styler and straightener. Dries, curls and straightens with swappable attachments."
+ },
+ {
+  "id": "p-hair-airwrap",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1785456283212-338f5bc44d50",
+  "head": "The one on <em style=\"color:var(--sun)\">every</em> wish list",
+  "plabel": "About",
+  "price": "$749"
+ },
+ {
+  "id": "g-her-1",
   "theme": "finds",
   "layout": "B",
   "img": "1513885535751-8b9238bd345a",
@@ -25,20 +560,146 @@
   ]
  },
  {
-  "id": "s-pets-c",
+  "id": "g-her-2",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1602521163308-23e552671e38",
+  "chip": "Gifts for her · Under $60",
+  "head": "Gifts she’ll <em>keep</em>, not regift",
+  "sub": "11 thoughtful picks from $16, sorted by budget."
+ },
+ {
+  "id": "g-her-3",
   "theme": "finds",
   "layout": "C",
   "imgs": [
-   "1675543999462-3b3157b044c2",
-   "1571131116858-2295ade82a72",
-   "1591946614720-90a587da4a36"
+   "1687435703153-88f6bc0cdcff",
+   "1611591437281-460bfbe1220a",
+   "1668112037360-900ff60ef6f7"
   ],
-  "chip": "Under $55",
-  "head": "Their pet is family. <em>Gift like it.</em>",
-  "sub": "9 gifts for dog and cat people"
+  "chip": "Under $60",
+  "head": "Little luxuries she <em>won’t buy herself</em>",
+  "sub": "11 gifts for her, honest catch on each"
  },
  {
-  "id": "s-kit-d",
+  "id": "g-her-4",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1650307535558-fa2b39ed16eb",
+  "num": "11",
+  "head": "gifts for her <em>under $60</em>",
+  "chip": "From $16",
+  "sub": "Cosy, beauty, jewellery and more."
+ },
+ {
+  "id": "p-her-slippers",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1650307535558-fa2b39ed16eb",
+  "head": "Cold toes? <em>Not this winter.</em>",
+  "plabel": "About",
+  "price": "$16",
+  "chip": "Under $25",
+  "sub": "Fuzzy faux-fur slippers. Soft, open-toe house slippers that turn up on almost every winter gift list."
+ },
+ {
+  "id": "p-her-lamp",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1779599859971-670a45aedf96",
+  "head": "The cosy glow, <em style=\"color:var(--sun)\">minus the flame</em>",
+  "plabel": "About",
+  "price": "$20"
+ },
+ {
+  "id": "p-her-candle",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1668112037360-900ff60ef6f7",
+  "head": "Her whole home will smell like <em>a winter forest</em>",
+  "chip": "P.F. Candle Co. Spruce candle · $24",
+  "sub": "A soy candle with a winter-forest scent in a plain glass jar that looks good on any shelf."
+ },
+ {
+  "id": "p-her-mask",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1687435703153-88f6bc0cdcff",
+  "head": "For the woman who <em>never gets a lie-in</em>",
+  "plabel": "About",
+  "price": "$27",
+  "chip": "$25 to $40",
+  "sub": "Hommey silk eye mask. A mulberry silk mask that blocks light for naps, flights and lazy weekend mornings."
+ },
+ {
+  "id": "p-her-owala",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1789276392869-8103c256a501",
+  "head": "The tumbler she’ll <em style=\"color:var(--sun)\">carry everywhere</em>",
+  "plabel": "About",
+  "price": "$35"
+ },
+ {
+  "id": "p-her-summer",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1765516976457-550bd5f6f708",
+  "head": "Her carry-on, <em>upgraded</em>",
+  "chip": "Summer Fridays Jet Lag Essentials · $34",
+  "sub": "Travel sizes of the brand's favourites in one zip pouch, ready for a carry-on."
+ },
+ {
+  "id": "p-her-saltstone",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1597931752949-98c74b5b159f",
+  "head": "Little luxury. <em>Every single shower.</em>",
+  "plabel": "About",
+  "price": "$36",
+  "chip": "$25 to $40",
+  "sub": "Salt & Stone body wash, Bergamot & Hinoki. A clean, woody scent in a bottle that looks good enough to keep on show."
+ },
+ {
+  "id": "p-her-cuff",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1611591437281-460bfbe1220a",
+  "head": "The gold cuff <em style=\"color:var(--sun)\">everyone’s pinning</em>",
+  "plabel": "From",
+  "price": "$20"
+ },
+ {
+  "id": "p-her-lego",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1775994121066-df9928d01e18",
+  "head": "Plants she <em>can’t</em> kill",
+  "chip": "LEGO Botanicals Tiny Plants · $40",
+  "sub": "Nine buildable plants in little terracotta-style pots."
+ },
+ {
+  "id": "p-her-bala",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1586401100295-7a8096fd231a",
+  "head": "Workout gear that <em>looks like jewellery</em>",
+  "plabel": "About",
+  "price": "$55",
+  "chip": "$40 to $60",
+  "sub": "Bala Bangles (1 lb pair). Weighted bangles that look like jewellery, for walks and at-home workouts."
+ },
+ {
+  "id": "p-her-tilbury",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1596462502278-27bfdc403348",
+  "head": "A beauty treat she <em style=\"color:var(--sun)\">won’t buy herself</em>",
+  "plabel": "About",
+  "price": "$54"
+ },
+ {
+  "id": "g-kit-1",
   "theme": "finds",
   "layout": "D",
   "img": "1518291344630-4857135fb581",
@@ -47,36 +708,195 @@
   "head": "For the one who<br><em style=\"color:var(--sun)\">cooks for everyone</em>"
  },
  {
-  "id": "s-hair-e",
-  "theme": "finds",
-  "layout": "E",
-  "img": "1712481846916-8f73ffc2067a",
-  "num": "8",
-  "head": "hair tool gifts on <em>every wish list</em>",
-  "chip": "From $29 to a splurge",
-  "sub": "Salon-style hair at home, sorted by budget."
- },
- {
-  "id": "s-wfh-a",
+  "id": "g-kit-2",
   "theme": "finds",
   "layout": "A",
-  "img": "1518976024611-28bf4b48222e",
-  "chip": "Gift guide \u00b7 Home office",
-  "head": "Make their Monday desk <em>feel like a treat</em>",
-  "sub": "10 work-from-home gifts, from a $20 desk mat to a splurge."
+  "img": "1603185730021-ddc0c8097059",
+  "chip": "Gift guide · Kitchen",
+  "head": "Make their <em>Sunday dinner</em> better",
+  "sub": "8 kitchen gifts from $16 to a splurge."
  },
  {
-  "id": "s-ff-notes-e",
+  "id": "g-kit-3",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1598103442097-8b74394b95c6",
+   "1622001545761-9bd12a4b465b",
+   "1590794056226-79ef3a8147e1"
+  ],
+  "chip": "From $16",
+  "head": "Kitchen tools they’ll <em>reach for daily</em>",
+  "sub": "8 gifts for the home cook"
+ },
+ {
+  "id": "g-kit-4",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1586208958839-06c17cacdf08",
+  "num": "8",
+  "head": "gifts for the <em>home cook</em>",
+  "chip": "Black Friday 2026",
+  "sub": "From a $16 zester to the Ninja Crispi Pro."
+ },
+ {
+  "id": "p-kit-skillet",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1598103442097-8b74394b95c6",
+  "head": "The pan they’ll <em>pass down</em>",
+  "plabel": "About",
+  "price": "$20",
+  "chip": "Under $50",
+  "sub": "Lodge 10.25\" cast iron skillet. Pre-seasoned, goes from hob to oven, and lasts a lifetime."
+ },
+ {
+  "id": "p-kit-microplane",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1743431631733-8ed5ee8c10a8",
+  "head": "The tool chefs <em style=\"color:var(--sun)\">can’t live without</em>",
+  "plabel": "About",
+  "price": "$16"
+ },
+ {
+  "id": "p-kit-thermopop",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1622001545761-9bd12a4b465b",
+  "head": "No more <em>guessing</em> if it’s done",
+  "chip": "ThermoWorks ThermoPop 2 thermomete · $39",
+  "sub": "Reads the temperature in a couple of seconds, with a big display that rotates the right way up."
+ },
+ {
+  "id": "p-kit-spinner",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1569760142069-bc6838de16c1",
+  "head": "Crisp salad, <em>one hand</em>",
+  "plabel": "About",
+  "price": "$30",
+  "chip": "Under $50",
+  "sub": "OXO Good Grips salad spinner. Dries greens in seconds with a one-handed pump, and the bowl doubles as a serving dish."
+ },
+ {
+  "id": "p-kit-instantpot",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1544233726-9f1d2b27be8b",
+  "head": "Weeknight dinners, <em style=\"color:var(--sun)\">handled</em>",
+  "plabel": "About",
+  "price": "$70"
+ },
+ {
+  "id": "p-kit-dutchoven",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1590794056226-79ef3a8147e1",
+  "head": "Sunday stew, <em>every Sunday</em>",
+  "chip": "Lodge 6 qt enameled Dutch oven · $70",
+  "sub": "The look and job of a much pricier French oven, for braises, soups and bread."
+ },
+ {
+  "id": "p-kit-allclad",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1624031000828-dba1b7a3e4ce",
+  "head": "Pro pans, <em>home-cook price</em>",
+  "plabel": "About",
+  "price": "$90",
+  "chip": "$50 to $100",
+  "sub": "All-Clad HA1 10\" and 12\" fry pan set. Two hard-anodised nonstick pans from a top brand."
+ },
+ {
+  "id": "p-kit-crispi",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1674504866626-fe4f19f68564",
+  "head": "Air fryer meets <em style=\"color:var(--sun)\">serving dish</em>",
+  "plabel": "About",
+  "price": "$199"
+ },
+ {
+  "id": "f-01",
   "theme": "ff",
   "layout": "A",
   "img": "1588196749597-9ff075ee6b5b",
-  "num": "0",
-  "head": "Never type <em>meeting notes</em> by hand again",
   "chip": "AI note-takers compared",
+  "head": "Never type <em>meeting notes</em> by hand again",
   "sub": "Fathom, Granola, Otter or Fireflies: free plans, prices and the catch on each."
  },
  {
-  "id": "s-ff-plan-b",
+  "id": "f-02",
+  "theme": "ff",
+  "layout": "E",
+  "img": "1616587226960-4a03badbe8bf",
+  "num": "4",
+  "head": "AI note-takers, <em>honestly compared</em>",
+  "chip": "Free plans included",
+  "sub": "Which one fits how you work."
+ },
+ {
+  "id": "f-03",
+  "theme": "ff",
+  "layout": "B",
+  "img": "1612831455359-970e23a1e4e9",
+  "plabel": "Free",
+  "price": "$0",
+  "chip": "AI note-takers",
+  "head": "Hate meeting <em>bots</em>? Read this.",
+  "sub": "Bot-free options compared, with free plans."
+ },
+ {
+  "id": "f-04",
+  "theme": "ff",
+  "layout": "D",
+  "img": "1668605335684-c97ce92cbd76",
+  "plabel": "Start",
+  "price": "Free",
+  "head": "Be <em style=\"color:var(--sun)\">present</em> in the meeting, not typing"
+ },
+ {
+  "id": "f-05",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1517245386807-bb43f82c33c4",
+  "chip": "AI presentation makers",
+  "head": "A full deck from <em>one prompt</em>",
+  "sub": "Gamma vs Canva vs Copilot: which fits how you work."
+ },
+ {
+  "id": "f-06",
+  "theme": "ff",
+  "layout": "E",
+  "img": "1552664730-d307ca884978",
+  "num": "3",
+  "head": "AI slide makers, <em>one winner for you</em>",
+  "chip": "Gamma · Canva · Copilot",
+  "sub": "Free options, prices and exports."
+ },
+ {
+  "id": "f-07",
+  "theme": "ff",
+  "layout": "B",
+  "img": "1531403009284-440f080d1e12",
+  "plabel": "Free",
+  "price": "$0",
+  "chip": "AI presentations",
+  "head": "Stop <em>fighting</em> PowerPoint",
+  "sub": "Let AI draft the deck; you make it yours."
+ },
+ {
+  "id": "f-08",
+  "theme": "ff",
+  "layout": "D",
+  "img": "1557804506-669a67965ba0",
+  "plabel": "Draft in",
+  "price": "mins",
+  "head": "Your next deck, <em style=\"color:var(--sun)\">done by lunch</em>"
+ },
+ {
+  "id": "f-09",
   "theme": "ff",
   "layout": "B",
   "img": "1513128034602-7814ccaddd4e",
@@ -90,5 +910,55 @@
    "ClickUp",
    "Gamma"
   ]
+ },
+ {
+  "id": "f-10",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1535981767287-35259dbf7d0e",
+  "chip": "Plan 2027",
+  "head": "A calendar that <em>protects your focus</em>",
+  "sub": "7 AI planning tools with free plans, compared."
+ },
+ {
+  "id": "f-11",
+  "theme": "ff",
+  "layout": "E",
+  "img": "1676287566973-7e25f18f12a9",
+  "num": "7",
+  "head": "AI tools for a <em>calmer 2027</em>",
+  "chip": "All have free plans",
+  "sub": "Plan, meet, present and create."
+ },
+ {
+  "id": "f-12",
+  "theme": "ff",
+  "layout": "C",
+  "imgs": [
+   "1580934174026-8142803ebb5b",
+   "1542271484-f163235efa6d",
+   "1453928582365-b6ad33cbcf64"
+  ],
+  "chip": "Free plans",
+  "head": "New year, <em>new system</em>",
+  "sub": "The 7-tool stack for planning 2027"
+ },
+ {
+  "id": "f-13",
+  "theme": "ff",
+  "layout": "D",
+  "img": "1501504905252-473c47e087f8",
+  "plabel": "Cost",
+  "price": "$0",
+  "head": "Build your 2027 plan <em style=\"color:var(--sun)\">for free</em>"
+ },
+ {
+  "id": "f-14",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1496181133206-80ce9b88a853",
+  "chip": "Plan 2027",
+  "head": "Less busywork. <em>More of your year.</em>",
+  "sub": "Reclaim.ai, ClickUp, Gamma and 4 more, with free plans."
  }
 ]
