@@ -26,8 +26,8 @@ AI_GUIDES = [
      "alt": "A video call on a laptop next to a mug",
      "title": "Best AI meeting note-takers in 2026: Fathom, Granola, Otter or Fireflies?",
      "desc": "Free plans, prices, and whether a bot joins your call: the right note-taker for how you work."},
-    {"url": "/guides/ai-tools-for-planning-2027/", "tag": "AI planning tools", "img": U("1676287566973-7e25f18f12a9"),
-     "alt": "A planner and notepad beside a keyboard", "chip": "New",
+    {"url": "/guides/ai-tools-for-planning-2027/", "tag": "AI planning tools", "img": U("1513128034602-7814ccaddd4e"),
+     "alt": "Hands holding a notepad and pen on a desk", "chip": "New",
      "title": "7 AI tools for planning 2027, and what each one costs",
      "desc": "Reclaim.ai, MeetGeek, monday.com, ClickUp, Gamma, Canva and ElevenLabs: free plans, real prices and who each suits."},
 ]
