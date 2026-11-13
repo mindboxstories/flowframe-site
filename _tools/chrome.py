@@ -19,9 +19,9 @@ MARK_DF = ('<svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width
            '<path d="M9 13.2 15.6 7h7.4v7.4L16.8 21a2 2 0 0 1-2.8 0L9 16a2 2 0 0 1 0-2.8Z" fill="#FFF8EF"/>'
            '<circle cx="19.4" cy="10.6" r="1.7" fill="#E4572E"/><path d="M9.5 23.5h13" stroke="#FFC93C" stroke-width="2.6" stroke-linecap="round"/></svg>')
 
-FINDS_NAV = [("/finds/", "All gift guides"), ("/finds/gifts-for-her-under-60/", "For her"),
-             ("/finds/gifts-under-25/", "Under $25"), ("/finds/work-from-home-gifts/", "Home office"),
-             ("/finds/kitchen-gifts-home-cook/", "Kitchen"), ("/finds/hair-styler-gifts/", "Hair tools"), ("/finds/pet-lover-gifts-under-55/", "Pet lovers")]
+FINDS_NAV = [("/finds/", "All guides"), ("/finds/black-friday-2026/", "Black Friday"), ("/finds/gifts-for-her-under-60/", "For her"),
+             ("/finds/gifts-under-25/", "Under $25"), ("/finds/work-from-home-gifts/", "Desk"),
+             ("/finds/kitchen-gifts-home-cook/", "Kitchen"), ("/finds/hair-styler-gifts/", "Hair"), ("/finds/pet-lover-gifts-under-55/", "Pets")]
 FF_NAV = [("/guides/", "AI guides"), ("/finds/", "Gift guides"), ("/about/", "About")]
 
 
@@ -46,7 +46,7 @@ def top(theme, active=""):
     d = days_left()
     ann = (f'<div class="ann" data-countdown="{DEAL_DATE}"><div class="s-wrap"><span>Black Friday is 27 November: '
            f'<b class="ann-days">{d} days</b> to go.<i class="x"> Our gift guides are re-checked every week.</i></span>'
-           f'<a href="/finds/">Shop the gift guides</a></div></div>')
+           f'<a href="/finds/black-friday-2026/">See the Black Friday watchlist</a></div></div>')
     if finds:
         brand = f'<a class="brand" href="/finds/">{MARK_DF}<span>Digittouch <em>Finds</em></span></a>'
         nav = "".join(f'<a href="{u}"{" aria-current=page" if u == active else ""}>{E(t)}</a>' for u, t in FINDS_NAV)
@@ -54,7 +54,7 @@ def top(theme, active=""):
     else:
         brand = f'<a class="brand" href="/">{MARK_FF}<span>Flow<em>Frame</em></span></a>'
         nav = "".join(f'<a href="{u}"{" aria-current=page" if u == active else ""}>{E(t)}</a>' for u, t in FF_NAV)
-        cta = '<a class="hcta" href="/finds/">Black Friday picks</a>'
+        cta = '<a class="hcta" href="/finds/black-friday-2026/">Black Friday picks</a>'
     return (f'{ann}<header class="hd"><div class="s-wrap hd-in">{brand}<nav class="hd-nav" aria-label="Main">{nav}</nav>{cta}</div></header>')
 
 
