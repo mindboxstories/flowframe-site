@@ -397,3 +397,9 @@ body.v6 .g-signup-btn:hover{background:var(--accent-ink)}
 @media (max-width:860px){.g-signup{grid-template-columns:1fr;gap:22px;padding:30px 22px;border-radius:26px}body.v6 .g-signup-btn{flex:1 1 100%}}
 
 @media (min-width:861px) and (max-width:1199px){.hd-nav{overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent)}.hd-nav::-webkit-scrollbar{display:none}}
+/* Article buy row (home-office gear articles) */
+.a-buy{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;margin:4px 0 8px}
+body.v6 .a-buy .s-btn{padding:13px 22px;font-size:15px}
+body.v6 .a-uk{font-size:14px;font-weight:600;color:var(--muted);text-decoration:none}
+body.v6 .a-uk:hover{color:var(--ink);text-decoration:underline}
+@media (max-width:640px){.a-verdict{grid-template-columns:1fr;gap:10px}}

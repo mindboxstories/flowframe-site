@@ -3,7 +3,7 @@ build_site.py and build_guide.py, so every page on flowframe.shop shares one des
 import html, datetime
 
 E = html.escape
-SITE_CSS_V = "6"
+SITE_CSS_V = "8"
 DEAL_DATE = "2026-11-27"
 U = lambda i: "https://images.unsplash.com/photo-" + i
 
@@ -66,7 +66,7 @@ def footer(theme):
              if finds else "Plain-English comparisons of AI tools and home-office gear, so you pick the right one the first time.")
     gl = "".join(f'<a href="{u}">{E(t)}</a>' for u, t in FINDS_NAV)
     fl = ('<a href="/">FlowFrame home</a><a href="/guides/">All AI guides</a>'
-          '<a href="/guides/gamma-vs-canva-vs-copilot/">AI presentation makers</a><a href="/guides/best-ai-meeting-note-takers/">AI note-takers</a><a href="/guides/ai-tools-for-planning-2027/">AI planning tools</a>')
+          '<a href="/guides/gamma-vs-canva-vs-copilot/">AI presentation makers</a><a href="/guides/best-ai-meeting-note-takers/">AI note-takers</a><a href="/guides/ai-tools-for-planning-2027/">AI planning tools</a><a href="/guides/best-webcams-for-video-calls/">Best webcams</a>')
     cl = '<a href="/about/">About us</a><a href="/contact/">Contact</a><a href="/disclosure/">Affiliate disclosure</a><a href="/privacy/">Privacy</a>'
     return (f'<footer class="ft"><div class="s-wrap"><div class="ft-grid"><div class="ft-brand">{brand}<p>{blurb}</p></div>'
             f'<div><h4>Gift guides</h4>{gl}</div><div><h4>FlowFrame</h4>{fl}</div><div><h4>Company</h4>{cl}</div></div>'

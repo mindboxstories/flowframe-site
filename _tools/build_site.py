@@ -27,15 +27,25 @@ AI_GUIDES = [
      "title": "Best AI meeting note-takers in 2026: Fathom, Granola, Otter or Fireflies?",
      "desc": "Free plans, prices, and whether a bot joins your call: the right note-taker for how you work."},
     {"url": "/guides/ai-tools-for-planning-2027/", "tag": "AI planning tools", "img": U("1513128034602-7814ccaddd4e"),
-     "alt": "Hands holding a notepad and pen on a desk", "chip": "New",
+     "alt": "Hands holding a notepad and pen on a desk",
      "title": "7 AI tools for planning 2027, and what each one costs",
      "desc": "Reclaim.ai, MeetGeek, monday.com, ClickUp, Gamma, Canva and ElevenLabs: free plans, real prices and who each suits."},
+    {"url": "/guides/best-webcams-for-video-calls/", "tag": "Home-office gear", "img": U("1758521541657-fd70465a5c54"),
+     "alt": "A smiling woman waving hello on a video call", "chip": "New", "pop": True,
+     "title": "Best webcams for video calls in 2026: 7 picks from $25 to $199",
+     "desc": "From a $25 fix for a grainy laptop camera to 4K: what each webcam costs, who it suits and the catch.", "go": "See the 7 picks"},
 ]
 ARTICLE_HERO = {
     "gamma-vs-canva-vs-copilot": AI_GUIDES[0],
     "best-ai-meeting-note-takers": AI_GUIDES[1],
     "ai-tools-for-planning-2027": AI_GUIDES[2],
+    "best-webcams-for-video-calls": AI_GUIDES[3],
 }
+
+
+def ff_grid():
+    """Newest FlowFrame guide as a full-width feature card, the rest below."""
+    return card(AI_GUIDES[-1], True) + "".join(card(c) for c in AI_GUIDES[:-1])
 
 
 def img(src, alt, sizes="100vw", w=1600, h=900, eager=False):
@@ -96,7 +106,7 @@ def build_home():
     body += '<div class="s-wrap">'
     body += ('<section class="sec"><div class="sec-head"><div><h2>Latest comparisons</h2><p>One question per guide, answered with prices, free plans and a clear pick.</p></div>'
              '<a class="more" href="/guides/">All AI guides</a></div>'
-             f'<div class="grid">{"".join(card(c) for c in AI_GUIDES)}</div></section>')
+             f'<div class="grid">{ff_grid()}</div></section>')
     body += promise([("scale", "We compare, you choose", "Every guide ends with a 30-second way to pick the right tool for how you work."),
                      ("tag", "Real prices, dated", "Free plans and paid prices are checked against the vendors and dated in each guide."),
                      ("eye", "The honest catch", "Every pick says who should skip it, not just who should buy it.")])
@@ -112,8 +122,8 @@ def build_home():
 
 def build_guides_index():
     head_ = ('<section class="ph-head"><div class="s-wrap"><p class="crumb"><a href="/">FlowFrame</a><span>/</span>AI guides</p>'
-             '<h1>AI tool guides</h1><p class="sub">Side-by-side comparisons of the AI tools worth paying for, with the free options first.</p></div></section>')
-    body = head_ + f'<div class="s-wrap"><section class="sec" style="padding-top:48px"><div class="grid">{"".join(card(c) for c in AI_GUIDES)}</div></section>'
+             '<h1>FlowFrame guides</h1><p class="sub">Plain-English comparisons of AI tools and home-office gear, with the free and cheap options first.</p></div></section>')
+    body = head_ + f'<div class="s-wrap"><section class="sec" style="padding-top:48px"><div class="grid">{ff_grid()}</div></section>'
     body += promise([("scale", "One question per guide", "Each guide answers one decision, like which AI note-taker to use, and ends with a clear pick."),
                      ("tag", "Free plans first", "We start with what you can do for free, then show exactly what paying adds."),
                      ("eye", "Who should skip it", "Every tool gets an honest downside so you can rule it out quickly.")]) + "</div>"
@@ -229,7 +239,7 @@ def build_404():
     body = ('<section class="ph-head"><div class="s-wrap"><p class="crumb">Page not found</p><h1>We could not find that page</h1>'
             '<p class="sub">It may have moved when we updated the site. These are the best places to start.</p></div></section>'
             '<div class="s-wrap"><section class="sec" style="padding-top:48px"><div class="grid">'
-            + card(dict(finds_cards()[0], chip="Gift guide", pop=True)) + "".join(card(c) for c in AI_GUIDES) + '</div></section></div>')
+            + card(dict(finds_cards()[0], chip="Gift guide", pop=True)) + card(AI_GUIDES[-1]) + card(AI_GUIDES[0]) + '</div></section></div>')
     return page("Page not found", "The page you were looking for could not be found.", "/404.html", "ff", body, active="")
 
 
@@ -241,6 +251,7 @@ if __name__ == "__main__":
         "guides/gamma-vs-canva-vs-copilot/index.html": build_article("gamma-vs-canva-vs-copilot"),
         "guides/best-ai-meeting-note-takers/index.html": build_article("best-ai-meeting-note-takers"),
         "guides/ai-tools-for-planning-2027/index.html": build_article("ai-tools-for-planning-2027"),
+        "guides/best-webcams-for-video-calls/index.html": build_article("best-webcams-for-video-calls"),
         "404.html": build_404(),
     }
     for rel in ["about/index.html", "contact/index.html", "disclosure/index.html", "privacy/index.html"]:
