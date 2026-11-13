@@ -73,6 +73,27 @@ def card(item, people, short):
 PIN_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.1-.8 3.3-.2 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.6 2.2-4.6 4.4 0 .9.3 1.8.8 2.3.1.1.1.2.1.3l-.3 1.2c0 .2-.2.3-.4.2-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg>'
 
 
+KIT_FORM = "10187082"
+KIT_OPTS = ('{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,'
+            '&quot;success_message&quot;:&quot;You are in! Check your inbox and tap the confirm link so the picks reach you.&quot;,'
+            '&quot;redirect_url&quot;:&quot;&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false}},&quot;version&quot;:&quot;5&quot;}')
+
+
+def signup(slug):
+    return (f'<div class="s-wrap"><section class="g-signup" id="get-the-picks" aria-labelledby="signup-h">'
+            f'<div class="g-signup-copy"><span class="g-signup-k">Free, weekly</span><h2 id="signup-h">Get our best gift finds each week</h2>'
+            f'<p>One short email with the picks worth buying, real price drops we have checked, and nothing else. Unsubscribe in one click.</p></div>'
+            f'<form action="https://app.kit.com/forms/{KIT_FORM}/subscriptions" method="post" class="seva-form formkit-form g-signup-form" '
+            f'data-sv-form="{KIT_FORM}" data-uid="212f95b401" data-format="inline" data-version="5" data-options="{KIT_OPTS}">'
+            f'<ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>'
+            f'<div data-element="fields" class="seva-fields formkit-fields g-signup-row">'
+            f'<label class="sr" for="kit-email">Email address</label>'
+            f'<input id="kit-email" class="formkit-input" name="email_address" type="email" required placeholder="you@example.com" autocomplete="email">'
+            f'<input type="hidden" name="fields[source_page]" value="{E(slug)}">'
+            f'<button data-element="submit" class="formkit-submit g-signup-btn" type="submit"><span>Send me the picks</span></button></div>'
+            f'<p class="g-signup-fine">We use Kit to send emails. Read our <a href="/privacy/">privacy page</a>.</p></form></section></div>')
+
+
 def build(data):
     slug, url = data["slug"], f'{SITE}/finds/{data["slug"]}/'
     title, desc = data["title"], data["description"]
@@ -133,11 +154,12 @@ def build(data):
 <div class="s-wrap"><section class="g-save"><img src="/pins/{data["pin"]}" alt="Pinterest pin for this guide" width="1000" height="1500" loading="lazy">
 <div><h2>Save this list for later</h2><p>Pin it to a board and come back when the Black Friday prices drop on {E(data["deal_day"])}.</p>
 <a class="g-pin" href="{E(pin_url)}" target="_blank" rel="noopener">{PIN_SVG}Save to Pinterest</a></div></section></div>
+{signup(slug)}
 <section class="g-notes s-wrap"><div><h2>How we picked</h2><p>{E(data["method"])}</p>
 <p>Photos are lifestyle images from Unsplash and may not show the exact product; tap through to Amazon to see it.</p></div>
 <div><h2>Updates</h2><ul>{updates}</ul></div><div><h2>Where we checked</h2><ul>{sources}</ul></div>
 <p class="more">More gift ideas: {data["more_html"]}</p></section>
-</main>''' + footer("finds") + '<script src="/finds/guide.js?v=14" defer></script></body></html>')
+</main>''' + footer("finds") + '<script src="https://f.convertkit.com/ckjs/ck.5.js" defer></script><script src="/finds/guide.js?v=14" defer></script></body></html>')
 
 
 if __name__ == "__main__":

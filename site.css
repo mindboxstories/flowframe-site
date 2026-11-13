@@ -377,3 +377,21 @@ body.v6 .g-extra a:hover{background:var(--accent-ink)}
 .g-extra a svg{width:15px;height:15px}
 @media (max-width:760px){.g-ex{grid-template-columns:1fr}.g-extras{padding-top:64px}.g-extra{padding:24px 22px}}
 .toc .tbox + .tbox{margin-top:14px;background:var(--wash)}
+
+/* Email sign-up (Kit form 10187082) */
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.g-signup{margin:40px 0 0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center;background:var(--wash);border:1.5px solid var(--line);border-radius:32px;padding:40px 44px}
+.g-signup-k{display:inline-block;background:var(--pop);color:var(--ink);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px}
+.g-signup h2{font-size:clamp(26px,3vw,36px);line-height:1.12;letter-spacing:-.03em;margin:0 0 10px;color:var(--ink)}
+.g-signup-copy p{margin:0;color:var(--text);max-width:460px}
+.g-signup-row{display:flex;gap:10px;flex-wrap:wrap}
+.g-signup .formkit-input{flex:1 1 220px;min-width:0;font:inherit;font-size:16px;padding:15px 18px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink)}
+.g-signup .formkit-input:focus{outline:3px solid var(--accent);outline-offset:2px;border-color:var(--accent)}
+body.v6 .g-signup-btn{flex:0 0 auto;font:inherit;font-weight:700;font-size:16px;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:15px 24px;cursor:pointer;position:relative}
+body.v6 .g-signup-btn:hover{background:var(--accent-ink)}
+.g-signup .formkit-spinner{display:none}
+.g-signup-fine{margin:10px 0 0 6px;font-size:13px;color:var(--muted)}
+.g-signup .formkit-alert{list-style:none;margin:0 0 10px;padding:0;color:var(--accent-ink);font-weight:600}
+.g-signup .formkit-alert:empty{display:none}
+.g-signup .formkit-alert-success{display:block;margin:0;padding:16px 18px;background:#fff;border-radius:16px;color:var(--ink);font-weight:600}
+@media (max-width:860px){.g-signup{grid-template-columns:1fr;gap:22px;padding:30px 22px;border-radius:26px}body.v6 .g-signup-btn{flex:1 1 100%}}

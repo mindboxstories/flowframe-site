@@ -3,7 +3,7 @@ build_site.py and build_guide.py, so every page on flowframe.shop shares one des
 import html, datetime
 
 E = html.escape
-SITE_CSS_V = "5"
+SITE_CSS_V = "6"
 DEAL_DATE = "2026-11-27"
 U = lambda i: "https://images.unsplash.com/photo-" + i
 
