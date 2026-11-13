@@ -220,7 +220,7 @@ WC=[
  dict(layout='D',img='1616587226960-4a03badbe8bf',plabel='From',price='$25',head='Your laptop camera <em style="color:var(--sun)">is the problem</em>',angle='relatable',title='Laptop Camera Too Grainy? 7 Webcams That Fix It'),
  dict(layout='C',imgs=['1758521541657-fd70465a5c54','1612831455359-970e23a1e4e9','1668605335684-c97ce92cbd76'],chip='Webcams 2026',head='Grainy on calls? <em>Upgrade from $25</em>',sub='7 picks, from budget to 4K',angle='value',title='Grainy on Video Calls? Webcams From $25'),
  dict(layout='A',img='1612831455359-970e23a1e4e9',chip='Home office',head='Work from home? <em>Upgrade this first</em>',sub='The webcam is the cheapest way to look better on every call.',angle='practical',title='Work From Home Upgrade: The Best Webcams for Calls'),
- dict(layout='E',img='1588196749597-9ff075ee6b5b',num='4K',head='webcams worth it <em>for calls</em>?',chip='Honest comparison',sub='When 4K helps, and when 1080p is plenty.',angle='curiosity',title='Is a 4K Webcam Worth It for Video Calls?'),
+ dict(layout='E',img='1616587226960-4a03badbe8bf',num='4K',head='webcams worth it <em>for calls</em>?',chip='Honest comparison',sub='When 4K helps, and when 1080p is plenty.',angle='curiosity',title='Is a 4K Webcam Worth It for Video Calls?'),
 ]
 for k,w in enumerate(WC):
     sp=dict(id=f'wc-{k+1}',theme='ff',**{x:y for x,y in w.items() if x not in('angle','title')}); specs.append(sp)
