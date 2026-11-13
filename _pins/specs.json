@@ -1147,5 +1147,451 @@
   "plabel": "About",
   "price": "$20",
   "size": 92
+ },
+ {
+  "id": "wl-1",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1513884923967-4b182ef167ab",
+  "num": "28",
+  "head": "gifts worth <em>watching</em> this Black Friday",
+  "chip": "Black Friday 2026",
+  "sub": "One list, under $25 to the splurge."
+ },
+ {
+  "id": "wl-2",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1513884923967-4b182ef167ab",
+  "chip": "Black Friday watchlist",
+  "head": "Your whole gift list, <em>in one place</em>",
+  "sub": "28 picks across tech, kitchen, hair tools and pets."
+ },
+ {
+  "id": "wl-3",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1603508102977-02688e3265fd",
+   "1544233726-9f1d2b27be8b",
+   "1580618672591-eb180b1a973f"
+  ],
+  "chip": "Black Friday 2026",
+  "head": "Shop smarter <em>this Black Friday</em>",
+  "sub": "28 picks, the honest catch on each"
+ },
+ {
+  "id": "wl-4",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1607082348824-0a96f2a4b9da",
+  "plabel": "From",
+  "price": "$12",
+  "chip": "Black Friday watchlist",
+  "head": "Know what to buy <em>before</em> the rush",
+  "tags": [
+   "AirTag",
+   "Instant Pot",
+   "Kindle",
+   "Shark FlexFusion"
+  ]
+ },
+ {
+  "id": "wl-5",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1513201099705-a9746e1e201f",
+  "plabel": "Picks",
+  "price": "28",
+  "head": "Black Friday, <em style=\"color:var(--sun)\">without the stress</em>"
+ },
+ {
+  "id": "wl-6",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1612373914372-79a8a0311f78",
+  "chip": "Black Friday · Gift list",
+  "head": "Done with gift shopping <em>by December</em>",
+  "sub": "The 28 picks worth watching, sorted by who you are buying for."
+ },
+ {
+  "id": "wl-7",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1590794056226-79ef3a8147e1",
+  "num": "6",
+  "head": "gift lists, <em>one Black Friday watchlist</em>",
+  "chip": "Under $25 to splurge",
+  "sub": "For her, kitchen, desk, hair and pets."
+ },
+ {
+  "id": "wl-8",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1500989145603-8e7ef71d639e",
+   "1734111719430-fe4a3973f8af",
+   "1571131116858-2295ade82a72"
+  ],
+  "chip": "Black Friday weekend",
+  "head": "Still deciding? <em>Start here.</em>",
+  "sub": "28 gifts worth watching, honest catch on each"
+ },
+ {
+  "id": "f2-01",
+  "theme": "ff",
+  "layout": "C",
+  "imgs": [
+   "1588196749597-9ff075ee6b5b",
+   "1612831455359-970e23a1e4e9",
+   "1668605335684-c97ce92cbd76"
+  ],
+  "chip": "AI note-takers",
+  "head": "Your meetings, <em>summarised for you</em>",
+  "sub": "Fathom, Granola, Otter, Fireflies compared"
+ },
+ {
+  "id": "f2-02",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1668605335684-c97ce92cbd76",
+  "chip": "Free plans compared",
+  "head": "The free AI note-taker <em>worth trying first</em>",
+  "sub": "Which free plan fits how you meet, and the catch on each."
+ },
+ {
+  "id": "f2-03",
+  "theme": "ff",
+  "layout": "D",
+  "img": "1616587226960-4a03badbe8bf",
+  "plabel": "Notes",
+  "price": "Auto",
+  "head": "Stop taking <em style=\"color:var(--sun)\">meeting notes</em>"
+ },
+ {
+  "id": "f2-04",
+  "theme": "ff",
+  "layout": "E",
+  "img": "1588196749597-9ff075ee6b5b",
+  "num": "1",
+  "head": "question to ask <em>before you pick an AI note-taker</em>",
+  "chip": "Bot or no bot?",
+  "sub": "The difference that matters most."
+ },
+ {
+  "id": "f2-05",
+  "theme": "ff",
+  "layout": "C",
+  "imgs": [
+   "1517245386807-bb43f82c33c4",
+   "1552664730-d307ca884978",
+   "1557804506-669a67965ba0"
+  ],
+  "chip": "Gamma · Canva · Copilot",
+  "head": "Which AI slide maker <em>is right for you?</em>",
+  "sub": "Free options, prices and exports"
+ },
+ {
+  "id": "f2-06",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1531403009284-440f080d1e12",
+  "chip": "AI presentations",
+  "head": "From blank page to deck <em>in minutes</em>",
+  "sub": "How Gamma, Canva and Copilot compare for real work."
+ },
+ {
+  "id": "f2-07",
+  "theme": "ff",
+  "layout": "B",
+  "img": "1552664730-d307ca884978",
+  "plabel": "Tools",
+  "price": "3",
+  "chip": "Slides with AI",
+  "head": "The <em>best</em> AI presentation maker?",
+  "tags": [
+   "Gamma",
+   "Canva",
+   "Copilot"
+  ]
+ },
+ {
+  "id": "f2-08",
+  "theme": "ff",
+  "layout": "D",
+  "img": "1517245386807-bb43f82c33c4",
+  "plabel": "Start",
+  "price": "Free",
+  "head": "Make slides <em style=\"color:var(--sun)\">people remember</em>"
+ },
+ {
+  "id": "f2-09",
+  "theme": "ff",
+  "layout": "E",
+  "img": "1513128034602-7814ccaddd4e",
+  "num": "2027",
+  "head": "planned with <em>7 free AI tools</em>",
+  "chip": "Plan your year",
+  "sub": "Calendar, meetings, tasks and slides.",
+  "size": 96
+ },
+ {
+  "id": "f2-10",
+  "theme": "ff",
+  "layout": "C",
+  "imgs": [
+   "1535981767287-35259dbf7d0e",
+   "1496181133206-80ce9b88a853",
+   "1501504905252-473c47e087f8"
+  ],
+  "chip": "Plan 2027",
+  "head": "Start 2027 <em>already organised</em>",
+  "sub": "7 AI planning tools with free plans"
+ },
+ {
+  "id": "f2-11",
+  "theme": "ff",
+  "layout": "B",
+  "img": "1676287566973-7e25f18f12a9",
+  "plabel": "Cost",
+  "price": "$0",
+  "chip": "AI planning tools",
+  "head": "Your 2027 plan, <em>on autopilot</em>",
+  "tags": [
+   "Reclaim.ai",
+   "MeetGeek",
+   "ClickUp",
+   "Gamma"
+  ]
+ },
+ {
+  "id": "f2-12",
+  "theme": "ff",
+  "layout": "D",
+  "img": "1580934174026-8142803ebb5b",
+  "plabel": "Tools",
+  "price": "7",
+  "head": "New year, <em style=\"color:var(--sun)\">less busywork</em>"
+ },
+ {
+  "id": "f2-13",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1542271484-f163235efa6d",
+  "chip": "Plan 2027",
+  "head": "Protect your <em>focus time</em> next year",
+  "sub": "AI calendars and planners with free plans, compared."
+ },
+ {
+  "id": "f2-14",
+  "theme": "ff",
+  "layout": "E",
+  "img": "1453928582365-b6ad33cbcf64",
+  "num": "7",
+  "head": "AI tools I wish I had <em>this year</em>",
+  "chip": "All have free plans",
+  "sub": "Plan, meet, present and create."
+ },
+ {
+  "id": "cm-u25-1",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1601804590276-e19ce20343da",
+  "chip": "Cyber Monday",
+  "head": "Missed Black Friday? <em>Start here.</em>",
+  "sub": "12 gifts under $25, with the honest catch on each."
+ },
+ {
+  "id": "cm-kit-2",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1518291344630-4857135fb581",
+  "plabel": "From",
+  "price": "$16",
+  "head": "Cyber Monday <em style=\"color:var(--sun)\">kitchen gifts</em>",
+  "size": 96
+ },
+ {
+  "id": "cm-wfh-3",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1518976024611-28bf4b48222e",
+  "num": "10",
+  "head": "Cyber Monday <em>desk upgrades</em>",
+  "chip": "From $20",
+  "sub": "For anyone who works from home."
+ },
+ {
+  "id": "cm-hair-4",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1769029270594-26ce033ca6fc",
+  "plabel": "From",
+  "price": "$29",
+  "chip": "Cyber Monday",
+  "head": "Hair-tool gifts <em>worth checking today</em>",
+  "tags": [
+   "Revlon",
+   "Laifen",
+   "Shark",
+   "Dyson"
+  ]
+ },
+ {
+  "id": "cm-her-5",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1687435703153-88f6bc0cdcff",
+   "1611591437281-460bfbe1220a",
+   "1668112037360-900ff60ef6f7"
+  ],
+  "chip": "Cyber Monday",
+  "head": "Gifts for her, <em>one last look</em>",
+  "sub": "11 picks from $16, honest catch on each"
+ },
+ {
+  "id": "cm-pets-6",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1672355422293-a912bc3a1d90",
+  "chip": "Cyber Monday · Pets",
+  "head": "The pets deserve <em>a gift too</em>",
+  "sub": "9 gifts for dog and cat people, all under $55."
+ },
+ {
+  "id": "xm-u25-1",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1513201099705-a9746e1e201f",
+  "num": "12",
+  "head": "stocking stuffers <em>under $25</em>",
+  "chip": "Christmas 2026",
+  "sub": "Small gifts they will actually use."
+ },
+ {
+  "id": "xm-u25-2",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1607900177462-ac553f1f5d97",
+  "plabel": "All under",
+  "price": "$25",
+  "head": "Secret Santa <em style=\"color:var(--sun)\">sorted</em>",
+  "size": 104
+ },
+ {
+  "id": "xm-her-3",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1602521163308-23e552671e38",
+  "chip": "Christmas · For her",
+  "head": "The gift she’ll <em>actually keep</em>",
+  "sub": "11 thoughtful picks from $16, sorted by budget."
+ },
+ {
+  "id": "xm-her-4",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1513885535751-8b9238bd345a",
+  "plabel": "From",
+  "price": "$16",
+  "chip": "Christmas gifts for her",
+  "head": "For mum, sister or <em>best friend</em>",
+  "tags": [
+   "Silk eye mask",
+   "Owala",
+   "Gold cuff",
+   "LEGO plants"
+  ]
+ },
+ {
+  "id": "xm-kit-5",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1603185730021-ddc0c8097059",
+  "chip": "Christmas · Kitchen",
+  "head": "For the one who <em>cooks Christmas dinner</em>",
+  "sub": "8 kitchen gifts from $16 to a splurge."
+ },
+ {
+  "id": "xm-kit-6",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1598103442097-8b74394b95c6",
+   "1622001545761-9bd12a4b465b",
+   "1590794056226-79ef3a8147e1"
+  ],
+  "chip": "Christmas 2026",
+  "head": "Kitchen gifts <em>they’ll use all year</em>",
+  "sub": "8 picks for the home cook"
+ },
+ {
+  "id": "xm-wfh-7",
+  "theme": "finds",
+  "layout": "B",
+  "img": "1511467687858-23d96c32e4ae",
+  "plabel": "From",
+  "price": "$20",
+  "chip": "Christmas · Home office",
+  "head": "Make their January desk <em>a better place</em>",
+  "tags": [
+   "Desk mat",
+   "Laptop stand",
+   "Ember Mug",
+   "Kindle"
+  ]
+ },
+ {
+  "id": "xm-wfh-8",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1500989145603-8e7ef71d639e",
+  "plabel": "From",
+  "price": "$20",
+  "head": "For the colleague who <em style=\"color:var(--sun)\">has everything</em>",
+  "size": 92
+ },
+ {
+  "id": "xm-hair-9",
+  "theme": "finds",
+  "layout": "A",
+  "img": "1734111719430-fe4a3973f8af",
+  "chip": "Christmas · Hair tools",
+  "head": "Good hair days <em>under the tree</em>",
+  "sub": "8 hair tools from $29, each with the honest catch."
+ },
+ {
+  "id": "xm-hair-10",
+  "theme": "finds",
+  "layout": "E",
+  "img": "1712481846916-8f73ffc2067a",
+  "num": "8",
+  "head": "hair tools on <em>her Christmas list</em>",
+  "chip": "From $29",
+  "sub": "Dryers, brushes and stylers."
+ },
+ {
+  "id": "xm-pets-11",
+  "theme": "finds",
+  "layout": "C",
+  "imgs": [
+   "1675543999462-3b3157b044c2",
+   "1571131116858-2295ade82a72",
+   "1591946614720-90a587da4a36"
+  ],
+  "chip": "Christmas 2026",
+  "head": "Christmas for the <em>whole family</em>, fur included",
+  "sub": "9 pet gifts under $55"
+ },
+ {
+  "id": "xm-pets-12",
+  "theme": "finds",
+  "layout": "D",
+  "img": "1774440865482-81a8c9b92e76",
+  "plabel": "All under",
+  "price": "$55",
+  "head": "A stocking for <em style=\"color:var(--sun)\">the dog</em>",
+  "size": 104
  }
 ]

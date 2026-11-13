@@ -6,12 +6,14 @@
     var b = ann.querySelector('.ann-days'), s = ann.querySelector('span');
     if (days > 1) b.textContent = days + ' days';
     else if (days === 1) b.textContent = '1 day';
-    else if (s) s.innerHTML = '<b>Black Friday deals are live.</b> <i class="x"> Our gift guides are re-checked every week.</i>';
+    else if (s && days >= -3) s.innerHTML = '<b>Black Friday weekend is here.</b> <i class="x"> Prices move fast, so check the current price before you buy.</i>';
+    else if (s) s.innerHTML = '<b>Christmas gift ideas</b> <i class="x"> from every budget, re-checked every week.</i>';
   }
   var badge = document.querySelector('.mz-badge[data-countdown]');
   if (badge) {
     var d = Math.ceil((new Date(badge.dataset.countdown + 'T00:00:00') - new Date()) / 86400000);
-    if (d <= 0) { badge.querySelector('b').textContent = 'Now'; badge.querySelector('span').textContent = 'Black Friday deals are live'; }
+    if (d < -3) { badge.querySelector('b').textContent = 'Gifts'; badge.querySelector('span').textContent = 'for Christmas, every budget'; }
+    else if (d <= 0) { badge.querySelector('b').textContent = 'Now'; badge.querySelector('span').textContent = 'Black Friday weekend'; }
     else badge.querySelector('b').textContent = d;
   }
   if (!('IntersectionObserver' in window)) return;
