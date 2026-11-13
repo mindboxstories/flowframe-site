@@ -57,7 +57,7 @@ def capture():
         pg = ctx.new_page()
         pg.route(re.compile(r".*(goatcounter|zgo\.at).*"), lambda r: r.abort())
         pg.goto(spec["url"], wait_until="networkidle")
-        pg.add_style_tag(content=".ann{display:none!important} html{scroll-behavior:auto!important} *{transition:none!important;animation:none!important}")
+        pg.add_style_tag(content=".ann,.g-bar{display:none!important} .g-card.focus{box-shadow:0 0 0 4px var(--accent),0 24px 48px -18px rgba(0,0,0,.35)!important;border-color:transparent!important} html{scroll-behavior:auto!important} *{transition:none!important;animation:none!important}")
         # load every lazy image, then return to the top
         hgt = pg.evaluate("document.documentElement.scrollHeight")
         for y in range(0, hgt, 500):
@@ -81,6 +81,12 @@ def capture():
                     pg.screenshot(path=f"{OUT}/shots/{i:02d}_t{k:02d}.jpg", type="jpeg", quality=90)
             pg.evaluate(f"scrollTo(0,{r['y']})"); pg.wait_for_timeout(250)
             pg.screenshot(path=f"{OUT}/shots/{i:02d}_hold.png")
+            if s.get("item"):   # second still: this card highlighted, the rest dimmed (crossfaded in compose)
+                pg.evaluate("""(sel) => { const t = document.querySelector(sel);
+                  document.querySelectorAll('.g-card').forEach(c => c.classList.toggle(c === t ? 'focus' : 'dim', true)); }""", s["target"])
+                pg.wait_for_timeout(150)
+                pg.screenshot(path=f"{OUT}/shots/{i:02d}_focus.png")
+                pg.evaluate("document.querySelectorAll('.g-card').forEach(c => c.classList.remove('focus','dim'))")
             s["box"] = r["box"]
             prev = r["y"]
         b.close()
@@ -99,7 +105,7 @@ def compose():
 
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
                            "-i", "-", "-i", f"{OUT}/voice.wav", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p",
-                           "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", f"{OUT}/video.mp4"], stdin=subprocess.PIPE)
+                           "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart", f"{OUT}/video.mp4"], stdin=subprocess.PIPE)
     t, timeline = 0.0, []
     for i, s in enumerate(segs):
         if i:
@@ -109,6 +115,7 @@ def compose():
                 ff.stdin.write(np.asarray(im.resize((W, H), Image.BILINEAR, reducing_gap=2.0)).tobytes())
             t += n / FPS
         im = Image.open(f"{OUT}/shots/{i:02d}_hold.png").convert("RGB")
+        fo = Image.open(f"{OUT}/shots/{i:02d}_focus.png").convert("RGB") if s.get("item") else None
         dur = s["dur"] + PAD
         nf = int(round(dur * FPS))
         dur = nf / FPS
@@ -116,8 +123,8 @@ def compose():
         if s.get("item") and s["box"]:
             bx = s["box"]
             c1 = ((bx["x"] + bx["w"] / 2) * DPR, (bx["y"] + bx["h"] / 2) * DPR)
-            zmax = min(1.32, 0.94 * min(VW / bx["w"], VH / bx["h"]))
-            zmax = max(zmax, 1.08)
+            c1 = (c0[0] + (c1[0] - c0[0]) * 0.4, c0[1] + (c1[1] - c0[1]) * 0.4)
+            zmax = 1.06
         else:
             c1, zmax = c0, 1.05
         for f in range(nf):
@@ -129,6 +136,8 @@ def compose():
             z = 1 + (zmax * drift - 1) * m
             cx, cy = c0[0] + (c1[0] - c0[0]) * m, c0[1] + (c1[1] - c0[1]) * m
             fr = frame_at(im, cx, cy, z)
+            if fo is not None:
+                fr = Image.blend(fr, frame_at(fo, cx, cy, z), m)
             ff.stdin.write(np.asarray(fr).tobytes())
             if f == int(min(2.0, dur / 2) * FPS):
                 fr.resize((960, 540)).save(f"{OUT}/frames/{i:02d}_{s['id']}.jpg", quality=82)

@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
     inputs:
       slug: {description: "folder under _video", default: "gifts-for-her"}
+permissions:
+  contents: write
 jobs:
   video:
     runs-on: ubuntu-latest
@@ -33,3 +35,10 @@ jobs:
             _video/out/*/frames/
             _video/out/*/thumb-*.jpg
           retention-days: 30
+      - name: Release (downloadable copy)
+        env: {GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}", SLUG: "${{ inputs.slug || 'gifts-for-her' }}"}
+        run: |
+          cd _video/out/$SLUG
+          zip -qr qa.zip frames thumb-*.jpg captions.srt chapters.txt timeline.json
+          mv video.mp4 $SLUG.mp4
+          gh release create "video-$SLUG-${{ github.run_id }}" $SLUG.mp4 qa.zip thumb-*.jpg captions.srt -R ${{ github.repository }} --prerelease --title "video-$SLUG-${{ github.run_id }}" --notes "Rendered guide video (not for the site)."
