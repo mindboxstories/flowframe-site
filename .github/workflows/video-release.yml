@@ -1,0 +1,27 @@
+name: Release guide video
+on:
+  workflow_dispatch:
+    inputs:
+      run_id: {description: "Render guide video run id", required: true}
+      slug: {description: "video slug", default: "gifts-for-her"}
+permissions:
+  contents: write
+  actions: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: video-${{ inputs.slug }}
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: out
+      - run: |
+          cd out/${{ inputs.slug }}
+          zip -qr qa.zip frames thumb-*.jpg captions.srt chapters.txt timeline.json
+          mv video.mp4 ${{ inputs.slug }}.mp4
+          TAG=video-${{ inputs.slug }}-${{ inputs.run_id }}
+          gh release create "$TAG" ${{ inputs.slug }}.mp4 qa.zip thumb-*.jpg captions.srt -R ${{ github.repository }} --prerelease --title "$TAG" --notes "Rendered guide video (not for the site)."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
