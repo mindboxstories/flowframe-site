@@ -44,7 +44,7 @@
   },
   {
    "id": "b2",
-   "target": "#25-to-40 .g-banner",
+   "target": "[id=\"25-to-40\"] .g-banner",
    "text": "Twenty-five to forty dollars. This is the sweet spot for friends, sisters, and partners."
   },
   {
@@ -85,7 +85,7 @@
   },
   {
    "id": "b3",
-   "target": "#40-to-60 .g-banner",
+   "target": "[id=\"40-to-60\"] .g-banner",
    "text": "Forty to sixty dollars, for when you want it to feel like a proper present."
   },
   {
