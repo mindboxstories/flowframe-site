@@ -1271,12 +1271,11 @@
  {
   "id": "f2-04",
   "theme": "ff",
-  "layout": "E",
-  "img": "1588196749597-9ff075ee6b5b",
-  "num": "1",
-  "head": "question to ask <em>before you pick an AI note-taker</em>",
+  "layout": "A",
+  "img": "1612831455359-970e23a1e4e9",
   "chip": "Bot or no bot?",
-  "sub": "The difference that matters most."
+  "head": "Ask this <em>before</em> you pick an AI note-taker",
+  "sub": "The one difference that matters most, and which tools get it right."
  },
  {
   "id": "f2-05",
@@ -1352,7 +1351,7 @@
   "id": "f2-11",
   "theme": "ff",
   "layout": "B",
-  "img": "1676287566973-7e25f18f12a9",
+  "img": "1501504905252-473c47e087f8",
   "plabel": "Cost",
   "price": "$0",
   "chip": "AI planning tools",
@@ -1388,7 +1387,7 @@
   "layout": "E",
   "img": "1453928582365-b6ad33cbcf64",
   "num": "7",
-  "head": "AI tools I wish I had <em>this year</em>",
+  "head": "AI tools worth <em>starting 2027 with</em>",
   "chip": "All have free plans",
   "sub": "Plan, meet, present and create."
  },
