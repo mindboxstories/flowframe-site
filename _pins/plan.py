@@ -268,6 +268,9 @@ for p in bford:
       link=f"https://flowframe.shop/finds/{p['slug']}/?utm_source=pinterest&utm_medium=social&utm_campaign={p['id']}",img=f"https://flowframe.shop/pins/v7/{p['id']}.jpg",layout=p['layout'],angle=p['angle'],kind=p['kind'],batch='bf'))
 
 # Batch 2 schedule
+SPN={x['id']:x.get('num') for x in specs if x.get('layout')=='E'}
+for p in b2:
+    if SPN.get(p['id']) and p['hook'][:1].islower(): p['hook']=f"{SPN[p['id']]} {p['hook']}"
 WLD=['2026-11-14','2026-11-15','2026-11-17','2026-11-19','2026-11-21','2026-11-23','2026-11-25','2026-11-26']
 GBF=json.load(open(os.path.join(REPO,'_tools/guides/black-friday-2026.json')))
 def tagsfor(slug): return TAGS.get(slug,'#blackfriday #giftideas #blackfriday2026')
