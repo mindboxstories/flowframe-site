@@ -223,8 +223,8 @@
    "id": "kitchen",
    "label": "Kitchen",
    "blurb": "The pans and gadgets that see big Black Friday drops.",
-   "img": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6",
-   "alt": "A roast chicken in a cast iron skillet",
+   "img": "https://images.unsplash.com/photo-1518291344630-4857135fb581",
+   "alt": "A frying pan and tomatoes on a blue surface",
    "items": [
     {
      "id": "skillet",
@@ -392,8 +392,8 @@
    "id": "hair-tools",
    "label": "Hair tools",
    "blurb": "The wish-list stylers, from $49 to the splurge.",
-   "img": "https://images.unsplash.com/photo-1734111719430-fe4a3973f8af",
-   "alt": "Hair being styled with a round brush",
+   "img": "https://images.unsplash.com/photo-1712481846916-8f73ffc2067a",
+   "alt": "A woman styling her hair at home",
    "items": [
     {
      "id": "revlon",
