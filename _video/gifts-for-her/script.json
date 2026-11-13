@@ -1,0 +1,144 @@
+{
+ "slug": "gifts-for-her",
+ "url": "https://flowframe.shop/finds/gifts-for-her-under-60/",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "segments": [
+  {
+   "id": "intro",
+   "target": "top",
+   "text": "Stuck on what to get her this year? Here are eleven gift ideas for her, all under sixty dollars, sorted by budget, with the one thing to know before you buy each one. These are the gifts that keep showing up on this season's gift lists, and Black Friday is on the twenty-seventh of November, so now is a good time to make a shortlist."
+  },
+  {
+   "id": "disclosure",
+   "target": ".g-intro",
+   "text": "A quick note first. As an Amazon Associate, we earn from qualifying purchases. If you buy through our links, we may earn a small commission at no extra cost to you, and it never changes our picks. The prices in this video are the ones we saw on November eleventh. They change often, so check the link for today's price."
+  },
+  {
+   "id": "top",
+   "target": "#top-picks",
+   "text": "If you only buy one, our three favorites are the LEGO Botanicals Tiny Plants, the Owala FreeSip tumbler, and the fuzzy slippers. Now for the full list, starting under twenty-five dollars."
+  },
+  {
+   "id": "b1",
+   "target": "#under-25 .g-banner",
+   "text": "Under twenty-five dollars: stocking fillers, Secret Santa gifts, and easy add-ons."
+  },
+  {
+   "id": "slippers",
+   "target": "#slippers",
+   "item": true,
+   "text": "First, fuzzy faux-fur slippers, around sixteen dollars. Soft, open-toe house slippers that turn up on almost every winter gift list. They're an easy pick when you don't know her taste well. The catch: sizes come in pairs, like seven to eight, so if she's between sizes, go up."
+  },
+  {
+   "id": "lamp",
+   "target": "#lamp",
+   "item": true,
+   "text": "Next, a candle warmer lamp, around twenty dollars. It melts a candle from the top, so there's no open flame, and it works best as an add-on to a candle gift. The catch: you still need the candle, so check that the jar fits under the lamp."
+  },
+  {
+   "id": "candle",
+   "target": "#candle",
+   "item": true,
+   "text": "Then the P.F. Candle Co. Spruce candle, around twenty-four dollars. A soy candle with a winter-forest scent, in a plain glass jar that looks good on any shelf. The catch: scent is personal. If you're not sure, pick a fresh or citrus one instead."
+  },
+  {
+   "id": "b2",
+   "target": "#25-to-40 .g-banner",
+   "text": "Twenty-five to forty dollars. This is the sweet spot for friends, sisters, and partners."
+  },
+  {
+   "id": "mask",
+   "target": "#mask",
+   "item": true,
+   "text": "The Hommey silk eye mask, around twenty-seven dollars. Mulberry silk that blocks the light on flights, trips, and lazy weekend mornings. The catch: silk needs a gentle hand wash, not the washing machine."
+  },
+  {
+   "id": "owala",
+   "target": "#owala",
+   "item": true,
+   "text": "The Owala FreeSip forty-ounce tumbler, around thirty-five dollars. A big insulated tumbler with a built-in straw and a side handle, in lots of colors. It goes everywhere with her. The catch: forty ounces won't fit every car cup holder, so for a commuter, the twenty-four-ounce bottle is the safer size."
+  },
+  {
+   "id": "summer",
+   "target": "#summer",
+   "item": true,
+   "text": "Summer Fridays Jet Lag Essentials, around thirty-four dollars. Travel sizes of the brand's favorites in one zip pouch, ready for a carry-on. The catch: travel sizes run out fast, so think of it as a treat, not a long-term supply."
+  },
+  {
+   "id": "saltstone",
+   "target": "#saltstone",
+   "item": true,
+   "text": "Salt and Stone body wash in Bergamot and Hinoki, around thirty-six dollars. A clean, woody scent in a bottle that looks good enough to keep on show. The catch: that's a lot for body wash, which is exactly why she won't buy it for herself."
+  },
+  {
+   "id": "cuff",
+   "target": "#cuff",
+   "item": true,
+   "text": "A gold cuff bracelet, roughly twenty to forty dollars. Chunky gold cuffs are one of Pinterest's predicted jewelry looks for twenty twenty-six, and an open cuff fits most wrists. The catch: at this price it's gold-plated, not solid gold, so keep it away from water."
+  },
+  {
+   "id": "lego",
+   "target": "#lego",
+   "item": true,
+   "text": "LEGO Botanicals Tiny Plants, around forty dollars. Nine buildable plants in little terracotta-style pots. A calm evening build, and a plant she can't kill. The catch: it takes a few hours to build, so it suits someone who enjoys a project."
+  },
+  {
+   "id": "b3",
+   "target": "#40-to-60 .g-banner",
+   "text": "Forty to sixty dollars, for when you want it to feel like a proper present."
+  },
+  {
+   "id": "bala",
+   "target": "#bala",
+   "item": true,
+   "text": "Bala Bangles, the one-pound pair, at fifty-five dollars. Weighted bangles that look like jewelry, for walks and at-home workouts. The catch: we haven't seen these discounted this season, so fifty-five dollars is the usual price."
+  },
+  {
+   "id": "tilbury",
+   "target": "#tilbury",
+   "item": true,
+   "text": "And the Charlotte Tilbury mini beauty set, around fifty-four dollars. Minis of the brand's best-known lip and face products in a gift box, so she gets a luxury brand at a gift price. The catch: holiday sets change every year, so check what's inside before you buy."
+  },
+  {
+   "id": "signup",
+   "target": "#get-the-picks",
+   "text": "If you'd like the real price drops as Black Friday gets closer, there's a free weekly email on the guide page. One short email with the picks worth buying, and you can unsubscribe in one click."
+  },
+  {
+   "id": "table",
+   "target": ".g-table",
+   "text": "Here are all eleven at a glance."
+  },
+  {
+   "id": "outro",
+   "target": ".g-save",
+   "text": "The full guide, with every link for Amazon in the US and the UK, is linked in the description and in the pinned comment. Save it for later, and good luck with the shopping. This has been Digittouch Finds."
+  }
+ ],
+ "chapters": {
+  "intro": "Intro",
+  "disclosure": "How we picked (and prices)",
+  "top": "Our top 3",
+  "b1": "Under $25",
+  "b2": "$25 to $40",
+  "b3": "$40 to $60",
+  "signup": "Free weekly price-drop email",
+  "table": "All 11 at a glance + where to buy"
+ },
+ "thumb": {
+  "kicker": "Black Friday 2026",
+  "headline_html": "Gifts she&rsquo;ll <em>actually</em> love",
+  "sub": "11 picks, each with the honest catch",
+  "price": "$60",
+  "photos": [
+   "https://images.unsplash.com/photo-1775994121066-df9928d01e18",
+   "https://images.unsplash.com/photo-1668112037360-900ff60ef6f7",
+   "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb",
+   "https://images.unsplash.com/photo-1611591437281-460bfbe1220a"
+  ],
+  "number": "11",
+  "headline_b_html": "gifts for her <em>under $60</em>",
+  "tag_b": "Before Black Friday"
+ }
+}
