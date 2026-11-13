@@ -1592,5 +1592,81 @@
   "price": "$55",
   "head": "A stocking for <em style=\"color:var(--sun)\">the dog</em>",
   "size": 104
+ },
+ {
+  "id": "wc-1",
+  "theme": "ff",
+  "layout": "E",
+  "img": "1758521541657-fd70465a5c54",
+  "num": "7",
+  "head": "webcams that make you <em>look better on calls</em>",
+  "chip": "From $25 to $199",
+  "sub": "Compared from expert reviews."
+ },
+ {
+  "id": "wc-2",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1668605335684-c97ce92cbd76",
+  "chip": "Webcams compared",
+  "head": "Look clearer on <em>every video call</em>",
+  "sub": "7 webcams from $25 to $199, with the catch on each."
+ },
+ {
+  "id": "wc-3",
+  "theme": "ff",
+  "layout": "B",
+  "img": "1588196749597-9ff075ee6b5b",
+  "plabel": "From",
+  "price": "$25",
+  "chip": "Webcam upgrade",
+  "head": "The upgrade <em>your calls</em> are missing",
+  "tags": [
+   "Anker C200",
+   "Logitech C920s",
+   "Brio 500",
+   "Insta360"
+  ]
+ },
+ {
+  "id": "wc-4",
+  "theme": "ff",
+  "layout": "D",
+  "img": "1616587226960-4a03badbe8bf",
+  "plabel": "From",
+  "price": "$25",
+  "head": "Your laptop camera <em style=\"color:var(--sun)\">is the problem</em>"
+ },
+ {
+  "id": "wc-5",
+  "theme": "ff",
+  "layout": "C",
+  "imgs": [
+   "1758521541657-fd70465a5c54",
+   "1612831455359-970e23a1e4e9",
+   "1668605335684-c97ce92cbd76"
+  ],
+  "chip": "Webcams 2026",
+  "head": "Grainy on calls? <em>Upgrade from $25</em>",
+  "sub": "7 picks, from budget to 4K"
+ },
+ {
+  "id": "wc-6",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1612831455359-970e23a1e4e9",
+  "chip": "Home office",
+  "head": "Work from home? <em>Upgrade this first</em>",
+  "sub": "The webcam is the cheapest way to look better on every call."
+ },
+ {
+  "id": "wc-7",
+  "theme": "ff",
+  "layout": "E",
+  "img": "1588196749597-9ff075ee6b5b",
+  "num": "4K",
+  "head": "webcams worth it <em>for calls</em>?",
+  "chip": "Honest comparison",
+  "sub": "When 4K helps, and when 1080p is plenty."
  }
 ]
