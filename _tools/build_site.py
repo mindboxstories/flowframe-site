@@ -3,7 +3,7 @@ Usage: python3 _tools/build_site.py
 - Hubs (/, /guides/, /finds/) are generated from the data below and from _tools/guides/*.json.
 - Articles (/guides/<slug>/) and simple pages keep their written content: the script reads the
   <article> body from the current file (or from _tools/src/ once archived) and re-wraps it."""
-import html, json, os, re, glob, sys
+import html, json, os, re, glob, sys, datetime
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from chrome import head, top, footer, mosaic, split_hero, promise, ARROW, MARK_FF, days_left
 
@@ -57,10 +57,11 @@ def img(src, alt, sizes="100vw", w=1600, h=900, eager=False):
             f'alt="{E(alt)}" width="{ws[1]}" height="{round(ws[1]*h/w)}" {load}>')
 
 
-def page(title, desc, url, theme, body, og=None, active=None):
+def page(title, desc, url, theme, body, og=None, active=None, ld=None):
     brand = "Digittouch Finds" if theme == "finds" else "FlowFrame"
     full = title if brand in title else f"{title} | {brand}"
-    return (head(full, desc, url, theme, og) + f'</head><body class="v6 {theme}">' + top(theme, active or url)
+    ldj = f'<script type="application/ld+json">{json.dumps(ld)}</script>' if ld else ""
+    return (head(full, desc, url, theme, og) + ldj + f'</head><body class="v6 {theme}">' + top(theme, active or url)
             + f"<main>{body}</main>" + footer(theme) + "</body></html>")
 
 
@@ -204,7 +205,17 @@ def build_article(slug):
     body = head_ + f'<div class="s-wrap a-layout"><article class="a-body">{art}</article>{aside}</div>'
     body += ('<div class="s-wrap"><section class="sec"><div class="sec-head"><div><h2>Keep reading</h2></div></div>'
              f'<div class="grid two">{"".join(card(c) for c in others)}{card(dict(finds_cards()[0], chip="Gift guide", pop=True))}</div></section></div>')
-    return page(title, desc, f"/guides/{slug}/", "ff", body, h["img"] + "?w=1200&h=630&fit=crop", active="/guides/")
+    try:
+        iso = datetime.date.fromisoformat(updated.strip()).isoformat()
+    except ValueError:
+        iso = None
+    ld = {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": desc,
+          "image": [h["img"] + "?w=1200&h=630&fit=crop"], "mainEntityOfPage": f"https://flowframe.shop/guides/{slug}/",
+          "author": {"@type": "Organization", "name": "FlowFrame", "url": "https://flowframe.shop/about/"},
+          "publisher": {"@type": "Organization", "name": "FlowFrame", "logo": {"@type": "ImageObject", "url": "https://flowframe.shop/favicon.svg"}}}
+    if iso:
+        ld["dateModified"] = iso
+    return page(title, desc, f"/guides/{slug}/", "ff", body, h["img"] + "?w=1200&h=630&fit=crop", active="/guides/", ld=ld)
 
 
 def nice_date(d):

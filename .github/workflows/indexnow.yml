@@ -1,0 +1,41 @@
+name: Tell search engines about new pages (IndexNow)
+# Bing, Yandex, Seznam and Naver share IndexNow; Bing also feeds DuckDuckGo, Copilot and ChatGPT search.
+on:
+  push:
+    branches: [main]
+    paths: ["**.html", "sitemap.xml"]
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - name: Submit changed pages
+        env:
+          KEY: "dc27d00f8cffaddc1dd5d61c39e54bea"
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY'
+          import os, re, json, subprocess, urllib.request
+          host = "flowframe.shop"
+          sitemap = re.findall(r"<loc>(.*?)</loc>", open("sitemap.xml").read())
+          before, after, event = os.environ["BEFORE"], os.environ["AFTER"], os.environ["EVENT"]
+          urls = sitemap
+          if event == "push" and before and not set(before) <= {"0"}:
+              out = subprocess.run(["git", "diff", "--name-only", before, after], capture_output=True, text=True).stdout.split()
+              if "sitemap.xml" not in out:
+                  pages = {"https://%s/%s" % (host, f[:-10]) if f.endswith("index.html") else None for f in out if f.endswith(".html")}
+                  urls = [u for u in sitemap if u in pages]
+          if not urls:
+              print("Nothing to submit"); raise SystemExit
+          body = json.dumps({"host": host, "key": os.environ["KEY"], "keyLocation": "https://%s/%s.txt" % (host, os.environ["KEY"]), "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body, headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              r = urllib.request.urlopen(req, timeout=30); print("IndexNow", r.status, len(urls), "URLs")
+          except urllib.error.HTTPError as e:
+              print("IndexNow", e.code, e.read()[:300]); raise SystemExit(0 if e.code in (202,) else 1)
+          for u in urls: print(" ", u)
+          PY
