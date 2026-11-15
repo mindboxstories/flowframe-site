@@ -177,7 +177,12 @@ def audio(total):
     vr = np.sqrt(np.mean(vn[speech[: len(vn)]] ** 2)); mr = np.sqrt(np.mean(mus[: len(vn)][speech[: len(vn)]] ** 2)) + 1e-9
     bed *= (vr / mr) * 10 ** (-23 / 20)      # music sits 23 dB under the voice while she speaks
     sf.write(f"{OUT}/mix.wav", vn + bed[: len(vn)], sr)
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{OUT}/mix.wav", "-af", "loudnorm=I=-14:TP=-1.5:LRA=9", "-ar", "48000", f"{OUT}/final.wav"], check=True)
+    # two-pass loudnorm (linear) so the file lands on -14 LUFS exactly
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", f"{OUT}/mix.wav", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"], capture_output=True, text=True)
+    m = json.loads(r.stderr[r.stderr.rindex("{"):])
+    af = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
+          f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{OUT}/mix.wav", "-af", af, "-ar", "48000", f"{OUT}/final.wav"], check=True)
 
 
 # ---------- 4. frames ----------

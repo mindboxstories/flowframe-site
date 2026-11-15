@@ -180,7 +180,7 @@ item(el, seg, lt) {
   const inB = lt >= c.why && lt < c.catch, inC = lt >= c.catch;
   // photo motion: different framing per phase so the picture changes every few seconds
   if (!inB && !inC) { const k = eo(lt / .7); full.style.inset = '0'; full.style.left = '0'; full.style.width = '1920px';
-    full.style.transform = `scale(${1.14 - .1 * k + .035 * lt / c.why})`; full.style.filter = 'none'; full.style.backgroundPosition = 'center'; }
+    full.style.transform = `scale(${1.14 - .1 * k + .1 * lt / c.why}) translateX(${18 * lt / c.why}px)`; full.style.filter = 'none'; full.style.backgroundPosition = 'center'; }
   else if (inB) { const lb = lt - c.why, k = eo(lb / .45); full.style.left = `${820 * k}px`; full.style.width = `${1920 - 820 * k}px`;
     full.style.transform = `scale(${1.22 - .04 * lb / (c.catch - c.why)})`; full.style.backgroundPosition = '62% 40%'; full.style.filter = 'none'; }
   else { const lc = lt - c.catch; full.style.left = '0'; full.style.width = '1920px'; const q = lc / (seg.dur - c.catch); full.style.transform = `scale(${1.08 + .14 * q}) translateX(${-30 * q}px)`;
