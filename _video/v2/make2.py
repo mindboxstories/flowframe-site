@@ -179,7 +179,7 @@ def audio(total):
     sf.write(f"{OUT}/mix.wav", vn + bed[: len(vn)], sr)
     # two-pass loudnorm (linear) so the file lands on -14 LUFS exactly
     r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", f"{OUT}/mix.wav", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"], capture_output=True, text=True)
-    m = json.loads(r.stderr[r.stderr.rindex("{"):])
+    m = json.loads(r.stderr[r.stderr.rindex("{"):r.stderr.rindex("}") + 1])
     af = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
           f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{OUT}/mix.wav", "-af", af, "-ar", "48000", f"{OUT}/final.wav"], check=True)
