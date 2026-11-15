@@ -1,0 +1,248 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,700;1,9..144,800&family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+:root{--cream:#FFF5EF;--ink:#1D1B22;--coral:#E4572E;--sun:#FFC93C;--plum:#22172B;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--plum);font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink)}
+.scene{position:absolute;inset:0;overflow:hidden;visibility:hidden}
+.ph{position:absolute;background-size:cover;background-position:center;will-change:transform}
+.abs{position:absolute}
+em,.acc{font-family:'Fraunces',serif;font-style:italic;font-weight:800}
+.word{display:inline-block;will-change:transform,opacity}
+.pill{display:inline-flex;align-items:center;gap:14px;padding:16px 30px;border-radius:999px;font-weight:800;font-size:38px;background:var(--white);color:var(--ink);box-shadow:0 18px 40px -18px rgba(0,0,0,.45)}
+.pill i{width:16px;height:16px;border-radius:50%;background:var(--coral);display:inline-block}
+.sticker{position:absolute;width:230px;height:230px;border-radius:50%;background:var(--coral);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;box-shadow:0 22px 50px -14px rgba(0,0,0,.55);border:6px solid #fff}
+.sticker small{font-size:26px;letter-spacing:.12em;text-transform:uppercase;opacity:.92}
+.sticker b{font-size:70px;line-height:1;letter-spacing:-.02em}
+.num{font-weight:800;color:transparent;-webkit-text-stroke:4px var(--sun);letter-spacing:-.04em;line-height:.8}
+#hud{position:absolute;inset:0;pointer-events:none;z-index:50}
+#brand{position:absolute;left:56px;top:40px;display:flex;align-items:center;gap:14px;color:#fff;font-weight:800;font-size:28px;letter-spacing:.01em;background:rgba(29,27,34,.72);padding:10px 24px 10px 12px;border-radius:999px}
+#brand span{width:40px;height:40px;border-radius:12px;background:var(--coral);display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;text-shadow:none}
+#prog{position:absolute;right:56px;top:40px;display:flex;align-items:center;gap:16px;background:rgba(29,27,34,.72);padding:12px 22px;border-radius:999px;color:#fff;font-weight:800;font-size:28px}
+#dots{display:flex;gap:7px}#dots i{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.28);display:block}#dots i.on{background:var(--sun)}#dots i.cur{background:var(--coral);transform:scale(1.25)}
+#wipe{position:absolute;top:-10%;height:120%;width:2600px;left:0;background:var(--coral);z-index:60;transform:translateX(-200%) skewX(-14deg)}
+#wipe2{position:absolute;top:-10%;height:120%;width:2600px;left:0;background:var(--sun);z-index:59;transform:translateX(-200%) skewX(-14deg)}
+.grad{position:absolute;inset:0}
+.card{position:absolute;background:var(--plum);color:#fff;border-radius:36px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+.tag{font-size:26px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+</style></head>
+<body>
+<div id="stage"></div>
+<div id="hud"><div id="brand"><span>F</span>Digittouch Finds</div><div id="prog"><span id="pn">1 / 11</span><div id="dots"></div></div></div>
+<div id="wipe2"></div><div id="wipe"></div>
+<script>
+const $ = (h) => { const d = document.createElement('div'); d.innerHTML = h.trim(); return d.firstChild; };
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const eo = (x) => 1 - Math.pow(1 - clamp(x), 3);              // ease out cubic
+const eio = (x) => { x = clamp(x); return x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2; };
+const back = (x) => { x = clamp(x); const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); }; // overshoot
+const IMG = (u, w = 2400) => `url('${u}?w=${w}&q=85&auto=format&fit=crop')`;
+const words = (txt, cls = '') => txt.split(' ').map(w => `<span class="word ${cls}">${w}</span>`).join(' ');
+let T = null, scenes = [];
+
+function show(el, on) { el.style.visibility = on ? 'visible' : 'hidden'; }
+function pop(el, t, t0, dur = .45, from = 0) { const k = (t - t0) / dur; el.style.opacity = clamp(k * 3); el.style.transform = `scale(${t < t0 ? from : from + (1 - from) * back(k)})`; }
+function rise(el, t, t0, dur = .45, dy = 60) { const k = eo((t - t0) / dur); el.style.opacity = clamp((t - t0) / (dur * .6)); el.style.transform = `translateY(${(1 - k) * dy}px)`; }
+function slideX(el, t, t0, dur = .5, dx = -120) { const k = eo((t - t0) / dur); el.style.opacity = clamp((t - t0) / (dur * .5)); el.style.transform = `translateX(${(1 - k) * dx}px)`; }
+// word i of a segment: start time (local)
+const wt = (seg, re, after = 0) => { const r = new RegExp(re, 'i'); for (const w of seg.words) if (w.s >= after && r.test(w.w)) return w.s; return null; };
+
+// ---------- scene builders ----------
+const B = {
+hook(seg) {
+  const el = $(`<div class="scene" style="background:var(--plum)">
+    <div class="flash"></div>
+    <div class="ph p1" style="width:560px;height:700px;left:1180px;top:160px;border-radius:28px;border:10px solid #fff;background-image:${IMG(seg.flash[0],1200)}"></div>
+    <div class="ph p2" style="width:470px;height:590px;left:1480px;top:330px;border-radius:28px;border:10px solid #fff;background-image:${IMG(seg.flash[1],1200)}"></div>
+    <div class="ph p3" style="width:430px;height:540px;left:1000px;top:470px;border-radius:28px;border:10px solid #fff;background-image:${IMG(seg.flash[2],1200)}"></div>
+    <div class="abs ttl" style="left:120px;top:250px;width:900px;color:#fff;font-weight:800;font-size:132px;line-height:1.0;letter-spacing:-.035em">${words('11 gifts she\'ll')} <span class="word"><em style="color:var(--coral)">actually</em></span> ${words('love')}</div>
+    <div class="sticker s1" style="left:860px;top:560px;transform:rotate(-10deg)"><small>All under</small><b>$60</b></div>
+    <div class="abs chip" style="left:120px;top:780px"><span class="pill" style="background:var(--sun)"><i style="background:var(--plum)"></i>+ the catch on each one</span></div>
+    <div class="abs big" style="inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:520px;color:var(--sun);letter-spacing:-.06em;text-shadow:0 30px 80px rgba(0,0,0,.5)">11</div>
+  </div>`);
+  const fl = el.querySelector('.flash');
+  seg.flash.forEach((u, i) => fl.appendChild($(`<div class="ph f" style="inset:0;background-image:${IMG(u)};visibility:hidden"></div>`)));
+  return el;
+},
+note(seg) {
+  return $(`<div class="scene" style="background:var(--ink)">
+    <div class="ph bg" style="inset:-4%;background-image:${IMG(seg.img)};filter:saturate(1.05)"></div>
+    <div class="grad" style="background:linear-gradient(90deg,rgba(29,27,34,.92) 0%,rgba(29,27,34,.55) 55%,rgba(29,27,34,.15) 100%)"></div>
+    <div class="abs" style="left:120px;top:250px;width:1100px;color:#fff">
+      <div class="tag l0" style="color:var(--sun)">Quick note</div>
+      <div class="l1" style="font-weight:800;font-size:76px;line-height:1.08;letter-spacing:-.02em;margin-top:26px">Our links are affiliate links.</div>
+      <div class="l2" style="font-weight:700;font-size:52px;line-height:1.2;margin-top:22px;color:rgba(255,255,255,.86)">They <em style="color:var(--sun)">never</em> change our picks.</div>
+      <div class="l3" style="margin-top:46px"><span class="pill" style="font-size:34px"><i></i>Prices move daily: check the link</span></div>
+    </div></div>`);
+},
+band(seg) {
+  const bg = {coral: 'var(--coral)', sun: 'var(--sun)', plum: 'var(--plum)'}[seg.color];
+  const fg = seg.color === 'sun' ? 'var(--ink)' : '#fff';
+  return $(`<div class="scene" style="background:${bg};color:${fg}">
+    <div class="abs dollar" style="right:-60px;top:-180px;font-weight:800;font-size:1400px;line-height:1;opacity:.12;letter-spacing:-.08em">$</div>
+    <div class="abs" style="left:140px;top:330px">
+      <div class="tag k" style="opacity:.85">${seg.id === 'b1' ? 'Budget 1 of 3' : seg.id === 'b2' ? 'Budget 2 of 3' : 'Budget 3 of 3'}</div>
+      <div class="lab" style="font-weight:800;font-size:220px;line-height:1;letter-spacing:-.045em;margin-top:18px">${seg.label}</div>
+      <div class="sub" style="font-weight:700;font-size:58px;margin-top:26px"><em>${seg.sub}</em></div>
+    </div></div>`);
+},
+item(seg) {
+  const n = String(seg.n).padStart(2, '0');
+  return $(`<div class="scene" style="background:var(--cream)">
+    <div class="ph full" style="inset:0;background-image:${IMG(seg.img)}"></div>
+    <div class="grad g1" style="background:linear-gradient(90deg,rgba(29,27,34,.86) 0%,rgba(29,27,34,.55) 42%,rgba(29,27,34,0) 72%),linear-gradient(0deg,rgba(29,27,34,.55),rgba(29,27,34,0) 40%)"></div>
+    <div class="abs A" style="left:110px;top:230px;width:1000px;color:#fff">
+      <div class="num" style="font-size:250px">${n}</div>
+      <div class="nm" style="font-weight:800;font-size:${seg.name.length > 24 ? 92 : 108}px;line-height:1.02;letter-spacing:-.03em;margin-top:30px;text-shadow:0 4px 30px rgba(0,0,0,.35)">${words(seg.name)}</div>
+    </div>
+    <div class="sticker pr" style="left:${seg.name.length > 24 ? 1010 : 930}px;top:560px"><small>about</small><b>${seg.price}</b></div>
+    <div class="abs Bp" style="left:0;top:0;width:820px;height:1080px;background:var(--cream)">
+      <div class="abs" style="left:110px;top:200px;width:640px">
+        <div style="display:flex;align-items:baseline;gap:22px"><div class="num" style="font-size:150px;-webkit-text-stroke:4px var(--coral)">${n}</div><div class="tag" style="color:var(--coral)">${seg.price}</div></div>
+        <div style="font-weight:800;font-size:64px;line-height:1.05;letter-spacing:-.025em;margin-top:22px">${seg.name}</div>
+        <div class="tags" style="margin-top:52px;display:flex;flex-direction:column;align-items:flex-start;gap:22px">${seg.tags.map(t => `<span class="pill tg" style="background:#fff;font-size:36px"><i></i>${t}</span>`).join('')}</div>
+      </div></div>
+    <div class="card C" style="left:110px;bottom:110px;width:1140px;padding:56px 64px">
+      <div class="tag" style="color:var(--coral);display:flex;align-items:center;gap:18px"><span style="width:52px;height:52px;border-radius:50%;background:var(--coral);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:34px;letter-spacing:0">!</span>The catch</div>
+      <div class="ct" style="font-weight:800;font-size:60px;line-height:1.15;letter-spacing:-.015em;margin-top:22px">${words(seg.catch)}</div>
+    </div>
+  </div>`);
+},
+rehook(seg) {
+  return $(`<div class="scene" style="background:var(--plum);color:#fff">
+    <div class="ph r1" style="width:600px;height:740px;left:1060px;top:170px;border-radius:28px;border:10px solid #fff;background-image:${IMG(seg.imgs[0],1200)};filter:blur(18px) saturate(1.2)"></div>
+    <div class="ph r2" style="width:520px;height:640px;left:1400px;top:300px;border-radius:28px;border:10px solid #fff;background-image:${IMG(seg.imgs[1],1200)};filter:blur(18px) saturate(1.2)"></div>
+    <div class="abs q" style="left:1290px;top:380px;font-weight:800;font-size:260px;color:var(--sun);text-shadow:0 20px 60px rgba(0,0,0,.5)">?</div>
+    <div class="abs" style="left:120px;top:300px;width:900px">
+      <div class="tag k" style="color:var(--sun)">Still coming</div>
+      <div class="a1" style="font-weight:800;font-size:84px;line-height:1.06;letter-spacing:-.03em;margin-top:24px">A plant she <em style="color:var(--coral)">can't kill</em></div>
+      <div class="a2" style="font-weight:800;font-size:84px;line-height:1.06;letter-spacing:-.03em;margin-top:30px">Luxury at a <em style="color:var(--sun)">gift price</em></div>
+    </div></div>`);
+},
+recap(seg) {
+  return $(`<div class="scene" style="background:var(--cream)">
+    <div class="abs" style="left:0;right:0;top:120px;text-align:center"><div class="tag" style="color:var(--coral)">If you only buy one</div>
+      <div style="font-weight:800;font-size:88px;letter-spacing:-.03em;margin-top:14px">Our top <em style="color:var(--coral)">3</em></div></div>
+    ${seg.picks.map((p, i) => `<div class="abs pk pk${i}" style="left:${150 + i * 560}px;top:360px;width:500px">
+      <div class="ph" style="position:relative;width:500px;height:440px;border-radius:30px;background-image:${IMG(p.img,1200)};box-shadow:0 30px 60px -28px rgba(0,0,0,.5)"></div>
+      <div class="tag" style="color:var(--coral);margin-top:30px">${p.label}</div>
+      <div style="font-weight:800;font-size:48px;letter-spacing:-.02em;margin-top:8px">${p.name} <span style="color:var(--coral)">${p.price}</span></div></div>`).join('')}
+  </div>`);
+},
+outro(seg) {
+  return $(`<div class="scene" style="background:var(--plum);color:#fff">
+    <div class="abs" style="left:120px;top:150px;width:760px">
+      <div class="tag k" style="color:var(--sun)">Every pick is linked</div>
+      <div class="o1" style="font-weight:800;font-size:96px;line-height:1.02;letter-spacing:-.035em;margin-top:22px">In the description <em style="color:var(--coral)">&amp;</em> pinned comment</div>
+      <div class="o2" style="margin-top:50px"><span class="pill" style="font-size:30px;white-space:nowrap"><i></i>${T.guide}</span></div>
+      <div class="o3" style="font-weight:700;font-size:44px;margin-top:60px;color:rgba(255,255,255,.8)">Happy <em style="color:var(--sun)">gifting.</em></div>
+    </div>
+    <div class="abs es" style="left:1000px;top:150px;width:800px">
+      <div class="tag" style="color:rgba(255,255,255,.6)">Watch next</div>
+      <div style="margin-top:20px;width:800px;height:450px;border-radius:24px;border:4px dashed rgba(255,255,255,.22)"></div>
+      <div style="margin-top:40px;display:flex;align-items:center;gap:30px"><div style="width:180px;height:180px;border-radius:50%;border:4px dashed rgba(255,255,255,.22)"></div><div class="tag" style="color:rgba(255,255,255,.6)">Subscribe for weekly finds</div></div>
+    </div></div>`);
+},
+};
+
+// ---------- per-frame renderers (lt = local seconds) ----------
+const R = {
+hook(el, seg, lt) {
+  const fs = [...el.querySelectorAll('.f')], step = .16, fend = fs.length * step;
+  fs.forEach((f, i) => { const on = lt >= i * step && lt < (i + 1) * step; show(f, on); if (on) f.style.transform = `scale(${1.18 - .1 * ((lt - i * step) / step)})`; });
+  const big = el.querySelector('.big'); big.style.opacity = lt < fend ? 1 : clamp(1 - (lt - fend) / .12);
+  big.style.transform = `scale(${.9 + .25 * eo(lt / fend)})`;
+  const k = lt - fend;
+  ['.p1', '.p2', '.p3'].forEach((s, i) => { const p = el.querySelector(s); const kk = eo((k - i * .12) / .5);
+    p.style.opacity = clamp((k - i * .12) * 4); p.style.transform = `translateY(${(1 - kk) * 220}px) rotate(${[-6, 5, -3][i] + Math.sin(lt * .6 + i) * .8}deg) scale(${1 + .02 * lt / seg.dur})`; });
+  const ws = [...el.querySelectorAll('.ttl .word')];
+  const cues = seg.words.filter(w => /\w/.test(w.w)).slice(0, ws.length).map(w => w.s);
+  ws.forEach((w, i) => rise(w, lt, Math.max(fend, cues[i] ?? fend + i * .1), .35, 70));
+  pop(el.querySelector('.s1'), lt, wt(seg, '^sixty') ?? 2.2, .5); el.querySelector('.s1').style.transform += ' rotate(-10deg)';
+  rise(el.querySelector('.chip'), lt, (wt(seg, '^catch') ?? 4) - .2, .45, 50);
+},
+note(el, seg, lt) {
+  el.querySelector('.bg').style.transform = `scale(${1.02 + .05 * lt / seg.dur})`;
+  slideX(el.querySelector('.l0'), lt, 0.05, .4); rise(el.querySelector('.l1'), lt, .15, .45);
+  rise(el.querySelector('.l2'), lt, (wt(seg, '^never') ?? 2) - .35, .45); rise(el.querySelector('.l3'), lt, (wt(seg, '^prices') ?? 3.5) - .2, .45);
+},
+band(el, seg, lt) {
+  slideX(el.querySelector('.k'), lt, .02, .35, -80);
+  const lab = el.querySelector('.lab'); const k = eo(lt / .42); lab.style.transform = `translateX(${(1 - k) * 700}px) skewX(${(1 - k) * -12}deg)`; lab.style.opacity = clamp(lt * 6);
+  rise(el.querySelector('.sub'), lt, .25, .4); el.querySelector('.dollar').style.transform = `translateY(${-lt * 40}px) rotate(${lt * 3}deg)`;
+},
+item(el, seg, lt) {
+  const c = seg.cues, full = el.querySelector('.full');
+  const inB = lt >= c.why && lt < c.catch, inC = lt >= c.catch;
+  // photo motion: different framing per phase so the picture changes every few seconds
+  if (!inB && !inC) { const k = eo(lt / .7); full.style.inset = '0'; full.style.left = '0'; full.style.width = '1920px';
+    full.style.transform = `scale(${1.14 - .1 * k + .035 * lt / c.why})`; full.style.filter = 'none'; full.style.backgroundPosition = 'center'; }
+  else if (inB) { const lb = lt - c.why, k = eo(lb / .45); full.style.left = `${820 * k}px`; full.style.width = `${1920 - 820 * k}px`;
+    full.style.transform = `scale(${1.22 - .04 * lb / (c.catch - c.why)})`; full.style.backgroundPosition = '62% 40%'; full.style.filter = 'none'; }
+  else { const lc = lt - c.catch; full.style.left = '0'; full.style.width = '1920px'; full.style.transform = `scale(${1.08 + .04 * lc / (seg.dur - c.catch)})`;
+    full.style.backgroundPosition = 'center 35%'; full.style.filter = `blur(${6 * eo(lc / .4)}px) brightness(${1 - .35 * eo(lc / .4)})`; }
+  const g1 = el.querySelector('.g1'); g1.style.opacity = inB ? 0 : 1;
+  const A = el.querySelector('.A'), pr = el.querySelector('.pr');
+  show(A, !inB && !inC); A.style.opacity = 1;
+  if (!inB && !inC) { slideX(A.querySelector('.num'), lt, .08, .45, -160);
+    A.querySelectorAll('.nm .word').forEach((w, i) => rise(w, lt, .22 + i * .07, .4, 60)); }
+  show(pr, !inB); if (!inB) { if (!inC) { pop(pr, lt, c.price, .5); pr.style.transform += ' rotate(-9deg)'; }
+    else { pr.style.opacity = 1; pr.style.transform = 'scale(.72) rotate(-9deg)'; pr.style.left = '1560px'; pr.style.top = '120px'; } }
+  if (!inC) { pr.style.left = (seg.name.length > 24 ? 1010 : 930) + 'px'; pr.style.top = '560px'; }
+  const Bp = el.querySelector('.Bp'); show(Bp, inB);
+  if (inB) { const lb = lt - c.why; Bp.style.transform = `translateX(${(1 - eo(lb / .45)) * -820}px)`;
+    const tg = [...Bp.querySelectorAll('.tg')]; tg.forEach((t, i) => pop(t, lt, c.why + .35 + i * Math.min(1.1, (c.catch - c.why) * .35), .45, .4)); }
+  const C = el.querySelector('.C'); show(C, inC);
+  if (inC) { const lc = lt - c.catch; C.style.transform = `translateY(${(1 - eo(lc / .45)) * 420}px)`;
+    const ws = [...C.querySelectorAll('.ct .word')], span = Math.max(.6, (seg.dur - c.catch) - 1.2);
+    ws.forEach((w, i) => { const t0 = c.catch + .35 + span * i / ws.length; w.style.opacity = clamp((lt - t0) / .18); w.style.transform = `translateY(${(1 - eo((lt - t0) / .25)) * 24}px)`; }); }
+},
+rehook(el, seg, lt) {
+  slideX(el.querySelector('.k'), lt, .02, .35); rise(el.querySelector('.a1'), lt, (wt(seg, '^plant') ?? .8) - .3, .45);
+  rise(el.querySelector('.a2'), lt, (wt(seg, '^luxury') ?? 2.5) - .3, .45);
+  ['.r1', '.r2'].forEach((s, i) => { const p = el.querySelector(s); const k = eo((lt - i * .15) / .55); p.style.opacity = clamp((lt - i * .15) * 4);
+    p.style.transform = `translateY(${(1 - k) * 200}px) rotate(${[-5, 6][i] + Math.sin(lt + i) * .7}deg)`; });
+  pop(el.querySelector('.q'), lt, .5, .5);
+},
+recap(el, seg, lt) {
+  const ts = [wt(seg, '^lego') ?? 1, wt(seg, '^owala') ?? 3, wt(seg, '^slippers') ?? 5];
+  [0, 1, 2].forEach(i => { const p = el.querySelector('.pk' + i); const k = (lt - ts[i] + .25); p.style.opacity = clamp(k * 4);
+    p.style.transform = `translateY(${(1 - back(k / .55)) * 140}px) rotate(${(i - 1) * 1.5}deg)`; });
+},
+outro(el, seg, lt) {
+  slideX(el.querySelector('.k'), lt, .02, .35); rise(el.querySelector('.o1'), lt, .12, .5); rise(el.querySelector('.o2'), lt, (wt(seg, '^guide') ?? 2.6) - .4, .45);
+  rise(el.querySelector('.o3'), lt, (wt(seg, '^happy') ?? 5) - .2, .45); rise(el.querySelector('.es'), lt, .4, .6, 40);
+},
+};
+
+window.setup = async (tl) => {
+  T = tl; const st = document.getElementById('stage');
+  const total = tl.segments.filter(s => s.kind === 'item').length, dots = document.getElementById('dots');
+  for (let i = 0; i < total; i++) dots.appendChild(document.createElement('i'));
+  for (const s of tl.segments) { const el = B[s.kind](s); st.appendChild(el); scenes.push(el); }
+  const urls = new Set(); document.querySelectorAll('.ph').forEach(p => { const m = p.style.backgroundImage.match(/url\(["']?(.+?)["']?\)/); if (m) urls.add(m[1]); });
+  await Promise.all([...urls].map(u => new Promise(r => { const im = new Image(); im.onload = () => im.decode().then(r, r); im.onerror = () => r(u); im.src = u; })));
+  await document.fonts.ready;
+  return [...urls].length;
+};
+
+window.render = (t) => {
+  const segs = T.segments; let idx = segs.length - 1;
+  for (let i = 0; i < segs.length; i++) if (t < segs[i].start + segs[i].dur) { idx = i; break; }
+  scenes.forEach((el, i) => show(el, i === idx));
+  const seg = segs[idx], lt = t - seg.start; R[seg.kind](scenes[idx], seg, lt);
+  // HUD: progress during items; hidden on hook flash, bands and outro
+  const items = segs.filter(s => s.kind === 'item'); const cur = seg.kind === 'item' ? seg.n : 0;
+  const prog = document.getElementById('prog'); prog.style.opacity = cur ? 1 : 0;
+  document.getElementById('pn').textContent = `${cur} / ${items.length}`;
+  [...document.querySelectorAll('#dots i')].forEach((d, i) => { d.className = i + 1 < cur ? 'on' : i + 1 === cur ? 'cur' : ''; });
+  document.getElementById('brand').style.opacity = (seg.kind === 'hook' && lt < 1.4) || seg.kind === 'band' ? 0 : 1;
+  // transition wipe across every scene boundary (covers the cut)
+  const W = document.getElementById('wipe'), W2 = document.getElementById('wipe2'); let k = null;
+  for (const s of segs) { if (s.start === 0) continue; const d = t - s.start; if (d > -.22 && d < .22) { k = (d + .22) / .44; break; } }
+  if (k === null) { W.style.transform = W2.style.transform = 'translateX(-200%) skewX(-14deg)'; }
+  else { const x = -125 + 230 * eio(k); W.style.transform = `translateX(${x}%) skewX(-14deg)`; W2.style.transform = `translateX(${x - 14}%) skewX(-14deg)`; }
+};
+</script></body></html>

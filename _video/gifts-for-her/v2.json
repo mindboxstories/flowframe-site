@@ -1,0 +1,267 @@
+{
+ "slug": "gifts-for-her",
+ "version": "v2",
+ "voice": "af_heart",
+ "speed": 1.1,
+ "guide": "flowframe.shop/finds/gifts-for-her-under-60",
+ "segments": [
+  {
+   "id": "hook",
+   "kind": "hook",
+   "text": "Eleven gifts she'll actually love. All under sixty dollars. And the one catch to know before you buy each one.",
+   "flash": [
+    "https://images.unsplash.com/photo-1775994121066-df9928d01e18",
+    "https://images.unsplash.com/photo-1789276392869-8103c256a501",
+    "https://images.unsplash.com/photo-1611591437281-460bfbe1220a",
+    "https://images.unsplash.com/photo-1596462502278-27bfdc403348",
+    "https://images.unsplash.com/photo-1687435703153-88f6bc0cdcff",
+    "https://images.unsplash.com/photo-1668112037360-900ff60ef6f7",
+    "https://images.unsplash.com/photo-1586401100295-7a8096fd231a",
+    "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb"
+   ]
+  },
+  {
+   "id": "note",
+   "kind": "note",
+   "text": "Quick note: our links are affiliate links. It never changes our picks. Prices move daily, so always check the link.",
+   "img": "https://images.unsplash.com/photo-1513885535751-8b9238bd345a"
+  },
+  {
+   "id": "b1",
+   "kind": "band",
+   "text": "Under twenty-five dollars.",
+   "label": "Under $25",
+   "sub": "Stocking fillers & Secret Santa",
+   "color": "coral"
+  },
+  {
+   "id": "slippers",
+   "kind": "item",
+   "n": 1,
+   "name": "Fuzzy faux-fur slippers",
+   "price": "$16",
+   "text": "Number one. Fuzzy faux-fur slippers, about sixteen dollars. They're on almost every winter gift list, and they're safe when you don't know her taste. The catch? Sizes come in pairs. If she's between sizes, go up.",
+   "tags": [
+    "On every winter list",
+    "Safe if you don't know her taste"
+   ],
+   "catch": "Sizes come in pairs. Between sizes? Go up.",
+   "img": "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb"
+  },
+  {
+   "id": "lamp",
+   "kind": "item",
+   "n": 2,
+   "name": "Candle warmer lamp",
+   "price": "$20",
+   "text": "Number two. A candle warmer lamp, about twenty dollars. It melts the candle from the top, so there's no open flame. The catch? You still need the candle, so check the jar fits under the lamp.",
+   "tags": [
+    "Melts from the top",
+    "No open flame"
+   ],
+   "catch": "Candle not included. Check the jar fits.",
+   "img": "https://images.unsplash.com/photo-1779599859971-670a45aedf96"
+  },
+  {
+   "id": "candle",
+   "kind": "item",
+   "n": 3,
+   "name": "P.F. Candle Co. Spruce",
+   "price": "$24",
+   "text": "Three. The P.F. Candle Co. Spruce candle, about twenty-four dollars. A winter-forest scent, in a jar that looks good on any shelf. The catch? Scent is personal. Not sure? Go fresh or citrus.",
+   "tags": [
+    "Winter-forest scent",
+    "Shelf-worthy jar"
+   ],
+   "catch": "Scent is personal. Unsure? Go fresh or citrus.",
+   "img": "https://images.unsplash.com/photo-1668112037360-900ff60ef6f7"
+  },
+  {
+   "id": "rehook",
+   "kind": "rehook",
+   "text": "Still coming: a plant she can't kill, and a luxury brand at a gift price.",
+   "imgs": [
+    "https://images.unsplash.com/photo-1775994121066-df9928d01e18",
+    "https://images.unsplash.com/photo-1596462502278-27bfdc403348"
+   ]
+  },
+  {
+   "id": "b2",
+   "kind": "band",
+   "text": "Twenty-five to forty. The sweet spot.",
+   "label": "$25 to $40",
+   "sub": "The sweet spot",
+   "color": "sun"
+  },
+  {
+   "id": "mask",
+   "kind": "item",
+   "n": 4,
+   "name": "Hommey silk eye mask",
+   "price": "$27",
+   "text": "Four. The Hommey silk eye mask, about twenty-seven dollars. Mulberry silk for flights, naps, and lazy Sunday mornings. The catch? Hand wash only.",
+   "tags": [
+    "Mulberry silk",
+    "Flights, naps, lazy Sundays"
+   ],
+   "catch": "Hand wash only.",
+   "img": "https://images.unsplash.com/photo-1687435703153-88f6bc0cdcff"
+  },
+  {
+   "id": "owala",
+   "kind": "item",
+   "n": 5,
+   "name": "Owala FreeSip 40 oz",
+   "price": "$35",
+   "text": "Five. The Owala FreeSip forty-ounce tumbler, about thirty-five dollars. Built-in straw, side handle, and it goes everywhere with her. The catch? Forty ounces won't fit every cup holder. For a commuter, get the twenty-four.",
+   "tags": [
+    "Built-in straw",
+    "Goes everywhere"
+   ],
+   "catch": "40 oz won't fit every cup holder. Commuter? Get the 24 oz.",
+   "img": "https://images.unsplash.com/photo-1789276392869-8103c256a501"
+  },
+  {
+   "id": "summer",
+   "kind": "item",
+   "n": 6,
+   "name": "Summer Fridays Jet Lag Essentials",
+   "price": "$34",
+   "text": "Six. Summer Fridays Jet Lag Essentials, about thirty-four dollars. The brand's favorites in travel sizes, in one carry-on pouch. The catch? Minis run out fast. It's a treat, not a stock-up.",
+   "tags": [
+    "Travel-size favorites",
+    "One carry-on pouch"
+   ],
+   "catch": "Minis run out fast. A treat, not a stock-up.",
+   "img": "https://images.unsplash.com/photo-1765516976457-550bd5f6f708"
+  },
+  {
+   "id": "saltstone",
+   "kind": "item",
+   "n": 7,
+   "name": "Salt & Stone body wash",
+   "price": "$36",
+   "text": "Seven. Salt and Stone body wash, Bergamot and Hinoki, about thirty-six dollars. A clean, woody scent, in a bottle worth showing off. The catch? It's a lot for body wash. Which is exactly why she won't buy it for herself.",
+   "tags": [
+    "Clean, woody scent",
+    "A bottle worth showing off"
+   ],
+   "catch": "Pricey for body wash. That's why she won't buy it herself.",
+   "img": "https://images.unsplash.com/photo-1597931752949-98c74b5b159f"
+  },
+  {
+   "id": "cuff",
+   "kind": "item",
+   "n": 8,
+   "name": "Gold cuff bracelet",
+   "price": "$20\u201340",
+   "text": "Eight. A gold cuff bracelet, twenty to forty dollars. Chunky gold cuffs are one of Pinterest's predicted looks for twenty twenty-six. The catch? At this price it's gold-plated, so keep it away from water.",
+   "tags": [
+    "A predicted 2026 look",
+    "Open cuff fits most wrists"
+   ],
+   "catch": "Gold-plated at this price. Keep it away from water.",
+   "img": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a"
+  },
+  {
+   "id": "lego",
+   "kind": "item",
+   "n": 9,
+   "name": "LEGO Botanicals Tiny Plants",
+   "price": "$40",
+   "text": "Nine. LEGO Botanicals Tiny Plants, about forty dollars. Nine little plants to build. A calm evening, and a plant she can't kill. The catch? It takes a few hours, so it suits someone who likes a project.",
+   "tags": [
+    "9 plants to build",
+    "A plant she can't kill"
+   ],
+   "catch": "Takes a few hours. Best for someone who likes a project.",
+   "img": "https://images.unsplash.com/photo-1775994121066-df9928d01e18"
+  },
+  {
+   "id": "b3",
+   "kind": "band",
+   "text": "Forty to sixty. When it has to feel like a proper present.",
+   "label": "$40 to $60",
+   "sub": "A proper present",
+   "color": "plum"
+  },
+  {
+   "id": "bala",
+   "kind": "item",
+   "n": 10,
+   "name": "Bala Bangles, 1 lb pair",
+   "price": "$55",
+   "text": "Ten. Bala Bangles, the one-pound pair, fifty-five dollars. Weights that look like jewelry, for walks and home workouts. The catch? We haven't seen them discounted, so fifty-five is the usual price.",
+   "tags": [
+    "Weights that look like jewelry",
+    "Walks and home workouts"
+   ],
+   "catch": "Rarely discounted. $55 is the usual price.",
+   "img": "https://images.unsplash.com/photo-1586401100295-7a8096fd231a"
+  },
+  {
+   "id": "tilbury",
+   "kind": "item",
+   "n": 11,
+   "name": "Charlotte Tilbury mini set",
+   "price": "$54",
+   "text": "And eleven. The Charlotte Tilbury mini beauty set, about fifty-four dollars. A luxury beauty brand, at a gift price. The catch? Holiday sets change every year, so check what's inside.",
+   "tags": [
+    "Best-known minis",
+    "Luxury at a gift price"
+   ],
+   "catch": "Sets change yearly. Check what's inside.",
+   "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348"
+  },
+  {
+   "id": "recap",
+   "kind": "recap",
+   "text": "If you only buy one: the LEGO plants for a surprise, the Owala for every day, or the slippers under twenty-five.",
+   "picks": [
+    {
+     "img": "https://images.unsplash.com/photo-1775994121066-df9928d01e18",
+     "label": "The surprise",
+     "name": "LEGO Tiny Plants",
+     "price": "$40"
+    },
+    {
+     "img": "https://images.unsplash.com/photo-1789276392869-8103c256a501",
+     "label": "The everyday",
+     "name": "Owala FreeSip",
+     "price": "$35"
+    },
+    {
+     "img": "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb",
+     "label": "Under $25",
+     "name": "Faux-fur slippers",
+     "price": "$16"
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "kind": "outro",
+   "text": "Every pick is linked in the description and the pinned comment, with the full guide for the US and the UK. Happy gifting.",
+   "hold": 16
+  }
+ ],
+ "chapters": {
+  "hook": "Intro",
+  "b1": "Under $25",
+  "b2": "$25 to $40",
+  "b3": "$40 to $60",
+  "recap": "Our top 3",
+  "outro": "Where to buy",
+  "slippers": "1. Fuzzy faux-fur slippers",
+  "lamp": "2. Candle warmer lamp",
+  "candle": "3. P.F. Candle Co. Spruce",
+  "mask": "4. Hommey silk eye mask",
+  "owala": "5. Owala FreeSip 40 oz",
+  "summer": "6. Summer Fridays Jet Lag Essentials",
+  "saltstone": "7. Salt & Stone body wash",
+  "cuff": "8. Gold cuff bracelet",
+  "lego": "9. LEGO Botanicals Tiny Plants",
+  "bala": "10. Bala Bangles, 1 lb pair",
+  "tilbury": "11. Charlotte Tilbury mini set"
+ }
+}
