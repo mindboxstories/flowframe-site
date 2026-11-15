@@ -13,7 +13,7 @@ PREVIEW = "--preview" in sys.argv          # fake voice timings, short render, f
 OUT = os.path.join(HERE, "..", "out", spec["slug"] + "-v2")
 os.makedirs(f"{OUT}/frames", exist_ok=True)
 segs = spec["segments"]
-PAD = {"hook": .30, "note": .30, "band": .30, "item": .40, "rehook": .35, "recap": .45, "outro": 0}
+PAD = {"hook": .25, "note": .25, "band": .22, "item": .28, "rehook": .3, "recap": .4, "outro": 0}
 
 
 # ---------- 1. voice ----------
@@ -22,7 +22,8 @@ def tts():
     pipe = KPipeline(lang_code="a")
     for s in segs:
         audio, words, t = [], [], 0.0
-        for r in pipe(s["text"], voice=spec["voice"], speed=spec["speed"], split_pattern=r"(?<=[.?!:])\s+"):
+        say = re.sub(r"\bcatch\b", "[catch](/kˈæʧ/)", s["text"])
+        for r in pipe(say, voice=spec["voice"], speed=spec["speed"], split_pattern=r"(?<=[.?!:])\s+"):
             a = r.audio.numpy() if hasattr(r.audio, "numpy") else np.asarray(r.audio)
             toks = getattr(r, "tokens", None) or []
             got = False
