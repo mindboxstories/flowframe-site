@@ -6,7 +6,7 @@ from playwright.sync_api import sync_playwright
 qs = json.load(open(sys.argv[1])); out = sys.argv[2]; os.makedirs(out, exist_ok=True)
 res = {}
 JS = r"""() => { const seen = new Set(), o = [];
-  for (const a of document.querySelectorAll('a[href^="/photos/"]')) {
+  for (const a of document.querySelectorAll('a[href*="/photos/"]')) {
     const img = a.querySelector('img[src*="images.unsplash.com/photo-"]'); if (!img) continue;
     const m = img.src.match(/photo-[0-9a-z-]+/); if (!m || seen.has(m[0])) continue;
     if (a.closest('figure') && a.closest('figure').innerText.match(/Unsplash\+|Plus/)) continue;
@@ -19,6 +19,7 @@ with sync_playwright() as p:
             pg.goto("https://unsplash.com/s/photos/" + urllib.parse.quote(q.replace(" ", "-")) + "?license=free&orientation=landscape", wait_until="domcontentloaded", timeout=60000)
             pg.wait_for_timeout(3500)
             items = pg.evaluate(JS)[:12]
+            if not items: print('DEBUG', pg.title(), pg.evaluate("[...document.images].slice(0,8).map(i=>i.src.slice(0,90)).join(' | ')"))
         except Exception as e:
             print("fail", key, e); continue
         res[key] = items; thumbs = []
