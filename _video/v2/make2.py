@@ -189,7 +189,7 @@ def audio(total):
             c = s["cues"]; put(fx["pop"], s["start"] + c["price"], .5); put(fx["whoosh"], s["start"] + c["why"] - .05, .16); put(fx["tick"], s["start"] + c["catch"], .45)
         if s["kind"] == "hook":
             for i in range(len(s["flash"])): put(fx["tick"], s["start"] + i * .16, .3)
-            p = first(s, r"^sixty"); put(fx["pop"], s["start"] + (p or 2.2), .5)
+            p = first(s, (s.get("sticker") or {}).get("cue", r"^sixty")); put(fx["pop"], s["start"] + (p or 2.2), .5)
     sf.write(f"{OUT}/voice.wav", v, sr); sf.write(f"{OUT}/bed.wav", mus + fxt, sr)
     # level voice alone to -16 LUFS, bed relative to it, then mix and do the final -14 LUFS pass
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{OUT}/voice.wav", "-af", "loudnorm=I=-16:TP=-1.5:LRA=7", "-ar", "48000", f"{OUT}/voice_n.wav"], check=True)
@@ -278,6 +278,22 @@ def captions_and_chapters():
             m, s_ = divmod(int(st), 60); f.write(f"{m}:{s_:02d} {nm}\n")
 
 
+def thumb():
+    """Render the 1280x720 thumbnail from spec["thumb"] (Finds design: headline + italic accent, 3 tilted photo cards, coral sticker)."""
+    t = spec.get("thumb")
+    if not t:
+        return
+    from playwright.sync_api import sync_playwright
+    exe = os.environ.get("CHROME")
+    with sync_playwright() as p:
+        b = p.chromium.launch(**({"executable_path": exe} if exe else {}))
+        pg = b.new_page(viewport={"width": 1280, "height": 720})
+        pg.goto("file://" + os.path.join(HERE, "thumb.html"), wait_until="networkidle")
+        pg.evaluate("t => window.setThumb(t)", t); pg.wait_for_timeout(500)
+        pg.screenshot(path=f"{OUT}/thumb.jpg", type="jpeg", quality=92)
+        b.close()
+
+
 if __name__ == "__main__":
     vary_cues()
     (fake_tts if PREVIEW else tts)()
@@ -285,5 +301,5 @@ if __name__ == "__main__":
     if PREVIEW:
         render(total, limit=float(os.environ.get("PREVIEW_SECONDS", "6"))); captions_and_chapters()
     else:
-        audio(total); render(total); mux(); captions_and_chapters()
+        audio(total); render(total); mux(); captions_and_chapters(); thumb()
         print("done", os.path.getsize(f"{OUT}/video.mp4") // 1_000_000, "MB")

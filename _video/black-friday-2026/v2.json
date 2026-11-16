@@ -1,0 +1,305 @@
+{
+ "slug": "black-friday-2026",
+ "version": "v2",
+ "voice": "af_heart",
+ "speed": 1.1,
+ "guide": "flowframe.shop/finds/black-friday-2026",
+ "segments": [
+  {
+   "id": "hook",
+   "kind": "hook",
+   "text": "Eleven Black Friday gifts actually worth watching, from twelve dollars, and the one catch to know before you buy each one.",
+   "title": {
+    "pre": "11 Black Friday gifts",
+    "accent": "worth",
+    "post": "watching"
+   },
+   "sticker": {
+    "small": "from",
+    "big": "$12",
+    "cue": "^twelve"
+   },
+   "chip": "+ the catch on each one",
+   "flash": [
+    "https://images.unsplash.com/photo-1603508102977-02688e3265fd",
+    "https://images.unsplash.com/photo-1781737857663-f1f14a60ba46",
+    "https://images.unsplash.com/photo-1676107779674-f77343861e81",
+    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f",
+    "https://images.unsplash.com/photo-1598103442097-8b74394b95c6",
+    "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
+    "https://images.unsplash.com/photo-1612373914372-79a8a0311f78",
+    "https://images.unsplash.com/photo-1715033749994-55f16a83c236"
+   ]
+  },
+  {
+   "id": "note",
+   "kind": "note",
+   "text": "Quick note: our links are affiliate links. It never changes our picks. Prices move daily, so always check the link.",
+   "img": "https://images.unsplash.com/photo-1513884923967-4b182ef167ab"
+  },
+  {
+   "id": "b1",
+   "kind": "band",
+   "text": "Under twenty-five dollars.",
+   "label": "Under $25",
+   "sub": "Stocking stuffers & Secret Santa",
+   "color": "coral",
+   "kicker": "Part 1 of 3"
+  },
+  {
+   "id": "kong",
+   "kind": "item",
+   "n": 1,
+   "name": "KONG Classic dog toy",
+   "price": "$12",
+   "text": "Number one. The KONG Classic dog toy, about twelve dollars. Fill it with treats and a dog stays busy for ages. The catch? Size matters. Too small is a choking risk, so match it to the dog.",
+   "tags": [
+    "Stuff it with treats",
+    "A dog owner's favorite"
+   ],
+   "catch": "Match the size to the dog. Too small is a choking risk.",
+   "img": "https://images.unsplash.com/photo-1715033749994-55f16a83c236"
+  },
+  {
+   "id": "airtag",
+   "kind": "item",
+   "n": 2,
+   "name": "Apple AirTag",
+   "price": "$23",
+   "text": "Two. The Apple AirTag, about twenty-three dollars. Clip it to keys or a suitcase and find it from an iPhone. The catch? It only works with iPhones. For Android, get a Samsung SmartTag or a Tile.",
+   "tags": [
+    "Keys, bags, suitcases",
+    "Finds it from an iPhone"
+   ],
+   "catch": "iPhone only. Android? Get a SmartTag or Tile.",
+   "img": "https://images.unsplash.com/photo-1603508102977-02688e3265fd"
+  },
+  {
+   "id": "earbuds",
+   "kind": "item",
+   "n": 3,
+   "name": "Soundcore noise-cancelling earbuds",
+   "price": "$25",
+   "text": "Three. Anker Soundcore noise-cancelling earbuds, about twenty-five dollars. Noise cancelling and around ten hours of play, at a stocking-stuffer price. The catch? They soften a commute, but they won't match two-hundred-dollar earbuds.",
+   "tags": [
+    "Noise cancelling",
+    "Around 10 hours of play"
+   ],
+   "catch": "Good, not premium. They won't match $200 earbuds.",
+   "img": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df"
+  },
+  {
+   "id": "blanket",
+   "kind": "item",
+   "n": 4,
+   "name": "Wearable sherpa blanket",
+   "price": "$25",
+   "text": "Four. A wearable sherpa blanket, about twenty-five dollars. Half hoodie, half blanket, with a big front pocket. The catch? It's one size and bulky. It's for the sofa, not for going out.",
+   "tags": [
+    "Hoodie meets blanket",
+    "Big front pocket"
+   ],
+   "catch": "One size and bulky. Sofa only.",
+   "img": "https://images.unsplash.com/photo-1612373914372-79a8a0311f78"
+  },
+  {
+   "id": "b2",
+   "kind": "band",
+   "text": "For the cook.",
+   "label": "The kitchen",
+   "sub": "Gifts that get used every day",
+   "color": "sun",
+   "kicker": "Part 2 of 3"
+  },
+  {
+   "id": "skillet",
+   "kind": "item",
+   "n": 5,
+   "name": "Lodge cast iron skillet",
+   "price": "$20",
+   "text": "Five. The Lodge cast iron skillet, about twenty dollars. Pre-seasoned, goes from stove to oven, and lasts a lifetime. The catch? It's heavy, and it needs drying and a little oil after washing.",
+   "tags": [
+    "Stove to oven",
+    "Lasts a lifetime"
+   ],
+   "catch": "Heavy. Dry it and oil it after washing.",
+   "img": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6"
+  },
+  {
+   "id": "instantpot",
+   "kind": "item",
+   "n": 6,
+   "name": "Instant Pot Duo, 6 qt",
+   "price": "$70",
+   "text": "Six. The Instant Pot Duo, six quarts, about seventy dollars. Pressure cooker, slow cooker and rice cooker in one. The catch? It takes counter space, and pressure cooking has a short learning curve.",
+   "tags": [
+    "Three cookers in one",
+    "Weeknight stews, fast"
+   ],
+   "catch": "Needs counter space, and a little practice.",
+   "img": "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b"
+  },
+  {
+   "id": "crispi",
+   "kind": "item",
+   "n": 7,
+   "name": "Ninja Crispi Pro air fryer",
+   "price": "$199",
+   "text": "Seven. The Ninja Crispi Pro glass air fryer, about a hundred and ninety-nine dollars. Cook, serve, and store in the same glass dish, so there's no basket to scrub. The catch? The glass dish is heavier than a normal basket.",
+   "tags": [
+    "Cook, serve, store",
+    "No basket to scrub"
+   ],
+   "catch": "The glass dish is heavier than a basket.",
+   "img": "https://images.unsplash.com/photo-1781737857663-f1f14a60ba46"
+  },
+  {
+   "id": "rehook",
+   "kind": "rehook",
+   "text": "Still coming: a mouse built for long workdays, and a styler that does much of what a seven-hundred-dollar one does.",
+   "lines": [
+    {
+     "pre": "A mouse built for",
+     "accent": "long workdays",
+     "cue": "^mouse"
+    },
+    {
+     "pre": "Much of a $700 styler,",
+     "accent": "under $300",
+     "cue": "^styler"
+    }
+   ],
+   "imgs": [
+    "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46",
+    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f"
+   ]
+  },
+  {
+   "id": "b3",
+   "kind": "band",
+   "text": "The bigger gifts.",
+   "label": "Bigger gifts",
+   "sub": "Desk, tech and beauty",
+   "color": "plum",
+   "kicker": "Part 3 of 3"
+  },
+  {
+   "id": "screenbar",
+   "kind": "item",
+   "n": 8,
+   "name": "BenQ ScreenBar light",
+   "price": "$109",
+   "text": "Eight. The BenQ ScreenBar monitor light, about a hundred and nine dollars. It sits on the monitor and lights the desk, with no glare on the screen. The catch? It needs a monitor. It won't sit on a laptop.",
+   "tags": [
+    "Lights the desk",
+    "No screen glare"
+   ],
+   "catch": "Needs a monitor, not a laptop.",
+   "img": "https://images.unsplash.com/photo-1618133030686-e1186525ebcc"
+  },
+  {
+   "id": "mxmaster",
+   "kind": "item",
+   "n": 9,
+   "name": "Logitech MX Master 4",
+   "price": "$120",
+   "text": "Nine. The Logitech MX Master four mouse, about a hundred and twenty dollars. Logitech's flagship work mouse, with a fast scroll wheel and a thumb wheel. The catch? It's big and right-handed only. Small hands may prefer the MX Anywhere.",
+   "tags": [
+    "Fast scroll wheel",
+    "Built for long workdays"
+   ],
+   "catch": "Big and right-handed only.",
+   "img": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46"
+  },
+  {
+   "id": "kindle",
+   "kind": "item",
+   "n": 10,
+   "name": "Kindle Colorsoft",
+   "price": "$290",
+   "text": "Ten. The Kindle Colorsoft, about two hundred and ninety dollars. A glare-free color screen for books, comics and highlights. The catch? Color is softer than a tablet. For plain novels, a regular Kindle costs less.",
+   "tags": [
+    "Glare-free color",
+    "Books and comics"
+   ],
+   "catch": "Softer color than a tablet. Novels only? Get a regular Kindle.",
+   "img": "https://images.unsplash.com/photo-1676107779674-f77343861e81"
+  },
+  {
+   "id": "flexfusion",
+   "kind": "item",
+   "n": 11,
+   "name": "Shark FlexFusion styler",
+   "price": "$299",
+   "text": "And eleven. The Shark FlexFusion air styler, about two hundred and ninety-nine dollars. It dries, curls and straightens with swappable attachments. The catch? It's still a big spend. If they only dry their hair, a good dryer costs far less.",
+   "tags": [
+    "Dries, curls, straightens",
+    "Swappable attachments"
+   ],
+   "catch": "A big spend. Only drying? A good dryer costs far less.",
+   "img": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f"
+  },
+  {
+   "id": "recap",
+   "kind": "recap",
+   "text": "If you only buy one: the AirTag as a stocking stuffer, the Instant Pot for the kitchen, or the FlexFusion as the splurge for less.",
+   "picks": [
+    {
+     "img": "https://images.unsplash.com/photo-1603508102977-02688e3265fd",
+     "label": "Stocking stuffer",
+     "name": "Apple AirTag",
+     "price": "$23",
+     "cue": "^airtag"
+    },
+    {
+     "img": "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b",
+     "label": "The kitchen pick",
+     "name": "Instant Pot Duo",
+     "price": "$70",
+     "cue": "^instant"
+    },
+    {
+     "img": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f",
+     "label": "Splurge for less",
+     "name": "Shark FlexFusion",
+     "price": "$299",
+     "cue": "^flexfusion"
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "kind": "outro",
+   "text": "Every pick is linked in the description and the pinned comment, with the full watchlist for the US and the UK. Happy shopping.",
+   "hold": 16
+  }
+ ],
+ "chapters": {
+  "hook": "Intro",
+  "recap": "Our top 3 + where to buy",
+  "kong": "1. KONG Classic dog toy",
+  "airtag": "2. Apple AirTag",
+  "earbuds": "3. Soundcore noise-cancelling earbuds",
+  "blanket": "4. Wearable sherpa blanket",
+  "skillet": "5. Lodge cast iron skillet",
+  "instantpot": "6. Instant Pot Duo, 6 qt",
+  "crispi": "7. Ninja Crispi Pro air fryer",
+  "screenbar": "8. BenQ ScreenBar light",
+  "mxmaster": "9. Logitech MX Master 4",
+  "kindle": "10. Kindle Colorsoft",
+  "flexfusion": "11. Shark FlexFusion styler"
+ },
+ "thumb": {
+  "kicker": "Black Friday 2026",
+  "pre": "Gifts",
+  "accent": "worth",
+  "post": "watching",
+  "sticker_small": "11 picks from",
+  "sticker_big": "$12",
+  "imgs": [
+   "https://images.unsplash.com/photo-1676107779674-f77343861e81",
+   "https://images.unsplash.com/photo-1781737857663-f1f14a60ba46",
+   "https://images.unsplash.com/photo-1603508102977-02688e3265fd"
+  ]
+ }
+}

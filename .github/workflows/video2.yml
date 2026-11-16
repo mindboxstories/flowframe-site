@@ -38,6 +38,6 @@ jobs:
         env: {GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"}
         run: |
           cd _video/out/$SLUG-v2
-          zip -qr qa.zip frames captions.srt chapters.txt timeline.json qa.txt
+          zip -qr qa.zip frames captions.srt chapters.txt timeline.json qa.txt $(ls thumb.jpg 2>/dev/null)
           mv video.mp4 $SLUG-v2.mp4
-          gh release create "video2-$SLUG-${{ github.run_id }}" $SLUG-v2.mp4 qa.zip captions.srt -R ${{ github.repository }} --prerelease --title "video2-$SLUG-${{ github.run_id }}" --notes "Guide video v2 (motion graphics). Not for the site."
+          gh release create "video2-$SLUG-${{ github.run_id }}" $SLUG-v2.mp4 qa.zip captions.srt $(ls thumb.jpg 2>/dev/null) -R ${{ github.repository }} --prerelease --title "video2-$SLUG-${{ github.run_id }}" --notes "Guide video v2 (motion graphics). Not for the site."
