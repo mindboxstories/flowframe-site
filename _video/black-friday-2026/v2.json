@@ -294,12 +294,13 @@
   "pre": "Gifts",
   "accent": "worth",
   "post": "watching",
-  "sticker_small": "11 picks from",
+  "sticker_small": "from",
   "sticker_big": "$12",
+  "chip": "11 picks + the catch on each",
   "imgs": [
    "https://images.unsplash.com/photo-1676107779674-f77343861e81",
    "https://images.unsplash.com/photo-1781737857663-f1f14a60ba46",
-   "https://images.unsplash.com/photo-1603508102977-02688e3265fd"
+   "https://images.unsplash.com/photo-1715033749994-55f16a83c236"
   ]
  }
 }

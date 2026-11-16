@@ -7,12 +7,14 @@
 html,body{width:1280px;height:720px;overflow:hidden;background:var(--plum);font-family:'Plus Jakarta Sans',sans-serif}
 .glow{position:absolute;right:-160px;top:-120px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(228,87,46,.38),rgba(228,87,46,0) 65%)}
 .card{position:absolute;border:9px solid #fff;border-radius:22px;background-size:cover;background-position:center;box-shadow:0 30px 60px -20px rgba(0,0,0,.65)}
-h1{position:absolute;left:58px;top:118px;width:610px;color:#fff;font-weight:800;font-size:96px;line-height:.98;letter-spacing:-.04em}
+h1{position:absolute;left:58px;top:122px;width:660px;color:#fff;font-weight:800;font-size:116px;line-height:.95;letter-spacing:-.045em}
+.chip{position:absolute;left:62px;top:520px;background:#fff;color:var(--ink);font-weight:800;font-size:30px;padding:12px 24px;border-radius:999px;display:flex;align-items:center;gap:12px;box-shadow:0 16px 34px -14px rgba(0,0,0,.6)}
+.chip i{width:14px;height:14px;border-radius:50%;background:var(--coral)}
 h1 em{font-family:'Fraunces',serif;font-style:italic;color:var(--coral);letter-spacing:-.02em}
 .kick{position:absolute;left:62px;top:56px;background:var(--sun);color:var(--ink);font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;padding:9px 20px;border-radius:999px}
-.st{position:absolute;width:210px;height:210px;border-radius:50%;background:var(--coral);border:7px solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-10deg);box-shadow:0 24px 50px -14px rgba(0,0,0,.6);font-weight:800}
-.st small{font-size:24px;letter-spacing:.1em;text-transform:uppercase}
-.st b{font-size:66px;line-height:1;letter-spacing:-.03em}
+.st{position:absolute;width:196px;height:196px;border-radius:50%;background:var(--coral);border:7px solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-10deg);box-shadow:0 24px 50px -14px rgba(0,0,0,.6);font-weight:800}
+.st small{font-size:24px;letter-spacing:.12em;text-transform:uppercase}
+.st b{font-size:70px;line-height:1;letter-spacing:-.03em}
 .brand{position:absolute;left:62px;bottom:44px;color:rgba(255,255,255,.75);font-weight:800;font-size:26px;display:flex;align-items:center;gap:12px}
 .brand i{width:34px;height:34px;border-radius:10px;background:var(--coral);display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:20px}
 </style></head><body>
@@ -22,7 +24,8 @@ h1 em{font-family:'Fraunces',serif;font-style:italic;color:var(--coral);letter-s
 <div id="c3" class="card" style="width:280px;height:340px;left:690px;top:360px;transform:rotate(3deg)"></div>
 <div class="kick" id="k"></div>
 <h1 id="h"></h1>
-<div class="st" id="st" style="left:520px;top:440px"><small id="ss"></small><b id="sb"></b></div>
+<div class="chip"><i></i><span id="cp"></span></div>
+<div class="st" id="st" style="left:560px;top:420px"><small id="ss"></small><b id="sb"></b></div>
 <div class="brand"><i>F</i>Digittouch Finds</div>
 <script>
 window.setThumb = async (t) => {
@@ -30,7 +33,7 @@ window.setThumb = async (t) => {
   ['c1', 'c2', 'c3'].forEach((id, i) => document.getElementById(id).style.backgroundImage = u(t.imgs[i]));
   document.getElementById('k').textContent = t.kicker;
   document.getElementById('h').innerHTML = `${t.pre} <em>${t.accent}</em> ${t.post}`;
-  document.getElementById('ss').textContent = t.sticker_small; document.getElementById('sb').textContent = t.sticker_big;
+  document.getElementById('ss').textContent = t.sticker_small; document.getElementById('cp').textContent = t.chip || ''; document.getElementById('sb').textContent = t.sticker_big;
   await Promise.all(t.imgs.map(x => new Promise(r => { const im = new Image(); im.onload = im.onerror = r; im.src = `${x}?w=900&q=85&auto=format&fit=crop`; })));
   await document.fonts.ready; return true;
 };

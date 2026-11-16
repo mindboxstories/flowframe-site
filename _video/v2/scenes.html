@@ -39,7 +39,7 @@ const eo = (x) => 1 - Math.pow(1 - clamp(x), 3);              // ease out cubic
 const eio = (x) => { x = clamp(x); return x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2; };
 const back = (x) => { x = clamp(x); const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); }; // overshoot
 const IMG = (u, w = 2400) => `url('${u}?w=${w}&q=85&auto=format&fit=crop')`;
-const nb = (t) => t.replace(/ (oz|lb|set|pair|mask|wash|lamp)\b/g, '\u00a0$1');
+const nb = (t) => t.replace(/ (oz|lb|set|pair|mask|wash|lamp)\b/g, '\u00a0$1').replace(/ (\S{1,4})$/, '\u00a0$1');
 const words = (txt, cls = '') => nb(txt).split(' ').map(w => `<span class="word ${cls}">${w}</span>`).join(' ');
 let T = null, scenes = [];
 
@@ -205,7 +205,8 @@ rehook(el, seg, lt) {
   slideX(el.querySelector('.k'), lt, .02, .35); rise(el.querySelector('.a1'), lt, (wt(seg, seg.lines ? seg.lines[0].cue : '^plant') ?? .8) - .3, .45);
   rise(el.querySelector('.a2'), lt, (wt(seg, seg.lines ? seg.lines[1].cue : '^luxury') ?? 2.5) - .3, .45);
   ['.r1', '.r2'].forEach((s, i) => { const p = el.querySelector(s); const k = eo((lt - i * .15) / .55); p.style.opacity = clamp((lt - i * .15) * 4);
-    p.style.transform = `translateY(${(1 - k) * 200}px) rotate(${[-5, 6][i] + Math.sin(lt + i) * .7}deg)`; });
+    p.style.transform = `translateY(${(1 - k) * 200 + Math.sin(lt * 1.7 + i) * 14}px) rotate(${[-5, 6][i] + Math.sin(lt * 1.3 + i) * 2.2}deg) scale(${1 + .05 * Math.sin(lt * .8 + i)})`; });
+  el.querySelector('.q').style.transform += ` scale(${1 + .08 * Math.sin(lt * 3)})`;
   pop(el.querySelector('.q'), lt, .5, .5);
 },
 recap(el, seg, lt) {
