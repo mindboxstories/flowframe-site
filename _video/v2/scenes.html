@@ -106,7 +106,7 @@ item(seg) {
         <div class="tags" style="margin-top:52px;display:flex;flex-direction:column;align-items:flex-start;gap:22px">${seg.tags.map(t => `<span class="pill tg" style="background:#fff;font-size:33px;white-space:nowrap"><i></i>${t}</span>`).join('')}</div>
       </div></div>
     <div class="card C" style="left:110px;bottom:110px;width:1140px;padding:56px 64px">
-      <div class="tag" style="color:var(--coral);display:flex;align-items:center;gap:18px"><span style="width:52px;height:52px;border-radius:50%;background:var(--coral);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:34px;letter-spacing:0">!</span>The catch</div>
+      <div class="tag" style="color:var(--${seg.cue_color || 'coral'});display:flex;align-items:center;gap:18px"><span style="width:52px;height:52px;border-radius:50%;background:var(--${seg.cue_color || 'coral'});color:${seg.cue_color === 'sun' ? 'var(--ink)' : '#fff'};display:inline-flex;align-items:center;justify-content:center;font-size:32px;letter-spacing:0">${seg.cue_icon || '!'}</span>${seg.cue_label || 'The catch'}</div>
       <div class="ct" style="font-weight:800;font-size:60px;line-height:1.15;letter-spacing:-.015em;margin-top:22px">${words(seg.catch)}</div>
     </div>
   </div>`);

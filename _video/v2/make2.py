@@ -13,6 +13,26 @@ PREVIEW = "--preview" in sys.argv          # fake voice timings, short render, f
 OUT = os.path.join(HERE, "..", "out", spec["slug"] + "-v2")
 os.makedirs(f"{OUT}/frames", exist_ok=True)
 segs = spec["segments"]
+# Varied "catch" lead-ins (Jarvis, 16 Nov: vary it so it isn't monotonous). Scripts write "The catch?";
+# the pipeline swaps it per pick: (spoken lead-in, on-screen label, icon, accent colour). An item can set "cue" to pin one.
+CUES = [("The catch?", "The catch", "!", "coral"), ("Heads-up:", "Heads-up", "!", "sun"),
+        ("One thing to know:", "Good to know", "i", "coral"), ("Before you buy:", "Before you buy", "✓", "sun"),
+        ("The trade-off?", "The trade-off", "⇄", "coral"), ("Worth knowing:", "Worth knowing", "i", "sun"),
+        ("The only snag?", "The only snag", "!", "coral"), ("Fair warning:", "Fair warning", "!", "sun")]
+
+
+def vary_cues():
+    k = 0
+    for s in segs:
+        if s["kind"] != "item":
+            continue
+        pick = next((c for c in CUES if c[1].lower() == s.get("cue", "").lower()), CUES[k % len(CUES)])
+        s["text"] = re.sub(r"The catch\?", pick[0], s["text"], count=1)
+        s["cue_words"] = pick[0].rstrip("?:").split()
+        s["cue_label"], s["cue_icon"], s["cue_color"] = pick[1], pick[2], pick[3]
+        k += 1
+
+
 PAD = {"hook": .25, "note": .25, "band": .22, "item": .28, "rehook": .3, "recap": .4, "outro": 0}
 
 
@@ -71,10 +91,11 @@ def timeline():
         if s["kind"] == "item":
             price = first(s, r"dollars|^\$") or 1.6
             # the "why" starts at the sentence after the price sentence; the catch starts at "The" before "catch"
-            ws = s["words"]; ci = next((i for i, w in enumerate(ws) if re.match(r"catch", w["w"], re.I)), len(ws) - 6)
-            catch = ws[max(0, ci - 1)]["s"] - .1
+            ws = s["words"]; cw = [re.sub(r"\W", "", x).lower() for x in s.get("cue_words", ["The", "catch"])]
+            ci = next((i for i in range(len(ws)) if [re.sub(r"\W", "", w["w"]).lower() for w in ws[i:i + len(cw)]] == cw), len(ws) - 6)
+            catch = ws[ci]["s"] - .1
             pi = next((i for i, w in enumerate(ws) if w["s"] >= price), 0)
-            why = ws[min(pi + 1, ci - 2)]["s"] - .05
+            why = ws[min(pi + 1, ci - 1)]["s"] - .05
             s["cues"] = {"price": round(max(.5, price - .05), 3), "why": round(max(price + .6, why), 3), "catch": round(catch, 3)}
         t += s["dur"]
     return t
@@ -258,6 +279,7 @@ def captions_and_chapters():
 
 
 if __name__ == "__main__":
+    vary_cues()
     (fake_tts if PREVIEW else tts)()
     total = timeline(); print(f"total {total:.1f}s")
     if PREVIEW:
