@@ -1,0 +1,8 @@
+{"_note": "18 Nov 2026: Finds capped at 5 pins/day (new-account guidance); these product pins were moved in Zernio to the times below. plan.py applies them when writing schedule.json.",
+ "when": {"p-kit-skillet":"2026-11-27T12:00:00.000Z","p-her-slippers":"2026-11-27T21:30:00.000Z","p-her-lamp":"2026-11-27T23:30:00.000Z","p-her-tilbury":"2026-11-27T16:00:00.000Z",
+  "p-hair-tymo":"2026-11-28T12:00:00.000Z","p-wfh-stand":"2026-11-28T16:00:00.000Z","p-hair-revlon":"2026-11-28T21:30:00.000Z",
+  "p-wfh-cable":"2026-11-29T12:00:00.000Z","p-wfh-charger":"2026-11-29T16:00:00.000Z","p-u25-warmers":"2026-11-29T21:30:00.000Z",
+  "p-pets-harness":"2026-11-30T12:00:00.000Z","p-pets-hotpursuit":"2026-11-30T16:00:00.000Z","p-wfh-screenbar":"2026-11-30T21:30:00.000Z",
+  "p-u25-popcorn":"2026-12-01T12:00:00.000Z","p-pets-tracks":"2026-12-01T16:00:00.000Z","p-her-cuff":"2026-12-01T21:30:00.000Z",
+  "p-hair-airwrap":"2026-12-02T12:00:00.000Z","p-wfh-ember":"2026-12-02T16:00:00.000Z","p-u25-board":"2026-12-02T21:30:00.000Z",
+  "p-her-bala":"2026-12-03T12:00:00.000Z","p-wfh-mv7":"2026-12-03T16:00:00.000Z","p-u25-laneige":"2026-12-03T21:30:00.000Z","p-her-lego":"2026-12-04T12:00:00.000Z"}}

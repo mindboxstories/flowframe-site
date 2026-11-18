@@ -307,3 +307,44 @@ for p in b2:
       link=f"https://flowframe.shop/finds/{p['slug']}/?utm_source=pinterest&utm_medium=social&utm_campaign={p['id']}",img=f"https://flowframe.shop/pins/v7/{p['id']}.jpg",layout=p['layout'],angle=p['angle'],kind=p['kind'],batch=p['batch']))
 json.dump(sched,open(os.path.join(ROOT,'schedule.json'),'w'),indent=1,ensure_ascii=False)
 print(len(specs),'specs',len(finds),'finds',len(ff),'ff; finds last slot',slots[len(order)-1])
+
+# --- 18 Nov 2026: keyword-first titles for product pins (Pinterest search), Finds cap of 5/day (overrides.json),
+#     and FlowFrame batch ff3 (27 Nov-6 Dec): 7 webcam product pins + 3 guide pins; half carry the R12 CTA strip (E8).
+PFX={'gifts-under-25':'Gift Ideas Under $25','gifts-for-her-under-60':'Gift Ideas for Her Under $60','hair-styler-gifts':'Hair Tool Gift Ideas for Her',
+ 'kitchen-gifts-home-cook':'Kitchen Gift Ideas for Home Cooks','pet-lover-gifts-under-55':'Gift Ideas for Dog and Cat Lovers','work-from-home-gifts':'Work From Home Gift Ideas'}
+OV=json.load(open(os.path.join(ROOT,'overrides.json')))
+for p in sched:
+    if p['id'].startswith('p-'):
+        slug=re.search(r'/finds/([^/]+)/',p['link']).group(1)
+        prod=p['title'].split(' | ')[-1]
+        p['title']=f"{PFX[slug]}: {prod}"[:100]; p['title_style']='keyword-first'
+    if p['id'] in OV['when']: p['when']=OV['when'][p['id']]
+WCL='/guides/best-webcams-for-video-calls/'
+WCT='#webcam #homeoffice #workfromhome'
+FF3=[  # (spec, angle, title, description lead, link, cta)
+ (dict(layout='B',img='1588873281272-14886ba1f737',plabel='About',price='$60',chip='Best value',head='Look <em>sharper</em> on every call',sub='Anker PowerConf C200: 2K video, a privacy cover and decent mics.'),'aspiration','Best Budget Webcam for Video Calls: Anker PowerConf C200','Anker PowerConf C200 (about $60): 2K video, a sliding privacy cover and stereo mics; the best-value pick at Tom\'s Guide and Engadget.',WCL,'See the price and the catch'),
+ (dict(layout='D',img='1612831455359-970e23a1e4e9',plabel='About',price='$56',head='The webcam <em style="color:var(--sun)">offices already trust</em>'),'relatable','Best Webcam for Zoom and Teams: Logitech C920s Pro','Logitech C920s Pro (about $56): reliable 1080p, stereo mics and a privacy shutter; works with Zoom, Teams and Meet out of the box.',WCL,None),
+ (dict(layout='A',img='1668605335684-c97ce92cbd76',chip='Logitech Brio 500 · about $130',head='Dim room? <em>Still look good.</em>',sub='Automatic light correction and auto-framing for long days on camera.'),'relief','Best Webcam for Low Light Calls: Logitech Brio 500','Logitech Brio 500 (about $130): automatic light correction, auto-framing and a built-in lens cover; Engadget\'s best webcam overall.',WCL,'See the price and the catch'),
+ (dict(layout='B',img='1586985564150-11ee04838034',plabel='About',price='$149',chip='Best 4K for the money',head='4K calls <em>without the 4K price</em>',sub='Insta360 Link 2C. Pair it with a headset: its mic is the weak spot.'),'value','Best 4K Webcam for the Money: Insta360 Link 2C','Insta360 Link 2C (about $149): a very clear 4K picture with good low-light performance; Tom\'s Guide\'s best webcam of 2026. Its mic sounds compressed.',WCL,None),
+ (dict(layout='D',img='1585974738771-84483dd9f89f',plabel='From',price='$99',head='A 4K webcam that <em style="color:var(--sun)">travels with you</em>'),'practical','Best Laptop Webcam for Travel: Obsbot Meet Flip','Obsbot Meet Flip (about $99–119): a tiny 4K camera that clips onto a laptop lid and flips its lens down for privacy.',WCL,'See the price and the catch'),
+ (dict(layout='A',img='1618133030686-e1186525ebcc',chip='Logitech MX Brio 705 · about $199',head='The <em>premium</em> pick for all-day calls',sub='4K, beamforming mics and three field-of-view settings.'),'aspiration','Best Premium Webcam for Work: Logitech MX Brio 705','Logitech MX Brio 705 (about $199): 4K, beamforming mics and AI-assisted focus; it runs warm and drains a laptop on battery.',WCL,None),
+ (dict(layout='B',img='1575909812264-6902b55846ad',plabel='About',price='$25',chip='Cheapest upgrade',head='Better than your laptop camera, <em>for $25</em>',sub='Logitech C310: 720p, but a clear step up from most built-in cameras.'),'value','Cheap Webcam Upgrade Under $25: Logitech C310','Logitech C310 (about $21–25): 720p, no privacy shutter, but a clear step up from most built-in laptop cameras.',WCL,'See the price and the catch'),
+ (dict(layout='E',img='1589903308904-1010c2294adc',num='4',head='AI note-takers with <em>free plans</em>',chip='Compared',sub='Fathom, Granola, Otter and Fireflies.'),'number','Free AI Meeting Note-Takers Compared: Fathom, Granola, Otter, Fireflies','4 AI meeting note-takers with free plans compared: which joins your call as a bot, what each free plan includes, and the catch on each.','/guides/best-ai-meeting-note-takers/',None),
+ (dict(layout='C',imgs=['1557804506-669a67965ba0','1531403009284-440f080d1e12','1552664730-d307ca884978'],chip='AI slide makers',head='Your next deck, <em>half the work</em>',sub='Gamma, Canva and Copilot compared'),'relief','AI Presentation Makers Compared: Gamma vs Canva vs Copilot','Gamma, Canva or Copilot in PowerPoint? Free options, prices and exports compared, and which one fits how you work.','/guides/gamma-vs-canva-vs-copilot/','See all 3 compared'),
+ (dict(layout='C',imgs=['1588873281272-14886ba1f737','1668605335684-c97ce92cbd76','1586985564150-11ee04838034'],chip='7 webcams compared',head='Which webcam is <em>right for you?</em>',sub='From a $25 upgrade to 4K'),'practical','Best Webcams for Video Calls 2026: 7 Picks From $25',"7 webcams compared from Tom's Guide, TechRadar and Engadget testing, from a $25 upgrade to 4K, with who each suits and the catch on each.",WCL,None),
+]
+for k,(sp,angle,title,lead,link,cta) in enumerate(FF3):
+    sid=f'ff3-{k+1:02d}'
+    s2=dict(id=sid,theme='ff',**sp)
+    if cta: s2['cta']=cta
+    specs.append(s2)
+    board=WC_BOARD if link==WCL else '263953296849938525'
+    tags=WCT if link==WCL else '#AItools #productivity #worksmarter'
+    disc='As an Amazon Associate I earn from qualifying purchases.' if link==WCL else 'Some links may be affiliate links; we may earn a commission at no cost to you.'
+    note=" Compared from published testing; we haven't tested it ourselves." if link==WCL and sid!='ff3-10' else ''
+    sched.append(dict(id=sid,acct='6af0cdc55128f5755abb20cc',board=board,when=f"{dt.date(2026,11,27)+dt.timedelta(days=k)}T18:00:00.000Z",title=title[:100],
+      content=f"{lead}{note} Full comparison on FlowFrame. {tags} #affiliate {disc}"[:500],
+      link=f"https://flowframe.shop{link}?utm_source=pinterest&utm_medium=social&utm_campaign={sid}",img=f"https://flowframe.shop/pins/v7/{sid}.jpg",
+      layout=sp['layout'],angle=angle,kind='product' if k<7 else 'guide',batch='ff3',cta=1 if cta else 0,title_style='keyword-first'))
+json.dump(specs,open(os.path.join(ROOT,'specs.json'),'w'),indent=1,ensure_ascii=False)
+json.dump(sched,open(os.path.join(ROOT,'schedule.json'),'w'),indent=1,ensure_ascii=False)

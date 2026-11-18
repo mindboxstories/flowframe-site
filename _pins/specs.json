@@ -1668,5 +1668,115 @@
   "head": "webcams worth it <em>for calls</em>?",
   "chip": "Honest comparison",
   "sub": "When 4K helps, and when 1080p is plenty."
+ },
+ {
+  "id": "ff3-01",
+  "theme": "ff",
+  "layout": "B",
+  "img": "1588873281272-14886ba1f737",
+  "plabel": "About",
+  "price": "$60",
+  "chip": "Best value",
+  "head": "Look <em>sharper</em> on every call",
+  "sub": "Anker PowerConf C200: 2K video, a privacy cover and decent mics.",
+  "cta": "See the price and the catch"
+ },
+ {
+  "id": "ff3-02",
+  "theme": "ff",
+  "layout": "D",
+  "img": "1612831455359-970e23a1e4e9",
+  "plabel": "About",
+  "price": "$56",
+  "head": "The webcam <em style=\"color:var(--sun)\">offices already trust</em>"
+ },
+ {
+  "id": "ff3-03",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1668605335684-c97ce92cbd76",
+  "chip": "Logitech Brio 500 · about $130",
+  "head": "Dim room? <em>Still look good.</em>",
+  "sub": "Automatic light correction and auto-framing for long days on camera.",
+  "cta": "See the price and the catch"
+ },
+ {
+  "id": "ff3-04",
+  "theme": "ff",
+  "layout": "B",
+  "img": "1586985564150-11ee04838034",
+  "plabel": "About",
+  "price": "$149",
+  "chip": "Best 4K for the money",
+  "head": "4K calls <em>without the 4K price</em>",
+  "sub": "Insta360 Link 2C. Pair it with a headset: its mic is the weak spot."
+ },
+ {
+  "id": "ff3-05",
+  "theme": "ff",
+  "layout": "D",
+  "img": "1585974738771-84483dd9f89f",
+  "plabel": "From",
+  "price": "$99",
+  "head": "A 4K webcam that <em style=\"color:var(--sun)\">travels with you</em>",
+  "cta": "See the price and the catch"
+ },
+ {
+  "id": "ff3-06",
+  "theme": "ff",
+  "layout": "A",
+  "img": "1618133030686-e1186525ebcc",
+  "chip": "Logitech MX Brio 705 · about $199",
+  "head": "The <em>premium</em> pick for all-day calls",
+  "sub": "4K, beamforming mics and three field-of-view settings."
+ },
+ {
+  "id": "ff3-07",
+  "theme": "ff",
+  "layout": "B",
+  "img": "1575909812264-6902b55846ad",
+  "plabel": "About",
+  "price": "$25",
+  "chip": "Cheapest upgrade",
+  "head": "Better than your laptop camera, <em>for $25</em>",
+  "sub": "Logitech C310: 720p, but a clear step up from most built-in cameras.",
+  "cta": "See the price and the catch"
+ },
+ {
+  "id": "ff3-08",
+  "theme": "ff",
+  "layout": "E",
+  "img": "1589903308904-1010c2294adc",
+  "num": "4",
+  "head": "AI note-takers with <em>free plans</em>",
+  "chip": "Compared",
+  "sub": "Fathom, Granola, Otter and Fireflies."
+ },
+ {
+  "id": "ff3-09",
+  "theme": "ff",
+  "layout": "C",
+  "imgs": [
+   "1557804506-669a67965ba0",
+   "1531403009284-440f080d1e12",
+   "1552664730-d307ca884978"
+  ],
+  "chip": "AI slide makers",
+  "head": "Your next deck, <em>half the work</em>",
+  "sub": "Gamma, Canva and Copilot compared",
+  "cta": "See all 3 compared"
+ },
+ {
+  "id": "ff3-10",
+  "theme": "ff",
+  "layout": "C",
+  "imgs": [
+   "1588873281272-14886ba1f737",
+   "1668605335684-c97ce92cbd76",
+   "1586985564150-11ee04838034"
+  ],
+  "chip": "7 webcams compared",
+  "head": "Which webcam is <em>right for you?</em>",
+  "sub": "From a $25 upgrade to 4K"
  }
 ]
