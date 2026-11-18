@@ -1,0 +1,32 @@
+{
+ "webcam": {
+  "error": "HTTP Error 401: Unauthorized"
+ },
+ "webcam on monitor": {
+  "error": "HTTP Error 401: Unauthorized"
+ },
+ "video call laptop home office": {
+  "error": "HTTP Error 401: Unauthorized"
+ },
+ "person on video call": {
+  "error": "HTTP Error 401: Unauthorized"
+ },
+ "home office desk setup": {
+  "error": "HTTP Error 401: Unauthorized"
+ },
+ "monitor light bar desk": {
+  "error": "HTTP Error 401: Unauthorized"
+ },
+ "headset video call": {
+  "error": "HTTP Error 401: Unauthorized"
+ },
+ "ring light desk": {
+  "error": "HTTP Error 401: Unauthorized"
+ },
+ "woman working from home laptop": {
+  "error": "HTTP Error 401: Unauthorized"
+ },
+ "man video conference": {
+  "error": "HTTP Error 401: Unauthorized"
+ }
+}
