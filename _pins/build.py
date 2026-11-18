@@ -16,7 +16,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);background:var(
 .brand{font-family:'Fraunces',serif;font-weight:600;font-size:34px}
 .brand b{color:var(--accent);font-weight:600}
 .url{font-weight:700;font-size:26px;letter-spacing:.02em}
-.cta{background:var(--sun);color:var(--ink);font-weight:800;font-size:27px;padding:14px 26px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.cta{background:var(--sun);color:var(--ink);font-weight:800;font-size:36px;padding:18px 32px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.18)}
 .price{position:absolute;width:250px;height:250px;border-radius:50%;background:var(--sun);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-8deg);box-shadow:0 18px 40px rgba(0,0,0,.25)}
 .price small{font-weight:800;font-size:24px;letter-spacing:.12em;text-transform:uppercase}
 .price span{font-family:'Fraunces',serif;font-weight:700;font-size:92px;line-height:.95}
