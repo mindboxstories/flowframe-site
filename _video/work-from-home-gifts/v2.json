@@ -1,0 +1,375 @@
+{
+ "slug": "work-from-home-gifts",
+ "version": "v2",
+ "voice": "af_heart",
+ "speed": 1.1,
+ "guide": "flowframe.shop/finds/work-from-home-gifts",
+ "segments": [
+  {
+   "id": "hook",
+   "kind": "hook",
+   "text": "Ten gifts for anyone who works from home, from twenty dollars, and the one catch to know before you buy each one.",
+   "title": {
+    "pre": "10 gifts for the",
+    "accent": "home",
+    "post": "office"
+   },
+   "sticker": {
+    "small": "from",
+    "big": "$20",
+    "cue": "^twenty"
+   },
+   "chip": "+ the catch on each one",
+   "flash": [
+    "https://images.unsplash.com/photo-1629317480826-910f729d1709",
+    "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46",
+    "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e",
+    "https://images.unsplash.com/photo-1588800347304-ec7e6f353327",
+    "https://images.unsplash.com/photo-1618133030686-e1186525ebcc",
+    "https://images.unsplash.com/photo-1650394923482-a0d03ffb2512",
+    "https://images.unsplash.com/photo-1676107779674-f77343861e81",
+    "https://images.unsplash.com/photo-1591290619618-904f6dd935e3"
+   ]
+  },
+  {
+   "id": "note",
+   "kind": "note",
+   "text": "Quick note: our links are affiliate links. It never changes our picks. Prices move daily, so always check the link.",
+   "img": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+  },
+  {
+   "id": "b1",
+   "kind": "band",
+   "text": "Under fifty dollars.",
+   "label": "Under $50",
+   "sub": "Small upgrades, big difference",
+   "color": "coral",
+   "kicker": "Part 1 of 3"
+  },
+  {
+   "id": "mat",
+   "kind": "item",
+   "n": 1,
+   "name": "Large felt desk mat",
+   "price": "$20",
+   "text": "Number one. A large felt or leather desk mat, about twenty dollars. It covers the whole desk, quiets the keyboard, and makes the setup look finished. The catch? Measure the desk first. The popular ninety-centimeter mats hang over small desks.",
+   "tags": [
+    "Quiets the keyboard",
+    "Desk looks finished"
+   ],
+   "catch": "Measure first. Big mats overhang small desks.",
+   "img": "https://images.unsplash.com/photo-1650394923482-a0d03ffb2512"
+  },
+  {
+   "id": "stand",
+   "kind": "item",
+   "n": 2,
+   "name": "Aluminum laptop stand",
+   "price": "$30",
+   "text": "Two. An aluminum laptop stand, about thirty dollars. It lifts the screen closer to eye level and folds flat for travel. Our top pick. The catch? Once the screen is up, they'll need a separate keyboard and mouse.",
+   "tags": [
+    "Screen at eye level",
+    "Folds flat for travel"
+   ],
+   "catch": "They'll also need a keyboard and mouse.",
+   "img": "https://images.unsplash.com/photo-1629317480826-910f729d1709"
+  },
+  {
+   "id": "cable",
+   "kind": "item",
+   "n": 3,
+   "name": "Cable management kit",
+   "price": "$20",
+   "text": "Three. An under-desk cable management kit, about twenty dollars. Clips, sleeves and a tray hide the cable mess under the desk. The catch? It takes about half an hour to fit, so it suits someone who enjoys tidying.",
+   "tags": [
+    "Hides the cable mess",
+    "Clips, sleeves and a tray"
+   ],
+   "catch": "About 30 minutes to fit. Best for tidiers.",
+   "img": "https://images.unsplash.com/photo-1760348213270-7cd00b8c3405"
+  },
+  {
+   "id": "rehook",
+   "kind": "rehook",
+   "text": "Still coming: a mug that keeps coffee hot through every meeting, and a mic that makes calls sound like radio.",
+   "lines": [
+    {
+     "pre": "Coffee hot through",
+     "accent": "every meeting",
+     "cue": "^mug"
+    },
+    {
+     "pre": "Calls that sound",
+     "accent": "like radio",
+     "cue": "^mic"
+    }
+   ],
+   "imgs": [
+    "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e",
+    "https://images.unsplash.com/photo-1588800347304-ec7e6f353327"
+   ]
+  },
+  {
+   "id": "charger",
+   "kind": "item",
+   "n": 4,
+   "name": "3-in-1 wireless charger",
+   "price": "$35",
+   "text": "Four. A three-in-one wireless charging stand, about thirty-five dollars. Phone, earbuds and watch charge in one spot, so the desk stays clear of cables. The catch? Check that it supports their phone and watch brand first.",
+   "tags": [
+    "Phone, earbuds, watch",
+    "Fewer cables"
+   ],
+   "catch": "Check it fits their phone and watch brand.",
+   "img": "https://images.unsplash.com/photo-1591290619618-904f6dd935e3"
+  },
+  {
+   "id": "b2",
+   "kind": "band",
+   "text": "Fifty to a hundred and fifty dollars.",
+   "label": "$50 to $150",
+   "sub": "Better tools for long days",
+   "color": "sun",
+   "kicker": "Part 2 of 3"
+  },
+  {
+   "id": "mxmaster",
+   "kind": "item",
+   "n": 5,
+   "name": "Logitech MX Master 4",
+   "price": "$120",
+   "text": "Five. The Logitech MX Master four mouse, about a hundred and twenty dollars, and often under a hundred on sale. A fast scroll wheel, a thumb wheel, and it pairs with three computers. The catch? It's big and right-handed only. Small hands may prefer the MX Anywhere.",
+   "tags": [
+    "Fast scroll wheel",
+    "Pairs with 3 computers"
+   ],
+   "catch": "Big and right-handed only.",
+   "img": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46"
+  },
+  {
+   "id": "mxkeys",
+   "kind": "item",
+   "n": 6,
+   "name": "Logitech MX Keys S",
+   "price": "$110",
+   "text": "Six. The Logitech MX Keys S keyboard, about a hundred and ten dollars. Quiet, backlit keys, and one button switches between three devices. The catch? It's full size, so it takes more desk space than a compact board.",
+   "tags": [
+    "Quiet, backlit keys",
+    "Switches 3 devices"
+   ],
+   "catch": "Full size. Needs more desk space.",
+   "img": "https://images.unsplash.com/photo-1669884210028-81aa4c7442e5"
+  },
+  {
+   "id": "screenbar",
+   "kind": "item",
+   "n": 7,
+   "name": "BenQ ScreenBar light",
+   "price": "$109",
+   "text": "Seven. The BenQ ScreenBar monitor light, about a hundred and nine dollars. It sits on the monitor and lights the desk, with no glare on the screen. The catch? It needs a monitor. It won't sit on a laptop.",
+   "tags": [
+    "Lights the desk",
+    "No screen glare"
+   ],
+   "catch": "Needs a monitor, not a laptop.",
+   "img": "https://images.unsplash.com/photo-1618133030686-e1186525ebcc"
+  },
+  {
+   "id": "ember",
+   "kind": "item",
+   "n": 8,
+   "name": "Ember Mug 2, 14 oz",
+   "price": "$90–150",
+   "text": "Eight. The Ember Mug two, from about ninety dollars depending on the color. It keeps coffee at the exact temperature they pick, through back-to-back meetings. The catch? The battery is short off the coaster, and it's hand-wash only.",
+   "tags": [
+    "Set the exact temperature",
+    "Hot through meetings"
+   ],
+   "catch": "Short battery off the coaster. Hand-wash only.",
+   "img": "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e"
+  },
+  {
+   "id": "b3",
+   "kind": "band",
+   "text": "The splurges.",
+   "label": "Splurge",
+   "sub": "When it should feel like a present",
+   "color": "plum",
+   "kicker": "Part 3 of 3"
+  },
+  {
+   "id": "kindle",
+   "kind": "item",
+   "n": 9,
+   "name": "Kindle Colorsoft",
+   "price": "$290",
+   "text": "Nine. The Kindle Colorsoft, about two hundred and ninety dollars. A glare-free color screen, and a way to switch off from screens after work. The catch? Color is softer than a tablet. For plain novels, a regular Kindle costs less.",
+   "tags": [
+    "Glare-free color",
+    "Switch off after work"
+   ],
+   "catch": "Softer color than a tablet. Novels only? Get a regular Kindle.",
+   "img": "https://images.unsplash.com/photo-1676107779674-f77343861e81"
+  },
+  {
+   "id": "mv7",
+   "kind": "item",
+   "n": 10,
+   "name": "Shure MV7+ microphone",
+   "price": "$269",
+   "text": "And ten. The Shure MV7 plus microphone, about two hundred and sixty-nine dollars. USB-C and XLR in one, so every call and recording sounds professional. The catch? It's a lot of mic for a few calls a week. For light use, a good headset is enough.",
+   "tags": [
+    "USB-C and XLR",
+    "Studio sound on calls"
+   ],
+   "catch": "A lot of mic for light use. A headset may do.",
+   "img": "https://images.unsplash.com/photo-1588800347304-ec7e6f353327"
+  },
+  {
+   "id": "recap",
+   "kind": "recap",
+   "text": "If you only buy one: the laptop stand they'll use every day, the MX Master as the best upgrade, or the Shure mic as the splurge.",
+   "picks": [
+    {
+     "img": "https://images.unsplash.com/photo-1629317480826-910f729d1709",
+     "label": "Used every day",
+     "name": "Laptop stand",
+     "price": "$30",
+     "cue": "^laptop"
+    },
+    {
+     "img": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46",
+     "label": "Best upgrade",
+     "name": "MX Master 4",
+     "price": "$120",
+     "cue": "^mx"
+    },
+    {
+     "img": "https://images.unsplash.com/photo-1588800347304-ec7e6f353327",
+     "label": "The splurge",
+     "name": "Shure MV7+",
+     "price": "$269",
+     "cue": "^shure"
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "kind": "outro",
+   "text": "Every pick is linked in the description and the pinned comment, with the full guide for the US and the UK. Happy gifting.",
+   "hold": 16
+  }
+ ],
+ "chapters": {
+  "hook": "Intro",
+  "recap": "Our top 3 + where to buy",
+  "mat": "1. Large felt desk mat",
+  "stand": "2. Aluminum laptop stand",
+  "cable": "3. Cable management kit",
+  "charger": "4. 3-in-1 wireless charger",
+  "mxmaster": "5. Logitech MX Master 4",
+  "mxkeys": "6. Logitech MX Keys S",
+  "screenbar": "7. BenQ ScreenBar light",
+  "ember": "8. Ember Mug 2, 14 oz",
+  "kindle": "9. Kindle Colorsoft",
+  "mv7": "10. Shure MV7+ microphone"
+ },
+ "thumb": {
+  "kicker": "Black Friday 2026",
+  "pre": "Gifts for the",
+  "accent": "home",
+  "post": "office",
+  "sticker_small": "from",
+  "sticker_big": "$20",
+  "chip": "10 picks + the catch on each",
+  "imgs": [
+   "https://images.unsplash.com/photo-1588800347304-ec7e6f353327",
+   "https://images.unsplash.com/photo-1629317480826-910f729d1709",
+   "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e"
+  ]
+ },
+ "short_label": "home-office gifts",
+ "short_cta": "It's one of ten home-office gifts. The full list, with every link, is on our profile.",
+ "shorts": [
+  {
+   "id": "mat",
+   "hook": "The twenty-dollar gift that makes any desk look finished.",
+   "title": {
+    "pre": "Make any desk look",
+    "accent": "finished"
+   }
+  },
+  {
+   "id": "stand",
+   "hook": "The thirty-dollar gift they'll use every single day.",
+   "title": {
+    "pre": "The $30 gift they'll",
+    "accent": "use every day"
+   }
+  },
+  {
+   "id": "cable",
+   "hook": "Their desk has a cable mess? This twenty-dollar fix.",
+   "title": {
+    "pre": "Cable mess?",
+    "accent": "The $20 fix"
+   }
+  },
+  {
+   "id": "charger",
+   "hook": "One stand that charges a phone, earbuds and a watch. One thing first.",
+   "title": {
+    "pre": "3 chargers in one",
+    "accent": "One thing first"
+   }
+  },
+  {
+   "id": "mxmaster",
+   "hook": "The work mouse people upgrade to. Check this first.",
+   "title": {
+    "pre": "The work mouse upgrade",
+    "accent": "Check this first"
+   }
+  },
+  {
+   "id": "mxkeys",
+   "hook": "A quiet keyboard that switches between three devices. The catch?",
+   "title": {
+    "pre": "A quiet keyboard",
+    "accent": "with one catch"
+   }
+  },
+  {
+   "id": "screenbar",
+   "hook": "A desk light with no glare on your screen. One thing first.",
+   "title": {
+    "pre": "A light with no screen glare",
+    "accent": "One thing first"
+   }
+  },
+  {
+   "id": "ember",
+   "hook": "A mug that keeps coffee hot through every meeting. Worth it?",
+   "title": {
+    "pre": "Coffee hot all meeting",
+    "accent": "Worth it?"
+   }
+  },
+  {
+   "id": "kindle",
+   "hook": "Thinking about a color Kindle? Read this first.",
+   "title": {
+    "pre": "A color Kindle?",
+    "accent": "Read this first"
+   }
+  },
+  {
+   "id": "mv7",
+   "hook": "Want calls that sound like radio? Here's the honest take.",
+   "title": {
+    "pre": "Calls that sound like radio",
+    "accent": "The honest take"
+   }
+  }
+ ]
+}
