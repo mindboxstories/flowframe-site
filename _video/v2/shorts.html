@@ -90,7 +90,7 @@ scta(seg) {
     <div class="abs" style="left:60px;top:1050px;width:870px">
       <div class="tag k" style="color:var(--sun)">${seg.kicker}</div>
       <div class="o1" style="font-weight:800;font-size:96px;line-height:1.0;letter-spacing:-.035em;margin-top:18px">Full list + <em style="color:var(--coral)">every link</em></div>
-      <div class="o2" style="margin-top:36px"><span class="pill" style="font-size:38px;background:var(--sun)"><i style="background:var(--plum)"></i>Link on our profile ↗</span></div>
+      <div class="o2" style="margin-top:36px"><span class="pill" style="font-size:46px;padding:22px 38px;background:var(--sun)"><i style="background:var(--plum)"></i>Link on our profile ↗</span></div>
     </div></div>`);
 },
 };
@@ -168,7 +168,7 @@ window.render = (t) => {
   for (let i = 0; i < segs.length; i++) if (t < segs[i].start + segs[i].dur) { idx = i; break; }
   scenes.forEach((el, i) => { el.style.display = i === idx ? 'block' : 'none'; });
   const seg = segs[idx], lt = t - seg.start; R[seg.kind](scenes[idx], seg, lt);
-  caption(t);
+  caption(t); document.getElementById('cap').style.visibility = seg.kind === 'scta' ? 'hidden' : 'visible';
   const W = document.getElementById('wipe'), W2 = document.getElementById('wipe2'); let k = null;
   for (const s of segs) { if (s.start === 0) continue; const d = t - s.start; if (d > -.2 && d < .2) { k = (d + .2) / .4; break; } }
   if (k === null) { W.style.transform = W2.style.transform = 'translateY(-200%) skewY(-10deg)'; }
