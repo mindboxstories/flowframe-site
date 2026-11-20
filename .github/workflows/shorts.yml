@@ -1,0 +1,67 @@
+name: Render Shorts (vertical, one per pick)
+on:
+  workflow_dispatch:
+    inputs:
+      slug: {description: "folder under _video (its v2.json needs a shorts list)", default: "black-friday-2026"}
+      ids: {description: "comma-separated pick ids, blank = every short in v2.json", default: ""}
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs: {ids: "${{ steps.p.outputs.ids }}"}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: |
+          python3 - <<'EOF' >> $GITHUB_OUTPUT
+          import json, os
+          j = json.load(open(f"_video/${{ inputs.slug }}/v2.json"))
+          want = [x.strip() for x in "${{ inputs.ids }}".split(",") if x.strip()]
+          ids = [s["id"] for s in j["shorts"] if not want or s["id"] in want]
+          print("ids=" + json.dumps(ids))
+          EOF
+  short:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix: {id: "${{ fromJson(needs.plan.outputs.ids) }}"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: sudo apt-get update -q && sudo apt-get install -y -q espeak-ng ffmpeg
+      - run: |
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "kokoro>=0.9.4" soundfile numpy pillow playwright
+          python -m playwright install --with-deps chromium
+      - name: Render
+        run: python _video/v2/make2.py _video/${{ inputs.slug }}/v2.json --short ${{ matrix.id }}
+      - name: QA numbers
+        run: |
+          cd _video/out/${{ inputs.slug }}-short-${{ matrix.id }}
+          { echo "== loudness"; ffmpeg -hide_banner -nostats -i video.mp4 -af ebur128=peak=true -f null - 2>&1 | tail -12
+            echo "== opening silence"; ffmpeg -hide_banner -nostats -t 2 -i video.mp4 -af silencedetect=n=-40dB:d=0.3 -f null - 2>&1 | grep silence_ || echo none
+            echo "== freezes >2s"; ffmpeg -hide_banner -nostats -i video.mp4 -vf freezedetect=n=0.003:d=2 -map 0:v -f null - 2>&1 | grep freeze_ || echo none
+            echo "== black"; ffmpeg -hide_banner -nostats -i video.mp4 -vf blackdetect=d=0.2:pix_th=0.08 -an -f null - 2>&1 | grep black_ || echo none
+            echo "== format"; ffprobe -v error -show_entries format=duration,bit_rate:stream=codec_name,width,height,r_frame_rate -of compact video.mp4
+          } > qa.txt 2>&1; cat qa.txt
+          mkdir -p /tmp/o && cp video.mp4 /tmp/o/${{ matrix.id }}.mp4 && cp captions.srt /tmp/o/${{ matrix.id }}.srt && cp qa.txt /tmp/o/${{ matrix.id }}-qa.txt
+          mkdir -p /tmp/o/frames-${{ matrix.id }} && cp frames/*.jpg /tmp/o/frames-${{ matrix.id }}/
+      - uses: actions/upload-artifact@v4
+        with: {name: "short-${{ matrix.id }}", path: /tmp/o}
+  release:
+    needs: short
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: {path: out, pattern: "short-*", merge-multiple: true}
+      - env: {GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"}
+        run: |
+          cd out && zip -qr qa.zip frames-* *-qa.txt *.srt
+          gh release create "shorts-${{ inputs.slug }}-${{ github.run_id }}" *.mp4 qa.zip -R ${{ github.repository }} --prerelease \
+            --title "shorts-${{ inputs.slug }}-${{ github.run_id }}" --notes "Vertical Shorts (1080x1920), one per pick. Not for the site."

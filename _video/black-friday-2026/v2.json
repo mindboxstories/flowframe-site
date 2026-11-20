@@ -302,5 +302,97 @@
    "https://images.unsplash.com/photo-1781737857663-f1f14a60ba46",
    "https://images.unsplash.com/photo-1715033749994-55f16a83c236"
   ]
- }
+ },
+ "short_label": "Black Friday picks",
+ "short_cta": "It's one of eleven Black Friday picks. The full list, with every link, is on our profile.",
+ "shorts": [
+  {
+   "id": "kong",
+   "hook": "Getting the dog a gift? This twelve-dollar classic has one catch.",
+   "title": {
+    "pre": "The $12 dog gift",
+    "accent": "with one catch"
+   }
+  },
+  {
+   "id": "airtag",
+   "hook": "Buying an AirTag this Black Friday? Check this first.",
+   "title": {
+    "pre": "Buying an AirTag?",
+    "accent": "Check this first"
+   }
+  },
+  {
+   "id": "earbuds",
+   "hook": "Noise-cancelling earbuds for twenty-five dollars? Here's the honest take.",
+   "title": {
+    "pre": "$25 noise cancelling?",
+    "accent": "The honest take"
+   }
+  },
+  {
+   "id": "blanket",
+   "hook": "The coziest twenty-five-dollar gift on our list, and its one catch.",
+   "title": {
+    "pre": "The coziest $25 gift",
+    "accent": "and its one catch"
+   }
+  },
+  {
+   "id": "skillet",
+   "hook": "A twenty-dollar pan that can last a lifetime. Here's the catch.",
+   "title": {
+    "pre": "A $20 pan for life?",
+    "accent": "Here's the catch"
+   }
+  },
+  {
+   "id": "instantpot",
+   "hook": "Three cookers in one for about seventy dollars. Worth it?",
+   "title": {
+    "pre": "3 cookers in one",
+    "accent": "Worth it?"
+   }
+  },
+  {
+   "id": "crispi",
+   "hook": "An air fryer with no basket to scrub. Know this first.",
+   "title": {
+    "pre": "No basket to scrub",
+    "accent": "Know this first"
+   }
+  },
+  {
+   "id": "screenbar",
+   "hook": "A desk light with no glare on your screen. One thing first.",
+   "title": {
+    "pre": "A light with no screen glare",
+    "accent": "One thing first"
+   }
+  },
+  {
+   "id": "mxmaster",
+   "hook": "Logitech's flagship work mouse. Is it right for you?",
+   "title": {
+    "pre": "The flagship work mouse",
+    "accent": "Right for you?"
+   }
+  },
+  {
+   "id": "kindle",
+   "hook": "Thinking about a color Kindle this Black Friday? Read this first.",
+   "title": {
+    "pre": "A color Kindle?",
+    "accent": "Read this first"
+   }
+  },
+  {
+   "id": "flexfusion",
+   "hook": "Much of what a seven-hundred-dollar styler does, for under three hundred.",
+   "title": {
+    "pre": "Much of a $700 styler",
+    "accent": "for under $300"
+   }
+  }
+ ]
 }

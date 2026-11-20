@@ -10,7 +10,33 @@ FPS, W, H, SR = 30, 1920, 1080, 24000
 HERE = os.path.dirname(os.path.abspath(__file__))
 spec = json.load(open(sys.argv[1]))
 PREVIEW = "--preview" in sys.argv          # fake voice timings, short render, for layout checks without TTS
-OUT = os.path.join(HERE, "..", "out", spec["slug"] + "-v2")
+# --short <item id>: vertical 1080x1920 Short/Reel/TikTok for one pick, built from the same v2.json ("shorts" list)
+SHORT = sys.argv[sys.argv.index("--short") + 1] if "--short" in sys.argv else None
+SCENES = "scenes.html"
+
+
+def build_short(base, sid):
+    """hook (one line + price) -> the pick (number word dropped) -> CTA to the full list on our profile."""
+    cfg = next(x for x in base["shorts"] if x["id"] == sid)
+    items = [s for s in base["segments"] if s["kind"] == "item"]
+    it = dict(next(s for s in items if s["id"] == sid))
+    it["text"] = re.sub(r"^(And )?(Number )?[A-Za-z-]+\.\s+", "", it["text"])
+    it["of"] = len(items)
+    labels = ["The catch", "Heads-up", "Good to know", "Before you buy", "The trade-off", "Worth knowing", "The only snag", "Fair warning"]
+    it.setdefault("cue", labels[(it["n"] - 1) % len(labels)])
+    hook = {"id": "shook", "kind": "shook", "text": cfg["hook"], "title": cfg["title"], "img": it["img"], "price": it["price"],
+            "kicker": f"{it['n']} of {len(items)} · {base['short_label']}"}
+    flash = next((s.get("flash") for s in base["segments"] if s["kind"] == "hook"), []) or [x["img"] for x in items]
+    imgs = [it["img"]] + [u for u in flash if u != it["img"]][:2]
+    cta = {"id": "scta", "kind": "scta", "text": base["short_cta"], "imgs": imgs, "kicker": f"{len(items)} {base['short_label']}", "hold": 1.2}
+    out = {k: v for k, v in base.items() if k not in ("segments", "chapters", "thumb", "shorts")}
+    out["slug"] = f"{base['slug']}-short-{sid}"; out["format"] = "short"; out["segments"] = [hook, it, cta]
+    return out
+
+
+if SHORT:
+    spec = build_short(spec, SHORT); W, H = 1080, 1920; SCENES = "shorts.html"
+OUT = os.path.join(HERE, "..", "out", spec["slug"] + ("" if SHORT else "-v2"))
 os.makedirs(f"{OUT}/frames", exist_ok=True)
 segs = spec["segments"]
 # Varied "catch" lead-ins (Jarvis, 16 Nov: vary it so it isn't monotonous). Scripts write "The catch?";
@@ -33,7 +59,7 @@ def vary_cues():
         k += 1
 
 
-PAD = {"hook": .25, "note": .25, "band": .22, "item": .28, "rehook": .3, "recap": .4, "outro": 0}
+PAD = {"shook": .2, "scta": 0, "hook": .25, "note": .25, "band": .22, "item": .28, "rehook": .3, "recap": .4, "outro": 0}
 
 
 # ---------- 1. voice ----------
@@ -96,7 +122,10 @@ def timeline():
             catch = ws[ci]["s"] - .1
             pi = next((i for i, w in enumerate(ws) if w["s"] >= price), 0)
             why = ws[min(pi + 1, ci - 1)]["s"] - .05
-            s["cues"] = {"price": round(max(.5, price - .05), 3), "why": round(max(price + .6, why), 3), "catch": round(catch, 3)}
+            s["cues"] = {"price": round(max(.5, price - .05), 3), "why": round(min(max(price + (1.5 if SHORT else .6), why), catch - 1.5), 3), "catch": round(catch, 3)}
+        sp = s["text"].split(); ws = s["words"]
+        idx = [min(len(ws) - 1, int(i * len(ws) / len(sp))) for i in range(len(sp))] if len(sp) != len(ws) else list(range(len(sp)))
+        s["cap"] = [{"w": sp[i], "s": ws[j]["s"], "e": ws[j]["e"]} for i, j in enumerate(idx)] if ws else []
         t += s["dur"]
     return t
 
@@ -190,6 +219,7 @@ def audio(total):
         if s["kind"] == "hook":
             for i in range(len(s["flash"])): put(fx["tick"], s["start"] + i * .16, .3)
             p = first(s, (s.get("sticker") or {}).get("cue", r"^sixty")); put(fx["pop"], s["start"] + (p or 2.2), .5)
+        if s["kind"] == "shook": put(fx["pop"], s["start"] + .45, .5)
     sf.write(f"{OUT}/voice.wav", v, sr); sf.write(f"{OUT}/bed.wav", mus + fxt, sr)
     # level voice alone to -16 LUFS, bed relative to it, then mix and do the final -14 LUFS pass
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{OUT}/voice.wav", "-af", "loudnorm=I=-16:TP=-1.5:LRA=7", "-ar", "48000", f"{OUT}/voice_n.wav"], check=True)
@@ -224,7 +254,7 @@ def render(total, limit=None):
     with sync_playwright() as p:
         b = p.chromium.launch(**({"executable_path": exe} if exe else {}))
         pg = b.new_page(viewport={"width": W, "height": H})
-        pg.goto("file://" + os.path.join(HERE, "scenes.html"), wait_until="networkidle")
+        pg.goto("file://" + os.path.join(HERE, SCENES), wait_until="networkidle")
         n = pg.evaluate("tl => window.setup(tl)", tl); print("images", n)
         for f in range(nf):
             pg.evaluate(f"window.render({f / FPS:.4f})")
@@ -264,6 +294,8 @@ def captions_and_chapters():
         for i, (a, b, t) in enumerate(cues, 1):
             b = min(b, cues[i][0] - .01) if i < len(cues) else b
             f.write(f"{i}\n{ts(a)} --> {ts(b)}\n{t}\n\n")
+    if "chapters" not in spec:
+        return
     names = spec["chapters"]; out, prev_band = [], None
     for s in segs:
         st = s["start"]
