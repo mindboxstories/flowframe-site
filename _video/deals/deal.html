@@ -1,0 +1,176 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+/* Digittouch Finds — one-deal vertical Short (1080x1920). Safe text area x 60-930, y 220-1480. */
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:800;src:url(fonts/fraunces-latin-800-italic.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:500;src:url(fonts/plus-jakarta-sans-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:700;src:url(fonts/plus-jakarta-sans-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:800;src:url(fonts/plus-jakarta-sans-latin-800-normal.woff2) format('woff2')}
+:root{--cream:#FFF5EF;--ink:#1D1B22;--coral:#E4572E;--sun:#FFC93C;--plum:#22172B;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--plum);font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink)}
+.scene{position:absolute;inset:0;overflow:hidden;display:none}
+.ph{position:absolute;background-size:cover;background-position:center;will-change:transform}
+.abs{position:absolute}
+em{font-family:'Fraunces',serif;font-style:italic;font-weight:800}
+.word{display:inline-block}
+.pill{display:inline-flex;align-items:center;gap:14px;padding:16px 30px;border-radius:999px;font-weight:800;font-size:38px;background:#fff;color:var(--ink);box-shadow:0 18px 40px -18px rgba(0,0,0,.45);white-space:nowrap}
+.pill i{width:16px;height:16px;border-radius:50%;background:var(--coral);display:inline-block;flex:none}
+.sticker{position:absolute;width:280px;height:280px;border-radius:50%;background:var(--coral);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;box-shadow:0 22px 50px -14px rgba(0,0,0,.55);border:8px solid #fff;text-align:center}
+.sticker small{font-size:30px;letter-spacing:.12em;text-transform:uppercase}
+.sticker b{font-size:68px;line-height:1;letter-spacing:-.03em}
+.sticker s{font-size:32px;opacity:.9;font-weight:700;margin-top:6px}
+.tag{font-size:30px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.card{position:absolute;background:var(--plum);color:#fff;border-radius:40px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+#brand{position:absolute;left:60px;top:150px;display:flex;align-items:center;gap:14px;color:#fff;font-weight:800;font-size:30px;background:rgba(29,27,34,.72);padding:10px 26px 10px 12px;border-radius:999px;z-index:50}
+#brand span{width:44px;height:44px;border-radius:12px;background:var(--coral);display:flex;align-items:center;justify-content:center;font-size:26px}
+#cap{position:absolute;left:60px;width:870px;top:1290px;text-align:center;z-index:55;font-weight:800;font-size:80px;line-height:1.08;letter-spacing:-.02em;color:#fff;
+  text-shadow:0 0 2px #1D1B22,0 4px 0 #1D1B22,0 -4px 0 #1D1B22,4px 0 0 #1D1B22,-4px 0 0 #1D1B22,3px 3px 0 #1D1B22,-3px 3px 0 #1D1B22,3px -3px 0 #1D1B22,-3px -3px 0 #1D1B22,0 14px 30px rgba(0,0,0,.45)}
+#cap .on{color:var(--sun)}
+#wipe{position:absolute;left:-10%;width:120%;height:2600px;top:0;background:var(--coral);z-index:60;transform:translateY(-200%) skewY(-10deg)}
+#wipe2{position:absolute;left:-10%;width:120%;height:2600px;top:0;background:var(--sun);z-index:59;transform:translateY(-200%) skewY(-10deg)}
+</style></head>
+<body>
+<div id="stage"></div>
+<div id="brand"><span>F</span>Digittouch Finds</div>
+<div id="cap"></div>
+<div id="wipe2"></div><div id="wipe"></div>
+<script>
+const $ = (h) => { const d = document.createElement('div'); d.innerHTML = h.trim(); return d.firstChild; };
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const eo = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const eio = (x) => { x = clamp(x); return x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2; };
+const back = (x) => { x = clamp(x); const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const IMG = (u) => `url('${u}')`;
+const words = (txt) => { const a = txt.split(' '); if (a.length > 2) a.splice(-2, 2, a[a.length - 2] + '&nbsp;' + a[a.length - 1]); return a.map(w => `<span class="word">${w}</span>`).join(' '); };
+let T = null, scenes = [];
+function show(el, on) { el.style.visibility = on ? 'visible' : 'hidden'; }
+function pop(el, t, t0, dur = .45, from = 0) { const k = (t - t0) / dur; el.style.opacity = clamp(k * 3); el.style.transform = `scale(${t < t0 ? from : from + (1 - from) * back(k)})`; }
+function rise(el, t, t0, dur = .45, dy = 60) { const k = eo((t - t0) / dur); el.style.opacity = clamp((t - t0) / (dur * .6)); el.style.transform = `translateY(${(1 - k) * dy}px)`; }
+const sticker = (p, cls, top) => `<div class="sticker ${cls}" style="left:660px;top:${top}px"><small>${p.small}</small><b>${p.now}</b>${p.was ? `<s>was ${p.was}</s>` : ''}</div>`;
+
+const B = {
+hook(seg) {   // frame 0 is the cover: everything readable from the first frame
+  return $(`<div class="scene">
+    <div class="ph bg" style="inset:0;background-image:${IMG(seg.img)}"></div>
+    <div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(29,27,34,.92) 0%,rgba(29,27,34,.6) 36%,rgba(29,27,34,.05) 58%,rgba(29,27,34,.55) 100%)"></div>
+    <div class="abs" style="left:60px;top:250px;width:900px;color:#fff">
+      <div class="k"><span class="pill" style="background:var(--sun);font-size:30px"><i style="background:var(--plum)"></i>${seg.kicker}</span></div>
+      <div class="ttl" style="font-weight:800;font-size:118px;line-height:.98;letter-spacing:-.04em;margin-top:34px">${words(seg.title.pre)}</div>
+      <div class="acc" style="font-size:120px;line-height:1.04;margin-top:6px"><em style="color:var(--sun)">${seg.title.accent}</em></div>
+    </div>
+    ${sticker(seg.price, 's1', 990)}
+  </div>`);
+},
+item(seg) {
+  return $(`<div class="scene" style="background:var(--cream)">
+    <div class="ph full" style="inset:0;background-image:${IMG(seg.img)}"></div>
+    <div class="ph why" style="left:0;top:0;width:1080px;height:880px;background-image:${IMG(seg.why_img)}"></div>
+    <div class="ph cbg" style="inset:0;background-image:${IMG(seg.catch_img)}"></div>
+    <div class="abs g1" style="inset:0;background:linear-gradient(180deg,rgba(29,27,34,.9) 0%,rgba(29,27,34,.5) 34%,rgba(29,27,34,0) 56%,rgba(29,27,34,.5) 100%)"></div>
+    <div class="abs A" style="left:60px;top:260px;width:870px;color:#fff">
+      <div class="tag of" style="color:var(--sun)">${seg.kicker}</div>
+      <div class="nm" style="font-weight:800;font-size:96px;line-height:1.02;letter-spacing:-.03em;margin-top:22px">${words(seg.name)}</div>
+    </div>
+    ${sticker(seg.price, 'pr', 990)}
+    <div class="abs Bp" style="left:0;top:820px;width:1080px;height:1100px;background:var(--cream);border-radius:48px 48px 0 0">
+      <div class="abs" style="left:60px;top:56px;width:900px">
+        <div style="font-weight:800;font-size:56px;letter-spacing:-.02em">Why it's <em style="color:var(--coral)">everywhere</em></div>
+        <div style="margin-top:34px;display:flex;flex-direction:column;align-items:flex-start;gap:22px">${seg.tags.map(t => `<span class="pill tg" style="font-size:42px"><i></i>${t}</span>`).join('')}</div>
+      </div></div>
+    <div class="card C" style="left:60px;top:400px;width:870px;padding:56px 56px 60px">
+      <div class="tag" style="color:var(--sun);display:flex;align-items:center;gap:18px"><span style="width:56px;height:56px;border-radius:50%;background:var(--sun);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-size:34px;letter-spacing:0">!</span>${seg.cue_label}</div>
+      <div class="ct" style="font-weight:800;font-size:62px;line-height:1.14;letter-spacing:-.015em;margin-top:26px">${words(seg.catch)}</div>
+    </div>
+  </div>`);
+},
+cta(seg) {
+  return $(`<div class="scene" style="background:var(--plum);color:#fff">
+    ${seg.imgs.map((u, i) => `<div class="ph c${i}" style="width:${[420, 380, 360][i]}px;height:${[540, 480, 450][i]}px;left:${[90, 540, 310][i]}px;top:${[260, 330, 560][i]}px;border-radius:30px;border:9px solid #fff;background-image:${IMG(u)}"></div>`).join('')}
+    <div class="abs" style="left:60px;top:1060px;width:900px">
+      <div class="tag k" style="color:var(--sun)">${seg.kicker}</div>
+      <div class="o1" style="font-weight:800;font-size:104px;line-height:1.0;letter-spacing:-.035em;margin-top:18px">One real deal, <em style="color:var(--coral)">every day</em></div>
+      <div class="o2" style="margin-top:40px"><span class="pill" style="font-size:44px;padding:22px 38px;background:var(--sun)"><i style="background:var(--plum)"></i>Follow + full list on our profile</span></div>
+      <div class="o3" style="margin-top:34px;font-size:30px;font-weight:600;opacity:.8">${seg.note}</div>
+    </div></div>`);
+},
+};
+
+const R = {
+hook(el, seg, lt) {
+  el.querySelector('.bg').style.transform = `scale(${1.04 + .1 * lt / seg.dur})`;
+  const s1 = el.querySelector('.s1'); const k = lt / .5;   // already visible on frame 0, then a small punch
+  s1.style.opacity = 1; s1.style.transform = `rotate(-10deg) scale(${1 + .08 * Math.sin(Math.PI * clamp(k))})`;
+  const acc = el.querySelector('.acc'); acc.style.transform = `translateX(${Math.sin(lt * 2.4) * 4}px)`;
+},
+item(el, seg, lt) {
+  const c = seg.cues, full = el.querySelector('.full'), why = el.querySelector('.why'), cbg = el.querySelector('.cbg');
+  const inB = lt >= c.why && lt < c.catch, inC = lt >= c.catch, inA = !inB && !inC;
+  show(full, inA); show(why, inB); show(cbg, inC);
+  if (inA) full.style.transform = `scale(${1.12 - .06 * eo(lt / .7) + .06 * lt / c.why})`;
+  if (inB) why.style.transform = `scale(${1.06 + .08 * (lt - c.why) / (c.catch - c.why)})`;
+  if (inC) { const lc = lt - c.catch; cbg.style.transform = `scale(${1.1 + .1 * lc / (seg.dur - c.catch)})`;
+    cbg.style.filter = `blur(${8 * eo(lc / .4)}px) brightness(${1 - .45 * eo(lc / .4)})`; }
+  el.querySelector('.g1').style.opacity = inB ? 0 : 1;
+  const A = el.querySelector('.A'), pr = el.querySelector('.pr'); show(A, inA); show(pr, inA);
+  if (inA) { rise(A.querySelector('.of'), lt, .05, .4, 40); A.querySelectorAll('.nm .word').forEach((w, i) => rise(w, lt, .12 + i * .07, .38, 60));
+    pop(pr, lt, c.price, .5); pr.style.transform += ' rotate(-9deg)'; }
+  const Bp = el.querySelector('.Bp'); show(Bp, inB);
+  if (inB) { const lb = lt - c.why; Bp.style.transform = `translateY(${(1 - eo(lb / .45)) * 1100}px)`;
+    [...Bp.querySelectorAll('.tg')].forEach((t, i) => pop(t, lt, c.tags[i] ?? (c.why + .3 + i * .8), .45, .4)); }
+  const C = el.querySelector('.C'); show(C, inC);
+  if (inC) { const lc = lt - c.catch; C.style.transform = `translateY(${(1 - eo(lc / .45)) * 600 + Math.sin(lc * 2.2) * 6}px)`;
+    const ws = [...C.querySelectorAll('.ct .word')], span = Math.max(.6, (seg.dur - c.catch) - 1.0);
+    ws.forEach((w, i) => { const t0 = c.catch + .3 + span * i / ws.length; w.style.opacity = clamp((lt - t0) / .18); w.style.transform = `translateY(${(1 - eo((lt - t0) / .25)) * 24}px)`; }); }
+},
+cta(el, seg, lt) {
+  [0, 1, 2].forEach(i => { const p = el.querySelector('.c' + i); const k = lt - i * .12; p.style.opacity = clamp(k * 4);
+    p.style.transform = `translateY(${(1 - back(k / .55)) * 240 + Math.sin(lt * 1.6 + i) * 10}px) rotate(${[-6, 5, -2][i] + Math.sin(lt + i * 2) * 1.5}deg)`; });
+  rise(el.querySelector('.k'), lt, .1, .35, 40); rise(el.querySelector('.o1'), lt, .2, .45, 60);
+  pop(el.querySelector('.o2'), lt, seg.follow_at - .2, .5, .5); rise(el.querySelector('.o3'), lt, .6, .4, 20);
+},
+};
+
+let CH = [];
+function chunks(tl) {
+  const out = [];
+  for (const s of tl.segments) { let cur = [];
+    for (const w of s.words) { cur.push(w);
+      if (cur.length >= 3 || /[.?!:,]$/.test(w.w)) { out.push({ws: cur, s: s.start + cur[0].s, e: s.start + cur[cur.length - 1].e, st: s.start}); cur = []; } }
+    if (cur.length) out.push({ws: cur, s: s.start + cur[0].s, e: s.start + cur[cur.length - 1].e, st: s.start}); }
+  for (let i = 0; i < out.length; i++) out[i].e2 = i + 1 < out.length ? Math.min(out[i + 1].s, out[i].e + .5) : out[i].e + .5;
+  return out;
+}
+function caption(t) {
+  const cap = document.getElementById('cap'); const c = CH.find(c => t >= c.s - .05 && t < c.e2);
+  if (!c) { cap.innerHTML = ''; return; }
+  const key = c.s.toFixed(3);
+  if (cap.dataset.k !== key) { cap.dataset.k = key; cap.innerHTML = c.ws.map(w => `<span class="word">${w.cap || w.w.replace(/[,]$/, '')}</span>`).join(' '); }
+  const spans = [...cap.children]; const k = (t - c.s) / .18;
+  cap.style.transform = `scale(${.86 + .14 * back(k)})`;
+  spans.forEach((sp, i) => sp.className = 'word' + (t >= c.st + c.ws[i].s - .03 && (i + 1 >= c.ws.length || t < c.st + c.ws[i + 1].s - .03) ? ' on' : ''));
+}
+
+window.setup = async (tl) => {
+  T = tl; const st = document.getElementById('stage');
+  for (const s of tl.segments) { const el = B[s.kind](s); st.appendChild(el); scenes.push(el); }
+  CH = chunks(tl);
+  const urls = new Set(); document.querySelectorAll('.ph').forEach(p => { const m = p.style.backgroundImage.match(/url\(["']?(.+?)["']?\)/); if (m) urls.add(m[1]); });
+  const bad = []; await Promise.all([...urls].map(u => new Promise(r => { const im = new Image(); im.onload = () => im.decode().then(r, r); im.onerror = () => { bad.push(u); r(); }; im.src = u; })));
+  await Promise.all(["italic 800 40px Fraunces", "500 40px 'Plus Jakarta Sans'", "700 40px 'Plus Jakarta Sans'", "800 40px 'Plus Jakarta Sans'"].map(f => document.fonts.load(f)));
+  await document.fonts.ready;
+  return {images: urls.size, bad, fonts: [...document.fonts].filter(f => f.status === 'loaded').length};
+};
+
+window.render = (t) => {
+  const segs = T.segments; let idx = segs.length - 1;
+  for (let i = 0; i < segs.length; i++) if (t < segs[i].start + segs[i].dur) { idx = i; break; }
+  scenes.forEach((el, i) => { el.style.display = i === idx ? 'block' : 'none'; });
+  const seg = segs[idx], lt = t - seg.start; R[seg.kind](scenes[idx], seg, lt);
+  caption(t); document.getElementById('cap').style.visibility = (seg.kind === 'cta' || (seg.kind === 'hook' && t < .9)) ? 'hidden' : 'visible';
+  const W = document.getElementById('wipe'), W2 = document.getElementById('wipe2'); let k = null;
+  for (const s of segs) { if (s.start === 0) continue; const d = t - s.start; if (d > -.2 && d < .2) { k = (d + .2) / .4; break; } }
+  if (k === null) { W.style.transform = W2.style.transform = 'translateY(-200%) skewY(-10deg)'; }
+  else { const y = -125 + 230 * eio(k); W.style.transform = `translateY(${y}%) skewY(-10deg)`; W2.style.transform = `translateY(${y - 14}%) skewY(-10deg)`; }
+};
+</script></body></html>

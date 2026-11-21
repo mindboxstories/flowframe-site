@@ -1,0 +1,65 @@
+name: Render daily deal Short
+on:
+  workflow_dispatch:
+    inputs:
+      spec: {description: "spec file under _video/deals (e.g. 2026-11-21-stanley-quencher.json)", required: true}
+  push:
+    branches: [main]
+    paths: ["_video/deals/2*.json"]
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs: {specs: "${{ steps.p.outputs.specs }}"}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - id: p
+        run: |
+          if [ -n "${{ inputs.spec }}" ]; then s='["${{ inputs.spec }}"]'
+          else s=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- '_video/deals/2*.json' | xargs -r -n1 basename | python3 -c 'import sys,json;print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))'); fi
+          echo "specs=$s" >> $GITHUB_OUTPUT; echo "$s"
+  render:
+    needs: plan
+    if: needs.plan.outputs.specs != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix: {spec: "${{ fromJson(needs.plan.outputs.specs) }}"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: "apt, with retry"
+        run: for i in 1 2 3; do timeout 300 sh -c 'sudo apt-get update -q && sudo apt-get install -y -q espeak-ng ffmpeg' && break; echo retry $i; done
+      - name: Python + fonts
+        run: |
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "kokoro>=0.9.4" soundfile numpy pillow playwright
+          python -m playwright install --with-deps chromium
+          mkdir -p /tmp/f && cd /tmp/f && npm i -s @fontsource/fraunces @fontsource/plus-jakarta-sans >/dev/null
+          mkdir -p $GITHUB_WORKSPACE/_video/deals/fonts
+          cp node_modules/@fontsource/fraunces/files/fraunces-latin-800-italic.woff2 node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-{500,700,800}-normal.woff2 $GITHUB_WORKSPACE/_video/deals/fonts/
+      - name: Render
+        run: python _video/deals/make_deal.py _video/deals/${{ matrix.spec }}
+      - name: QA + package
+        run: |
+          slug=$(python3 -c "import json;print(json.load(open('_video/deals/${{ matrix.spec }}'))['slug'])")
+          cd _video/out/$slug
+          { echo "== loudness"; ffmpeg -hide_banner -nostats -i video.mp4 -af ebur128=peak=true -f null - 2>&1 | tail -12
+            echo "== opening silence"; ffmpeg -hide_banner -nostats -t 2 -i video.mp4 -af silencedetect=n=-40dB:d=0.3 -f null - 2>&1 | grep silence_ || echo none
+            echo "== silences >1.2s"; ffmpeg -hide_banner -nostats -i video.mp4 -af silencedetect=n=-40dB:d=1.2 -f null - 2>&1 | grep silence_ || echo none
+            echo "== freezes >2s"; ffmpeg -hide_banner -nostats -i video.mp4 -vf freezedetect=n=0.003:d=2 -map 0:v -f null - 2>&1 | grep freeze_ || echo none
+            echo "== format"; ffprobe -v error -show_entries format=duration,bit_rate,size:stream=codec_name,width,height,r_frame_rate -of compact video.mp4
+          } > qa.txt 2>&1; cat qa.txt
+          cp $GITHUB_WORKSPACE/_video/deals/${{ matrix.spec }} spec.json
+          zip -qr qa.zip frames qa.txt timeline.json
+          echo "SLUG=$slug" >> $GITHUB_ENV
+      - name: Release
+        env: {GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"}
+        run: |
+          cd _video/out/$SLUG
+          gh release create "$SLUG-${{ github.run_id }}" video.mp4 cover.jpg captions.srt qa.zip spec.json -R ${{ github.repository }} --prerelease \
+            --title "$SLUG-${{ github.run_id }}" --notes "Daily deal Short (1080x1920). Not for the site."
