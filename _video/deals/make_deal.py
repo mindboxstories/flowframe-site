@@ -2,7 +2,7 @@
 Kokoro voice per sentence -> word timings -> original music bed + SFX (from the v2 renderer) -> deal.html frames -> mp4.
 Images in the spec: "unsplash:<photo id>" (fetched from images.unsplash.com at the right crop) or a path/URL.
 Runs on GitHub Actions (.github/workflows/deals.yml). Output: _video/out/<slug>/ (video.mp4, cover.jpg, captions.srt, frames/)."""
-import ast, json, os, re, subprocess, sys
+import ast, json, math, os, re, subprocess, sys
 import numpy as np, soundfile as sf
 
 HERE = os.path.dirname(os.path.abspath(__file__))
