@@ -1,0 +1,38 @@
+{
+ "slug": "deal-2026-11-23-kindle-paperwhite",
+ "date": "2026-11-23",
+ "voice": "af_heart",
+ "speed": 1.1,
+ "youtube": {
+  "title": "Kindle Paperwhite is $129.99 now, $70 under the new one #shorts",
+  "description": "The Kindle Paperwhite 16GB (2024 model) was $129.99 on Amazon US when we checked on 23 Nov 2026, tagged as a Black Friday deal. That's $70 under the 2026 Paperwhite, per The Mac Observer (23 Nov 2026). The trade-off: it's last year's model, and this price is the version with lockscreen ads.\n\nAs an Amazon Associate I earn from qualifying purchases. We haven't tested this ourselves; this is a price pick from published deal lists. Check the current price before you buy.\n\nUS: https://www.amazon.com/dp/B0CFPJYX7P?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=Kindle+Paperwhite+16GB&tag=digittouch-21\n(Links in Shorts aren't clickable: use the link on our channel page.)\n\nMore gift picks with prices: https://flowframe.shop/finds/black-friday-2026/\n\nNarrated with an AI voice; music made by us.\n\n#kindle #kindlepaperwhite #blackfriday #amazonfinds #deals",
+  "tags": ["kindle paperwhite", "kindle paperwhite deal", "kindle black friday", "black friday deals", "amazon deals", "e-reader deal", "deal of the day"]
+ },
+ "segments": [
+  {"id": "hook", "kind": "hook",
+   "say": ["The Kindle Paperwhite is one twenty-nine ninety-nine right now.", "Seventy dollars under the new model."],
+   "cap": {"one": "$129.99", "twenty-nine": "", "ninety-nine": "", "seventy": "$70", "dollars": ""},
+   "img": "unsplash:photo-1551190435-def8c09f507c",
+   "kicker": "Black Friday · checked Nov 23",
+   "title": {"pre": "Kindle Paperwhite", "accent": "for $129.99"},
+   "price": {"small": "now", "now": "$129.99"}},
+  {"id": "item", "kind": "item",
+   "say": ["Amazon's Kindle Paperwhite, sixteen gigs.", "A seven-inch glare-free screen,", "up to twelve weeks per charge,", "and it's waterproof.", "Amazon tags it a Black Friday deal at this price.", "The trade-off:", "this is the twenty twenty-four model,", "and this price comes with lockscreen ads."],
+   "cap": {"sixteen": "16", "seven-inch": "7-inch", "twelve": "12", "twenty": "2024", "twenty-four": ""},
+   "img": "unsplash:photo-1551190435-def8c09f507c", "why_img": "unsplash:photo-1676107779674-f77343861e81", "catch_img": "unsplash:photo-1622122892817-45b38188db7e",
+   "kicker": "Amazon · Kindle Paperwhite 16GB", "name": "Kindle Paperwhite",
+   "price": {"small": "now", "now": "$129.99"},
+   "tags": ["7-inch glare-free screen", "Up to 12 weeks per charge", "Waterproof (IPX8)"],
+   "tag_cues": ["^seven", "^up", "^waterproof"],
+   "why_cue": "^seven", "catch_cue": "^the",
+   "cue_label": "The trade-off",
+   "catch": "It's the 2024 model (a 2026 Paperwhite is out), and $129.99 is the version with lockscreen ads."},
+  {"id": "cta", "kind": "cta",
+   "say": ["Prices move fast this week.", "Follow for one real deal every day."],
+   "imgs": ["unsplash:photo-1551190435-def8c09f507c", "unsplash:photo-1676107779674-f77343861e81", "unsplash:photo-1622122892817-45b38188db7e"],
+   "kicker": "Digittouch Finds",
+   "follow_cue": "^follow",
+   "note": "Price seen on Amazon US, 23 Nov 2026. Prices change; check before you buy.",
+   "hold": 1.4}
+ ]
+}
