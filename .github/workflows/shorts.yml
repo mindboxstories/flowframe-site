@@ -4,6 +4,7 @@ on:
     inputs:
       slug: {description: "folder under _video (its v2.json needs a shorts list)", default: "black-friday-2026"}
       ids: {description: "comma-separated pick ids, blank = every short in v2.json", default: ""}
+      mode: {description: "short = one pick per Short; stack = multi-pick Shorts from the stacks list", default: "short"}
 permissions:
   contents: write
 jobs:
@@ -18,7 +19,7 @@ jobs:
           import json, os
           j = json.load(open(f"_video/${{ inputs.slug }}/v2.json"))
           want = [x.strip() for x in "${{ inputs.ids }}".split(",") if x.strip()]
-          ids = [s["id"] for s in j["shorts"] if not want or s["id"] in want]
+          ids = [s["id"] for s in j["${{ inputs.mode }}s"] if not want or s["id"] in want]
           print("ids=" + json.dumps(ids))
           EOF
   short:
@@ -40,10 +41,10 @@ jobs:
           pip install -q "kokoro>=0.9.4" soundfile numpy pillow playwright
           python -m playwright install --with-deps chromium
       - name: Render
-        run: python _video/v2/make2.py _video/${{ inputs.slug }}/v2.json --short ${{ matrix.id }}
+        run: python _video/v2/make2.py _video/${{ inputs.slug }}/v2.json --${{ inputs.mode }} ${{ matrix.id }}
       - name: QA numbers
         run: |
-          cd _video/out/${{ inputs.slug }}-short-${{ matrix.id }}
+          cd _video/out/${{ inputs.slug }}-${{ inputs.mode }}-${{ matrix.id }}
           { echo "== loudness"; ffmpeg -hide_banner -nostats -i video.mp4 -af ebur128=peak=true -f null - 2>&1 | tail -12
             echo "== opening silence"; ffmpeg -hide_banner -nostats -t 2 -i video.mp4 -af silencedetect=n=-40dB:d=0.3 -f null - 2>&1 | grep silence_ || echo none
             echo "== freezes >2s"; ffmpeg -hide_banner -nostats -i video.mp4 -vf freezedetect=n=0.003:d=2 -map 0:v -f null - 2>&1 | grep freeze_ || echo none

@@ -60,7 +60,8 @@ shook(seg) {
       <div class="ttl" style="font-weight:800;font-size:${seg.title.pre.length > 22 ? 96 : 112}px;line-height:1.0;letter-spacing:-.035em;margin-top:36px">${words(seg.title.pre)}</div>
       <div class="acc" style="font-size:${seg.title.accent.length > 18 ? 92 : 108}px;line-height:1.05;margin-top:14px"><em style="color:var(--coral)">${seg.title.accent}</em></div>
     </div>
-    <div class="sticker s1" style="left:650px;top:1020px"><small>${seg.price.includes('–') ? 'from' : 'about'}</small><b style="font-size:${priceTxt(seg.price).length > 4 ? 60 : 76}px">${priceTxt(seg.price)}</b></div>
+    ${seg.sticker ? `<div class="sticker s1" style="left:650px;top:1020px;background:var(--sun);color:var(--plum)"><b style="font-size:120px">${seg.sticker.big}</b><small>${seg.sticker.small}</small></div>`
+      : `<div class="sticker s1" style="left:650px;top:1020px"><small>${seg.price.includes('–') ? 'from' : 'about'}</small><b style="font-size:${priceTxt(seg.price).length > 4 ? 60 : 76}px">${priceTxt(seg.price)}</b></div>`}
   </div>`);
 },
 item(seg) {
@@ -84,12 +85,29 @@ item(seg) {
     </div>
   </div>`);
 },
+qitem(seg) {
+  return $(`<div class="scene" style="background:var(--plum)">
+    <div class="ph full" style="inset:0;background-image:${IMG(seg.img)}"></div>
+    <div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(29,27,34,.9) 0%,rgba(29,27,34,.55) 34%,rgba(29,27,34,.08) 56%,rgba(29,27,34,.62) 100%)"></div>
+    <div class="abs" style="left:60px;top:250px;width:870px;color:#fff">
+      <div class="cnt" style="display:flex;align-items:center;gap:18px"><span class="pill" style="background:var(--sun);font-size:34px;padding:12px 28px"><i style="background:var(--plum)"></i>${seg.n} / ${seg.of}</span>
+        <span style="display:flex;gap:10px">${Array.from({length: seg.of}, (_, i) => `<i style="display:block;width:${i + 1 === seg.n ? 54 : 18}px;height:18px;border-radius:9px;background:${i < seg.n ? 'var(--sun)' : 'rgba(255,255,255,.35)'}"></i>`).join('')}</span></div>
+      <div class="nm" style="font-weight:800;font-size:${seg.name.length > 22 ? 84 : 100}px;line-height:1.02;letter-spacing:-.03em;margin-top:30px">${words(seg.name)}</div>
+      <div class="fl" style="font-size:${seg.feel.length > 22 ? 70 : 84}px;line-height:1.06;margin-top:18px"><em style="color:var(--sun)">${seg.feel}</em></div>
+    </div>
+    <div class="sticker pr" style="left:650px;top:1010px;width:220px;height:220px"><small>${seg.price.includes('–') ? 'from' : 'about'}</small><b style="font-size:${priceTxt(seg.price).length > 4 ? 56 : 70}px">${priceTxt(seg.price)}</b></div>
+    <div class="abs ch" style="left:60px;top:1110px;max-width:600px"><div style="background:rgba(34,23,43,.92);color:#fff;border-radius:28px;padding:22px 28px;box-shadow:0 24px 50px -20px rgba(0,0,0,.6)">
+      <div class="tag" style="font-size:24px;color:var(--${seg.cue_color || 'coral'})">${seg.cue_icon || '!'} &nbsp;${seg.cue_label || 'The catch'}</div>
+      <div style="font-weight:800;font-size:40px;line-height:1.15;margin-top:8px">${seg.catch}</div></div></div>
+  </div>`);
+},
 scta(seg) {
   return $(`<div class="scene" style="background:var(--plum);color:#fff">
     ${seg.imgs.map((u, i) => `<div class="ph c${i}" style="width:${[420, 380, 360][i]}px;height:${[520, 470, 440][i]}px;left:${[90, 520, 300][i]}px;top:${[250, 330, 560][i]}px;border-radius:30px;border:9px solid #fff;background-image:${IMG(u, 900)}"></div>`).join('')}
     <div class="abs" style="left:60px;top:1050px;width:870px">
       <div class="tag k" style="color:var(--sun)">${seg.kicker}</div>
       <div class="o1" style="font-weight:800;font-size:96px;line-height:1.0;letter-spacing:-.035em;margin-top:18px">Full list + <em style="color:var(--coral)">every link</em></div>
+      ${seg.share ? `<div class="sh" style="font-weight:700;font-size:44px;line-height:1.2;margin-top:26px;color:rgba(255,255,255,.88)">${seg.share} <span style="color:var(--sun)">↗</span></div>` : ''}
       <div class="o2" style="margin-top:36px"><span class="pill" style="font-size:46px;padding:22px 38px;background:var(--sun)"><i style="background:var(--plum)"></i>Link on our profile ↗</span></div>
     </div></div>`);
 },
@@ -124,11 +142,21 @@ item(el, seg, lt) {
     const ws = [...C.querySelectorAll('.ct .word')], span = Math.max(.6, (seg.dur - c.catch) - 1.0);
     ws.forEach((w, i) => { const t0 = c.catch + .3 + span * i / ws.length; w.style.opacity = clamp((lt - t0) / .18); w.style.transform = `translateY(${(1 - eo((lt - t0) / .25)) * 24}px)`; }); }
 },
+qitem(el, seg, lt) {
+  const c = seg.cues;
+  el.querySelector('.full').style.transform = `scale(${1.16 - .08 * eo(lt / .6) + .06 * lt / seg.dur})`;
+  rise(el.querySelector('.cnt'), lt, 0, .3, 40);
+  el.querySelectorAll('.nm .word').forEach((w, i) => rise(w, lt, .08 + i * .06, .34, 60));
+  const pr = el.querySelector('.pr'); pop(pr, lt, c.price, .45); pr.style.transform += ' rotate(-9deg)';
+  rise(el.querySelector('.fl'), lt, c.why - .1, .45, 50);
+  const ch = el.querySelector('.ch'); show(ch, lt >= c.catch - .05); if (lt >= c.catch - .05) rise(ch, lt, c.catch - .05, .4, 80);
+},
 scta(el, seg, lt) {
   [0, 1, 2].forEach(i => { const p = el.querySelector('.c' + i); if (!p) return; const k = lt - i * .12; p.style.opacity = clamp(k * 4);
     p.style.transform = `translateY(${(1 - back(k / .55)) * 240 + Math.sin(lt * 1.6 + i) * 10}px) rotate(${[-6, 5, -2][i] + Math.sin(lt + i * 2) * 1.5}deg)`; });
   rise(el.querySelector('.k'), lt, .1, .35, 40); rise(el.querySelector('.o1'), lt, .2, .45, 60);
   pop(el.querySelector('.o2'), lt, (wt(seg, '^profile') ?? 2.2) - .3, .5, .5);
+  const sh = el.querySelector('.sh'); if (sh) rise(sh, lt, Math.max(.3, (wt(seg, '^(send|share)') ?? .4) - .2), .45, 40);
 },
 };
 

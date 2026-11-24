@@ -12,6 +12,9 @@ spec = json.load(open(sys.argv[1]))
 PREVIEW = "--preview" in sys.argv          # fake voice timings, short render, for layout checks without TTS
 # --short <item id>: vertical 1080x1920 Short/Reel/TikTok for one pick, built from the same v2.json ("shorts" list)
 SHORT = sys.argv[sys.argv.index("--short") + 1] if "--short" in sys.argv else None
+# --stack <stack id>: vertical multi-pick Short (5 or so picks, ~45 s) from the v2.json "stacks" list:
+# emotional hook (who it's for) -> quick picks (name, price, the feeling, a one-line catch) -> share + profile CTA
+STACK = sys.argv[sys.argv.index("--stack") + 1] if "--stack" in sys.argv else None
 SCENES = "scenes.html"
 
 
@@ -34,8 +37,28 @@ def build_short(base, sid):
     return out
 
 
+def build_stack(base, sid):
+    cfg = next(x for x in base["stacks"] if x["id"] == sid)
+    items = {s["id"]: s for s in base["segments"] if s["kind"] == "item"}
+    picks = []
+    for i, p in enumerate(cfg["picks"], 1):
+        it = items[p["id"]]
+        picks.append({"id": p["id"], "kind": "qitem", "n": i, "of": len(cfg["picks"]), "name": p.get("name", it["name"]),
+                      "price": p.get("price", it["price"]), "img": p.get("img", it["img"]), "text": p["text"],
+                      "feel": p["feel"], "catch": p["catch"], **({"cue": p["cue"]} if "cue" in p else {})})
+    hook = {"id": "shook", "kind": "shook", "text": cfg["hook"], "title": cfg["title"], "img": cfg.get("img", picks[0]["img"]),
+            "price": "", "sticker": cfg.get("sticker", {"small": "picks", "big": str(len(picks))}), "kicker": cfg["kicker"]}
+    cta = {"id": "scta", "kind": "scta", "text": cfg["cta"], "imgs": [x["img"] for x in picks[:3]], "kicker": cfg.get("cta_kicker", base["short_label"]),
+           "share": cfg.get("share", "Send this to someone who'd love one"), "hold": 1.2}
+    out = {k: v for k, v in base.items() if k not in ("segments", "chapters", "thumb", "shorts", "stacks")}
+    out["slug"] = f"{base['slug']}-stack-{sid}"; out["format"] = "short"; out["segments"] = [hook] + picks + [cta]
+    return out
+
+
 if SHORT:
     spec = build_short(spec, SHORT); W, H = 1080, 1920; SCENES = "shorts.html"
+if STACK:
+    spec = build_stack(spec, STACK); W, H = 1080, 1920; SCENES = "shorts.html"; SHORT = STACK
 OUT = os.path.join(HERE, "..", "out", spec["slug"] + ("" if SHORT else "-v2"))
 os.makedirs(f"{OUT}/frames", exist_ok=True)
 segs = spec["segments"]
@@ -50,7 +73,7 @@ CUES = [("The catch?", "The catch", "!", "coral"), ("Heads-up:", "Heads-up", "!"
 def vary_cues():
     k = 0
     for s in segs:
-        if s["kind"] != "item":
+        if s["kind"] not in ("item", "qitem"):
             continue
         pick = next((c for c in CUES if c[1].lower() == s.get("cue", "").lower()), CUES[k % len(CUES)])
         s["text"] = re.sub(r"The catch\?", pick[0], s["text"], count=1)
@@ -59,7 +82,7 @@ def vary_cues():
         k += 1
 
 
-PAD = {"shook": .2, "scta": 0, "hook": .25, "note": .25, "band": .22, "item": .28, "rehook": .3, "recap": .4, "outro": 0}
+PAD = {"qitem": .18, "shook": .2, "scta": 0, "hook": .25, "note": .25, "band": .22, "item": .28, "rehook": .3, "recap": .4, "outro": 0}
 
 
 # ---------- 1. voice ----------
@@ -114,7 +137,7 @@ def timeline():
         s["start"] = round(t, 3)
         s["dur"] = round(s["speech"] + PAD[s["kind"]] + (s.get("hold", 0)), 3)
         s["dur"] = round(round(s["dur"] * FPS) / FPS, 4)
-        if s["kind"] == "item":
+        if s["kind"] in ("item", "qitem"):
             price = first(s, r"dollars|^\$") or 1.6
             # the "why" starts at the sentence after the price sentence; the catch starts at "The" before "catch"
             ws = s["words"]; cw = [re.sub(r"\W", "", x).lower() for x in s.get("cue_words", ["The", "catch"])]
@@ -214,7 +237,7 @@ def audio(total):
         if 0 <= i < len(fxt): fxt[i:j] += gain * x[: j - i]
     for s in segs:
         if s["start"] > 0: put(fx["whoosh"], s["start"] - .21, .32)
-        if s["kind"] == "item":
+        if s["kind"] in ("item", "qitem"):
             c = s["cues"]; put(fx["pop"], s["start"] + c["price"], .5); put(fx["whoosh"], s["start"] + c["why"] - .05, .16); put(fx["tick"], s["start"] + c["catch"], .45)
         if s["kind"] == "hook":
             for i in range(len(s["flash"])): put(fx["tick"], s["start"] + i * .16, .3)
@@ -247,7 +270,7 @@ def render(total, limit=None):
                            "-c:v", "libx264", "-preset", "slow", "-crf", "15", "-pix_fmt", "yuv420p", "-r", str(FPS), f"{OUT}/silent.mp4"], stdin=subprocess.PIPE)
     qa = set()
     for s in segs:
-        if s["kind"] == "item":
+        if s["kind"] in ("item", "qitem"):
             c = s["cues"]; qa |= {int((s["start"] + c["price"] + .8) * FPS), int((s["start"] + (c["why"] + c["catch"]) / 2 + .3) * FPS), int((s["start"] + s["dur"] - .25) * FPS)}
         else:
             qa.add(int((s["start"] + s["dur"] * .7) * FPS))
