@@ -394,5 +394,97 @@
     "accent": "for under $300"
    }
   }
+ ],
+ "stacks": [
+  {
+   "id": "under25x5",
+   "kicker": "5 gifts · for the friend who says 'don't'",
+   "title": {
+    "pre": "Says don't bother?",
+    "accent": "5 gifts under $25"
+   },
+   "hook": "For the friend who says, don't get me anything. Five gifts under twenty-five dollars they'll love anyway.",
+   "picks": [
+    {
+     "id": "kong",
+     "text": "One. A KONG Classic, twelve dollars. For the dog they love more than anyone. The catch? Match the size to the dog.",
+     "feel": "Their dog says thanks",
+     "catch": "Match the size to the dog."
+    },
+    {
+     "id": "airtag",
+     "text": "Two. An Apple AirTag, twenty-three dollars. No more where-are-my-keys mornings. The catch? It's iPhone only.",
+     "feel": "No more lost keys",
+     "catch": "iPhone only."
+    },
+    {
+     "id": "earbuds",
+     "text": "Three. Soundcore noise-cancelling earbuds, twenty-five dollars. A quieter commute for the price of lunch. The catch? Good, not premium.",
+     "feel": "A quieter commute",
+     "catch": "Good, not premium."
+    },
+    {
+     "id": "blanket",
+     "text": "Four. A wearable sherpa blanket, twenty-five dollars. The coziest thing on this list. The catch? It's bulky, so it's sofa only.",
+     "feel": "Instant cozy",
+     "catch": "Bulky. Sofa only."
+    },
+    {
+     "id": "skillet",
+     "text": "Five. A Lodge cast iron skillet, twenty dollars. The pan they'll hand down one day. The catch? Dry it and oil it after washing.",
+     "feel": "A pan for life",
+     "catch": "Heavy. Dry and oil it after washing."
+    }
+   ],
+   "cta": "Send this to the friend who says don't get me anything. All eleven picks and every link are on our profile.",
+   "cta_kicker": "11 Black Friday picks",
+   "share": "Send this to the friend who says don't get me anything",
+   "img": "https://images.unsplash.com/photo-1612373914372-79a8a0311f78"
+  },
+  {
+   "id": "splurge5",
+   "kicker": "5 gifts · worth the splurge",
+   "title": {
+    "pre": "One big gift?",
+    "accent": "5 worth the splurge"
+   },
+   "hook": "Want to give one gift they'll still talk about next year? Five worth the splurge this Black Friday.",
+   "picks": [
+    {
+     "id": "instantpot",
+     "text": "One. The Instant Pot Duo, seventy dollars. Dinner that cooks itself on busy nights. The catch? It needs counter space, and a little practice.",
+     "feel": "Dinner, handled",
+     "catch": "Needs counter space and practice."
+    },
+    {
+     "id": "mxmaster",
+     "text": "Two. The Logitech MX Master four, a hundred and twenty dollars. The mouse people never go back from. The catch? Big, and right-handed only.",
+     "feel": "They won't go back",
+     "catch": "Big and right-handed only."
+    },
+    {
+     "id": "crispi",
+     "text": "Three. The Ninja Crispi Pro, a hundred and ninety-nine dollars. Crispy food, and no basket to scrub. The catch? The glass dish is heavy.",
+     "feel": "No basket to scrub",
+     "catch": "The glass dish is heavy."
+    },
+    {
+     "id": "kindle",
+     "text": "Four. The Kindle Colorsoft, two hundred and ninety dollars. Cookbooks and comics in color, in their bag. The catch? Novels only? A regular Kindle costs less.",
+     "feel": "A library in their bag",
+     "catch": "Novels only? A regular Kindle costs less."
+    },
+    {
+     "id": "flexfusion",
+     "text": "Five. The Shark FlexFusion, two hundred and ninety-nine dollars. Salon-style hair, at home. The catch? Only drying? A good dryer costs far less.",
+     "feel": "Salon-style at home",
+     "catch": "Only drying? A dryer costs less."
+    }
+   ],
+   "cta": "Send this to someone planning one big gift. All eleven picks and every link are on our profile.",
+   "cta_kicker": "11 Black Friday picks",
+   "share": "Send this to someone planning one big gift",
+   "img": "https://images.unsplash.com/photo-1676107779674-f77343861e81"
+  }
  ]
 }

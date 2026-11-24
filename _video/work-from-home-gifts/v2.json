@@ -417,6 +417,51 @@
    "cta": "Send this to someone who works from home. All ten picks and every link are on our profile.",
    "cta_kicker": "10 home-office gifts",
    "share": "Send this to someone who works from home"
+  },
+  {
+   "id": "oncalls5",
+   "kicker": "5 gifts · for someone on calls all day",
+   "title": {
+    "pre": "On calls all day?",
+    "accent": "5 gifts for their desk"
+   },
+   "hook": "On calls all day, and still answering emails at night? Five gifts that make the workday lighter.",
+   "picks": [
+    {
+     "id": "cable",
+     "text": "One. A cable kit, twenty dollars. A desk that looks calm, even on busy days. The catch? It takes thirty minutes to fit.",
+     "feel": "A calm-looking desk",
+     "catch": "About 30 minutes to fit."
+    },
+    {
+     "id": "mxkeys",
+     "text": "Two. Logitech MX Keys S, a hundred and ten dollars. Quiet keys, so the call stays clear. The catch? It's full size, so it needs space.",
+     "feel": "Quiet keys on calls",
+     "catch": "Full size. Needs desk space."
+    },
+    {
+     "id": "mxmaster",
+     "text": "Three. The MX Master four, a hundred and twenty dollars. One mouse across three computers. The catch? Right-handed only.",
+     "feel": "One mouse, three computers",
+     "catch": "Big and right-handed only."
+    },
+    {
+     "id": "mv7",
+     "text": "Four. The Shure MV7 plus, two hundred and sixty-nine dollars. They'll sound like a podcast on every call. The catch? It's a lot of mic for light use.",
+     "feel": "Sound like a podcast",
+     "catch": "A lot of mic for light use."
+    },
+    {
+     "id": "kindle",
+     "text": "Five. The Kindle Colorsoft, two hundred and ninety dollars. Because the screen should go off after work. The catch? Novels only? A regular Kindle costs less.",
+     "feel": "Switch off after work",
+     "catch": "Novels only? A regular Kindle costs less."
+    }
+   ],
+   "cta": "Send this to someone who's on calls all day. All ten picks and every link are on our profile.",
+   "cta_kicker": "10 home-office gifts",
+   "share": "Send this to someone who's on calls all day",
+   "img": "https://images.unsplash.com/photo-1588800347304-ec7e6f353327"
   }
  ]
 }

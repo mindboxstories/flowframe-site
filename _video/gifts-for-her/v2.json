@@ -154,7 +154,7 @@
    "kind": "item",
    "n": 8,
    "name": "Gold cuff bracelet",
-   "price": "$20\u201340",
+   "price": "$20–40",
    "text": "Eight. A gold cuff bracelet, twenty to forty dollars. Chunky gold cuffs are one of Pinterest's predicted looks for twenty twenty-six. The catch? At this price it's gold-plated, so keep it away from water.",
    "tags": [
     "A predicted 2026 look",
@@ -262,5 +262,97 @@
   "lego": "9. LEGO Botanicals Tiny Plants",
   "bala": "10. Bala Bangles, 1 lb pair",
   "tilbury": "11. Charlotte Tilbury mini set"
- }
+ },
+ "stacks": [
+  {
+   "id": "doesitall5",
+   "kicker": "5 gifts · for the woman who does it all",
+   "title": {
+    "pre": "She does it all?",
+    "accent": "5 gifts just for her"
+   },
+   "hook": "She takes care of everyone. Who takes care of her? Five gifts that say, this one's just for you.",
+   "picks": [
+    {
+     "id": "slippers",
+     "text": "One. Fuzzy faux-fur slippers, sixteen dollars. Warm feet the second she walks in. The catch? Between sizes, go up.",
+     "feel": "Warm feet, instantly",
+     "catch": "Between sizes? Go up."
+    },
+    {
+     "id": "lamp",
+     "text": "Two. A candle warmer lamp, twenty dollars. The glow of a candle, with no flame. The catch? The candle's not included.",
+     "feel": "Glow, no flame",
+     "catch": "Candle not included."
+    },
+    {
+     "id": "candle",
+     "text": "Three. A P.F. Candle Co. candle, twenty-four dollars. Her room smells like a weekend away. The catch? Scent is personal.",
+     "feel": "A weekend-away smell",
+     "catch": "Scent is personal. Go fresh if unsure."
+    },
+    {
+     "id": "mask",
+     "text": "Four. A silk eye mask, twenty-seven dollars. A small luxury she'd never buy herself. The catch? Hand-wash only.",
+     "feel": "A luxury she'd skip",
+     "catch": "Hand-wash only."
+    },
+    {
+     "id": "saltstone",
+     "text": "Five. Salt and Stone body wash, thirty-six dollars. An everyday shower that feels like a treat. The catch? It's pricey, which is why she won't buy it.",
+     "feel": "Everyday, made special",
+     "catch": "Pricey. That's why it's a gift."
+    }
+   ],
+   "cta": "Send this to someone shopping for her. All eleven gifts and every link are on our profile.",
+   "cta_kicker": "11 gifts for her",
+   "share": "Send this to someone shopping for her",
+   "img": "https://images.unsplash.com/photo-1668112037360-900ff60ef6f7"
+  },
+  {
+   "id": "hardtoshop5",
+   "kicker": "5 gifts · for her, under $60",
+   "title": {
+    "pre": "Hard to shop for?",
+    "accent": "5 she'll actually use"
+   },
+   "hook": "Hard to shop for? Five gifts under sixty dollars she'll actually use, not hide in a drawer.",
+   "picks": [
+    {
+     "id": "owala",
+     "text": "One. The Owala FreeSip, thirty-five dollars. The bottle everyone's carrying this year. The catch? It won't fit every cup holder.",
+     "feel": "The bottle she'll carry",
+     "catch": "Won't fit every cup holder."
+    },
+    {
+     "id": "summer",
+     "text": "Two. Summer Fridays travel minis, thirty-four dollars. A little treat for her bag. The catch? Minis run out fast.",
+     "feel": "A treat for her bag",
+     "catch": "Minis run out fast."
+    },
+    {
+     "id": "cuff",
+     "text": "Three. A gold cuff bracelet, from twenty dollars. She'll wear it with everything. The catch? It's gold-plated, so keep it dry.",
+     "feel": "Goes with everything",
+     "catch": "Gold-plated. Keep it dry."
+    },
+    {
+     "id": "lego",
+     "text": "Four. LEGO Botanicals Tiny Plants, forty dollars. A calm afternoon, and plants that never wilt. The catch? It's a project, not a quick gift.",
+     "feel": "Plants that never wilt",
+     "catch": "A few hours to build."
+    },
+    {
+     "id": "tilbury",
+     "text": "Five. A Charlotte Tilbury mini set, fifty-four dollars. A big-name gift, without the big-name price. The catch? Sets change every year.",
+     "feel": "Big name, gift-sized",
+     "catch": "Check what's in this year's set."
+    }
+   ],
+   "cta": "Send this to someone stuck on a gift for her. All eleven picks and every link are on our profile.",
+   "cta_kicker": "11 gifts for her",
+   "share": "Send this to someone stuck on a gift for her",
+   "img": "https://images.unsplash.com/photo-1789276392869-8103c256a501"
+  }
+ ]
 }
