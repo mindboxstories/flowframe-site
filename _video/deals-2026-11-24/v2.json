@@ -42,38 +42,20 @@
    "catch": "",
    "text": "",
    "small": "now"
-  },
-  {
-   "id": "tiles",
-   "kind": "item",
-   "n": 3,
-   "name": "PicassoTiles 100-pc",
-   "price": "$27.99",
-   "img": "https://images.unsplash.com/photo-1573691863165-14bf17020fd7",
-   "asin": "B00AU56C5W",
-   "was": "$39.99",
-   "sources": [
-    "NBC Select 23 Nov",
-    "Amazon listing 24 Nov"
-   ],
-   "tags": [],
-   "catch": "",
-   "text": "",
-   "small": "now"
   }
  ],
  "stacks": [
   {
    "id": "deals",
-   "kicker": "3 real deals · checked Nov 24",
+   "kicker": "2 real deals · checked Nov 24",
    "title": {
     "pre": "Gifts they'll use",
-    "accent": "3 deals today"
+    "accent": "2 deals today"
    },
-   "hook": "For the people who are hardest to shop for: three deals everyone is grabbing today, and the catch on each.",
+   "hook": "For the people who are hardest to shop for: two deals everyone is grabbing today, and the catch on each.",
    "sticker": {
     "small": "deals",
-    "big": "3"
+    "big": "2"
    },
    "picks": [
     {
@@ -87,12 +69,6 @@
      "text": "Two. The Skylight Calendar, two hundred thirty-nine dollars, sixty off. The whole family's plans on one screen. The catch? It needs Wi-Fi to sync.",
      "feel": "The whole family, synced",
      "catch": "It needs Wi-Fi to sync."
-    },
-    {
-     "id": "tiles",
-     "text": "Three. PicassoTiles, a hundred magnetic tiles for twenty-seven dollars and ninety-nine cents. Hours of building, no screens. The catch? They're for ages three and up.",
-     "feel": "Hours of no-screen play",
-     "catch": "For ages 3 and up."
     }
    ],
    "cta": "Follow for real deals every day. Every link is on our profile.",
@@ -101,16 +77,16 @@
   }
  ],
  "youtube": {
-  "title": "Gift deals: JBL Charge 6 $139.95, Skylight $239, tiles $27.99 #shorts",
+  "title": "Gift deals: JBL Charge 6 $139.95, Skylight Calendar $239 #shorts",
   "tags": [
    "amazon deals",
    "black friday deals 2026",
    "deals today",
    "jbl charge 6 deal",
    "skylight calendar deal",
-   "magnetic tiles",
-   "gift ideas"
+   "gift ideas",
+   "smart calendar"
   ],
-  "description": "3 deals people are buying today, and the catch on each.\n\nJBL Charge 6: $139.95 (was $199.95), checked Nov 24, 2026. Sources: NBC Select (Nov 23, lowest price ever per NBC Select*), Amazon listing (Nov 24).\nSkylight Calendar 15\": $239 (was $299), checked Nov 24, 2026. Sources: NBC Select (Nov 23), Amazon listing (Nov 24).\nPicassoTiles 100-piece magnetic tiles: $27.99 (was $39.99), checked Nov 24, 2026. Sources: NBC Select (Nov 23), Amazon listing (Nov 24).\n*\"Lowest price ever\" is NBC Select's claim.\n\nJBL Charge 6\nUS: https://www.amazon.com/dp/B0DN2ZCZX6?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=JBL+Charge+6&tag=digittouch-21\n\nSkylight Calendar 15\"\nUS: https://www.amazon.com/dp/B0C9V811L6?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=Skylight+Calendar+15&tag=digittouch-21\n\nPicassoTiles 100-pc\nUS: https://www.amazon.com/dp/B00AU56C5W?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=PicassoTiles+100+piece+magnetic+tiles&tag=digittouch-21\n\n(Links in Shorts aren't clickable: use the link on our channel page.)\nAs an Amazon Associate we earn from qualifying purchases.\nWe haven't tested these ourselves.\nPrices change often; check the current price before you buy.\nNarrated with an AI voice; music made by us."
+  "description": "2 deals people are buying today, and the catch on each.\n\nJBL Charge 6: $139.95 (was $199.95), checked Nov 24, 2026. Sources: NBC Select (Nov 23, lowest price ever per NBC Select*), Amazon listing (Nov 24).\nSkylight Calendar 15\": $239 (was $299), checked Nov 24, 2026. Sources: NBC Select (Nov 23), Amazon listing (Nov 24).\n*\"Lowest price ever\" is NBC Select's claim.\n\nJBL Charge 6\nUS: https://www.amazon.com/dp/B0DN2ZCZX6?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=JBL+Charge+6&tag=digittouch-21\n\nSkylight Calendar 15\"\nUS: https://www.amazon.com/dp/B0C9V811L6?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=Skylight+Calendar+15&tag=digittouch-21\n\n(Links in Shorts aren't clickable: use the link on our channel page.)\nAs an Amazon Associate we earn from qualifying purchases.\nWe haven't tested these ourselves.\nPrices change often; check the current price before you buy.\nNarrated with an AI voice; music made by us."
  }
 }
