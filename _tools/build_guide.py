@@ -94,6 +94,17 @@ def signup(slug):
             f'<p class="g-signup-fine">We use Kit to send emails. Read our <a href="/privacy/">privacy page</a>.</p></form></section></div>')
 
 
+def video_card(v):
+    if not v:
+        return ""
+    yt = f'https://www.youtube.com/watch?v={v["id"]}'
+    return (f'<div class="s-wrap"><a class="g-video" href="{yt}" target="_blank" rel="noopener">'
+            f'<span class="g-video-im"><img src="/video/{v["thumb"]}" alt="" width="1280" height="720" loading="lazy">'
+            f'<span class="g-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span>'
+            f'<span class="g-video-copy"><span class="g-video-k">Watch &middot; {E(v["len"])}</span><b>{E(v["title"])}</b>'
+            f'<span>Every pick and its catch, in one quick video. Opens on YouTube.</span></span></a></div>')
+
+
 def build(data):
     slug, url = data["slug"], f'{SITE}/finds/{data["slug"]}/'
     title, desc = data["title"], data["description"]
@@ -148,6 +159,7 @@ def build(data):
 <div class="g-chips" role="group" aria-labelledby="people-h">{chips}</div><p class="g-status" role="status" aria-live="polite"></p></div>
 <p class="g-disclosure">As an Amazon Associate, Digittouch Finds earns from qualifying purchases. Buying through our links costs you nothing extra and never changes our picks. <a href="/disclosure/">How we make money</a>.</p></section>
 <section class="g-top s-wrap" id="top-picks"><div class="sec-head"><div><h2>If you only buy one</h2><p>Our three favourites from the list, for three different kinds of people.</p></div></div><ol>{tops}</ol></section>
+{video_card(data.get("video"))}
 {bands}
 {extras(data.get("extras", ["prime"]))}
 <section class="g-table s-wrap"><div class="sec-head"><div><h2>All {n} at a glance</h2><p>Tap a name to jump to it.</p></div></div><div class="tw"><table><thead><tr><th>Gift</th><th>Price</th><th>Best for</th></tr></thead><tbody>{rows}</tbody></table></div></section>

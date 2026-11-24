@@ -226,7 +226,8 @@
   ],
   "method": "We cross-checked this season's work-from-home gift guides and this week's Amazon best-sellers, and kept items that suit a wide range of desks and jobs. Prices were checked on 11 November 2026 and change daily around Black Friday, so check the price before you buy. We only call something a deal when we've seen the price drop.",
   "updates": [
-    "11 November 2026: guide published."
+    "11 November 2026: guide published.",
+    "24 November 2026: added our video of this list."
   ],
   "sources": [
     {
@@ -254,5 +255,11 @@
   "extras": [
     "audible",
     "prime"
-  ]
+  ],
+  "video": {
+    "id": "O9g2XAkj7Ig",
+    "title": "10 work-from-home gifts worth buying",
+    "len": "3:34",
+    "thumb": "work-from-home-gifts-thumb.jpg"
+  }
 }

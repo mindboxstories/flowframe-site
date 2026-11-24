@@ -53,7 +53,8 @@
  ],
  "method": "We pulled the picks from our six gift guides that most often drop in price around Black Friday, using last year’s Black Friday prices and price-tracker history as a guide. Prices shown are from each guide’s last check (11–12 November 2026) and will move before and during the sale, so always check the current price. We only call something a deal when we have seen the price drop.",
  "updates": [
-  "13 November 2026: watchlist published, drawn from our six gift guides."
+  "13 November 2026: watchlist published, drawn from our six gift guides.",
+  "24 November 2026: added our video of this list."
  ],
  "sources": [
   {
@@ -577,5 +578,11 @@
  "extras": [
   "prime",
   "audible"
- ]
+ ],
+ "video": {
+  "id": "QGg_RuUYN1I",
+  "title": "11 Black Friday gifts worth watching",
+  "len": "3:39",
+  "thumb": "black-friday-2026-thumb.jpg"
+ }
 }
