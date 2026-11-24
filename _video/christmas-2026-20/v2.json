@@ -1,0 +1,511 @@
+{
+ "slug": "christmas-2026-20",
+ "version": "v2",
+ "voice": "af_heart",
+ "speed": 1.1,
+ "guide": "flowframe.shop/finds",
+ "segments": [
+  {
+   "id": "hook",
+   "kind": "hook",
+   "text": "Twenty Christmas gifts, from twelve dollars, sorted by who they're for: Mom, the home cook, the one who works from home, and the friend who says don't get me anything.",
+   "title": {
+    "pre": "20 gifts, sorted by",
+    "accent": "who they're",
+    "post": "for"
+   },
+   "sticker": {
+    "small": "from",
+    "big": "$12",
+    "cue": "^twelve"
+   },
+   "chip": "+ the catch on each one",
+   "flash": [
+    "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb",
+    "https://images.unsplash.com/photo-1598103442097-8b74394b95c6",
+    "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e",
+    "https://images.unsplash.com/photo-1612373914372-79a8a0311f78",
+    "https://images.unsplash.com/photo-1676107779674-f77343861e81",
+    "https://images.unsplash.com/photo-1789276392869-8103c256a501",
+    "https://images.unsplash.com/photo-1781737857663-f1f14a60ba46",
+    "https://images.unsplash.com/photo-1715033749994-55f16a83c236"
+   ]
+  },
+  {
+   "id": "note",
+   "kind": "note",
+   "text": "Quick note: prices move daily, so always check the link for today's price.",
+   "img": "https://images.unsplash.com/photo-1779599859971-670a45aedf96"
+  },
+  {
+   "id": "b1",
+   "kind": "band",
+   "text": "For Mom, and every woman who does it all.",
+   "label": "For Mom",
+   "sub": "And every woman who does it all",
+   "color": "coral",
+   "kicker": "Part 1 of 4"
+  },
+  {
+   "id": "slippers",
+   "kind": "item",
+   "n": 1,
+   "name": "Fuzzy faux-fur slippers",
+   "price": "$16",
+   "text": "Number one. Fuzzy faux-fur slippers, about sixteen dollars. Warm feet the second she walks in, and she'll wear them every evening. The catch? If she's between sizes, go up.",
+   "tags": [
+    "Warm the moment she's home",
+    "Worn every evening"
+   ],
+   "catch": "Between sizes? Go up.",
+   "img": "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb",
+   "guide": "gifts-for-her-under-60",
+   "asin": null,
+   "q": "womens fuzzy faux fur slippers"
+  },
+  {
+   "id": "lamp",
+   "kind": "item",
+   "n": 2,
+   "name": "Candle warmer lamp",
+   "price": "$20",
+   "text": "Number two. A candle warmer lamp, about twenty dollars. The cozy glow of a candle, with no open flame to worry about. The catch? The candle isn't included, so check her jar fits.",
+   "tags": [
+    "Candle glow, no flame",
+    "Lovely on a shelf"
+   ],
+   "catch": "Candle not included. Check the jar fits.",
+   "img": "https://images.unsplash.com/photo-1779599859971-670a45aedf96",
+   "guide": "gifts-for-her-under-60",
+   "asin": null,
+   "q": "candle warmer lamp"
+  },
+  {
+   "id": "mask",
+   "kind": "item",
+   "n": 3,
+   "name": "Hommey silk eye mask",
+   "price": "$27",
+   "text": "Number three. A silk eye mask, about twenty-seven dollars. A small luxury she'd never buy for herself. The catch? It's hand-wash only.",
+   "tags": [
+    "Soft silk",
+    "A treat she'd skip"
+   ],
+   "catch": "Hand-wash only.",
+   "img": "https://images.unsplash.com/photo-1687435703153-88f6bc0cdcff",
+   "guide": "gifts-for-her-under-60",
+   "asin": null,
+   "q": "hommey silk eye mask"
+  },
+  {
+   "id": "owala",
+   "kind": "item",
+   "n": 4,
+   "name": "Owala FreeSip 40 oz",
+   "price": "$35",
+   "text": "Number four. The Owala FreeSip, about thirty-five dollars. The bottle everyone's carrying this year, and she'll take it everywhere. The catch? The forty-ounce size won't fit every cup holder.",
+   "tags": [
+    "Sip or swig",
+    "Keeps drinks cold"
+   ],
+   "catch": "40 oz won't fit every cup holder.",
+   "img": "https://images.unsplash.com/photo-1789276392869-8103c256a501",
+   "guide": "gifts-for-her-under-60",
+   "asin": "B0FFTLKRX3",
+   "q": "owala freesip 40 oz tumbler"
+  },
+  {
+   "id": "tilbury",
+   "kind": "item",
+   "n": 5,
+   "name": "Charlotte Tilbury mini set",
+   "price": "$54",
+   "text": "Number five. A Charlotte Tilbury mini set, about fifty-four dollars. A big-name gift that feels special to unwrap. The catch? The sets change every year, so check what's inside.",
+   "tags": [
+    "Big-name brand",
+    "Gift-ready box"
+   ],
+   "catch": "Sets change yearly. Check what's inside.",
+   "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348",
+   "guide": "gifts-for-her-under-60",
+   "asin": null,
+   "q": "charlotte tilbury mini gift set"
+  },
+  {
+   "id": "b2",
+   "kind": "band",
+   "text": "For the one who feeds everyone.",
+   "label": "The home cook",
+   "sub": "For the one who feeds everyone",
+   "color": "sun",
+   "kicker": "Part 2 of 4"
+  },
+  {
+   "id": "skillet",
+   "kind": "item",
+   "n": 6,
+   "name": "Lodge cast iron skillet",
+   "price": "$20",
+   "text": "Number six. A Lodge cast iron skillet, about twenty dollars. The pan they'll cook with for decades, and maybe hand down. The catch? It's heavy, and it needs drying and a little oil after washing.",
+   "tags": [
+    "Hob to oven",
+    "Lasts a lifetime"
+   ],
+   "catch": "Heavy. Dry and oil it after washing.",
+   "img": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6",
+   "guide": "kitchen-gifts-home-cook",
+   "asin": null,
+   "q": "lodge 10.25 inch cast iron skillet"
+  },
+  {
+   "id": "thermopop",
+   "kind": "item",
+   "n": 7,
+   "name": "ThermoPop 2 thermometer",
+   "price": "$39",
+   "text": "Number seven. The ThermoPop two thermometer, about thirty-nine dollars. No more cutting into the roast to check it. The catch? It's instant-read, so it can't stay in the oven.",
+   "tags": [
+    "Reads in seconds",
+    "Big, clear display"
+   ],
+   "catch": "Instant-read. It can't stay in the oven.",
+   "img": "https://images.unsplash.com/photo-1622001545761-9bd12a4b465b",
+   "guide": "kitchen-gifts-home-cook",
+   "asin": null,
+   "q": "thermoworks thermopop 2"
+  },
+  {
+   "id": "instantpot",
+   "kind": "item",
+   "n": 8,
+   "name": "Instant Pot Duo, 6 qt",
+   "price": "$70",
+   "text": "Number eight. The Instant Pot Duo, about seventy dollars. Weeknight stews and rice, mostly hands-off. The catch? It takes counter space, and a little practice.",
+   "tags": [
+    "7 cookers in one",
+    "Hands-off dinners"
+   ],
+   "catch": "Needs counter space and practice.",
+   "img": "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b",
+   "guide": "kitchen-gifts-home-cook",
+   "asin": null,
+   "q": "instant pot duo 7 in 1 6 quart"
+  },
+  {
+   "id": "dutchoven",
+   "kind": "item",
+   "n": 9,
+   "name": "Lodge enameled Dutch oven",
+   "price": "$70",
+   "text": "Number nine. A Lodge enameled Dutch oven, about seventy dollars. The Sunday-stew pot that goes straight to the table. The catch? Enamel can chip if it's knocked, or heated empty.",
+   "tags": [
+    "Braises and soups",
+    "Oven to table"
+   ],
+   "catch": "Enamel can chip. Never heat it empty.",
+   "img": "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1",
+   "guide": "kitchen-gifts-home-cook",
+   "asin": null,
+   "q": "lodge 6 quart enameled cast iron dutch oven"
+  },
+  {
+   "id": "crispi",
+   "kind": "item",
+   "n": 10,
+   "name": "Ninja Crispi Pro air fryer",
+   "price": "$199",
+   "text": "Number ten. The Ninja Crispi Pro air fryer, about a hundred and ninety-nine dollars. Cook, serve and store in one glass dish, so there's no basket to scrub. The catch? The glass dish is heavier than a basket.",
+   "tags": [
+    "No basket to scrub",
+    "Cook, serve, store"
+   ],
+   "catch": "The glass dish is heavy.",
+   "img": "https://images.unsplash.com/photo-1781737857663-f1f14a60ba46",
+   "guide": "kitchen-gifts-home-cook",
+   "asin": null,
+   "q": "ninja crispi pro 6 qt glass air fryer"
+  },
+  {
+   "id": "rehook",
+   "kind": "rehook",
+   "text": "Still coming: a mug that keeps coffee warm through the longest call, and the twelve-dollar gift their dog will thank you for.",
+   "lines": [
+    {
+     "pre": "Coffee warm through",
+     "accent": "the longest call",
+     "cue": "^mug"
+    },
+    {
+     "pre": "The gift their dog",
+     "accent": "will thank you for",
+     "cue": "^dog"
+    }
+   ],
+   "imgs": [
+    "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e",
+    "https://images.unsplash.com/photo-1715033749994-55f16a83c236"
+   ]
+  },
+  {
+   "id": "b3",
+   "kind": "band",
+   "text": "For the one who works from home.",
+   "label": "Home office",
+   "sub": "For the one who works from home",
+   "color": "plum",
+   "kicker": "Part 3 of 4"
+  },
+  {
+   "id": "stand",
+   "kind": "item",
+   "n": 11,
+   "name": "Aluminum laptop stand",
+   "price": "$30",
+   "text": "Number eleven. An aluminum laptop stand, about thirty dollars. Their screen at eye level, every single workday. The catch? They'll need a separate keyboard and mouse.",
+   "tags": [
+    "Screen at eye level",
+    "Folds flat for travel"
+   ],
+   "catch": "They'll need a keyboard and mouse.",
+   "img": "https://images.unsplash.com/photo-1629317480826-910f729d1709",
+   "guide": "work-from-home-gifts",
+   "asin": null,
+   "q": "aluminum laptop stand adjustable"
+  },
+  {
+   "id": "charger",
+   "kind": "item",
+   "n": 12,
+   "name": "3-in-1 wireless charger",
+   "price": "$35",
+   "text": "Number twelve. A three-in-one wireless charger, about thirty-five dollars. One tidy spot for phone, earbuds and watch. The catch? Check it fits their phone and watch brand.",
+   "tags": [
+    "Phone, earbuds, watch",
+    "Fewer cables"
+   ],
+   "catch": "Check it fits their phone and watch.",
+   "img": "https://images.unsplash.com/photo-1591290619618-904f6dd935e3",
+   "guide": "work-from-home-gifts",
+   "asin": null,
+   "q": "3 in 1 wireless charging station"
+  },
+  {
+   "id": "ember",
+   "kind": "item",
+   "n": 13,
+   "name": "Ember Mug 2, 14 oz",
+   "price": "$90–150",
+   "text": "Number thirteen. The Ember Mug two, from about ninety dollars. Coffee still warm after the longest call. The catch? The battery is short off the coaster, and it's hand-wash only.",
+   "tags": [
+    "Set the exact temperature",
+    "Hot through meetings"
+   ],
+   "catch": "Short battery off the coaster.",
+   "img": "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e",
+   "guide": "work-from-home-gifts",
+   "asin": null,
+   "q": "ember mug 2 14 oz"
+  },
+  {
+   "id": "screenbar",
+   "kind": "item",
+   "n": 14,
+   "name": "BenQ ScreenBar light",
+   "price": "$109",
+   "text": "Number fourteen. The BenQ ScreenBar, about a hundred and nine dollars. Soft light for late evenings, with no glare on the screen. The catch? It needs a monitor, not a laptop.",
+   "tags": [
+    "Lights the desk",
+    "No screen glare"
+   ],
+   "catch": "Needs a monitor, not a laptop.",
+   "img": "https://images.unsplash.com/photo-1618133030686-e1186525ebcc",
+   "guide": "work-from-home-gifts",
+   "asin": null,
+   "q": "benq screenbar monitor light"
+  },
+  {
+   "id": "mxmaster",
+   "kind": "item",
+   "n": 15,
+   "name": "Logitech MX Master 4",
+   "price": "$120",
+   "text": "Number fifteen. The Logitech MX Master four, about a hundred and twenty dollars. The mouse people never go back from. The catch? It's big, and right-handed only.",
+   "tags": [
+    "Fast scroll wheel",
+    "Pairs with 3 computers"
+   ],
+   "catch": "Big and right-handed only.",
+   "img": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46",
+   "guide": "work-from-home-gifts",
+   "asin": null,
+   "q": "logitech mx master 4"
+  },
+  {
+   "id": "b4",
+   "kind": "band",
+   "text": "For the friend who says, don't get me anything.",
+   "label": "Everyone else",
+   "sub": "For the friend who says 'don't get me anything'",
+   "color": "coral",
+   "kicker": "Part 4 of 4"
+  },
+  {
+   "id": "kong",
+   "kind": "item",
+   "n": 16,
+   "name": "KONG Classic dog toy",
+   "price": "$12",
+   "text": "Number sixteen. A KONG Classic, about twelve dollars. For the dog they love more than anyone. The catch? Match the size to the dog. Too small is a choking risk.",
+   "tags": [
+    "Fill it with treats",
+    "Built to last"
+   ],
+   "catch": "Match the size to the dog.",
+   "img": "https://images.unsplash.com/photo-1715033749994-55f16a83c236",
+   "guide": "pet-lover-gifts-under-55",
+   "asin": null,
+   "q": "kong classic dog toy"
+  },
+  {
+   "id": "airtag",
+   "kind": "item",
+   "n": 17,
+   "name": "Apple AirTag",
+   "price": "$23",
+   "text": "Number seventeen. An Apple AirTag, about twenty-three dollars. No more where-are-my-keys mornings. The catch? It's iPhone only. For Android, get a SmartTag or Tile.",
+   "tags": [
+    "Find keys or bags",
+    "Clips on anything"
+   ],
+   "catch": "iPhone only. Android? Get a SmartTag or Tile.",
+   "img": "https://images.unsplash.com/photo-1603508102977-02688e3265fd",
+   "guide": "gifts-under-25",
+   "asin": null,
+   "q": "apple airtag 2nd generation"
+  },
+  {
+   "id": "blanket",
+   "kind": "item",
+   "n": 18,
+   "name": "Wearable sherpa blanket",
+   "price": "$25",
+   "text": "Number eighteen. A wearable sherpa blanket, about twenty-five dollars. The coziest gift on this whole list. The catch? It's one size and bulky, so it's a sofa thing.",
+   "tags": [
+    "Hoodie meets blanket",
+    "Big front pocket"
+   ],
+   "catch": "One size and bulky. Sofa only.",
+   "img": "https://images.unsplash.com/photo-1612373914372-79a8a0311f78",
+   "guide": "gifts-under-25",
+   "asin": null,
+   "q": "wearable blanket sherpa"
+  },
+  {
+   "id": "lego",
+   "kind": "item",
+   "n": 19,
+   "name": "LEGO Botanicals Tiny Plants",
+   "price": "$40",
+   "text": "Number nineteen. LEGO Botanicals Tiny Plants, about forty dollars. A calm afternoon, and plants that never wilt. The catch? It takes a few hours, so it's best for someone who likes a project.",
+   "tags": [
+    "Plants that never wilt",
+    "A calm project"
+   ],
+   "catch": "A few hours to build.",
+   "img": "https://images.unsplash.com/photo-1775994121066-df9928d01e18",
+   "guide": "gifts-for-her-under-60",
+   "asin": null,
+   "q": "lego botanicals tiny plants 10329"
+  },
+  {
+   "id": "kindle",
+   "kind": "item",
+   "n": 20,
+   "name": "Kindle Colorsoft",
+   "price": "$290",
+   "text": "And number twenty. The Kindle Colorsoft, about two hundred and ninety dollars. Cookbooks and comics in color, all in one bag. The catch? For plain novels, a regular Kindle costs less.",
+   "tags": [
+    "Color e-ink",
+    "Glare-free reading"
+   ],
+   "catch": "Novels only? A regular Kindle costs less.",
+   "img": "https://images.unsplash.com/photo-1676107779674-f77343861e81",
+   "guide": "work-from-home-gifts",
+   "asin": null,
+   "q": "kindle colorsoft"
+  },
+  {
+   "id": "recap",
+   "kind": "recap",
+   "text": "If you only buy one: the slippers she'll wear every night, the skillet that lasts a lifetime, or the AirTag that ends lost-key mornings.",
+   "picks": [
+    {
+     "img": "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb",
+     "label": "Worn every night",
+     "name": "Faux-fur slippers",
+     "price": "$16",
+     "cue": "^slippers"
+    },
+    {
+     "img": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6",
+     "label": "Lasts a lifetime",
+     "name": "Lodge skillet",
+     "price": "$20",
+     "cue": "^skillet"
+    },
+    {
+     "img": "https://images.unsplash.com/photo-1603508102977-02688e3265fd",
+     "label": "Ends lost keys",
+     "name": "Apple AirTag",
+     "price": "$23",
+     "cue": "^airtag"
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "kind": "outro",
+   "text": "Every pick is linked in the description, with the full guides for the US and the UK. Send this to someone with a long list. Happy holidays.",
+   "hold": 16
+  }
+ ],
+ "chapters": {
+  "hook": "Intro",
+  "slippers": "1. Fuzzy faux-fur slippers",
+  "lamp": "2. Candle warmer lamp",
+  "mask": "3. Hommey silk eye mask",
+  "owala": "4. Owala FreeSip 40 oz",
+  "tilbury": "5. Charlotte Tilbury mini set",
+  "skillet": "6. Lodge cast iron skillet",
+  "thermopop": "7. ThermoPop 2 thermometer",
+  "instantpot": "8. Instant Pot Duo, 6 qt",
+  "dutchoven": "9. Lodge enameled Dutch oven",
+  "crispi": "10. Ninja Crispi Pro air fryer",
+  "stand": "11. Aluminum laptop stand",
+  "charger": "12. 3-in-1 wireless charger",
+  "ember": "13. Ember Mug 2, 14 oz",
+  "screenbar": "14. BenQ ScreenBar light",
+  "mxmaster": "15. Logitech MX Master 4",
+  "kong": "16. KONG Classic dog toy",
+  "airtag": "17. Apple AirTag",
+  "blanket": "18. Wearable sherpa blanket",
+  "lego": "19. LEGO Botanicals Tiny Plants",
+  "kindle": "20. Kindle Colorsoft",
+  "recap": "Our top 3 + where to buy"
+ },
+ "thumb": {
+  "kicker": "Christmas 2026",
+  "pre": "20 gifts for",
+  "accent": "everyone",
+  "post": "on your list",
+  "sticker_small": "from",
+  "sticker_big": "$12",
+  "chip": "Sorted by person + the catch on each",
+  "imgs": [
+   "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb",
+   "https://images.unsplash.com/photo-1598103442097-8b74394b95c6",
+   "https://images.unsplash.com/photo-1676107779674-f77343861e81"
+  ]
+ },
+ "short_label": "Christmas gifts"
+}
