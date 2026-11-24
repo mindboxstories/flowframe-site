@@ -327,7 +327,7 @@
    "id": "mxmaster",
    "hook": "The work mouse people upgrade to. Check this first.",
    "title": {
-    "pre": "The work mouse upgrade",
+    "pre": "Work mouse upgrade",
     "accent": "Check this first"
    }
   },
@@ -367,7 +367,7 @@
    "id": "mv7",
    "hook": "Want calls that sound like radio? Here's the honest take.",
    "title": {
-    "pre": "Calls that sound like radio",
+    "pre": "Sound like radio",
     "accent": "The honest take"
    }
   }
