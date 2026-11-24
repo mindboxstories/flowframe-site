@@ -107,7 +107,7 @@ scta(seg) {
     <div class="abs" style="left:60px;top:1050px;width:870px">
       <div class="tag k" style="color:var(--sun)">${seg.kicker}</div>
       <div class="o1" style="font-weight:800;font-size:96px;line-height:1.0;letter-spacing:-.035em;margin-top:18px">Full list + <em style="color:var(--coral)">every link</em></div>
-      ${seg.share ? `<div class="sh" style="font-weight:700;font-size:44px;line-height:1.2;margin-top:26px;color:rgba(255,255,255,.88)">${seg.share} <span style="color:var(--sun)">↗</span></div>` : ''}
+      ${seg.share ? `<div class="sh" style="font-weight:700;font-size:44px;line-height:1.2;margin-top:26px;color:rgba(255,255,255,.88)">${seg.share.replace(/ (\S+ \S+)$/, (m, a) => ' ' + a.replace(' ', '&nbsp;'))}&nbsp;<span style="color:var(--sun)">↗</span></div>` : ''}
       <div class="o2" style="margin-top:36px"><span class="pill" style="font-size:46px;padding:22px 38px;background:var(--sun)"><i style="background:var(--plum)"></i>Link on our profile ↗</span></div>
     </div></div>`);
 },
