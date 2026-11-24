@@ -10,9 +10,9 @@
    "kind": "hook",
    "text": "Twenty Christmas gifts, from twelve dollars, sorted by who they're for: Mom, the home cook, the one who works from home, and the friend who says don't get me anything.",
    "title": {
-    "pre": "20 gifts, sorted by",
-    "accent": "who they're",
-    "post": "for"
+    "pre": "20 gifts for",
+    "accent": "everyone",
+    "post": "on your list"
    },
    "sticker": {
     "small": "from",
@@ -500,7 +500,7 @@
   "post": "on your list",
   "sticker_small": "from",
   "sticker_big": "$12",
-  "chip": "Sorted by person + the catch on each",
+  "chip": "Sorted by person",
   "imgs": [
    "https://images.unsplash.com/photo-1650307535558-fa2b39ed16eb",
    "https://images.unsplash.com/photo-1598103442097-8b74394b95c6",
