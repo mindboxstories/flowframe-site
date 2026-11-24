@@ -120,6 +120,9 @@ shook(el, seg, lt) {
   el.querySelectorAll('.ttl .word').forEach((w, i) => rise(w, lt, .05 + i * .07, .32, 70));
   rise(el.querySelector('.acc'), lt, Math.min(1.1, (seg.words[Math.floor(seg.words.length / 2)] || {s: .8}).s) - .15, .4, 60);
   pop(el.querySelector('.s1'), lt, .45, .5); el.querySelector('.s1').style.transform += ' rotate(-10deg)';
+  if (lt < .02) { /* frame 0 = cover: title, accent and sticker fully visible */
+    [el.querySelector('.k'), el.querySelector('.acc'), ...el.querySelectorAll('.ttl .word')].forEach(x => { x.style.opacity = 1; x.style.transform = 'none'; });
+    const s1 = el.querySelector('.s1'); s1.style.opacity = 1; s1.style.transform = 'rotate(-10deg)'; }
 },
 item(el, seg, lt) {
   const c = seg.cues, full = el.querySelector('.full');
