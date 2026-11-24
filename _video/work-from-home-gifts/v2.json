@@ -380,41 +380,41 @@
     "pre": "Works from home?",
     "accent": "5 gifts they'll feel"
    },
-   "hook": "Know someone who works from home and never treats themselves? Here are five gifts they'll feel every single day.",
+   "hook": "Works from home and never treats themselves? Five gifts they'll feel every day.",
    "img": "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e",
    "picks": [
     {
      "id": "stand",
-     "text": "One. A laptop stand, about thirty dollars. Their screen, finally at eye level. The catch? They'll need a keyboard too.",
+     "text": "One. A laptop stand, thirty dollars. Screen at eye level. The catch? They'll need a keyboard.",
      "feel": "Screen at eye level",
      "catch": "They'll need a keyboard too."
     },
     {
      "id": "mat",
-     "text": "Two. A big felt desk mat, about twenty dollars. Suddenly the desk feels like theirs. The catch? Measure the desk first.",
+     "text": "Two. A felt desk mat, twenty dollars. The desk finally feels like theirs. The catch? Measure first.",
      "feel": "A desk that feels theirs",
      "catch": "Measure the desk first."
     },
     {
      "id": "charger",
-     "text": "Three. A three-in-one charger, about thirty-five dollars. Phone, earbuds and watch, all in one spot. The catch? Check it fits their phone.",
+     "text": "Three. A three-in-one charger, thirty-five dollars. One spot for every device. The catch? Check their phone fits.",
      "feel": "No more cable hunt",
      "catch": "Check it fits their phone."
     },
     {
      "id": "ember",
-     "text": "Four. The Ember mug, from about ninety dollars. Coffee still warm after the long call. The catch? It's hand-wash only.",
+     "text": "Four. The Ember mug, from ninety dollars. Coffee still warm after the long call. The catch? Hand-wash only.",
      "feel": "Coffee still warm",
      "catch": "Hand-wash only. Short battery."
     },
     {
      "id": "screenbar",
-     "text": "Five. The BenQ ScreenBar, about a hundred and nine dollars. Softer light for the late evenings. The catch? It needs a monitor.",
+     "text": "Five. The BenQ ScreenBar, a hundred and nine dollars. Softer light for late nights. The catch? Needs a monitor.",
      "feel": "Late nights, softer light",
      "catch": "Needs a monitor, not a laptop."
     }
    ],
-   "cta": "Send this to someone who works from home. All ten picks, with every link, are on our profile.",
+   "cta": "Send this to someone who works from home. All ten picks and every link are on our profile.",
    "cta_kicker": "10 home-office gifts",
    "share": "Send this to someone who works from home"
   }

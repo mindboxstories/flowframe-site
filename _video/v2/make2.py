@@ -47,7 +47,7 @@ def build_stack(base, sid):
                       "price": p.get("price", it["price"]), "img": p.get("img", it["img"]), "text": p["text"],
                       "feel": p["feel"], "catch": p["catch"], **({"cue": p["cue"]} if "cue" in p else {})})
     hook = {"id": "shook", "kind": "shook", "text": cfg["hook"], "title": cfg["title"], "img": cfg.get("img", picks[0]["img"]),
-            "price": "", "sticker": cfg.get("sticker", {"small": "picks", "big": str(len(picks))}), "kicker": cfg["kicker"]}
+            "price": "", "accent_color": cfg.get("accent_color", "sun"), "sticker": cfg.get("sticker", {"small": "picks", "big": str(len(picks))}), "kicker": cfg["kicker"]}
     cta = {"id": "scta", "kind": "scta", "text": cfg["cta"], "imgs": [x["img"] for x in picks[:3]], "kicker": cfg.get("cta_kicker", base["short_label"]),
            "share": cfg.get("share", "Send this to someone who'd love one"), "hold": 1.2}
     out = {k: v for k, v in base.items() if k not in ("segments", "chapters", "thumb", "shorts", "stacks")}

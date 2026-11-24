@@ -58,7 +58,7 @@ shook(seg) {
     <div class="abs" style="left:60px;top:270px;width:870px;color:#fff">
       <div class="k"><span class="pill" style="background:var(--sun);font-size:32px"><i style="background:var(--plum)"></i>${seg.kicker}</span></div>
       <div class="ttl" style="font-weight:800;font-size:${seg.title.pre.length > 22 ? 96 : 112}px;line-height:1.0;letter-spacing:-.035em;margin-top:36px">${words(seg.title.pre)}</div>
-      <div class="acc" style="font-size:${seg.title.accent.length > 18 ? 92 : 108}px;line-height:1.05;margin-top:14px"><em style="color:var(--coral)">${seg.title.accent}</em></div>
+      <div class="acc" style="font-size:${seg.title.accent.length > 18 ? 92 : 108}px;line-height:1.05;margin-top:14px"><em style="color:var(--${seg.accent_color || 'coral'})">${seg.title.accent}</em></div>
     </div>
     ${seg.sticker ? `<div class="sticker s1" style="left:650px;top:1020px;background:var(--sun);color:var(--plum)"><b style="font-size:120px">${seg.sticker.big}</b><small>${seg.sticker.small}</small></div>`
       : `<div class="sticker s1" style="left:650px;top:1020px"><small>${seg.price.includes('–') ? 'from' : 'about'}</small><b style="font-size:${priceTxt(seg.price).length > 4 ? 60 : 76}px">${priceTxt(seg.price)}</b></div>`}
@@ -96,9 +96,9 @@ qitem(seg) {
       <div class="fl" style="font-size:${seg.feel.length > 22 ? 70 : 84}px;line-height:1.06;margin-top:18px"><em style="color:var(--sun)">${seg.feel}</em></div>
     </div>
     <div class="sticker pr" style="left:650px;top:1010px;width:220px;height:220px"><small>${seg.price.includes('–') ? 'from' : 'about'}</small><b style="font-size:${priceTxt(seg.price).length > 4 ? 56 : 70}px">${priceTxt(seg.price)}</b></div>
-    <div class="abs ch" style="left:60px;top:1110px;max-width:600px"><div style="background:rgba(34,23,43,.92);color:#fff;border-radius:28px;padding:22px 28px;box-shadow:0 24px 50px -20px rgba(0,0,0,.6)">
-      <div class="tag" style="font-size:24px;color:var(--${seg.cue_color || 'coral'})">${seg.cue_icon || '!'} &nbsp;${seg.cue_label || 'The catch'}</div>
-      <div style="font-weight:800;font-size:40px;line-height:1.15;margin-top:8px">${seg.catch}</div></div></div>
+    <div class="abs ch" style="left:60px;top:1080px;max-width:600px"><div style="background:rgba(34,23,43,.92);color:#fff;border-radius:28px;padding:22px 28px;box-shadow:0 24px 50px -20px rgba(0,0,0,.6)">
+      <div class="tag" style="font-size:28px;color:var(--${seg.cue_color || 'coral'})">${seg.cue_icon || '!'} &nbsp;${seg.cue_label || 'The catch'}</div>
+      <div style="font-weight:800;font-size:48px;line-height:1.12;margin-top:8px">${seg.catch}</div></div></div>
   </div>`);
 },
 scta(seg) {
