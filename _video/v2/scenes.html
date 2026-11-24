@@ -73,9 +73,9 @@ note(seg) {
     <div class="grad" style="background:linear-gradient(90deg,rgba(29,27,34,.92) 0%,rgba(29,27,34,.55) 55%,rgba(29,27,34,.15) 100%)"></div>
     <div class="abs" style="left:120px;top:250px;width:1100px;color:#fff">
       <div class="tag l0" style="color:var(--sun)">Quick note</div>
-      <div class="l1" style="font-weight:800;font-size:76px;line-height:1.08;letter-spacing:-.02em;margin-top:26px">Our links are affiliate links.</div>
-      <div class="l2" style="font-weight:700;font-size:52px;line-height:1.2;margin-top:22px;color:rgba(255,255,255,.86)">They <em style="color:var(--sun)">never</em> change our picks.</div>
-      <div class="l3" style="margin-top:46px"><span class="pill" style="font-size:34px"><i></i>Prices move daily: check the link</span></div>
+      <div class="l1" style="font-weight:800;font-size:76px;line-height:1.08;letter-spacing:-.02em;margin-top:26px">Prices move daily.</div>
+      <div class="l2" style="font-weight:700;font-size:52px;line-height:1.2;margin-top:22px;color:rgba(255,255,255,.86)">Always <em style="color:var(--sun)">check</em> the link.</div>
+      <div class="l3" style="margin-top:46px"><span class="pill" style="font-size:34px"><i></i>Every pick is linked below</span></div>
     </div></div>`);
 },
 band(seg) {
@@ -168,7 +168,7 @@ hook(el, seg, lt) {
 note(el, seg, lt) {
   el.querySelector('.bg').style.transform = `scale(${1.02 + .05 * lt / seg.dur})`;
   slideX(el.querySelector('.l0'), lt, 0.05, .4); rise(el.querySelector('.l1'), lt, .15, .45);
-  rise(el.querySelector('.l2'), lt, (wt(seg, '^never') ?? 2) - .35, .45); rise(el.querySelector('.l3'), lt, (wt(seg, '^prices') ?? 3.5) - .2, .45);
+  rise(el.querySelector('.l2'), lt, (wt(seg, '^always') ?? wt(seg, '^never') ?? 2) - .35, .45); rise(el.querySelector('.l3'), lt, (wt(seg, '^today') ?? wt(seg, '^prices') ?? 3.5) - .2, .45);
 },
 band(el, seg, lt) {
   slideX(el.querySelector('.k'), lt, .02, .35, -80);
