@@ -1,0 +1,116 @@
+{
+ "slug": "deals-2026-11-25",
+ "version": "v2",
+ "voice": "af_heart",
+ "speed": 1.1,
+ "guide": "flowframe.shop/finds/black-friday-2026",
+ "short_label": "deals today",
+ "short_cta": "",
+ "segments": [
+  {
+   "id": "firetv",
+   "kind": "item",
+   "n": 1,
+   "name": "Fire TV Stick 4K Plus",
+   "price": "$29.99",
+   "img": "https://images.unsplash.com/photo-1653753336065-ed517a9af5e6",
+   "asin": "B0F7Z4QZTT",
+   "was": "$69.99",
+   "sources": [
+    "9to5Toys 24 Nov",
+    "Amazon listing 25 Nov"
+   ],
+   "tags": [],
+   "catch": "",
+   "text": "",
+   "small": "now"
+  },
+  {
+   "id": "hexclad",
+   "kind": "item",
+   "n": 2,
+   "name": "HexClad 10\" Hybrid Pan",
+   "price": "$110",
+   "img": "https://images.unsplash.com/photo-1760192716247-382af2aa9b35",
+   "asin": "B07WLQTCRH",
+   "was": "$149",
+   "sources": [
+    "CNN Underscored 25 Nov",
+    "Amazon listing 25 Nov"
+   ],
+   "tags": [],
+   "catch": "",
+   "text": "",
+   "small": "now"
+  },
+  {
+   "id": "aura",
+   "kind": "item",
+   "n": 3,
+   "name": "Aura 10\" Photo Frame",
+   "price": "$139",
+   "img": "https://images.unsplash.com/photo-1638953468925-e4e65d70ebb4",
+   "asin": "B0GMKR3PJ7",
+   "was": "$179",
+   "sources": [
+    "NBC Select 24 Nov",
+    "Amazon listing 25 Nov"
+   ],
+   "tags": [],
+   "catch": "",
+   "text": "",
+   "small": "now"
+  }
+ ],
+ "stacks": [
+  {
+   "id": "deals",
+   "kicker": "3 real deals · checked Nov 25",
+   "title": {
+    "pre": "Gifts that land",
+    "accent": "3 deals today"
+   },
+   "hook": "Shopping for the people who are hardest to buy for? Three deals that make it easy, and the catch on each.",
+   "sticker": {
+    "small": "deals",
+    "big": "3"
+   },
+   "picks": [
+    {
+     "id": "firetv",
+     "text": "One. The Fire TV Stick 4K Plus, twenty-nine dollars and ninety-nine cents, forty off. It gives an old TV a whole new life. The catch? You'll see ads on the home screen.",
+     "feel": "New life for an old TV",
+     "catch": "Ads on the home screen."
+    },
+    {
+     "id": "hexclad",
+     "text": "Two. The HexClad ten-inch pan, a hundred and ten dollars, the best price ever, per CNN Underscored. Sunday breakfast that slides right off. The catch? It's still a lot for one pan.",
+     "feel": "Best price ever*, CNN",
+     "catch": "Still pricey for just one pan."
+    },
+    {
+     "id": "aura",
+     "text": "Three. The Aura digital frame, a hundred thirty-nine dollars, forty off. Send new family photos to it from anywhere. The catch? There's no battery, so it stays plugged in.",
+     "feel": "Family photos, any time",
+     "catch": "No battery; it stays plugged in."
+    }
+   ],
+   "cta": "Follow for real deals every day. Every link is on our profile.",
+   "cta_kicker": "Deals checked today",
+   "share": "Send this to whoever's still shopping"
+  }
+ ],
+ "youtube": {
+  "title": "Gift deals: Fire TV Stick $29.99, HexClad $110, Aura $139 #shorts",
+  "tags": [
+   "amazon deals",
+   "black friday deals 2026",
+   "deals today",
+   "fire tv stick deal",
+   "hexclad deal",
+   "aura frame deal",
+   "gift ideas"
+  ],
+  "description": "3 gift deals people are buying today, and the catch on each.\n\nFire TV Stick 4K Plus: $29.99 (was $69.99), checked Nov 25, 2026. Sources: 9to5Toys (Nov 24), Amazon listing (Nov 25).\nHexClad 10\" Hybrid Nonstick Pan: $110 (was $149), checked Nov 25, 2026. Sources: CNN Underscored (Nov 25, best price ever per CNN Underscored*), Amazon listing (Nov 25).\nAura 10\" Digital Photo Frame (Carver): $139 (was $179), checked Nov 25, 2026. Sources: NBC Select (Nov 24), Amazon listing (Nov 25).\n*\"Best price ever\" is CNN Underscored's claim.\n\nFire TV Stick 4K Plus\nUS: https://www.amazon.com/dp/B0F7Z4QZTT?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=Fire+TV+Stick+4K+Plus&tag=digittouch-21\n\nHexClad 10\" Hybrid Pan\nUS: https://www.amazon.com/dp/B07WLQTCRH?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=HexClad+10+inch+pan&tag=digittouch-21\n\nAura 10\" Digital Photo Frame\nUS: https://www.amazon.com/dp/B0GMKR3PJ7?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=Aura+digital+photo+frame&tag=digittouch-21\n\n(Links in Shorts aren't clickable: use the link on our channel page.)\nAs an Amazon Associate we earn from qualifying purchases.\nWe haven't tested these ourselves.\nPrices change often; check the current price before you buy.\nNarrated with an AI voice; music made by us."
+ }
+}
