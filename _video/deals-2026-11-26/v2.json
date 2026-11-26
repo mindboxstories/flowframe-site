@@ -1,0 +1,66 @@
+{
+  "slug": "deals-2026-11-26",
+  "version": "v2",
+  "voice": "af_heart",
+  "speed": 1.1,
+  "guide": "flowframe.shop/finds/black-friday-2026",
+  "short_label": "deals today",
+  "short_cta": "",
+  "_note": "Daily deal Short 26 Nov 2026, format v3 single (one pick, problem-first hook).",
+  "segments": [
+    {
+      "id": "dualsense",
+      "kind": "item",
+      "n": 1,
+      "name": "PS5 DualSense controller",
+      "price": "$54",
+      "img": "https://images.unsplash.com/photo-1670535788315-6b7d64aa020c",
+      "asin": "B0FY6X2XXY",
+      "was": "$74.99",
+      "sources": [
+        "Amazon listing 26 Nov",
+        "Tom's Guide 25 Nov",
+        "TechRadar 25 Nov"
+      ],
+      "tags": [],
+      "catch": "",
+      "text": "",
+      "small": "now"
+    }
+  ],
+  "stacks": [
+    {
+      "id": "deals",
+      "kicker": "Real deal · checked today",
+      "title": {
+        "pre": "Stick drift again?",
+        "accent": "$54 fixes it"
+      },
+      "hook": "Your controller drifts every game. Fifty-four dollars fixes it.",
+      "picks": [
+        {
+          "id": "dualsense",
+          "text": "The PlayStation DualSense controller, fifty-four dollars. The catch? New sticks can drift again in time.",
+          "feel": "Aim goes where you point",
+          "catch": "New sticks can drift again in time."
+        }
+      ],
+      "cta": "Follow for one real deal a day.",
+      "cta_kicker": "Deals checked today",
+      "share": "Send this to your gamer"
+    }
+  ],
+  "youtube": {
+    "title": "Stick drift again? PS5 DualSense is $54 today #shorts",
+    "tags": [
+      "ps5 controller deal",
+      "dualsense deal",
+      "stick drift",
+      "black friday deals 2026",
+      "amazon deals",
+      "gaming gift ideas",
+      "deals today"
+    ],
+    "description": "PlayStation DualSense Wireless Controller: $54 (list $74.99), checked Nov 26, 2026. Sources: Amazon listing (26 Nov), Tom's Guide and TechRadar (25 Nov).\n\nUS: https://www.amazon.com/dp/B0FY6X2XXY?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=PlayStation+DualSense+Wireless+Controller&tag=digittouch-21\n(Links in Shorts aren't clickable: use the link on our channel page.)\n\nAs an Amazon Associate we earn from qualifying purchases.\nWe haven't tested this ourselves.\nPrices change often; check the current price before you buy.\nNarrated with an AI voice; music made by us."
+  }
+}
