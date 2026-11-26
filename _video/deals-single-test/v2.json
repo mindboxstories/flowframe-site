@@ -1,0 +1,99 @@
+{
+  "slug": "deals-single-test",
+  "version": "v2",
+  "voice": "af_heart",
+  "speed": 1.1,
+  "guide": "flowframe.shop/finds/black-friday-2026",
+  "short_label": "deals today",
+  "short_cta": "",
+  "_note": "Daily 3-deal Short. Copy to _video/deals-<YYYY-MM-DD>/v2.json, set slug to the folder name, replace the 3 items, the stack and the youtube block. Render: shorts.yml slug=deals-<date> mode=stack ids=deals. | v3 SINGLE (26 Nov 2026): one pick per Short, problem-first title.pre + price accent, no 'sticker' key so the cover shows the price.",
+  "segments": [
+    {
+      "id": "stanley",
+      "kind": "item",
+      "n": 1,
+      "name": "Stanley Quencher 40 oz",
+      "price": "$22.50",
+      "img": "https://images.unsplash.com/photo-1692411643820-86e678337b5b",
+      "asin": "B0CP9Z56SW",
+      "was": "$45",
+      "sources": [
+        "NBC Select 20 Nov",
+        "Amazon listing 21 Nov"
+      ],
+      "tags": [],
+      "catch": "",
+      "text": "",
+      "small": "now"
+    },
+    {
+      "id": "airpods",
+      "kind": "item",
+      "n": 2,
+      "name": "AirPods Pro 3",
+      "price": "$169.99",
+      "img": "https://images.unsplash.com/photo-1606741965429-8d76ff50bb2f",
+      "asin": "B0FQFB8FMG",
+      "was": "$249",
+      "sources": [
+        "9to5Toys 22 Nov",
+        "AppleInsider 22 Nov"
+      ],
+      "tags": [],
+      "catch": "",
+      "text": "",
+      "small": "now"
+    },
+    {
+      "id": "kindle",
+      "kind": "item",
+      "n": 3,
+      "name": "Kindle Paperwhite 16GB",
+      "price": "$129.99",
+      "img": "https://images.unsplash.com/photo-1676107779674-f77343861e81",
+      "asin": "B0CFPJYX7P",
+      "sources": [
+        "Amazon listing 23 Nov",
+        "The Mac Observer 23 Nov"
+      ],
+      "tags": [],
+      "catch": "",
+      "text": "",
+      "small": "now"
+    }
+  ],
+  "stacks": [
+    {
+      "id": "deals",
+      "kicker": "Real deal · checked today",
+      "title": {
+        "pre": "Ice melts by noon?",
+        "accent": "$22.50 fixes it"
+      },
+      "hook": "Your ice is gone by lunch. Twenty-two fifty fixes it.",
+      "picks": [
+        {
+          "id": "stanley",
+          "text": "The Stanley Quencher, twenty-two fifty, half price. The catch? Only some colors drop this low.",
+          "feel": "Cold water all day",
+          "catch": "Only some colors are this low."
+        }
+      ],
+      "cta": "Follow for one real deal a day.",
+      "cta_kicker": "Deals checked today",
+      "share": "Send this to a coffee lover"
+    }
+  ],
+  "youtube": {
+    "title": "3 deals worth it today: Stanley $22.50, AirPods Pro 3 $169.99 + 1 #shorts",
+    "tags": [
+      "amazon deals",
+      "black friday deals 2026",
+      "deals today",
+      "stanley cup deal",
+      "airpods pro 3 deal",
+      "kindle deal"
+    ],
+    "description": "Template only: one line per deal (name, price, 'checked <date>'), then each US link https://www.amazon.com/dp/<ASIN>?tag=digittouch-20 and UK search link with tag=digittouch-21, then the fixed lines from the single-deal template."
+  }
+}

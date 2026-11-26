@@ -49,6 +49,8 @@ def build_stack(base, sid):
                       **({"small": p.get("small", it.get("small"))} if p.get("small", it.get("small")) else {})})
     hook = {"id": "shook", "kind": "shook", "text": cfg["hook"], "title": cfg["title"], "img": cfg.get("img", picks[0]["img"]),
             "price": "", "accent_color": cfg.get("accent_color", "sun"), "sticker": cfg.get("sticker", {"small": "picks", "big": str(len(picks))}), "kicker": cfg["kicker"]}
+    if len(picks) == 1 and "sticker" not in cfg:  # single-deal Short (v3, 26 Nov): cover shows the price sticker, not "1 picks"
+        hook["sticker"] = None; hook["price"] = picks[0]["price"]
     cta = {"id": "scta", "kind": "scta", "text": cfg["cta"], "imgs": [x["img"] for x in picks[:3]], "kicker": cfg.get("cta_kicker", base.get("short_label", "")),
            "share": cfg.get("share", "Send this to someone who'd love one"), "hold": 1.2}
     out = {k: v for k, v in base.items() if k not in ("segments", "chapters", "thumb", "shorts", "stacks")}

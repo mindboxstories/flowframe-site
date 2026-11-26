@@ -90,7 +90,7 @@ qitem(seg) {
     <div class="ph full" style="inset:0;background-image:${IMG(seg.img)}"></div>
     <div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(29,27,34,.9) 0%,rgba(29,27,34,.55) 34%,rgba(29,27,34,.08) 56%,rgba(29,27,34,.62) 100%)"></div>
     <div class="abs" style="left:60px;top:250px;width:870px;color:#fff">
-      <div class="cnt" style="display:flex;align-items:center;gap:18px"><span class="pill" style="background:var(--sun);font-size:34px;padding:12px 28px"><i style="background:var(--plum)"></i>${seg.n} / ${seg.of}</span>
+      <div class="cnt" style="display:flex;align-items:center;gap:18px;${seg.of > 1 ? '' : 'visibility:hidden;'}"><span class="pill" style="background:var(--sun);font-size:34px;padding:12px 28px"><i style="background:var(--plum)"></i>${seg.n} / ${seg.of}</span>
         <span style="display:flex;gap:10px">${Array.from({length: seg.of}, (_, i) => `<i style="display:block;width:${i + 1 === seg.n ? 54 : 18}px;height:18px;border-radius:9px;background:${i < seg.n ? 'var(--sun)' : 'rgba(255,255,255,.35)'}"></i>`).join('')}</span></div>
       <div class="nm" style="font-weight:800;font-size:${seg.name.length > 22 ? 84 : 100}px;line-height:1.02;letter-spacing:-.03em;margin-top:30px">${words(seg.name)}</div>
       <div class="fl" style="font-size:${seg.feel.length > 22 ? 70 : 84}px;line-height:1.06;margin-top:18px"><em style="color:var(--sun)">${seg.feel}</em></div>
