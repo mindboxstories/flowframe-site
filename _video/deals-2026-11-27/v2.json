@@ -1,0 +1,66 @@
+{
+  "slug": "deals-2026-11-27",
+  "version": "v2",
+  "voice": "af_heart",
+  "speed": 1.1,
+  "guide": "flowframe.shop/finds/black-friday-2026",
+  "short_label": "deals today",
+  "short_cta": "",
+  "_note": "Daily deal Short 27 Nov 2026 (Black Friday), format v3 single (one pick, problem-first hook).",
+  "segments": [
+    {
+      "id": "noco",
+      "kind": "item",
+      "n": 1,
+      "name": "NOCO Boost GB40 starter",
+      "price": "$49.98",
+      "img": "https://images.unsplash.com/photo-1597766321604-9de3ff9e93e2",
+      "asin": "B015TKUPIC",
+      "was": "$99.95",
+      "sources": [
+        "Amazon listing 27 Nov",
+        "CNET Black Friday live blog 27 Nov"
+      ],
+      "tags": [],
+      "catch": "",
+      "text": "",
+      "small": "now"
+    }
+  ],
+  "stacks": [
+    {
+      "id": "deals",
+      "kicker": "Real deal · checked today",
+      "title": {
+        "pre": "Car won't start?",
+        "accent": "$49.98 fixes it"
+      },
+      "hook": "Your car battery died again. Forty-nine ninety-eight fixes it.",
+      "picks": [
+        {
+          "id": "noco",
+          "text": "The NOCO Boost GB40 jump starter, forty-nine dollars and ninety-eight cents. The catch? Keep it charged, or it can't help you.",
+          "feel": "Start your own car",
+          "catch": "Keep it charged, or it can't help."
+        }
+      ],
+      "cta": "Follow for one real deal a day.",
+      "cta_kicker": "Deals checked today",
+      "share": "Send this to a new driver"
+    }
+  ],
+  "youtube": {
+    "title": "Car won't start? NOCO GB40 jump starter is $49.98 #shorts",
+    "tags": [
+      "jump starter deal",
+      "noco gb40",
+      "noco boost",
+      "dead car battery",
+      "black friday deals 2026",
+      "amazon deals",
+      "car gift ideas",
+      "deals today"
+    ],
+    "description": "NOCO Boost GB40 1000A Jump Starter: $49.98 (list $99.95), checked Nov 27, 2026. Sources: Amazon listing (27 Nov) and CNET Black Friday live blog (27 Nov, 50% off).\n\nUS: https://www.amazon.com/dp/B015TKUPIC?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=NOCO+Boost+GB40+jump+starter&tag=digittouch-21\n(Links in Shorts aren't clickable: use the link on our channel page.)\n\nAs an Amazon Associate we earn from qualifying purchases.\nWe haven't tested this ourselves.\nPrices change often; check the current price before you buy.\nNarrated with an AI voice; music made by us."
+  }
+}
