@@ -93,25 +93,25 @@
       "picks": [
         {
           "id": "p1",
-          "text": "Photo 1.",
+          "text": "p1 is this photo. The catch? Just a check.",
           "feel": "check",
           "catch": "check"
         },
         {
           "id": "p2",
-          "text": "Photo 2.",
+          "text": "p2 is this photo. The catch? Just a check.",
           "feel": "check",
           "catch": "check"
         },
         {
           "id": "p3",
-          "text": "Photo 3.",
+          "text": "p3 is this photo. The catch? Just a check.",
           "feel": "check",
           "catch": "check"
         },
         {
           "id": "p4",
-          "text": "Photo 4.",
+          "text": "p4 is this photo. The catch? Just a check.",
           "feel": "check",
           "catch": "check"
         }
