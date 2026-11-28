@@ -14,7 +14,7 @@
       "n": 1,
       "name": "Echo Dot (5th Gen)",
       "price": "$39.99",
-      "img": "https://images.unsplash.com/photo-1636829147637-6b88c84fb6e2",
+      "img": "https://images.unsplash.com/photo-1667543241790-5afb2964c51f",
       "asin": "B09B8V1LZ3",
       "was": "$79.99",
       "sources": [
@@ -35,7 +35,7 @@
         "pre": "Hands full again?",
         "accent": "$39.99 fixes it"
       },
-      "hook": "Hands covered in dough, timer locked? Thirty-nine ninety-nine fixes it.",
+      "hook": "Hands covered in dough, phone locked? Thirty-nine ninety-nine fixes it.",
       "picks": [
         {
           "id": "echodot",
