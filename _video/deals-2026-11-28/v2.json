@@ -1,0 +1,66 @@
+{
+  "slug": "deals-2026-11-28",
+  "version": "v2",
+  "voice": "af_heart",
+  "speed": 1.1,
+  "guide": "flowframe.shop/finds/black-friday-2026",
+  "short_label": "deals today",
+  "short_cta": "",
+  "_note": "Daily deal Short 28 Nov 2026 (Black Friday weekend), format v3 single (one pick, problem-first hook).",
+  "segments": [
+    {
+      "id": "echodot",
+      "kind": "item",
+      "n": 1,
+      "name": "Echo Dot (5th Gen)",
+      "price": "$39.99",
+      "img": "https://images.unsplash.com/photo-1636829147637-6b88c84fb6e2",
+      "asin": "B09B8V1LZ3",
+      "was": "$79.99",
+      "sources": [
+        "Amazon Today's Deals 28 Nov",
+        "TechRadar Echo deals 27 Nov"
+      ],
+      "tags": [],
+      "catch": "",
+      "text": "",
+      "small": "now"
+    }
+  ],
+  "stacks": [
+    {
+      "id": "deals",
+      "kicker": "Real deal · checked today",
+      "title": {
+        "pre": "Hands full again?",
+        "accent": "$39.99 fixes it"
+      },
+      "hook": "Hands covered in dough, timer locked? Thirty-nine ninety-nine fixes it.",
+      "picks": [
+        {
+          "id": "echodot",
+          "text": "The Echo Dot, fifth gen, thirty-nine dollars and ninety-nine cents. The catch? It's the twenty twenty-two model, and a newer Dot is out.",
+          "feel": "Set timers by voice",
+          "catch": "2022 model; a newer Dot is out."
+        }
+      ],
+      "cta": "Follow for one real deal a day.",
+      "cta_kicker": "Deals checked today",
+      "share": "Send this to a home cook"
+    }
+  ],
+  "youtube": {
+    "title": "Hands full in the kitchen? Echo Dot is $39.99 today #shorts",
+    "tags": [
+      "echo dot deal",
+      "echo dot 5th gen",
+      "alexa speaker",
+      "kitchen gadgets",
+      "black friday deals 2026",
+      "amazon deals",
+      "gift ideas under 50",
+      "deals today"
+    ],
+    "description": "Amazon Echo Dot (5th Gen, 2022 model): $39.99 (list $79.99), checked Nov 28, 2026. Sources: Amazon Today's Deals page (28 Nov) and TechRadar Echo Black Friday deals (27 Nov, was $79.99 now $39.99); also Wired (27 Nov).\n\nUS: https://www.amazon.com/dp/B09B8V1LZ3?tag=digittouch-20\nUK: https://www.amazon.co.uk/s?k=Echo+Dot+5th+Gen&tag=digittouch-21\n(Links in Shorts aren't clickable: use the link on our channel page.)\n\nAs an Amazon Associate we earn from qualifying purchases.\nWe haven't tested this ourselves.\nPrices change often; check the current price before you buy.\nNarrated with an AI voice; music made by us."
+  }
+}
